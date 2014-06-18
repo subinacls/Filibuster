@@ -14,7 +14,7 @@ import datetime
 from socket import *
 import __builtin__
 
-class tcpsocks():
+class udpsocks():
 
 	def __init__(self):
 		pass
@@ -22,7 +22,7 @@ class tcpsocks():
 	def connectsocket(self):
 		try:
 			dft = str(datetime.datetime.now()).split(".")[0]
-			ident = bo+"On TCP Port: "+be+str(base_port)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(dft)
+			ident = bo+"On UDP Port: "+be+str(base_port)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(dft)
 			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))

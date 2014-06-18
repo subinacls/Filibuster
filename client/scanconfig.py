@@ -53,11 +53,13 @@ class initscanner():
 						stack.append(nstrip)
 						try:
 							stack.remove('\n')
-						except Exception as e: # add in diagnostics handling for this error if one is caught
+						except Exception as stackrfail: # add in diagnostics handling for this error if one is caught
+							print "stack remove failed: " + str(stackrfail)
 							pass
 						try:
 							stack.remove('')
-						except Exception as e: # add in diagnostics handling for this error if one is caught
+						except Exception as stackrfail: # add in diagnostics handling for this error if one is caught
+							print "stack remove failed: " + str(stackrfail)
 							pass
 			else:
 				if not os.path.isfile(portr):
@@ -71,9 +73,8 @@ class initscanner():
 						try:
 							from diagforall import portrng
 							portrng().prange(lowport, highport, end_port)
-						except Exception as e:
-							print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for portrange "+bf+"FAILED"+be +" to:")
-							print(str(e))
+						except Exception as prangefail:
+							print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for portrange "+bf+"FAILED"+be +" to:" + str(prangefail)
 					__builtin__.s = int(lowport)
 					__builtin__.t = int(highport)
 
@@ -88,12 +89,11 @@ class initscanner():
 				random.shuffle(stack)
 			else:
 				pass
-
-			#__builtin__.fin_stack = time.time()
+			global fin_stack
+			__builtin__.fin_stack = time.time()
 			__builtin__.total_stack = len(stack)
 			while int(u) != total_stack:
-
-				__builtin__.run_timer = time.time()
+				#__builtin__.run_timer = time.time()
 				if stack[0]:
 					__builtin__.ls = stack[0]
 					if sleepy == "random":
@@ -147,13 +147,12 @@ class initscanner():
 								if diag =="yes":
 									try:
 										cusc().clientudpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
-									except Exception as e:
-										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(e))
+									except Exception as cuscfail:
+										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(cuscfail))
 								try:
 									udpsocks().start_dgram(ipaddr,base_port, consultant, location, ldate, passlist,faillist)
-
-								except Exception as e:
-									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(e))
+								except Exception as udpsockfail:
+									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(udpsockfail))
 									pass
 								time.sleep(float(rest))
 								stack.remove(ls)
@@ -171,13 +170,13 @@ class initscanner():
 										from diagforall import cusc, ctsc
 										cusc(total_stack, u, ipaddr, base_port, consultant, location).clientudpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
 										ctsc(total_stack, u, ipaddr, base_port, consultant, location).clienttcpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
-									except Exception as e:
-										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(e))
+									except Exception as diagsockfail:
+										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(diagsockfail))
 								try:
 									from tcpsock import *
 									from udpsock import *
-								except Exception as e:
-									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP/TCP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(e))
+								except Exception as sockimportfail:
+									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP/TCP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(sockimportfail))
 								try:
 									tcpsocks().start_socket(ipaddr, base_port, location, consultant, ldate, passlist,faillist)
 									udpsocks(ipaddr, base_port, consultant, location, ldate, passlist,faillist).start_dgram(ipaddr,base_port, location, consultant, ldate, passlist,faillist)

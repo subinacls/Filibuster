@@ -94,9 +94,9 @@ class portrng():
 			pfunc("\t\t\t[!] target base port is: ",str(lowport))
 			pfunc("\t\t\t[!] target end port is: ",str(end_port))
 			pfunc("\t\t\t[!] target start time and date is: ",str(ldate))
-		except Exception as e:
+		except Exception as sysarg2fail:
 			print "\n"+bh +"[*] " + "-"*80 + be+"\n"
-			print "\t"+bf+"ATTENTION "+be+bw+"[?] System Argument position 2 has "+bf+"FAILED"+be+bw+" due to "+be+str(e) 
+			print "\t"+bf+"ATTENTION "+be+bw+"[?] System Argument position 2 has "+bf+"FAILED"+be+bw+" due to "+be+str(sysarg2fail)
 			sys.exit(0)
 
 class ctsc():
@@ -113,9 +113,9 @@ class ctsc():
 			pfunc("\t\t[!] Base port sent to TCP socket creator: ",str(base_port)) 
 			pfunc("\t\t[!] Consultants name sent to TCP socket creator: ",str(consultant)) 
 			pfunc("\t\t[!] Testing location sent to TCP socket creator: ",str(location))
-		except Exception as e:
+		except Exception as clienttcpsockfail:
 			print "\n"+bh +"[*] " + "-"*80 + be+"\n" 
-			print "\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for TCP Socket Creator "+bf+"FAILED"+be+bw+" due to "+be+str(e) 
+			print "\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for TCP Socket Creator "+bf+"FAILED"+be+bw+" due to "+be+str(clienttcpsockfail)
 			sys.exit(0)
 
 class cusc():
@@ -133,9 +133,9 @@ class cusc():
 			pfunc("\t\t[!] Consultants name sent to UDP socket creator: ",str(consultant)) 
 			pfunc("\t\t[!] Testing location sent to UDP socket creator: ",str(location)) 
 			print "" 
-		except Exception as e: 
+		except Exception as udpsockfail:
 			print "\n"+bh +"[*] " + "-"*80 + be+"\n" 
-			print "\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for UDP Socket Creator "+bf+"FAILED"+be+bw+" due to "+be+str(e) 
+			print "\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for UDP Socket Creator "+bf+"FAILED"+be+bw+" due to "+be+str(udpsockfail)
 			sys.exit(0)
 
 class diagserverheader():
@@ -153,9 +153,9 @@ class diagserverheader():
 			pfunc("\t\t[!] Application Maintainer: ",__maintainer__)
 			pfunc("\t\t[!] Development Status: ", __status__)
 			print ""
-		except Exception as e:
+		except Exception as serverheaderfail:
 			print "\n"+bh +"[*] " + "-"*80 + be+"\n" 
-			print "\t"+bf+"ATTENTION "+be+bw+"[?] Server Header "+bf+"FAILED"+be+bw+" due to "+be+str(e)
+			print "\t"+bf+"ATTENTION "+be+bw+"[?] Server Header "+bf+"FAILED"+be+bw+" due to "+be+str(serverheaderfail)
 			sys.exit(0) 
 
 class diagclientheader():
@@ -176,9 +176,9 @@ class diagclientheader():
 			pfunc("\t\t[!] Application Maintainer: ", __maintainer__)
 			pfunc("\t\t[!] Development Status: ", __status__)
 			print ""
-		except Exception as e:
+		except Exception as clientheaderfail:
 			print "\n"+bh +"[*] " + "-"*80 + be+"\n" 
-			print "\t"+bf+"ATTENTION "+be+bw+"[?] Server Header "+bf+"FAILED"+be+bw+" due to "+be+str(e) 
+			print "\t"+bf+"ATTENTION "+be+bw+"[?] Client Header "+bf+"FAILED"+be+bw+" due to "+be+str(clientheaderfail)
 			sys.exit(0) 
 
 class clientconfdiag():

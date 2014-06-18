@@ -95,6 +95,7 @@ except Exception as nofirstargument:
 """ function to check first user supplied argument before execution """
 def checkfirstargument():
 	try:
+		print "checkfirstargument"
 		if str(sa1).lower() in ["client","c"]: # if your looking for the client portion
 			from client_kicker import initclient
 			from scanconfig import initscanner
@@ -122,6 +123,7 @@ def checkfirstargument():
 				helper().helpall()
 				sys.exit(0)
 		if str(sa1).lower() in ["server", "s"]: # if your looking for the server portion
+			print "server initialized"
 			from servargs import args
 			args().getservargs()
 			from server_kicker import initserver # import some functionality
@@ -131,6 +133,7 @@ def checkfirstargument():
 				print "hit an exception in initserver.py serverrun(): " + str(serverrunfail)
 			pass
 		else:
+			print "no servers found"
 			helper().helpall() # get some help
 			sys.exit(0)
 	except Exception as nofirstargument:
@@ -140,6 +143,7 @@ def checkfirstargument():
 
 """ pain in the __main__ """
 if __name__ == "__main__":
+	print "Test1"
 	"""  run checkfirstargument function """
 	checkfirstargument()
 	"""

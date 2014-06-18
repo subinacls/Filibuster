@@ -35,8 +35,8 @@ class tcp_servers():
 				killer = "kill -9 "+str(pid)
 				os.popen(killer)
 				sys.exit(0)
-		except Exception as e: 
-			print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp server: " + bf + str(e) + "\n" +be 
+		except Exception as tcpserverfail:
+			print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp server: " + bf + str(tcpserverfail) + "\n" +be
 			sys.exit(0)
 
 class udp_servers:
@@ -47,7 +47,7 @@ class udp_servers:
 	def userver(self, serverport):
 		try:
 			from threadedudpserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
-			udpserver(int(serverport)).myudpserver(int(serverport))
+			udpserver().myudpserver(int(serverport))
 			try:
 				time.sleep(0)
 			except KeyboardInterrupt:
@@ -57,8 +57,8 @@ class udp_servers:
 				killer = "kill -9 "+str(pid)
 				os.popen(killer)
 				sys.exit(0)
-		except Exception as e: 
-			print "\t[?] " +va+" v."+vv+" - CRASHED during import of udp servers: " + bf + str(e) + "\n" +be 
+		except Exception as udpserverfail:
+			print "\t[?] " +va+" v."+vv+" - CRASHED during import of udp servers: " + bf + str(udpserverfail) + "\n" +be
 			sys.exit(0)
 
 class both_servers:
@@ -81,6 +81,6 @@ class both_servers:
 				killer = "kill -9 "+str(pid)
 				os.popen(killer)
 				sys.exit(0)
-		except Exception as e:
-			print "\t[?] " +va+" v."+vv+" - CRASHED during import of both servers: " + bf + str(e) + "\n" +be 
+		except Exception as bothserverfail:
+			print "\t[?] " +va+" v."+vv+" - CRASHED during import of both servers: " + bf + str(bothserverfail) + "\n" +be
 			sys.exit(0)
