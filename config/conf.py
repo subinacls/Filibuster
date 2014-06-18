@@ -50,70 +50,100 @@ class confsecmap:
 	ldate = datetime.datetime.now().date()
 	try:
 		try:
-			if Config.get("SectionOne", "target") != "":
-				__builtin__.ipaddr = ConfigSectionMap("SectionOne")["target"]
-			if Config.get("SectionOne", "target") == "":
+			try:
+				if Config.get("SectionOne", "target") != "":
+					__builtin__.ipaddr = ConfigSectionMap("SectionOne")["target"]
+			except Exception as targetconffail:
 				__builtin__.ipaddr = "127.0.0.1"
-			if Config.get("SectionOne", "types") != "":
-				__builtin__.scantype = ConfigSectionMap("SectionOne")["types"]
-			if Config.get("SectionOne", "types") == "":
+				pass
+			try:
+				if Config.get("SectionOne", "types") != "":
+					__builtin__.scantype = ConfigSectionMap("SectionOne")["types"]
+			except Exception as typesconffail:
 				__builtin__.scantype = "connect"
-			if Config.get("SectionOne", "spoof") != "":
-				__builtin__.spoofipaddr = ConfigSectionMap("SectionOne")["spoof"]
-			if Config.get("SectionOne", "spoof") == "":
+				pass
+			try:
+				if Config.get("SectionOne", "spoof") != "":
+					__builtin__.spoofipaddr = ConfigSectionMap("SectionOne")["spoof"]
+			except Exception as spoofconffail:
 				__builtin__.spoofipaddr = "no"
-			if Config.get("SectionOne", "range") != "":
-				__builtin__.portr = ConfigSectionMap("SectionOne")["range"]
-			if Config.get("SectionOne", "range") == "":
+				pass
+			try:
+				if Config.get("SectionOne", "range") != "":
+					__builtin__.portr = ConfigSectionMap("SectionOne")["range"]
+			except Exception as rangeconffail:
 				__builtin__.portr = "1000-2000"
-			if Config.get("SectionOne", "protocol") != "":
-				__builtin__.flipbit = ConfigSectionMap("SectionOne")["protocol"]
-				__builtin__.fb = flipbit
-				__builtin__.proto = flipbit
-			if Config.get("SectionOne", "protocol") == "":
+				pass
+			try:
+				if Config.get("SectionOne", "protocol") != "":
+					__builtin__.flipbit = ConfigSectionMap("SectionOne")["protocol"]
+					__builtin__.fb = flipbit
+					__builtin__.proto = flipbit
+			except Exception as protoconffail:
 				__builtin__.flipbit = "TCP"
 				__builtin__.fb = flipbit
 				__builtin__.proto = flipbit
-			if Config.get("SectionOne", "consultant") != "":
-				__builtin__.consultant = ConfigSectionMap("SectionOne")["consultant"]
-			if Config.get("SectionOne", "consultant") == "":
+				pass
+			try:
+				if Config.get("SectionOne", "consultant") != "":
+					__builtin__.consultant = ConfigSectionMap("SectionOne")["consultant"]
+			except Exception as conconffail:
 				__builtin__.consultant = "yournamehere"
-			if Config.get("SectionOne", "location") != "":
-				__builtin__.location = ConfigSectionMap("SectionOne")["location"]
-			if Config.get("SectionOne", "location") == "":
+				pass
+			try:
+				if Config.get("SectionOne", "location") != "":
+					__builtin__.location = ConfigSectionMap("SectionOne")["location"]
+			except Exception as locconffail:
 				__builtin__.location = "yourlocationhere"
-			if Config.get("SectionOne", "random") != "":
-				__builtin__.randomness = ConfigSectionMap("SectionOne")["random"]
-			if Config.get("SectionOne", "random") == "":
+				pass
+			try:
+				if Config.get("SectionOne", "random") != "":
+					__builtin__.randomness = ConfigSectionMap("SectionOne")["random"]
+			except Exception as randomconffail:
 				__builtin__.randomness = "False"
-			if Config.get("SectionTwo", "sleep") != "":
-				__builtin__.sleepy = ConfigSectionMap("SectionTwo")["sleep"]
-			if Config.get("SectionTwo", "sleep") == "":
+				pass
+			try:
+				if Config.get("SectionTwo", "sleep") != "":
+					__builtin__.sleepy = ConfigSectionMap("SectionTwo")["sleep"]
+			except Exception as sleepconffail:
 				__builtin__.sleepy = "1"
-			if Config.get("SectionTwo", "nappy") != "":
-				__builtin__.nappy = ConfigSectionMap("SectionTwo")["nappy"]
-			if Config.get("SectionTwo", "nappy") == "":
+				pass
+			try:
+				if Config.get("SectionTwo", "nappy") != "":
+					__builtin__.nappy = ConfigSectionMap("SectionTwo")["nappy"]
+			except Exception as nappyconffail: 
 				__builtin__.nappy = "5"
-			if Config.get("SectionTwo", "dwell") != "":
-				__builtin__.rester = ConfigSectionMap("SectionTwo")["dwell"]
-			if Config.get("SectionTwo", "dwell") == "":
+				pass
+			try:
+				if Config.get("SectionTwo", "dwell") != "":
+					__builtin__.rester = ConfigSectionMap("SectionTwo")["dwell"]
+			except Exception as restertypefail: :
 				__builtin__.rester = "1"
-			if Config.get("SectionThree", "suppress") != "":
-				__builtin__.suppress = ConfigSectionMap("SectionThree")["suppress"]
-			if Config.get("SectionThree", "suppress") == "":
+				pass
+			try:
+				if Config.get("SectionThree", "suppress") != "":
+					__builtin__.suppress = ConfigSectionMap("SectionThree")["suppress"]
+			except Exception as suppressconffail: 
 				__builtin__.suppress = "False"
-			if Config.get("SectionThree", "logging") != "":
-				__builtin__.logging = ConfigSectionMap("SectionThree")["logging"]
-			if Config.get("SectionThree", "logging") == "":
+				pass
+			try:
+				if Config.get("SectionThree", "logging") != "":
+					__builtin__.logging = ConfigSectionMap("SectionThree")["logging"]
+			except Exception as loggingconffail: 
 				__builtin__.logging = "False"
-			if Config.get("SectionThree", "logtype") != "":
-				__builtin__.logtype = ConfigSectionMap("SectionThree")["logtype"]
-			if Config.get("SectionThree", "logtype") == "":
+				pass
+			try:
+				if Config.get("SectionThree", "logtype") != "":
+					__builtin__.logtype = ConfigSectionMap("SectionThree")["logtype"]
+			except Exception as logtypefail: 
 				__builtin__.logtype = ""
-			if Config.get("SectionThree", "covert") != "":
-				__builtin__.covert = ConfigSectionMap("SectionThree")["covert"]
-			if Config.get("SectionThree", "covert") == "":
+				pass
+			try:
+				if Config.get("SectionThree", "covert") != "":
+					__builtin__.covert = ConfigSectionMap("SectionThree")["covert"]
+			except Exception as convertconffail:
 				__builtin__.covert = False
+				pass
 			__builtin__.dict1 = dict1
 			if diag == "yes":
 				clientconfdiag().diagconfig()
