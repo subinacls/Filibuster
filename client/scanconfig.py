@@ -19,6 +19,7 @@ initializes client scanner for further configuration
 
 import random
 import numpy as np
+import __builtin__
 from diagforall import diagclientheader
 from diagforall import csconf
 from pcolors import printfunction

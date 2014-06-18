@@ -11,12 +11,13 @@ sets __builtin__ vars to be used throughout the application
 
 import verinfo
 from bcolors import bcolors
-global failconfig
 import sys
 import ConfigParser
 import __builtin__
 from diagforall import clientconfdiag
 import datetime
+
+global failconfig
 
 #create a disctionary to store all configuration information
 __builtin__.dict1 = {}
@@ -117,7 +118,7 @@ class confsecmap:
 			try:
 				if Config.get("SectionTwo", "dwell") != "":
 					__builtin__.rester = ConfigSectionMap("SectionTwo")["dwell"]
-			except Exception as restertypefail: :
+			except Exception as restertypefail:
 				__builtin__.rester = "1"
 				pass
 			try:

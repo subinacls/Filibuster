@@ -48,9 +48,9 @@ class udp_servers:
 
 	def userver(self, serverport):
 		try:
-			from threadedbothtlsserver import ThreadedUDPRequestHandler
-			from threadedbothtlsserver import ThreadedUDPServer
-			from threadedbothtlsserver import udpserver 
+			from threadedudpserver import ThreadedUDPRequestHandler
+			from threadedudpserver import ThreadedUDPServer
+			from threadedudpserver import udpserver
 			udpserver(int(serverport)).myudpserver(int(serverport))
 			while 1: 
 				try: 

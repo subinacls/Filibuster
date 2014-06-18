@@ -143,11 +143,11 @@ if __name__ == "__main__":
 	"""  run checkfirstargument function """
 	checkfirstargument()
 
-	totalstack =  round(float(fin_stack) - float(stack_timer))
-	totalscantime = finish_run_timer - run_timer
-	finstarttime = round(time.time() - start_timer)
+	#totalstack =  round(float(fin_stack) - float(stack_timer))
+	#totalscantime = finish_run_timer - run_timer
+	#finstarttime = round(time.time() - start_timer)
 
-	if str(confsecmap.logging) == "true" or str(confsecmap.logging) == "True" or str(confsecmap.logging) == "t" or str(confsecmap.logging) == "T" or str(confsecmap.logging) == "1" or str(confsecmap.logging) == "yes" or str(confsecmap.logging) == "Yes" or str(confsecmap.logging) == "YES" or str(confsecmap.logging) == "y" or str(confsecmap.logging) == "Y":
+	if str(logging).lower() in ["true", "t", "1", "yes", "y"]:
 		total_pass_list = len(passlist)
 		total_fail_list = len(faillist)
 		print bcolors.HEADER + "\n\t[-] Total ports in passed list\n" + bcolors.ENDC

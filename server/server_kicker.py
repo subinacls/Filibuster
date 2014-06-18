@@ -45,7 +45,7 @@ class initserver():
 		"""
 		""" handling TCP protocol staging for server """
 		if str(ap).lower() in ["tcp","t"]:
-			""" check is protocol is tcp """
+			""" check if protocol is tcp """
 			try:
 				""" check if tls is being used or not """
 				if str(atls).lower() in ["yes","y"]:
@@ -63,3 +63,21 @@ class initserver():
 				      str(tcpserverfuncfail) + "\n" +be
 				sys.exit(0)
 		""" handling UDP protocol staging for server """
+		if str(ap).lower() in ["udp","u"]:
+			""" check if protocol is tcp """
+			try:
+				""" check if tls is being used or not """
+				if str(atls).lower() in ["yes","y"]:
+					from server_func import tls_servers
+					""" import tcp server functionality module """
+					tcp_servers().tlsserver(ap)
+					""" TLS/TCP server port from user supplied argument """
+				else:
+					from server_func import udp_servers
+					""" import tcp server functionality module """
+					udp_servers().userver(serverport)
+					""" set TCP server port from user supplied argument """
+			except Exception as tcpserverfuncfail:
+				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
+				      str(tcpserverfuncfail) + "\n" +be
+				sys.exit(0)
