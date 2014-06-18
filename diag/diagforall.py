@@ -289,7 +289,7 @@ class ctest():
 			print bo+"\t\t[-] This is the OKBLUE color test"+be
 			print bg+"\t\t[-] This is the OKGREEN color test"+be+"\n"
 		except Exception, colordiag:
-			print colordiag
+			print "failed in: "+str(colordiag)
 
 class socktesting():
 

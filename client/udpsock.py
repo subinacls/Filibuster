@@ -43,9 +43,9 @@ class udpsocks():
 			except Exception as logfailed:
 				print "log failed in tcpsock " + str(logfailed)
 
-		except Exception, e:
+		except Exception as confailtcp:
 			__builtin__.state = "failed"
-			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(base_port) + " - to IP Address: " + str(ipaddr) + " - " + str(e)+be
+			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(base_port) + " - to IP Address: " + str(ipaddr) + " - " + str(confailtcp)+be
 			__builtin__.proto = "TCP"
 			try:
 				from log_enable import log_enabled

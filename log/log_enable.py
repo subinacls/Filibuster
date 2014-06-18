@@ -48,8 +48,8 @@ class log_enabled():
 					jsonmod().json_keeper()
 					jsonmod().json_write(str(consultant)+'-'+str(location)+'-'+str(ldate)+'.json')
 				except Exception as jsonlogfail:
-					print jsonlogfail
+					print "json failed"  +str(jsonlogfail)
 			else:
 				pass
 		except Exception as notadict:
-			print str(notadict)
+			print "nota dictionary" + str(notadict)

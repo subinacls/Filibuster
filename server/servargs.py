@@ -21,7 +21,6 @@ class args():
 				sys.exit()
 		except Exception as sysarg2fail:
 			from helper import helper
-			print sysarg2fail
 			helper().shelp()
 			sys.exit()
 		try:
@@ -31,7 +30,6 @@ class args():
 				pass
 		except Exception as sysarg3fail:
 			from helper import shelp
-			print sysarg3fail
 			helper().shelp()
 			sys.exit(0)
 		try:
@@ -44,6 +42,5 @@ class args():
 		except Exception as sysarg4fail:
 			print "\tPlease choose: 'Yes' or 'No' for the use of TLS", str(e) + "\n\n"
 			from helper import tlshelp
-			print sysarg4fail
 			helper().tlshelp()
 			sys.exit()

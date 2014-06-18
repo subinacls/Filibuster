@@ -89,8 +89,6 @@ class initscanner():
 				random.shuffle(stack)
 			else:
 				pass
-			global fin_stack
-			__builtin__.fin_stack = time.time()
 			__builtin__.total_stack = len(stack)
 			while int(u) != total_stack:
 				#__builtin__.run_timer = time.time()

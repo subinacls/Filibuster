@@ -10,21 +10,18 @@ configuration file for the client portion of the application.
 """ standard lib imports here """
 
 import __builtin__ as __builtin__
-import sys as sys; __builtin__.sys = sys
-import thread as thread; __builtin__.thread = thread
-import signal as signal; __builtin__.signal = signal
-import datetime as datetime; __builtin__.datetime = datetime
+import sys
+import thread
+import datetime
 #import socket as socket; __builtin__.socket = socket
-import os as os;__builtin__.os = os
-import time as time; __builtin__.time = time
-import re as re; __builtin__.re = re
+import os
 global ipaddr
 __builtin__.ipaddr = "127.0.0.1"
 global hostip
 __builtin__.hostip = ""
 global stack
 __builtin__.stack = []
-import numpy as np; __builtin__.np = np
+import numpy as np
 global date
 date = str(datetime.datetime.now()).split()[0]
 __builtin__.date = date
@@ -146,38 +143,3 @@ if __name__ == "__main__":
 	print "Test1"
 	"""  run checkfirstargument function """
 	checkfirstargument()
-	"""
-	#totalstack =  round(float(fin_stack) - float(stack_timer))
-	#totalscantime = finish_run_timer - run_timer
-	#finstarttime = round(time.time() - start_timer)
-
-	if str(logging).lower() in ["true", "t", "1", "yes", "y"]:
-		total_pass_list = len(passlist)
-		total_fail_list = len(faillist)
-		print bcolors.HEADER + "\n\t[-] Total ports in passed list\n" + bcolors.ENDC
-		printfunction("\t\t[!] Passports: ",str(total_pass_list)).pfunc("\t\t[!] Passed ports: ",str(total_pass_list))
-		print bcolors.HEADER + "\n\t[-] Total ports in failed list\n" + bcolors.ENDC
-		printfunction("\t\t[!] Failed ports: ",str(total_fail_list)).pfunc("\t\t[!] Failed ports: ",str(total_fail_list))
-		print ""
-	if diag == "yes":
-		print "\n"+bcolors.HEADER+"\t[-] Client Successful port passlist" + bcolors.ENDC
-		print passlist
-		print "\n"
-		print bcolors.HEADER+"\t[-] Client Failed port faillist" + bcolors.ENDC
-		print faillist
-		print ""
-	print bcolors.HEADER + "\t[-] Statistical timer information\n" + bcolors.ENDC
-	printfunction("\t\t[!] Total stack compile time in sec.: ",str(totalstack)).pfunc("\t\t[!] Total stack compile time sec: ",str(totalstack))
-	printfunction("\t\t[!] Per port scan time: ",str(totalscantime)).pfunc("\t\t[!] Per port scan time: ",str(totalscantime))
-	if finstarttime > 60:
-		mfst = finstarttime / 60
-		if mfst > 3600:
-			hffst = mfst / 60
-			hfst = hffst / 60
-			printfunction("\t\t[!] Total app runtime hours: ",str(hfst)).pfunc("\t\t[!] Total app runtime hours: ",str(float(hfst)))
-		else:
-			printfunction("\t\t[!] Total app runtime min.: ",str(mfst)).pfunc("\t\t[!] Total app runtime min.: ",str(float(mfst)))
-	else:
-		printfunction("\t\t[!] Total app runtime sec.: ",str(finstarttime)).pfunc("\t\t[!] Total app runtime sec.: ",str(finstarttime))
-	print ""
-	"""

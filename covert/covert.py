@@ -42,7 +42,7 @@ class icmptunnel:
 					time.sleep(.04)
 				devnull.close()
 		except Exception as icmptunnelfail:
-			print icmptunnelfail
+			print icmptunnelfail, "icmp tunnel failed"
 
 """ handles all the ntp time protocol tunnel testing """
 class ntptunnel:
@@ -63,7 +63,7 @@ class ntptunnel:
 				tunnelsfail.append('ntp')
 			client.close()
 		except Exception as ntptunnelfail:
-			print ntptunnelfail
+			print ntptunnelfail, "ntp tunnel failed"
 
 """ handles all the dns protocol tunnel testing """
 class dnstunnel:
@@ -79,7 +79,7 @@ class dnstunnel:
 			else:
 				tunnelsfail.append('dns')
 		except Exception as dnstunnelfail:
-			print dnstunnelfail
+			print dnstunnelfail, "dnstunnel failed"
 
 """ set basic list for gathering for covert tunnel testing """
 tunnelspass = []

@@ -154,5 +154,5 @@ class confsecmap:
 			sys.exit(0)
 	except Exception as confcatchall:
 		if diag == "yes":
-			print confcatchall
+			print confcatchall, "configuration failed, hit catch all"
 		sys.exit(0)
