@@ -4,7 +4,6 @@
 # module author: subinacls
 #
 
-
 """ Useful information
 Used to check for dependencies required for operation
 run client user argument variables
