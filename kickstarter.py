@@ -35,7 +35,6 @@ __builtin__.diag = "yes"
 __builtin__.dd = {}
 """
 warning:
-
 	running diagnostics will slow down the scanning process
 	use only when adding modules to view the data flow
 	You have been informed
@@ -53,7 +52,6 @@ for inc in directories:
 	sys.path.append(os.getcwd()+"/"+inc)
 
 """ import modules after directory structure appended to system $PATH """
-
 from client_kicker import initclient
 from bcolors import bcolors as b
 from diagforall import diagclientheader as diagclientheader
@@ -133,7 +131,7 @@ def checkfirstargument():
 				print "hit an exception in initserver.py serverrun(): " + str(serverrunfail)
 			pass
 		else:
-			helper().helpall()
+			helper().helpall() # get some help
 			sys.exit(0)
 	except Exception as nofirstargument:
 		print "hit an exception in kickstarter.py last exception nofirstargument: " + str(nofirstargument)
