@@ -142,7 +142,7 @@ def checkfirstargument():
 if __name__ == "__main__":
 	"""  run checkfirstargument function """
 	checkfirstargument()
-
+	"""
 	#totalstack =  round(float(fin_stack) - float(stack_timer))
 	#totalscantime = finish_run_timer - run_timer
 	#finstarttime = round(time.time() - start_timer)
@@ -176,3 +176,4 @@ if __name__ == "__main__":
 	else:
 		printfunction("\t\t[!] Total app runtime sec.: ",str(finstarttime)).pfunc("\t\t[!] Total app runtime sec.: ",str(finstarttime))
 	print ""
+	"""

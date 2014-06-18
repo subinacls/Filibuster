@@ -89,7 +89,7 @@ class initscanner():
 			else:
 				pass
 
-			__builtin__.fin_stack = time.time()
+			#__builtin__.fin_stack = time.time()
 			__builtin__.total_stack = len(stack)
 			while int(u) != total_stack:
 
