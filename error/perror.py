@@ -10,7 +10,7 @@ class prettyerror:
 
 	def printerror(self, file, section, exceptionname):
 
-		if diag == "yes":
+		if str(diag).lower() in ["true","yes"]:
 			print bf+"\n\t\t[?] Application failure in the "+str(mp().mod_inspect())+" module" \
 					 "\n\t\t[-] Exception error name: " + str(section) +"" \
 			         "\n\t\t\t[-] Exception reported: "+str(exceptionname)+"\n"+be

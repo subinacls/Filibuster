@@ -17,6 +17,7 @@ import time
 import re
 import os
 import verinfo
+from diagforall import clientconfdiag
 
 van = __appname__
 vv = __version__
@@ -35,7 +36,7 @@ class initclient():
 			import numpy as np
 		except Exception as nonumpyinstalled:
 			print("Please install numpy with: easy_install numpy")
-			if diag == "yes":
+			if str(diag).lower() in ["true","yes"]:
 				print "Dependency exception caught as: " +str(nonumpyinstalled)
 			sys.exit()
 		try:
@@ -43,7 +44,7 @@ class initclient():
 			import ConfigParser
 		except Exception as noconfigparserinstalled:
 			print("Please install ConfigParser with: easy_install configparser")
-			if diag == "yes":
+			if str(diag).lower() in ["true","yes"]:
 				print "Dependency exception caught as: " +str(noconfigparserinstalled)
 			sys.exit()
 		try:
@@ -51,7 +52,7 @@ class initclient():
 			import dns.resolver
 		except Exception as covertdnsimportfail:
 			print("Please install python DNS module with: easy_install dnspython")
-			if diag == "yes":
+			if str(diag).lower() in ["true","yes"]:
 				print "Dependency exception caught as: " +str(covertdnsimportfail)
 			sys.exit()
 
@@ -77,7 +78,7 @@ class initclient():
 		try:
 			__builtin__.conffile = sys.argv[2]
 		except Exception as conffilefail:
-			if diag == "yes":
+			if str(diag).lower() in ["true","yes"]:
 				print("\n"+bh +"[*] " + "-"*80 + be+"\n")
 				print("\t"+bf+"ATTENTION "+be+bw+"[?] SYSARG position 2 has "+bf+"FAILED"+be+bw+" due to absence"+be)
 				print("\t[?] " +van+" v."+vv+" - CRASHED: " + bf + str(conffilefail) + "\n" +be)
@@ -110,11 +111,9 @@ class initclient():
 				""" check and make sure its a file and not some malicious user input """
 				if os.path.isfile(sys.argv[2]):
 					confsecmap
-				if diag == "yes":
-					from diagforall import clientconfdiag
-					clientconfdiag().diagconfig
+				clientconfdiag().diagconfig
 		except Exception as conffilefail:
-			if diag == "yes":
+			if str(diag).lower() in ["true","yes"]:
 				print("\n"+bh +"[*] " + "-"*80 + be+"\n")
 				print("\t"+bf+"ATTENTION "+be+bw+"[?] config file failed "+bf+str(conffilefail)+be+bw+be)
 				print("\t[?] " +van+" v."+vv+" - CRASHED: " + bf + str(nosysarg3) + "\n" +be)

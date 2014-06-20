@@ -5,11 +5,12 @@ import os
 import sys
 import time
 import verinfo
+import __builtin__
 from bcolors import bcolors
 
-va = __appname__
-vv = __version__
-vauth = __author__
+__builtin__.va = __appname__
+__builtin__.vv = __version__
+__builtin__.vauth = __author__
 
 bh = bcolors.HEADER
 bf = bcolors.FAIL

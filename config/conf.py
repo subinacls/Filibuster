@@ -146,13 +146,12 @@ class confsecmap:
 				__builtin__.covert = False
 				pass
 			__builtin__.dict1 = dict1
-			if diag == "yes":
-				clientconfdiag().diagconfig()
+			clientconfdiag().diagconfig()
 		except Exception as failconfig:
-			if diag == "yes":
+			if str(diag).lower() in ["true","yes"]:
 				print "Configuration failed in conf.py, reason: " + str(failconfig)
 			sys.exit(0)
 	except Exception as confcatchall:
-		if diag == "yes":
+		if str(diag).lower() in ["true","yes"]:
 			print confcatchall, "configuration failed, hit catch all"
 		sys.exit(0)

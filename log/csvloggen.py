@@ -9,7 +9,7 @@ class csvlogfilegen:
   def __init__(self):
     pass
 
-  def csvlog(self, proto, ipaddr, consultant, location, ldate, base_port, dft,state):
+  def csvlog(self):
 
     with open(str(consultant)+'-'+str(location)+'-'+str(ldate)+'.csv', 'a', buffering=0) as f:
       writer = csv.writer(f)

@@ -32,8 +32,6 @@ class initscanner():
 	def __init__(self):
 		pass
 	def scanengine(self):
-		if scantype:
-			print(bh+"\t[-] Starting "+be+str(scantype)+be+bh+" scanning process now, aganst: "+be+ipaddr+"\n"+be)
 		if 1 == 1 :
 			""" start stack build timer """
 			__builtin__.stack_timer = time.time()
@@ -71,10 +69,10 @@ class initscanner():
 					__builtin__.highport = int(portranges[1])
 					__builtin__.base_port = int(lowport)
 					__builtin__.end_port = int(highport)
-					if diag == "yes":
+					if str(diag).lower() in ["true","yes"]:
 						try:
 							from diagforall import portrng
-							portrng().prange(lowport, highport, end_port)
+							portrng().prange()
 						except Exception as prangefail:
 							print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for portrange "+bf+"FAILED"+be +" to:" + str(prangefail))
 					__builtin__.s = int(lowport)
@@ -84,16 +82,15 @@ class initscanner():
 			for x in range(s,t):
 				stack.append(x)
 			stack.append(highport)
-			if diag:
-				print("")
 			if str(randomness).lower() in ["1","t","true","y","yes","on"]:
 				#ls = random.choice(stack)
 				random.shuffle(stack)
 			else:
 				pass
 			__builtin__.total_stack = len(stack)
+			print(bh+"\n\t[-] Starting "+be+str(scantype)+be+bh+" scanning process against server IP: "+be+ipaddr+be)
 			while int(u) != total_stack:
-				#__builtin__.run_timer = time.time()
+				__builtin__.run_timer = time.time()
 				if stack[0]:
 					__builtin__.ls = stack[0]
 					if sleepy == "random":
@@ -112,17 +109,20 @@ class initscanner():
 							if cfb == "tcp":
 								from tcpsock import tcpsocks
 								from diagforall import ctsc
-								if diag =="yes":
+								if str(diag).lower() in ["true","yes"]:
 									try:
-										ctsc().clienttcpsockconf(total_stack, u, ipaddr, ls, consultant, location)
+										ctsc().clienttcpsockconf()
 									except Exception as diagclientsockconfigfail:
 										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for TCP sockets "+ \
 										      bf+"FAILED"+be+bw+" due to "+be+str(diagclientsockconfigfail))
 								try:
-									if diag == "yes":
-										from diagforall import socktesting
-										socktesting().sockdiag()
-									tcpsocks().connectsocket(ipaddr,base_port, consultant, location, ldate, passlist,faillist)
+									if str(diag).lower() in ["true","yes"]:
+										try:
+											from diagforall import socktesting
+											socktesting().sockdiag()
+										except Exception as sockettestfail:
+											print sockettestfail
+									tcpsocks().connectsocket()
 								except Exception as tcpconnectsocketfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP sockets "+ \
 									      bf+"FAILED"+be+bw+" due to "+be+str(tcpconnectsocketfail))
@@ -133,7 +133,7 @@ class initscanner():
 
 							if cfb == "udp":
 								from udpsock import *
-								if diag =="yes":
+								if str(diag).lower() in ["true","yes"]:
 									try:
 										cusc().clientudpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
 									except Exception as cuscfail:
@@ -145,16 +145,11 @@ class initscanner():
 									pass
 								time.sleep(float(rest))
 								stack.remove(ls)
-								if diag == "yes":
-									print("\n\t"+bh+"[-] Client UDP port passlist\n" + be)
-									print(passlist)
-									print("\n\t"+bh+"[-] Client UDP port faillist\n" + be)
-									print(faillist)
 
 							# initalize socket creation
 
 							if cfb == "both":
-								if diag =="yes":
+								if str(diag).lower() in ["true","yes"]:
 									try:
 										from diagforall import cusc, ctsc
 										cusc(total_stack, u, ipaddr, base_port, consultant, location).clientudpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
@@ -173,9 +168,3 @@ class initscanner():
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(tcpsockfail))
 								time.sleep(float(rest))
 								stack.remove(ls)
-								if diag == "yes":
-									print("\n\t"+bh+"[-] Client TCP/UDP port passlist\n" + be)
-									print(passlist)
-									print("\n\t"+bh+"[-] Client TCP/UDP port faillist\n" + be)
-									print(faillist)
-

@@ -22,7 +22,6 @@ class jsonlogger():
 			with open(filename, "r") as f: # open a file as named variable
 				__builtin__.rawjson = json.loads(f.read()) # load json data to built in variable
 		except Exception as jreadfail: # catch all
-			print jreadfail, "something failed in read from: " + str(filename)
 			__builtin__.rawjson = json.loads(json.dumps({})) #, indent=4))
 			pass
 

@@ -24,21 +24,21 @@ class log_enabled():
 
 		try:
 			if str(logtype).lower() == "csv":
-				csv().csvlog(proto, ipaddr, consultant, location, ldate, base_port, dft, state)
+				csv().csvlog()
 			else:
 				pass
 		except Exception as notacsv:
 			print "CSV failed in " + proto + ": " + str(notacsv)
 		try:
 			if str(logtype).lower() == "xml":
-				xml().xmllog(proto, ipaddr, consultant, location, ldate, base_port, dft, state)
+				xml().xmllog()
 			else:
 				pass	
 		except Exception as notanxml:
 			print "XML failed in " + proto + ": " + str(notanxml)
 		try:
 			if str(logtype).lower() in ["txt", "text"]:
-				txt().txtlog(proto, ipaddr, consultant, location, ldate, base_port, dft, state)
+				txt().txtlog()
 			else:
 				pass
 		except Exception as notatxt:

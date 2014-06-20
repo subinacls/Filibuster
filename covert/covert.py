@@ -105,8 +105,8 @@ if tunnelsfail:
 	for tf in tunnelsfail:
 		printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tf))
 
-if diag == "yes":
-	diagclientheader().clientheader()
+diagclientheader().clientheader()
+if str(diag).lower() in ["true","yes"]:
 	print(bh+"\n\t[-] Entering the Client portion of application\n"+be)
 	printfunction().pfunc("\t\t[!] System Argument position 1 is set to: ",sa1)
 else:

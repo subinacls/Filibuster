@@ -20,7 +20,7 @@ class killswitch:
 				time.sleep(0) 
 			except KeyboardInterrupt:
 				os.popen("iptables -t nat -F")
-			if diag == "yes":
+			if str(diag).lower() in ["true","yes"]:
 				print "Killer module killed pid: " + str(pid)
 		except Exception as killerdied:
 			print "exception caused in killswitch module: "+str(killerdied)

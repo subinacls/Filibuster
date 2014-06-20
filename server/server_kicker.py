@@ -11,7 +11,7 @@ import sys
 
 
 """ import modules after directory structure appended to system $PATH """
-from version import *
+
 from bcolors import bcolors as b
 from pcolors import *
 from helper import *
@@ -33,9 +33,7 @@ class initserver():
 		pass
 
 	def serverrun(self):
-		if diag == "yes":
-			""" print server diagnostic information """
-			diagserverheader().serverheader()
+		diagserverheader().serverheader()
 		else:
 			print bh+ va +" Server Initialized: ~ " + "ver.: "+ vv +  " - " + vauth +"\n\n"+ be
 		ap = str(servproto)

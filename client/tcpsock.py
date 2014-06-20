@@ -19,20 +19,20 @@ class tcpsocks():
 	def __init__(self):
 		pass
 
-	def connectsocket(self, ipaddr, base_port, consultant, location, ldate, passlist, faillist):
+	def connectsocket(self):
 		try:
 			dft = str(datetime.datetime.now()).split(".")[0]
-			ident = bo+"On TCP Port: "+be+str(base_port)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(dft)
+			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(dft)
 			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
 			else:
 				pass
-			sockobj.connect((ipaddr, base_port))
+			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
 			data = sockobj.recv(1024)
 			if data:
-				passlist.append("TCP/"+str(base_port))
+				passlist.append("TCP/"+str(ls))
 			sockobj.close()
 			__builtin__.state = "connected"
 			__builtin__.proto = "TCP"
@@ -45,7 +45,7 @@ class tcpsocks():
 
 		except Exception as tcpconfail:
 			__builtin__.state = str(tcpconfail).split("] ")[1]
-			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(base_port) + " - to IP Address: " + str(ipaddr) + " - " + str(tcpconfail)+be
+			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(tcpconfail)+be
 			__builtin__.proto = "TCP"
 			try:
 				from log_enable import log_enabled

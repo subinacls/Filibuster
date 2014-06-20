@@ -18,7 +18,8 @@ __builtin__.ipaddr = "127.0.0.1"
 __builtin__.hostip = ""
 __builtin__.stack = []
 import numpy as np
-global date
+global ident
+__builtin__.ident = ""
 date = str(datetime.datetime.now()).split()[0]
 __builtin__.date = date
 __builtin__.u = 0
@@ -47,7 +48,8 @@ for inc in directories:
 """ import modules after directory structure appended to system $PATH """
 from client_kicker import initclient
 from bcolors import bcolors as b
-from diagforall import diagclientheader as diagclientheader
+from diagforall import diagclientheader
+from diagforall import diagserverheader
 import verinfo as verinfo
 from pcolors import printfunction as printfunction
 from helper import helper as helper
@@ -57,8 +59,7 @@ from diagforall import diagclientheader, modimporttest, ctest
 from diagforall import piechartdiag
 
 """ do an import test on all modules """
-if diag == "yes":
-	modimporttest().runimporttest()
+modimporttest().runimporttest()
 
 """ set some color variable shortcuts """
 __builtin__.bh = b.HEADER
@@ -68,8 +69,7 @@ __builtin__.bw = b.WARNING
 __builtin__.bo = b.OKBLUE
 
 """ do some basic testing of the colorization module """
-if diag == "yes":
-	ctest().colortest()
+ctest().colortest()
 
 """check for user supplied argument in position 1, assume blank is assumption """
 try:
@@ -95,16 +95,17 @@ def checkfirstargument():
 				helper().helpall()
 				sys.exit(0)
 			try:
+				diagclientheader().clientheader()
 				initclient().clientrun() # run client kicker
 			except Exception as clientrunfail: # if anything failed here
-				if diag == "yes":
+				if str(diag).lower() in ["true","yes"]:
 					print "hit an exception in initclient.py clientrun(): " + str(clientrunfail)
 				helper().helpall()
 				sys.exit(0)
 			try:
 				initscanner().scanengine() # configure and run scanning engine
 			except Exception as scanenginefail: # if anything failed here
-				if diag == "yes":
+				if str(diag).lower() in ["true","yes"]:
 					print "hit an exception in initscanner.py scanengine(): " + str(scanenginefail)
 				helper().helpall()
 				sys.exit(0)
