@@ -5,9 +5,9 @@ Egress filter mapping application with additional functionality
 
   [*] Commandline Usage: ...
   
-  {Client}  term:$ python ./filterbuster.py client (config.file) (no/yes)
+    {Client}  term:$ python ./filterbuster.py client (config.file) (no/yes)
   
-  {Server}  term:$ python ./filterbuster.py server (tcp/udp/both) (port) (no/yes)
+    {Server}  term:$ python ./filterbuster.py server (tcp/udp/both) (port) (no/yes)
 
   [-] Understanding the client: ....
 
