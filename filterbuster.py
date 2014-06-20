@@ -138,3 +138,4 @@ if __name__ == "__main__":
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
 
+
