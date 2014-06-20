@@ -17,7 +17,7 @@ Egress filter mapping application with additional functionality
     [-] Client Configuration file:
   
         Below is a sample configuration file used by the application. As modules are introduced, this
-        configuraiton file will obviously need expanding as required. The examples below expect some 
+        configuration file will obviously need expanding as required. The examples below expect some
         modification from the end user -
   
       ___CUT___
@@ -53,9 +53,9 @@ Egress filter mapping application with additional functionality
         The server is threaded, bound to a single port and listens on all interfaces meaning all attempted 
         communications on the IP stack will be redirected to the server and it will answer the attempted 
         communication if specific criteria are meet. If these conditions are not fulfilled the server will 
-        append any recieved data to a Contaminated file which can be used as an Honeypot of sorts.
+        append any relieved data to a Contaminated file which can be used as an Honeypot of sorts.
         
-        No information about the scannings results are logged onto the server with one exception,the 
+        No information about the scanning results are logged onto the server with one exception,the
         Contamination log file which will not retain any information about the client and their egress rules.
         
         There really is no actual configuration to the server other than commandline options. As the applications
