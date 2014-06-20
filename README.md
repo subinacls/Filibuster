@@ -23,28 +23,29 @@ Egress filter mapping application with additional functionality
 
   
       [SectionOne]
-        
-        target: (127.0.0.1 / hostname / subdomain.domain.tla)
-        types: (connect/icmp/dns/ntp)
-        spoof: (yes/no)
-        range: (portlist.txt/0-65535)
-        random: (True/False)
-        protocol: (tcp/udp/icmp/etc/etc/)
-        consultant: (your name)
-        location: (your location)
+
+        diagnostics: ( boolean )
+        target: ( 127.0.0.1 / hostname / subdomain.domain.tla )
+        types: ( connect )
+        spoof: ( boolean )
+        range: ( portlist.txt / 0-65535 )
+        random: ( boolean )
+        protocol: ( tcp / udp / icmp / etc / etc )
+        consultant: ( your name )
+        location: ( your location )
       
       [SectionTwo]
       
-        sleep: (static/random)
-        nappy: (whole number)
-        dwell: (whole number)
+        sleep: ( static / random )
+        nappy: ( number )
+        dwell: ( number )
       
       [SectionThree]
       
-        suppress: (True/False)
-        logging: (True/False
-        logtype: (txt/xml/csv/json)
-        covert: (True/False)
+        suppress: ( boolean )
+        logging: ( boolean )
+        logtype: ( txt / xml / csv / json )
+        covert: ( boolean )
 
   
   [-] Understanding the server: ....
