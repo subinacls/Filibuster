@@ -137,3 +137,4 @@ if __name__ == "__main__":
 	"""for diagnostics display a pie chart"""
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
+

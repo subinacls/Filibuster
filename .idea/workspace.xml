@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filterbuster.py" afterPath="$PROJECT_DIR$/filterbuster.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403288468875" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403288575782" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403283803897" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403143212255" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -45,10 +46,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="filterbuster.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="filterbuster.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/filterbuster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="0" selection-start="4659" selection-end="4659" vertical-scroll-proportion="0.0">
+            <state line="140" column="0" selection-start="4660" selection-end="4660" vertical-scroll-proportion="0.90660024">
               <folding />
             </state>
           </provider>
@@ -101,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.1867995">
+            <state line="25" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,9 +175,9 @@
         <option value="$PROJECT_DIR$/config/conf.py" />
         <option value="$PROJECT_DIR$/client/scanconfig.py" />
         <option value="$PROJECT_DIR$/log/log_enable.py" />
-        <option value="$PROJECT_DIR$/filterbuster.py" />
         <option value="$PROJECT_DIR$/diag/diagforall.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/filterbuster.py" />
       </list>
     </option>
   </component>
@@ -635,7 +636,11 @@
       <created>1403288472285</created>
       <updated>1403288472285</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="corrected some spelling errors">
+      <created>1403288577209</created>
+      <updated>1403288577209</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -660,14 +665,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1680" height="1000" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969174" sideWeight="0.6701878" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2620222" sideWeight="0.6701878" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2620222" sideWeight="0.6701878" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39906102" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -845,13 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filterbuster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="0" selection-start="4659" selection-end="4659" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/diag/diagforall.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="264" column="17" selection-start="9973" selection-end="9973" vertical-scroll-proportion="0.0">
@@ -863,7 +861,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.1867995">
+        <state line="25" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filterbuster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="0" selection-start="4660" selection-end="4660" vertical-scroll-proportion="0.90660024">
           <folding />
         </state>
       </provider>
