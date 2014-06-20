@@ -9,17 +9,13 @@ configuration file for the client portion of the application.
 
 """ standard lib imports here """
 
-import __builtin__ as __builtin__
+import __builtin__
 import sys
 import thread
 import datetime
-#import socket as socket; __builtin__.socket = socket
 import os
-global ipaddr
 __builtin__.ipaddr = "127.0.0.1"
-global hostip
 __builtin__.hostip = ""
-global stack
 __builtin__.stack = []
 import numpy as np
 global date
@@ -61,7 +57,7 @@ from diagforall import diagclientheader, modimporttest, ctest
 from diagforall import piechartdiag
 
 """ do an import test on all modules """
-if diag == "no":
+if diag == "yes":
 	modimporttest().runimporttest()
 
 """ set some color variable shortcuts """
@@ -139,5 +135,5 @@ if __name__ == "__main__":
 	"""  run checkfirstargument function """
 	checkfirstargument()
 	"""for diagnostics display a pie chart"""
-	if diag = "yes":
-		piechartdiag().getaslice()
+	from diagforall import piechartdiag
+	piechartdiag().getaslice()

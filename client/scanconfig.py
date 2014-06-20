@@ -18,6 +18,8 @@ initializes client scanner for further configuration
 """
 
 import random
+import time
+import os
 import numpy as np
 import __builtin__
 from diagforall import diagclientheader
@@ -74,7 +76,7 @@ class initscanner():
 							from diagforall import portrng
 							portrng().prange(lowport, highport, end_port)
 						except Exception as prangefail:
-							print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for portrange "+bf+"FAILED"+be +" to:" + str(prangefail)
+							print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for portrange "+bf+"FAILED"+be +" to:" + str(prangefail))
 					__builtin__.s = int(lowport)
 					__builtin__.t = int(highport)
 
@@ -127,18 +129,7 @@ class initscanner():
 									pass
 								time.sleep(float(rest))
 								stack.remove(ls)
-								if diag == "yes":
-									try:
-										print("\n\t"+bh+"[-] Client TCP port passlist length\n" + be)
-										print("\t\t[!] "+str(len(passlist)))
-										print("\n\t"+bh+"[-] Client TCP port passlist last entry\n" + be)
-										print("\t\t[!] "+str(passlist[-1]))
-										print("\n\t"+bh+"[-] Client TCP port faillist length\n" + be)
-										print("\t\t[!] "+str(len(faillist)))
-										print("\n\t"+bh+"[-] Client TCP port faillist last entry\n" + be)
-										print("\t\t[!] "+str(faillist[-1]))
-									except Exception:
-										pass
+
 
 							if cfb == "udp":
 								from udpsock import *
@@ -178,8 +169,8 @@ class initscanner():
 								try:
 									tcpsocks().start_socket(ipaddr, base_port, location, consultant, ldate, passlist,faillist)
 									udpsocks(ipaddr, base_port, consultant, location, ldate, passlist,faillist).start_dgram(ipaddr,base_port, location, consultant, ldate, passlist,faillist)
-								except Exception as e:
-									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(e))
+								except Exception as tcpsockfail:
+									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(tcpsockfail))
 								time.sleep(float(rest))
 								stack.remove(ls)
 								if diag == "yes":

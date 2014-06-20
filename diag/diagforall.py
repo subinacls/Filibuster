@@ -14,6 +14,7 @@ from module_error_handling import modreporter as mp
 from diagfun import diagfun
 from bcolors import bcolors as b
 import verinfo
+import __builtin__
 
 bh = b.HEADER
 bf = b.FAIL
@@ -143,13 +144,13 @@ class diagserverheader():
 	def serverheader(self):
 		try: 
 			print bh+"\t[-] Displaying Application Development Information\n"+be
-			pfunc("\t\t[!] Application Codename: ",  __appname__)
-			pfunc("\t\t[!] Application Functionality: ",  "Server")
-			pfunc("\t\t[!] Original Author: ",  __author__)
+			pfunc("\t\t[!] Application Codename: ", __appname__)
+			pfunc("\t\t[!] Application Functionality: ", "Server")
+			pfunc("\t\t[!] Original Author: ", __author__)
 			pfunc("\t\t[!] Year of Copyright: ", __copyright__ )
-			pfunc("\t\t[!] Credits Given: ", __credits__  )
-			pfunc("\t\t[!] License version: ", __license__  )
-			pfunc("\t\t[!] Application Version: ", __version__  )
+			pfunc("\t\t[!] Credits Given: ", __credits__ )
+			pfunc("\t\t[!] License version: ", __license__ )
+			pfunc("\t\t[!] Application Version: ", __version__ )
 			pfunc("\t\t[!] Application Maintainer: ",__maintainer__)
 			pfunc("\t\t[!] Development Status: ", __status__)
 			print ""
@@ -167,12 +168,12 @@ class diagclientheader():
 		try:
 			print bh+"\t[-] Displaying Application Development Information\n"+be
 			pfunc("\t\t[!] Application Codename: ", __appname__)
-			pfunc("\t\t[!] Application Functionality: ",  "Client")
+			pfunc("\t\t[!] Application Functionality: ", "Client")
 			pfunc("\t\t[!] Original Author: ", __author__)
 			pfunc("\t\t[!] Years of development: ", __copyright__ )
-			pfunc("\t\t[!] Credits Given: ", __credits__  )
-			pfunc("\t\t[!] License version: ", __license__  )
-			pfunc("\t\t[!] Application Version: ", __version__  )
+			pfunc("\t\t[!] Credits Given: ", __credits__ )
+			pfunc("\t\t[!] License version: ", __license__ )
+			pfunc("\t\t[!] Application Version: ", __version__ )
 			pfunc("\t\t[!] Application Maintainer: ", __maintainer__)
 			pfunc("\t\t[!] Development Status: ", __status__)
 			print ""
@@ -189,21 +190,21 @@ class clientconfdiag():
 	def diagconfig(self):
 		try:
 			print bh+"\t[-] Displaying client configuration information\n"+be
-			pfunc("\t\t[!] Client target server: ",  ipaddr)
-			pfunc("\t\t[!] Client scan type: ",  scantype)
-			pfunc("\t\t[!] Do we spoof the source: ",  spoofipaddr)
-			pfunc("\t\t[!] Configured portrange: ",  portr)
-			pfunc("\t\t[!] Client protocol to use: ",  flipbit)
-			pfunc("\t\t[!] Consultant who is scanning: ",  consultant)
-			pfunc("\t\t[!] Location of consultant: ",  location)
-			pfunc("\t\t[!] Do we randomize the ports: ",  randomness)
-			pfunc("\t\t[!] Random or Static sleep: ",  sleepy)
-			pfunc("\t\t[!] How long do we sleep: ",  nappy)
-			pfunc("\t\t[!] How long is the dwell: ",  rester)
-			pfunc("\t\t[!] Do we suppress error: ",  suppress)
-			pfunc("\t\t[!] Are we logging the scan: ",  logging)
-			pfunc("\t\t[!] How are we storing it: ",  logtype)
-			pfunc("\t\t[!] Are we testing covert tunnels: ",  covert)
+			pfunc("\t\t[!] Client target server: ", ipaddr)
+			pfunc("\t\t[!] Client scan type: ", scantype)
+			pfunc("\t\t[!] Do we spoof the source: ", spoofipaddr)
+			pfunc("\t\t[!] Configured portrange: ", portr)
+			pfunc("\t\t[!] Client protocol to use: ", flipbit)
+			pfunc("\t\t[!] Consultant who is scanning: ", consultant)
+			pfunc("\t\t[!] Location of consultant: ", location)
+			pfunc("\t\t[!] Do we randomize the ports: ", randomness)
+			pfunc("\t\t[!] Random or Static sleep: ", sleepy)
+			pfunc("\t\t[!] How long do we sleep: ", nappy)
+			pfunc("\t\t[!] How long is the dwell: ", rester)
+			pfunc("\t\t[!] Do we suppress error: ", suppress)
+			pfunc("\t\t[!] Are we logging the scan: ", logging)
+			pfunc("\t\t[!] How are we storing it: ", logtype)
+			pfunc("\t\t[!] Are we testing covert tunnels: ", covert)
 			print ""
 		except Exception as clidiagfail:
 			print "\n"+bh +"[*] " + "-"*80 + be+"\n"
@@ -223,49 +224,55 @@ class modimporttest():
 				import verinfo
 				pfunc("\t\t[-] Version module imported ", "successfully")
 				import client_kicker
-				pfunc("\t\t[-] client_kicker module imported ",  "successfully")
+				pfunc("\t\t[-] Client_kicker module imported ", "successfully")
 				import scanconfig
-				pfunc("\t\t[-] scanconfig module imported ",  "successfully")
+				pfunc("\t\t[-] Scanconfig module imported ", "successfully")
 				import diagfun
-				pfunc("\t\t[-] diagfun module imported ",  "successfully")
-				import logging
-				pfunc("\t\t[-] logging module imported ", "successfully")
+				pfunc("\t\t[-] Diagfun module imported ", "successfully")
 				import killswitch
-				pfunc("\t\t[-] killer module imported ", "successfully")
+				pfunc("\t\t[-] Killer module imported ", "successfully")
 				import module_error_handling
-				pfunc("\t\t[-] error handler module imported ", "successfully")
+				pfunc("\t\t[-] Error handler module imported ", "successfully")
 				import perror
-				pfunc("\t\t[-] perror module imported ",  "successfully")
+				pfunc("\t\t[-] Perror module imported ", "successfully")
 				import helper
-				pfunc("\t\t[-] helper module imported ",  "successfully")
+				pfunc("\t\t[-] Helper module imported ", "successfully")
 				from bcolors import bcolors as b
-				pfunc("\t\t[-] print color module imported ", "successfully")
+				pfunc("\t\t[-] Color module imported ", "successfully")
 				import pcolors
-				pfunc("\t\t[-] print fancy module imported ", "successfully")
+				pfunc("\t\t[-] Fancy module imported ", "successfully")
 				import csvloggen
-				pfunc("\t\t[-] csv logging module imported ",  "successfully")
-				import log_enable
-				pfunc("\t\t[-] logging module imported ",  "successfully")
+				pfunc("\t\t[-] CSV logging module imported ", "successfully")
 				import txtloggen
-				pfunc("\t\t[-] text logging module imported ",  "successfully")
+				pfunc("\t\t[-] TXT logging module imported ", "successfully")
 				import xmlloggen
-				pfunc("\t\t[-] xml logging module imported ",  "successfully")
+				pfunc("\t\t[-] XML logging module imported ", "successfully")
+				import jsonloggen
+				pfunc("\t\t[-] JSON logging module imported ", "successfully")
 				import servargs
-				pfunc("\t\t[-] server args module imported ",  "successfully")
+				pfunc("\t\t[-] Server arguments module imported ", "successfully")
 				import server_func
-				pfunc("\t\t[-] server function module imported ",  "successfully")
+				pfunc("\t\t[-] Server function module imported ", "successfully")
 				import threadedtcpserver
-				pfunc("\t\t[-] threaded tcp server module imported ",  "successfully")
+				pfunc("\t\t[-] Threaded TCP server module imported ", "successfully")
+				import threadedudpserver
+				pfunc("\t\t[-] Threaded UDP server module imported ", "successfully")
+				#try:
+				#	from log_enable import log_enabled
+				#	pfunc("\t\t[-] Logging module imported ", "successfully")
+				#except: # just keep swimming
+				#	pfunc("\t\t[-] Logging module imported ", "FAILED")
+				#	pass
 				print ""
 		except Exception, importsfail:
 			if diag == "yes":
 				print bf+"\n\t[?] Application failure in the "+str(mp().mod_inspect())+" module" \
-						 "\n\t\t[-] Resolution to error: ensure all imported modules are on the system" \
-						 "\n\t\t[-] Exception reported: "+str(importsfail)+"\n"+be
+						"\n\t\t[-] Resolution to error: ensure all imported modules are on the system" \
+						"\n\t\t[-] Exception reported: "+str(importsfail)+"\n"+be
 			if suppress != True:
 				print bf+"\n\t[?] Error generated in ./diagforall.py module" \
-						 "\n\t\t[-] File location: "+str(mp().mod_inspect()) + \
-						 "\n\t\t[-] Exception reported: "+str(importsfail)+"\n"+be
+						"\n\t\t[-] File location: "+str(mp().mod_inspect()) + \
+						"\n\t\t[-] Exception reported: "+str(importsfail)+"\n"+be
 			pass
 
 class ctest():
@@ -297,39 +304,62 @@ class socktesting():
 		pass
 
 	def sockdiag(self):
-		pfunc("\t\t[!] print target scan type: ", str(scantype))
+		pfunc("\t\t[!] Target scan type: ", str(scantype))
 		if hostip != ipaddr:
-			pfunc("\t\t[!] print target host DNS name: ", str(ipaddr))
+			pfunc("\t\t[!] Target host DNS name: ", str(ipaddr))
 		else:
-			pfunc("\t\t[!] print target host ip: ", str(hostip))
+			pfunc("\t\t[!] Target host ip: ", str(hostip))
 
 		try:
 			if respshow:
-				pfunc("\t\t[!] print port condition - Open: ", str(ls))
+				pfunc("\t\t[!] Port condition - Open: ", str(ls))
 			else:
-				pfunc("\t\t[!] print port condition - Closed: ", str(ls))
+				pfunc("\t\t[!] Port condition - Closed: ", str(ls))
 		except:
 			pass
-		pfunc("\t\t[!] print total port count: ", str(len(stack)))
-		pfunc("\t\t[!] print current port count: ", str(u))
+		pfunc("\t\t[!] Total port count: ", str(len(stack)))
+		pfunc("\t\t[!] Current port count: ", str(u))
 
 		if scantype.lower() in ("c", "connect"):
 			pass
 		else:
-			pfunc("\t\t[-] print raw sent packet: ",str(spacket).strip())
+			pfunc("\t\t[-] Raw packet sent: ",str(spacket).strip())
 			base16spack = binascii.hexlify(str(spacket))
-			pfunc("\t\t[-] print hexdump of sent packet: ",base16spack)
+			pfunc("\t\t[-] Hexdump of sent packet: ",base16spack)
 		if scantype.lower() in ("c", "connect"):
 			pass
 		else:
 			try:
-				pfunc("\t\t[-] print raw received packet: ", str(respshow).strip())
+				pfunc("\t\t[-] Raw packet received: ", str(respshow).strip())
 				if str(respshow) != "None":
 					base16rpack = binascii.hexlify(str(respshow))
-					pfunc("\t\t[-] print hexdump of received packet: ",base16rpack)
-					pfunc("\t\t[-] print packet arrival times: ", str(packettime))
+					pfunc("\t\t[-] Hexdump of received packet: ",base16rpack)
+					pfunc("\t\t[-] Packet arrival times: ", str(packettime))
 			except:
 				pass
-		pfuncok("\n\t\t[!] print passlist "+be+str(len(passlist))+":",str(passlist[-6:-1:]))
-		pfuncbad("\n\t\t[!] print faillist "+be+str(len(faillist))+":",str(faillist[-6:-1:]))
+		pfuncok("\n\t\t[!] Passlist "+be+str(len(passlist))+":",str(passlist[-6:-1:]))
+		pfuncbad("\n\t\t[!] Faillist "+be+str(len(faillist))+":",str(faillist[-6:-1:]))
 		print("")
+
+class piechartdiag():
+
+	def __init__(self):
+		pass
+
+	def getaslice(self):
+		if str(sa1).lower() in ["client","c"]:
+			import matplotlib
+			matplotlib.use('Agg')
+			import matplotlib.pyplot as plt
+			pll = len(passlist)
+			fll = len(faillist)
+			from pylab import gcf
+			from pylab import pie
+			from pylab import show
+			fracs=[fll,pll]
+			fig = gcf()
+			fig.canvas.set_window_title(str(consultant)+"-"+str(ipaddr))
+			mycolors=['red', 'green']
+			mylabels=['Failed :'+str(fll), 'Passed: '+str(pll)]
+			pie(fracs,labels=mylabels,colors=mycolors)
+			plt.savefig(str(consultant)+"-"+str(location)+"-"+str(date))

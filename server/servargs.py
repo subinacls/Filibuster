@@ -5,6 +5,7 @@ server arguments checking
 """
 import sys
 import __builtin__
+from helper import helper
 
 class args():
 
@@ -20,7 +21,7 @@ class args():
 				helper().shelp()
 				sys.exit()
 		except Exception as sysarg2fail:
-			from helper import helper
+			print "\tPlease choose: 'TCP or UDP' for the protocol", str(sysarg2fail) + "\n\n"
 			helper().shelp()
 			sys.exit()
 		try:
@@ -29,18 +30,16 @@ class args():
 			else:
 				pass
 		except Exception as sysarg3fail:
-			from helper import shelp
+			print "\tPlease choose: 'Port Number' for the server to bind to", str(sysarg3fail) + "\n\n"
 			helper().shelp()
 			sys.exit(0)
 		try:
 			if str(sys.argv[4]):
-				__builtin__.atls = sys.argv[4]
+				__builtin__.atls = str(sys.argv[4])
 			else:
-				from helper import tlshelp
 				helper().tlshelp()
 				sys.exit()
 		except Exception as sysarg4fail:
-			print "\tPlease choose: 'Yes' or 'No' for the use of TLS", str(e) + "\n\n"
-			from helper import tlshelp
+			print "\tPlease choose: 'Yes' or 'No' for the use of TLS", str(sysarg4fail) + "\n\n"
 			helper().tlshelp()
 			sys.exit()

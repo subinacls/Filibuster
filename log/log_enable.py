@@ -4,6 +4,8 @@
 This file is used to determined the logging functionality
 '''
 
+import __builtin__
+
 if str(logtype).lower() == "xml":
 	from xmlloggen import xmllogfilegen as xml
 if str(logtype).lower() == "csv":
@@ -52,4 +54,4 @@ class log_enabled():
 			else:
 				pass
 		except Exception as notadict:
-			print "nota dictionary" + str(notadict)
+			print "JSON failed in " + proto + ": " + str(notadict)

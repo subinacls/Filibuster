@@ -12,6 +12,14 @@ kick off configuration parser
 """
 
 import __builtin__
+import sys
+import time
+import re
+import os
+import verinfo
+
+van = __appname__
+vv = __version__
 
 class initclient():
 	
@@ -87,8 +95,7 @@ class initclient():
 			if diag == "yes":
 				print("\n"+bh +"[*] " + "-"*80 + be+"\n")
 				print("\t"+bf+"ATTENTION "+be+bw+"[?] SYSARG position 3 is "+bf+str(mytls)+be+bw+be)
-				print("\t[?] " +van+" v."+vv+" - CRASHED: " +
-				      bf + str(nosysarg3) + "\n" +be)
+				print("\t[?] " +van+" v."+vv+" - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
 			print("")
 			from helper import helper
 			helper().chelp()
