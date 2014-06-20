@@ -48,17 +48,17 @@ Egress filter mapping application with additional functionality
   
   [-] Understanding the server ....
   
-      The server is threaded, bound to a single port and listens on all interfaces meaning all attempted 
-      communications on the IP stack will be redirected to the server and it will answer the attempted 
-      communication if specific criteria are meet. If these conditions are not fulfilled the server will 
-      append any received data to a Contaminated file which can be used as an Honeypot of sorts.
-      
-      No information about the scanning results are logged onto the server with one exception,the
-      Contamination log file which will not retain any information about the client and their egress rules.
-      
-      There really is no actual configuration to the server other than commandline options. As the applications
-      functionality expands this could change.
-      
+  The server is threaded, bound to a single port and listens on all interfaces meaning all attempted 
+  communications on the IP stack will be redirected to the server and it will answer the attempted 
+  communication if specific criteria are meet. If these conditions are not fulfilled the server will 
+  append any received data to a Contaminated file which can be used as an Honeypot of sorts.
+  
+  No information about the scanning results are logged onto the server with one exception,the
+  Contamination log file which will not retain any information about the client and their egress rules.
+  
+  There really is no actual configuration to the server other than commandline options. As the applications
+  functionality expands this could change.
+  
       
       
       
