@@ -3,7 +3,7 @@ Filterbuster
 
 Egress filter mapping application with additional functionality
 
-  [*] Commandline Usage:
+  [*] Commandline Usage: ...
   
   {Client}  term:$ python ./filterbuster.py client [config.file]
   {Server}  term:$ python ./filterbuster.py server (tcp/udp/both) [port] (no/yes)
@@ -46,7 +46,7 @@ Egress filter mapping application with additional functionality
         covert: (True/False)
 
   
-  [-] Understanding the server ....
+  [-] Understanding the server: ....
   
   The server is threaded, bound to a single port and listens on all interfaces meaning all attempted 
   communications on the IP stack will be redirected to the server and it will answer the attempted 
