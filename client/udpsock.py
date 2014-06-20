@@ -22,34 +22,34 @@ class udpsocks():
 	def connectsocket(self):
 		try:
 			dft = str(datetime.datetime.now()).split(".")[0]
-			ident = bo+"On UDP Port: "+be+str(base_port)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(dft)
-			sockobj = socket(AF_INET, SOCK_STREAM)
+			ident = bo+"On UDP Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(dft)
+			sockobj = socket(AF_INET, SOCK_DGRAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
 			else:
 				pass
-			sockobj.connect((ipaddr, base_port))
+			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
 			data = sockobj.recv(1024)
 			if data:
-				passlist.append("TCP/"+str(base_port))
+				passlist.append(str(fb).upper()+"/"+str(ls))
 			sockobj.close()
 			__builtin__.state = "connected"
-			__builtin__.proto = "TCP"
+			__builtin__.proto = "udp"
 			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to IP Address: "+be+str(ipaddr) +bo+" - " +be+str(data).strip()
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
 			except Exception as logfailed:
-				print "log failed in tcpsock " + str(logfailed)
+				print "log failed in udpsock " + str(logfailed)
 
-		except Exception as confailtcp:
+		except Exception as confailudp:
 			__builtin__.state = "failed"
-			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(base_port) + " - to IP Address: " + str(ipaddr) + " - " + str(confailtcp)+be
+			print bf+"\t\t[?] Connection attempt failed on port: UDP " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(confailudp)+be
 			__builtin__.proto = "TCP"
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
 			except Exception as logfailed:
-				print "log2 failed in tcpsock " + str(logfailed)
-			faillist.append("TCP/"+str(base_port))
+				print "log2 failed in udpsock " + str(logfailed)
+			faillist.append(str(fb).upper()+"/"+str(ls))

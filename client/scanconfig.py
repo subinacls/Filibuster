@@ -24,6 +24,8 @@ import numpy as np
 import __builtin__
 from diagforall import diagclientheader
 from diagforall import csconf
+from diagforall import ctsc
+from diagforall import cusc
 from pcolors import printfunction
 from helper import helper
 
@@ -135,11 +137,11 @@ class initscanner():
 								from udpsock import *
 								if str(diag).lower() in ["true","yes"]:
 									try:
-										cusc().clientudpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
+										cusc().clientudpsockconf()
 									except Exception as cuscfail:
 										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(cuscfail))
 								try:
-									udpsocks().start_dgram(ipaddr,base_port, consultant, location, ldate, passlist,faillist)
+									udpsocks().connectsocket()
 								except Exception as udpsockfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(udpsockfail))
 									pass
@@ -151,9 +153,8 @@ class initscanner():
 							if cfb == "both":
 								if str(diag).lower() in ["true","yes"]:
 									try:
-										from diagforall import cusc, ctsc
-										cusc(total_stack, u, ipaddr, base_port, consultant, location).clientudpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
-										ctsc(total_stack, u, ipaddr, base_port, consultant, location).clienttcpsockconf(total_stack, u, ipaddr, base_port, consultant, location)
+										cusc().clientudpsockconf()
+										ctsc().clienttcpsockconf()
 									except Exception as diagsockfail:
 										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(diagsockfail))
 								try:

@@ -34,8 +34,7 @@ class initserver():
 
 	def serverrun(self):
 		diagserverheader().serverheader()
-		else:
-			print bh+ va +" Server Initialized: ~ " + "ver.: "+ vv +  " - " + vauth +"\n\n"+ be
+		print bh+ va +" Server Initialized: ~ " + "ver.: "+ vv +  " - " + vauth +"\n\n"+ be
 		ap = str(servproto)
 		""" check system arguments for protocol to use """
 		"""
@@ -54,7 +53,7 @@ class initserver():
 				else:
 					from server_func import tcp_servers
 					""" import tcp server functionality module """
-					tcp_servers().tserver(serverport)
+					tcp_servers().tserver()
 					""" set TCP server port from user supplied argument """
 			except Exception as tcpserverfuncfail:
 				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
@@ -67,14 +66,14 @@ class initserver():
 				""" check if tls is being used or not """
 				if str(atls).lower() in ["yes","y"]:
 					from server_func import tls_servers
-					""" import udpp server functionality module """
+					""" import udp server functionality module """
 					udp_servers().dtlsserver(ap)
 					""" TLS/TCP server port from user supplied argument """
 				else:
 					from server_func import udp_servers
-					""" import tcp server functionality module """
-					udp_servers().userver(serverport)
-					""" set TCP server port from user supplied argument """
+					""" import udp server functionality module """
+					udp_servers().userver()
+					""" set udp server port from user supplied argument """
 			except Exception as udpserverfuncfail:
 				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
 				      str(udpserverfuncfail) + "\n" +be

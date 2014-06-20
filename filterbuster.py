@@ -117,9 +117,6 @@ def checkfirstargument():
 				try:
 					from server_kicker import initserver
 					# import some functionality
-				except:
-					print "server kicker failed here"
-				try:
 					initserver().serverrun()
 				except Exception as serverrunfail:
 					print "hit an exception in initserver.py serverrun(): " + str(serverrunfail)

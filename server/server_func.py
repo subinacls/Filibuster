@@ -23,7 +23,7 @@ class tcp_servers():
 	def __init__(self):
 		pass
 
-	def tserver(self,serverport):
+	def tserver(self):
 		try:
 			from threadedtcpserver import ThreadedTCPRequestHandler, ThreadedTCPServer, tcpserver
 			tcpserver().mytcpserver(int(serverport))
@@ -45,7 +45,7 @@ class udp_servers:
 	def __init__(self):
 		pass
 
-	def userver(self, serverport):
+	def userver(self):
 		try:
 			from threadedudpserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
 			udpserver().myudpserver(int(serverport))
