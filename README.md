@@ -1,7 +1,7 @@
 Filterbuster
 ============
 
-Egress filter mapping application with additional functionality
+Egress filter mapping application with additional functionality.
 Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
   [*] Commandline Usage: ...
