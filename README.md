@@ -93,6 +93,6 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
             Wait for 5 min for ssh connection,
             reconfigure iptables port redirection
         ]
-       OT GUI (who knows?)
+       QT GUI (who knows?)
       
       
