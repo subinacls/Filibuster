@@ -64,35 +64,35 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   
   [-] TODO list: ....
 
-  MORE SCAPY
-  IPv6 Support
-  More protocol testing
-  More Covert / backchannel testing
-  Better Request handling
-  FwKnop for remote administration
-  IDS/IPS testing (sending known signatures)
-    Modes:[
-        silent.
-        quiet.
-        loud,
-        OBVIOUS,
-        OBNOXIOUS
-    ]
-    Send known shellcodes signatures
-    Send known malware signatures
-    Send known virus signatures
-    Send known botnet signatures
-    Send known bufferoverflow signatures
-    Send clear text Personal Identifiable Information (PII) signatures
-    Send Clear text Payment Card Industry (PCI) signatures
-  Monitor and report activity on wire to identify other vectors of attack
-  Covert tunnel proxy options (turn client into a socks proxy)
-  Lockout watchdog (monitor for preconfigured port knock sequence)
-    Functionality:[
-        Flush iptables,
-        Wait for 5 min for ssh connection,
-        reconfigure iptables port redirection
-    ]
-   OT GUI (who knows?)
+      MORE SCAPY
+      IPv6 Support
+      More protocol testing
+      More Covert / backchannel testing
+      Better Request handling
+      FwKnop for remote administration
+      IDS/IPS testing (sending known signatures)
+        Modes:[
+            silent.
+            quiet.
+            loud,
+            OBVIOUS,
+            OBNOXIOUS
+        ]
+        Send known shellcodes signatures
+        Send known malware signatures
+        Send known virus signatures
+        Send known botnet signatures
+        Send known bufferoverflow signatures
+        Send clear text Personal Identifiable Information (PII) signatures
+        Send Clear text Payment Card Industry (PCI) signatures
+      Monitor and report activity on wire to identify other vectors of attack
+      Covert tunnel proxy options (turn client into a socks proxy)
+      Lockout watchdog (monitor for preconfigured port knock sequence)
+        Functionality:[
+            Flush iptables,
+            Wait for 5 min for ssh connection,
+            reconfigure iptables port redirection
+        ]
+       OT GUI (who knows?)
       
       
