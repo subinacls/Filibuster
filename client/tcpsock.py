@@ -12,7 +12,7 @@ configures and starts socket for communication
 
 import datetime
 from socket import *
-import __builtin__ as bi
+import __builtin__
 
 class tcpsocks():
 
@@ -22,7 +22,7 @@ class tcpsocks():
 	def connectsocket(self):
 		try:
 
-			bi.proto = str("tcp").upper()
+			__builtin__.proto = str("tcp").upper()
 			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
 			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
@@ -37,11 +37,8 @@ class tcpsocks():
 			else:
 				pass
 			sockobj.close()
-			print "testa"
-			state = "connected"
-			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to IP Address: "+be+str(ipaddr) +bo+" - " +be+str(data).strip()
-			print "testb"
-
+			__builtin__.state = "connected"
+			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(data).strip()
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
@@ -51,7 +48,6 @@ class tcpsocks():
 		except Exception as tcpconfail:
 			__builtin__.state = str(tcpconfail).split("] ")[1]
 			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(tcpconfail)+be
-			__builtin__.proto = "TCP"
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()

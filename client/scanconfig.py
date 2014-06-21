@@ -138,10 +138,12 @@ class initscanner():
 
 							if cfb == "both":
 								try:
-									cusc().clientudpsockconf()
 									ctsc().clienttcpsockconf()
 									socktesting().sockdiag()
-									bothsocks().connectsocket()
+									tcpsocks().connectsocket()
+									cusc().clientudpsockconf()
+									socktesting().sockdiag()
+									udpsocks().connectsocket()
 								except Exception as tcpsockfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(tcpsockfail))
 								time.sleep(float(rest))

@@ -10,6 +10,7 @@ configures and starts socket for communication
 	logs state and information about connection attempt
 """
 import os
+import __builtin__
 import socket
 from bcolors import bcolors as b
 bh = b.HEADER
@@ -18,7 +19,7 @@ be = b.ENDC
 bw = b.WARNING
 bo = b.OKBLUE
 
-import __builtin__ as bi
+import __builtin__
 
 class udpsocks():
 
@@ -28,11 +29,9 @@ class udpsocks():
 	def connectsocket(self):
 		try:
 
-			global state
-			bi.state = ""
-			global proto
-			bi.proto = str("udp").upper()
-			ident = bo+"On "+ be +str(proto) + bo+" Port: "+ be +str(ls) + bo+" - By: "+ be +  str(location) +bo+ " - From: " +be + str(consultant) + bo+ " - On: " +  be +str(ldate)
+			__builtin__.state = ""
+			__builtin__.proto = str("udp").upper()
+			ident = bo+"On "+ be +str(proto) + bo+" Port: "+ be +str(ls) + bo+" - By: "+ be +  str(consultant) +bo+ " - From: " +be + str(location) + bo+ " - On: " +  be +str(ldate)
 			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
@@ -44,8 +43,8 @@ class udpsocks():
 			sockobj.close()
 			if data != "":
 				passlist.append(str(proto).upper()+"/"+str(ls))
-			state = "Successful"
-			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: - "+be+str(ipaddr) +bo+" - "+ be + str(data)
+			__builtin__.state = "connected"
+			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - "+ be + str(data)
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
