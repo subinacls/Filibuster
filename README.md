@@ -62,10 +62,31 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   There really is no actual configuration to the server other than commandline options. As the applications
   functionality expands this could change.
   
-      
-      
-      
-      
+  [-] TODO list: ....
+
+  MORE SCAPY
+  IPv6 Support
+  More protocol testing
+  More Covert / backchannel test
+  Better Request handling
+  FwKnop for remote administration
+  IDS/IPS testing (sending known signatures)
+    Modes:[
+        silent.
+        quiet.
+        loud,
+        OBVIOUS,
+        OBNOXIOUS
+    ]
+    Send known shellcodes signatures
+    Send known malware signatures
+    Send known virus signatures
+    Send known botnet signatures
+    Send known bufferoverflow signatures
+    Send clear text Personal Identifiable Information (PII) signatures
+    Send Clear text Payment Card Industry (PCI) signatures
+  Monitor and report activity on wire to identify other vectors of attack
+  Covert tunnel proxy options
       
       
       

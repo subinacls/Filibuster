@@ -78,3 +78,22 @@ class initserver():
 				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
 				      str(udpserverfuncfail) + "\n" +be
 				sys.exit(0)
+
+		if str(ap).lower() in ["both","b"]:
+			""" check if protocol is both """
+			try:
+				""" check if tls is being used or not """
+				if str(atls).lower() in ["yes","y"]:
+					from server_func import tls_servers
+					""" import udp server functionality module """
+					both_servers().dtlsserver(ap)
+					""" TLS/TCP server port from user supplied argument """
+				else:
+					from server_func import both_servers
+					""" import udp server functionality module """
+					both_servers().bserver()
+					""" set udp server port from user supplied argument """
+			except Exception as udpserverfuncfail:
+				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
+				      str(udpserverfuncfail) + "\n" +be
+				sys.exit(0)

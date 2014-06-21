@@ -69,12 +69,12 @@ class both_servers:
 	def __init__(self):
 		pass
 
-	def bserver(self, serverport):
+	def bserver(self):
 		try:
-			from threadedtcpserver import ThreadedTCPRequestHandler, ThreadedTCPServer, tcpserver
-			tcpserver().mytcpserver()
-			from threadedudpserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
+			from threadedbothserver import ThreadedTCPRequestHandler, ThreadedTCPServer, tcpserver
+			from threadedbothserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
 			udpserver().myudpserver()
+			tcpserver().mytcpserver()
 			try:
 				while 1:
 					time.sleep(0)
