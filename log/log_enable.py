@@ -59,5 +59,4 @@ class log_enabled():
 		except Exception as notadict:
 			print "JSON failed in " + proto + ": " + str(notadict)
 
-	def contaminationlog(self):
 

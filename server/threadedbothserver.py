@@ -41,7 +41,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		else:
 			contaminlog().jcom_read()
 			contaminlog().jcom_keeper()
-			contaminlog().jcom_write()
+			contaminlog().jcom_write(self.client_address[0],str("udp").upper(),self.client_address[1],self.data)
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass

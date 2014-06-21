@@ -10,45 +10,39 @@ class contaminlog():
 	def __init__(self):
 		pass # nothing to see here
 
-	def jccom_read(self):
+	def jcom_read(self):
 		try:
 			with open('Contaminated_log-'+str(date)+'.json', 'r', buffering=0) as f: # open a file as named variable
-				__builtin__.rawjson = json.loads(f.read()) # load json data to built in variable
+				__builtin__.contjson = json.loads(f.read()) # load json data to built in variable
 		except Exception as jreadfail: # catch all
-			__builtin__.rawjson = json.loads(json.dumps({})) #, indent=4))
+			#print jreadfail, 'Can not read file: Contaminated_log-'+str(date)+'.json'
+			__builtin__.contjson = json.loads(json.dumps({})) #, indent=4))
 			pass
 
-	def jcom_write(self,filename):
+	def jcom_write(self):
 		try:
-			with open('Contaminated_log-'+str(date)+'.json', 'r', buffering=0) as f: # open a file as named variable
-				f.write(json.dumps(rawjson)) #, indent=4)) # dumps data to file with indent 4 spaces
+			with open('Contaminated_log-'+str(date)+'.json', 'w', buffering=0) as f: # open a file as named variable
+				f.write(json.dumps(contjson)) #, indent=4)) # dumps data to file with indent 4 spaces
 		except Exception as jwritefail: # catch all
-			print jwritefail, "something failed in writing the file: " + str(filename)
+			print jwritefail, "something failed in writing the file: Contaminated_log-"+str(date)+".json"
 			pass
 
-	def jcom_keeper(self):
+	def jcom_keeper(self,ipaddr,proto,port,data):
 		try:
-			if consultant not in rawjson.keys(): # check for variable in key values
-				rawjson[consultant] = {} # if not in key values, make new key as a dict
-			if location not in rawjson[consultant].keys(): # repeated
-				rawjson[consultant][location] = {}
-			if ldate not in rawjson[consultant][location].keys():
-				rawjson[consultant][location][ldate] = {}
-			if ipaddr not in rawjson[consultant][location][ldate].keys():
-				rawjson[consultant][location][ldate][ipaddr] = {}
-			if proto not in rawjson[consultant][location][ldate][ipaddr].keys():
-				rawjson[consultant][location][ldate][ipaddr][proto] = {}
-			if state not in rawjson[consultant][location][ldate][ipaddr][proto].keys():
-				rawjson[consultant][location][ldate][ipaddr][proto][state] = [] # set state as a list
-			try: # check if value in both potential string and integer value are in the list
-				if str(ls) not in rawjson[consultant][location][ldate][ipaddr][proto][state]:
-					rawjson[consultant][location][ldate][ipaddr][proto][state].append(str(ls))
-					rawjson[consultant][location][ldate][ipaddr][proto][state].sort(key=int)
-			except Exception as baseportfail:
-				if ls not in rawjson[consultant][location][ldate][ipaddr][proto][state]:
-					rawjson[consultant][location][ldate][ipaddr][proto][state].append(ls)
-					rawjson[consultant][location][ldate][ipaddr][proto][state].sort(key=int)
+			if str(ipaddr) not in contjson.keys():
+				contjson[ipaddr] = {}
+			if str(proto) not in contjson[ipaddr].keys():
+				contjson[ipaddr][proto] = {}
+			if str(port) not in contjson[ipaddr][proto].keys():
+				contjson[ipaddr][proto][port] = {}
+			if str(data) not in contjson[ipaddr][proto][port].keys():
+				contjson[ipaddr][proto][port][data] = []
+				contjson[ipaddr][proto][port][data].append(1)
+			else:
+				cjc = contjson[ipaddr][proto][port][data][0]
+				cjc = int(cjc) + 1
+				contjson[ipaddr][proto][port][data][0] = str(cjc)
 			pass # keep on moving
 		except Exception as jkeeperfail: # catch all
-			print jkeeperfail, "something happened in keeper "
+			print jkeeperfail, "something happened in contamination().keeper() ..."
 			pass # keep on keeping no

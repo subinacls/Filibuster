@@ -15,7 +15,7 @@ class diagfun:
 
 	def pfunc(self,userstr, var):
 		from bcolors import bcolors
-		collen = 100
+		collen = 95
 		pip = bcolors.OKBLUE + userstr + bcolors.ENDC
 		pips = " " + var
 		pipri = pip + pips.rjust((collen-len(pip)), '.')

@@ -22,7 +22,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 			self.request.send(self.data) 
 		else:
 			contaminlog().jcom_read()
-			contaminlog().jcom_keeper()
+			contaminlog().jcom_keeper(self.client_address[0],str("tcp").upper(),self.client_address[1],self.data)
 			contaminlog().jcom_write()
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
