@@ -60,20 +60,22 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
       {
           "127.0.0.1": {
-              "80":{
-                      "hexdump":"\x00\x01\x02",
-                      "binarydump":"000000000000000100000010",
-                      "ASCIIdump":"somedata",
-                      "rawdump":"somedata",
-                      "Count":"25"
-              },
-              "443":{
-                      "hexdump":"\xFF\xFF\xFF",
-                      "binarydump":"111111111111111111111111",
-                      "ASCIIdump":"somedata",
-                      "rawdump":"somedata",
-                      "Count":"100"              
-              }
+              "TCP":{
+                  "80":{
+                          "hexdump":"\x00\x01\x02",
+                          "binarydump":"000000000000000100000010",
+                          "ASCIIdump":"somedata",
+                          "rawdump":"somedata",
+                          "Count":"25"
+                  },
+                  "443":{
+                          "hexdump":"\xFF\xFF\xFF",
+                          "binarydump":"111111111111111111111111",
+                          "ASCIIdump":"somedata",
+                          "rawdump":"somedata",
+                          "Count":"100"              
+                  }
+              }    
           }
       "}
 
