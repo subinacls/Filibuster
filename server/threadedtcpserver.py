@@ -9,6 +9,7 @@ import re
 import threading
 import SocketServer
 import __builtin__
+from contamination import contaminlog
 
 
 class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler): 
@@ -20,9 +21,9 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 			print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data 
 			self.request.send(self.data) 
 		else:
-			with open('Contaminated_log-'+str(date)+'.txt', 'a', buffering=0) as f:
-				f.write("IP:"+str(self.client_address)+" - Data: "+str(self.data)+"\n")
-				f.close()
+			contaminlog().jcom_read()
+			contaminlog().jcom_keeper()
+			contaminlog().jcom_write()
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass
