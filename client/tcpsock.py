@@ -33,6 +33,8 @@ class tcpsocks():
 			data = sockobj.recv(1024)
 			if data:
 				passlist.append("TCP/"+str(ls))
+			else:
+				pass
 			sockobj.close()
 			__builtin__.state = "connected"
 			__builtin__.proto = "TCP"

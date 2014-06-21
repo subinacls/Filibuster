@@ -132,7 +132,6 @@ class cusc():
 				pfunc("\t\t[!] Server port sent to socket creator: ",str(ls))
 				pfunc("\t\t[!] Consultants name sent to UDP socket creator: ",str(consultant))
 				pfunc("\t\t[!] Testing location sent to UDP socket creator: ",str(location))
-				print ""
 			except Exception as udpsockfail:
 				print "\n"+bh +"[*] " + "-"*80 + be+"\n"
 				print "\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for UDP Socket Creator "+bf+"FAILED"+be+bw+" due to "+be+str(udpsockfail)
@@ -312,12 +311,15 @@ class socktesting():
 					pfunc("\t\t[!] Target host is: ", str(hostip))
 				pfunc("\t\t[!] Total port count: ", str(len(stack)))
 				pfunc("\t\t[!] Current port count: ", str(u))
-				pfunc("\t\t[-] Data sent: ",str(ident).strip())
-				#base16spack = binascii.hexlify(str(ident))
-				#pfunc("\t\t[-] Hexdump of sent packet: ",base16spack)
-				pfuncok("\n\t\t[!] Passlist "+be+str(len(passlist))+":",str(passlist[-6:-1:]))
-				pfuncbad("\n\t\t[!] Faillist "+be+str(len(faillist))+":",str(faillist[-6:-1:]))
-				print("")
+				if len(passlist) != 0:
+					pfuncok("\n\t\t[!] Passlist "+be+str(len(passlist)+1)+":",str(passlist[-6:-1:]))
+				else:
+					pfuncok("\n\t\t[!] Passlist "+be+str(len(passlist))+":",str(passlist[-6:-1:]))
+				if len(faillist) != 0:
+					pfuncbad("\n\t\t[!] Faillist "+be+str(len(faillist)+1)+":",str(faillist[-6:-1:]))
+				else:
+					pfuncbad("\n\t\t[!] Faillist "+be+str(len(faillist))+":",str(faillist[-6:-1:]))
+				print ""
 			except Exception as sockdiagfail:
 				print "\n"+bh +"[*] " + "-"*80 + be+"\n"
 				print "\t"+bf+"ATTENTION "+be+bw+"[?] Socket construction diagnostics "+bf+"FAILED"+be+bw+" due to "+be+str(sockdiagfail)

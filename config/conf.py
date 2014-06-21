@@ -53,6 +53,12 @@ class confsecmap:
 		try:
 			try:
 				if Config.get("SectionOne", "target") != "":
+					__builtin__.diag = ConfigSectionMap("SectionOne")["diagnostics"]
+			except Exception as diagconffail:
+				__builtin__.diag = False
+				pass
+			try:
+				if Config.get("SectionOne", "target") != "":
 					__builtin__.ipaddr = ConfigSectionMap("SectionOne")["target"]
 			except Exception as targetconffail:
 				__builtin__.ipaddr = "127.0.0.1"

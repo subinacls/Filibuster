@@ -26,9 +26,10 @@ class tcp_servers():
 	def tserver(self):
 		try:
 			from threadedtcpserver import ThreadedTCPRequestHandler, ThreadedTCPServer, tcpserver
-			tcpserver().mytcpserver(int(serverport))
+			tcpserver().mytcpserver()
 			try:
-				time.sleep(0)
+				while 1:
+					time.sleep(0)
 			except KeyboardInterrupt:
 				pid = os.getpid()
 				os.popen("iptables -t nat -F")
@@ -48,9 +49,10 @@ class udp_servers:
 	def userver(self):
 		try:
 			from threadedudpserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
-			udpserver().myudpserver(int(serverport))
+			udpserver().myudpserver()
 			try:
-				time.sleep(0)
+				while 1:
+					time.sleep(0)
 			except KeyboardInterrupt:
 				pid = os.getpid()
 				os.popen("iptables -t nat -F")
@@ -69,12 +71,13 @@ class both_servers:
 
 	def bserver(self, serverport):
 		try:
-			from threadedudpserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
-			udpserver(int(serverport)).myudpserver(int(serverport))
 			from threadedtcpserver import ThreadedTCPRequestHandler, ThreadedTCPServer, tcpserver
-			tcpserver().mytcpserver(int(serverport))
+			tcpserver().mytcpserver()
+			from threadedudpserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
+			udpserver().myudpserver()
 			try:
-				time.sleep(0)
+				while 1:
+					time.sleep(0)
 			except KeyboardInterrupt:
 				pid = os.getpid()
 				os.popen("iptables -t nat -F")

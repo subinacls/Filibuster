@@ -22,6 +22,7 @@ import time
 import os
 import numpy as np
 import __builtin__
+from diagforall import socktesting
 from diagforall import diagclientheader
 from diagforall import csconf
 from diagforall import ctsc
@@ -110,7 +111,6 @@ class initscanner():
 							# initalize socket creation
 							if cfb == "tcp":
 								from tcpsock import tcpsocks
-								from diagforall import ctsc
 								if str(diag).lower() in ["true","yes"]:
 									try:
 										ctsc().clienttcpsockconf()
@@ -118,12 +118,7 @@ class initscanner():
 										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for TCP sockets "+ \
 										      bf+"FAILED"+be+bw+" due to "+be+str(diagclientsockconfigfail))
 								try:
-									if str(diag).lower() in ["true","yes"]:
-										try:
-											from diagforall import socktesting
-											socktesting().sockdiag()
-										except Exception as sockettestfail:
-											print sockettestfail
+									socktesting().sockdiag()
 									tcpsocks().connectsocket()
 								except Exception as tcpconnectsocketfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP sockets "+ \
@@ -141,6 +136,7 @@ class initscanner():
 									except Exception as cuscfail:
 										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(cuscfail))
 								try:
+									socktesting().sockdiag()
 									udpsocks().connectsocket()
 								except Exception as udpsockfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(udpsockfail))
@@ -163,8 +159,9 @@ class initscanner():
 								except Exception as sockimportfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP/TCP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(sockimportfail))
 								try:
-									tcpsocks().start_socket(ipaddr, base_port, location, consultant, ldate, passlist,faillist)
-									udpsocks(ipaddr, base_port, consultant, location, ldate, passlist,faillist).start_dgram(ipaddr,base_port, location, consultant, ldate, passlist,faillist)
+									tcpsocks().connectsocket()
+									udpsocks().connectsocket()
+
 								except Exception as tcpsockfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(tcpsockfail))
 								time.sleep(float(rest))
