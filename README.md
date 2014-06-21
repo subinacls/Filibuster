@@ -58,27 +58,25 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
   The Contaminated files contents are constructed as follows:
 
-      {
-          "127.0.0.1": {
-              "TCP":{
-                  "80":{
-                          "hexdump":"\x00\x01\x02",
-                          "binarydump":"000000000000000100000010",
-                          "ASCIIdump":"somedata",
-                          "rawdump":"somedata",
-                          "Count":"25"
-                  },
-                  "443":{
-                          "hexdump":"\xFF\xFF\xFF",
-                          "binarydump":"111111111111111111111111",
-                          "ASCIIdump":"somedata",
-                          "rawdump":"somedata",
-                          "Count":"100"              
-                  }
-              }    
+      {"127.0.0.1": {
+        "TCP":{
+          "80":{
+            "hexdump":"\x00\x01\x02",
+            "binarydump":"000000000000000100000010",
+            "ASCIIdump":"somedata",
+            "rawdump":"somedata",
+            "Count":"25"
+          },
+          "443":{
+            "hexdump":"\xFF\xFF\xFF",
+            "binarydump":"111111111111111111111111",
+            "ASCIIdump":"somedata",
+            "rawdump":"somedata",
+            "Count":"100"              
           }
-      "}
-
+        }    
+      }}
+      
   There really is no actual configuration to the server other than commandline options. As the applications
   functionality expands this could change.
   
