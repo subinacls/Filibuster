@@ -12,7 +12,7 @@ class xmllogfilegen:
 	def __init__(self):
 		pass
 
-	def xmllog(self,proto, ipaddr, consultant, location, ldate, base_port, dft,state):
+	def xmllog(self):
 		xmloutput = """<consultant>
 \t<name>"""+str(consultant)+"""</name>
 </consultant>

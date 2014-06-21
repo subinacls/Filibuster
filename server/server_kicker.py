@@ -11,12 +11,11 @@ specific to the functionality desired for smaller payload to deploy.
 """
 
 import sys
-from exceptcatcher import skerrorhandler as skeh
+
 
 """ import modules after directory structure appended to system $PATH """
 
 from bcolors import bcolors as b
-import verinfo
 from pcolors import *
 from helper import *
 from diagforall import diagserverheader
@@ -28,9 +27,6 @@ bf = b.FAIL
 be = b.ENDC
 bw = b.WARNING
 bo = b.OKBLUE
-__builtin__.va = __appname__
-__builtin__.vv = __version__
-__builtin__.vauth = __author__
 
 """ import server args class to handle commandline arguments """
 
@@ -63,8 +59,9 @@ class initserver():
 					tcp_servers().tserver()
 					""" set TCP server port from user supplied argument """
 			except Exception as tcpserverfuncfail:
-				skeh().tcpserverfail(tcpserverfuncfail)
-
+				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
+				      str(tcpserverfuncfail) + "\n" +be
+				sys.exit(0)
 		""" handling UDP protocol staging for server """
 		if str(ap).lower() in ["udp","u"]:
 			""" check if protocol is udp """
@@ -81,7 +78,9 @@ class initserver():
 					udp_servers().userver()
 					""" set udp server port from user supplied argument """
 			except Exception as udpserverfuncfail:
-				skeh().udpserverfail(udpserverfuncfail)
+				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
+				      str(udpserverfuncfail) + "\n" +be
+				sys.exit(0)
 
 		if str(ap).lower() in ["both","b"]:
 			""" check if protocol is both """
@@ -98,4 +97,6 @@ class initserver():
 					both_servers().bserver()
 					""" set udp server port from user supplied argument """
 			except Exception as bothserverfuncfail:
-				skeh().bothserverfail(bothserverfuncfail)
+				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
+				      str(bothserverfuncfail) + "\n" +be
+				sys.exit(0)

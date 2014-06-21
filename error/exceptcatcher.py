@@ -22,18 +22,15 @@ class skerrorhandler():
 		pass
 
 	def bothserverfail(self,reporterror):
-		print "\t[?] " +va+" v."+vv+" - CRASH in server_kicker.py during import of tcp servers: " + bf + \
-				str(reporterror) + "\n" +be
+		print "\t[?] " +va+" v."+vv+" - CRASH in server_kicker.py during import of tcp servers: " + bf + str(reporterror) + "\n" +be
 		sys.exit(0)
 
 	def udpserverfail(self,reporterror):
-		print "\t[?] " +va+" v."+vv+" - CRASH in server_kicker.py during import of tcp servers: " + bf + \
-				str(reporterror) + "\n" +be
+		print "\t[?] " +va+" v."+vv+" - CRASH in server_kicker.py during import of tcp servers: " + bf + str(reporterror) + "\n" +be
 		sys.exit(0)
 
 	def tcpserverfail(self,reporterror):
-		print "\t[?] " +va+" v."+vv+" - CRASH in server_kicker.py  during import of tcp servers: " + bf + \
-				str(reporterror) + "\n" +be
+		print "\t[?] " +va+" v."+vv+" - CRASH in server_kicker.py  during import of tcp servers: " + bf + str(reporterror) + "\n" +be
 		sys.exit(0)
 
 class sferrorhandler():
