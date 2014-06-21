@@ -23,8 +23,8 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 			socket.sendto(str(self.data[0:10000000]), self.client_address)
 		else:
 			contaminlog().jcom_read()
-			contaminlog().jcom_keeper()
-			contaminlog().jcom_write(self.client_address[0],str("udp").upper(),self.client_address[1],self.data)
+			contaminlog().jcom_keeper(self.client_address[0],str("tcp").upper(),self.client_address[1],self.data)
+			contaminlog().jcom_write()
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass
