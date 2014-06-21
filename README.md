@@ -109,8 +109,9 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
           ]
       Spoofing traffic to confuse investigators (Red Herring)
         Mode: [
-            spoof live machine,
-            produce ficticious machine traffic
+            spoof live machine (DoS / race conditions),
+            produce ficticious traffic (smokescreen),
+            capture and replay (cause RST floods)
         ]
       Monitor and report activity on wire to identify other vectors of attack
       Covert tunnel proxy options (turn client into a socks proxy)
