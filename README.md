@@ -65,6 +65,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   [-] TODO list: ....
 
       MORE SCAPY
+      Take IP/Hostname list (iterate list for targeting)
       IPv6 Support
       More protocol testing
       More Covert / backchannel testing
