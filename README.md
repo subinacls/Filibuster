@@ -82,7 +82,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
         Send known malware signatures
         Send known virus signatures
         Send known botnet signatures
-        Send known bufferoverflow signatures
+        Send known buffer overflow signatures
         Send clear text Personal Identifiable Information (PII) signatures
         Send Clear text Payment Card Industry (PCI) signatures
       Monitor and report activity on wire to identify other vectors of attack
