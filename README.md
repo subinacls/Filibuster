@@ -57,7 +57,25 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   append any received data to a Contaminated file which can be used as an Honeypot of sorts.
 
   The Contaminated files contents are constructed as follows:
-      "{"IP":"127.0.0.1"{"PORT":"80"{"DATA":{"hex":"\x00\x01\x02","binary":"000000010010", "ASCII":"words","raw":"012"},"Count":1}}}"
+
+      {
+          "127.0.0.1": {
+              "80":{
+                      "hexdump":"\x00\x01\x02",
+                      "binarydump":"000000000000000100000010",
+                      "ASCIIdump":"somedata",
+                      "rawdump":"somedata",
+                      "Count":"25"
+              },
+              "443":{
+                      "hexdump":"\xFF\xFF\xFF",
+                      "binarydump":"111111111111111111111111",
+                      "ASCIIdump":"somedata",
+                      "rawdump":"somedata",
+                      "Count":"100"              
+              }
+          }
+      "}
 
   There really is no actual configuration to the server other than commandline options. As the applications
   functionality expands this could change.
