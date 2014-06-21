@@ -1,5 +1,5 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
 #
 # module author: subinacls
 #
@@ -27,24 +27,23 @@ class udpsocks():
 
 	def connectsocket(self):
 		try:
-			d = os.popen("date")
-			dft = d.readline()
+
 			global state
 			bi.state = ""
 			global proto
-			bi.proto = str(fb).upper()
-			ident = bo+"On UDP Port: "+ be +str(ls) + bo+" - By: "+ be +  str(location) +bo+ " - From: " +be + str(consultant) + bo+ " - On: " +  be +str(dft)
+			bi.proto = str("udp").upper()
+			ident = bo+"On "+ be +str(proto) + bo+" Port: "+ be +str(ls) + bo+" - By: "+ be +  str(location) +bo+ " - From: " +be + str(consultant) + bo+ " - On: " +  be +str(ldate)
 			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
 			else:
 				sockobj.settimeout(float(0.1))
-			sockobj.connect((ipaddr, ls))
+			sockobj.connect((ipaddr, base_port))
 			sockobj.send(ident)
 			data = sockobj.recv(1024)
 			sockobj.close()
-			if data:
-				passlist.append(str(fb).upper()+"/"+str(ls))
+			if data != "":
+				passlist.append(str(proto).upper()+"/"+str(ls))
 			state = "Successful"
 			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: - "+be+str(ipaddr) +bo+" - "+ be + str(data)
 			try:
@@ -55,7 +54,7 @@ class udpsocks():
 
 		except Exception as logenbfail:
 			print "test2"
-			print bf+"\t\t[?] Connection attempt failed on port: UDP " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(logenbfail)+be
+			print bf+"\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(logenbfail)+be
 			bi.state = "Failed"
 			try:
 				from log_enable import log_enabled
@@ -64,7 +63,7 @@ class udpsocks():
 			except Exception as e:
 				print "Failed in udpsock logging: " + str(e)
 				pass
-			faillist.append(str(fb).upper()+"/"+str(ls))
+			faillist.append(str(proto).upper()+"/"+str(ls))
 			pass
 
 

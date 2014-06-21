@@ -1,5 +1,8 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
 '''
 This file generates the txt log
 '''

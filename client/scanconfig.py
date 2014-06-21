@@ -1,5 +1,5 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
 #
 # module author: subinacls
 #
@@ -29,7 +29,9 @@ from diagforall import ctsc
 from diagforall import cusc
 from pcolors import printfunction
 from helper import helper
-
+from tcpsock import tcpsocks
+from udpsock import udpsocks
+from bothsock import bothsocks
 class initscanner():
 
 	def __init__(self):
@@ -85,7 +87,7 @@ class initscanner():
 			for x in range(s,t):
 				stack.append(x)
 			stack.append(highport)
-			if str(randomness).lower() in ["1","t","true","y","yes","on"]:
+			if str(randomness).lower() in ["true","yes"]:
 				#ls = random.choice(stack)
 				random.shuffle(stack)
 			else:
@@ -93,6 +95,7 @@ class initscanner():
 			__builtin__.total_stack = len(stack)
 			print(bh+"\n\t[-] Starting "+be+str(scantype)+be+bh+" scanning process against server IP: "+be+ipaddr+be)
 			while int(u) != total_stack:
+				__builtin__.state = ""
 				__builtin__.run_timer = time.time()
 				if stack[0]:
 					__builtin__.ls = stack[0]
@@ -101,7 +104,6 @@ class initscanner():
 					else:
 						__builtin__.rest = rester
 					__builtin__.u = int(u) + 1
-					base_port = ls
 					__builtin__.thread_count = int(u)
 					__builtin__.cfb = str(flipbit)
 					# configure connect scanner
@@ -110,14 +112,8 @@ class initscanner():
 							cfb = str(flipbit).lower()
 							# initalize socket creation
 							if cfb == "tcp":
-								from tcpsock import tcpsocks
-								if str(diag).lower() in ["true","yes"]:
-									try:
-										ctsc().clienttcpsockconf()
-									except Exception as diagclientsockconfigfail:
-										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for TCP sockets "+ \
-										      bf+"FAILED"+be+bw+" due to "+be+str(diagclientsockconfigfail))
 								try:
+									ctsc().clienttcpsockconf()
 									socktesting().sockdiag()
 									tcpsocks().connectsocket()
 								except Exception as tcpconnectsocketfail:
@@ -127,15 +123,9 @@ class initscanner():
 								time.sleep(float(rest))
 								stack.remove(ls)
 
-
 							if cfb == "udp":
-								from udpsock import *
-								if str(diag).lower() in ["true","yes"]:
-									try:
-										cusc().clientudpsockconf()
-									except Exception as cuscfail:
-										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preparation for UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(cuscfail))
 								try:
+									cusc().clientudpsockconf()
 									socktesting().sockdiag()
 									udpsocks().connectsocket()
 								except Exception as udpsockfail:
@@ -147,21 +137,11 @@ class initscanner():
 							# initalize socket creation
 
 							if cfb == "both":
-								if str(diag).lower() in ["true","yes"]:
-									try:
-										cusc().clientudpsockconf()
-										ctsc().clienttcpsockconf()
-									except Exception as diagsockfail:
-										print("\t"+bf+"ATTENTION "+be+bw+"[?] Client preperation for TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(diagsockfail))
 								try:
-									from tcpsock import *
-									from udpsock import *
-								except Exception as sockimportfail:
-									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to UDP/TCP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(sockimportfail))
-								try:
-									tcpsocks().connectsocket()
-									udpsocks().connectsocket()
-
+									cusc().clientudpsockconf()
+									ctsc().clienttcpsockconf()
+									socktesting().sockdiag()
+									bothsocks().connectsocket()
 								except Exception as tcpsockfail:
 									print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(tcpsockfail))
 								time.sleep(float(rest))

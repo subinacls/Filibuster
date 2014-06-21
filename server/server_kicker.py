@@ -1,5 +1,8 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
 
 """
 file takes argv 1 var and passes it to a if statement which evaluates the supplied function to determine the flow of

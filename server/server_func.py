@@ -1,5 +1,8 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
 
 import os
 import sys
@@ -71,10 +74,9 @@ class both_servers:
 
 	def bserver(self):
 		try:
-			from threadedbothserver import ThreadedTCPRequestHandler, ThreadedTCPServer, tcpserver
-			from threadedbothserver import ThreadedUDPRequestHandler, ThreadedUDPServer, udpserver
-			udpserver().myudpserver()
-			tcpserver().mytcpserver()
+			from threadedbothserver import ThreadedTCPRequestHandler, ThreadedTCPServer, bothserver
+			from threadedbothserver import ThreadedUDPRequestHandler, ThreadedUDPServer
+			bothserver().mybothserver()
 			try:
 				while 1:
 					time.sleep(0)

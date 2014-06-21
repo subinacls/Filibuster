@@ -1,5 +1,9 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
+
 '''
 version information in this file
 '''

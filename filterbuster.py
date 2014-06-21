@@ -25,7 +25,7 @@ __builtin__.date = date
 __builtin__.u = 0
 
 """ useful for diagnostics and error suppression """
-__builtin__.diag = "yes"
+__builtin__.diag = "true"
 __builtin__.dd = {}
 """
 warning:
@@ -135,5 +135,5 @@ if __name__ == "__main__":
 	"""for diagnostics display a pie chart"""
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
-
+	print ""
 

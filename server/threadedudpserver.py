@@ -1,5 +1,9 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
+
 import os
 import re
 import threading
@@ -35,4 +39,4 @@ class udpserver():
 		socketserver_thread.setDaemon(False)
 		socketserver_thread.start()
 		os.popen("iptables -t nat -I PREROUTING -p udp --dport 1:65535 -j REDIRECT --to-ports "+str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p udp -d 127.0.0.1 --dport 1:6553 -j REDIRECT --to-port "+str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p udp -d 127.0.0.1 --dport 1:65535 -j REDIRECT --to-port "+str(serverport))

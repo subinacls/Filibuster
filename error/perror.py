@@ -1,5 +1,8 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
 from module_error_handling import modreporter as mp
 import sys
 
@@ -14,9 +17,11 @@ class prettyerror:
 			print bf+"\n\t\t[?] Application failure in the "+str(mp().mod_inspect())+" module" \
 					 "\n\t\t[-] Exception error name: " + str(section) +"" \
 			         "\n\t\t\t[-] Exception reported: "+str(exceptionname)+"\n"+be
-		if suppress != True:
+
+		if suppress:
 			print bf+"\n\t\t[?] Error generated in ./"+str(file)+".py module" \
 					 "\n\t\t[-] Exception error name: " + str(section) + "" \
 		             "\n\t\t\t[-] File location: "+str(mp().mod_inspect()) + \
 		             "\n\t\t\t[-] Exception reported: "+str(exceptionname)+"\n"+be
+
 		sys.exit()

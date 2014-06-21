@@ -67,7 +67,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   MORE SCAPY
   IPv6 Support
   More protocol testing
-  More Covert / backchannel test
+  More Covert / backchannel testing
   Better Request handling
   FwKnop for remote administration
   IDS/IPS testing (sending known signatures)
@@ -86,8 +86,13 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
     Send clear text Personal Identifiable Information (PII) signatures
     Send Clear text Payment Card Industry (PCI) signatures
   Monitor and report activity on wire to identify other vectors of attack
-  Covert tunnel proxy options
-      
-      
+  Covert tunnel proxy options (turn client into a socks proxy)
+  Lockout watchdog (monitor for preconfigured port knock sequence)
+    Functionality:[
+        Flush iptables,
+        Wait for 5 min for ssh connection,
+        reconfigure iptables port redirection
+    ]
+   OT GUI (who knows?)
       
       

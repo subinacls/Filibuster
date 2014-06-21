@@ -1,5 +1,9 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
+
 import os
 import re
 import threading
@@ -22,21 +26,6 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass
-  
-class tcpserver():
-	def __init__(self):
-		pass
-
-	def mytcpserver(self):
-		__builtin__.socketserver = ThreadedTCPServer(('', int(serverport)), ThreadedTCPRequestHandler)
-		socketserver_thread = threading.Thread(target=socketserver.serve_forever)
-		socketserver_thread.setDaemon(False)
-		socketserver_thread.start()
-		os.popen("iptables -t nat -F")
-		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports "+str(serverport)) 
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port "+str(serverport)) 
-		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-port 22")
 
 class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 	def handle(self):
@@ -56,15 +45,23 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass
 
-class udpserver():
+class bothserver():
 	def __init__(self):
 		pass
 
-	def myudpserver(self):
-		socketserver = ThreadedUDPServer(('', int(serverport)), ThreadedUDPRequestHandler)
-		socketserver_thread = threading.Thread(target=socketserver.serve_forever)
-		socketserver_thread.setDaemon(False)
-		socketserver_thread.start()
+	def mybothserver(self):
+		usocketserver = ThreadedUDPServer(('', int(serverport)), ThreadedUDPRequestHandler)
+		usocketserver_thread = threading.Thread(target=usocketserver.serve_forever)
+		usocketserver_thread.setDaemon(False)
+		usocketserver_thread.start()
 		os.popen("iptables -t nat -I PREROUTING -p udp --dport 1:65535 -j REDIRECT --to-ports "+str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p udp -d 127.0.0.1 --dport 1:6553 -j REDIRECT --to-port "+str(serverport))
-
+		os.popen("iptables -t nat -I OUTPUT -p udp -d 127.0.0.1 --dport 1:65535 -j REDIRECT --to-port "+str(serverport))
+		tsocketserver = ThreadedTCPServer(('', int(serverport)), ThreadedTCPRequestHandler)
+		tsocketserver_thread = threading.Thread(target=tsocketserver.serve_forever)
+		tsocketserver_thread.setDaemon(False)
+		tsocketserver_thread.start()
+		os.popen("iptables -t nat -F")
+		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports "+str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port "+str(serverport))
+		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-port 22")

@@ -1,5 +1,5 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
 #
 # module author: subinacls
 #
@@ -12,7 +12,7 @@ configures and starts socket for communication
 
 import datetime
 from socket import *
-import __builtin__
+import __builtin__ as bi
 
 class tcpsocks():
 
@@ -21,8 +21,9 @@ class tcpsocks():
 
 	def connectsocket(self):
 		try:
-			dft = str(datetime.datetime.now()).split(".")[0]
-			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(dft)
+
+			bi.proto = str("tcp").upper()
+			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
 			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
@@ -31,14 +32,16 @@ class tcpsocks():
 			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
 			data = sockobj.recv(1024)
-			if data:
+			if data != "":
 				passlist.append("TCP/"+str(ls))
 			else:
 				pass
 			sockobj.close()
-			__builtin__.state = "connected"
-			__builtin__.proto = "TCP"
+			print "testa"
+			state = "connected"
 			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to IP Address: "+be+str(ipaddr) +bo+" - " +be+str(data).strip()
+			print "testb"
+
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()

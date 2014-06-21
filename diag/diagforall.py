@@ -1,5 +1,5 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
 #
 # module author: subinacls
 #
@@ -68,7 +68,7 @@ class csconf():
 				pfunc("\t\t\t[!] End port is: ",str(highport))
 				pfunc("\t\t\t[!] Process count is set to: ",str(u))
 				print("")
-			except Exception, csockconffail:
+			except Exception as csockconffail:
 				print "\n"+bh +"[*] " + "-"*80 + be+"\n"
 				print "\t"+bf+"ATTENTION "+be+bw+"[?] Client diagnostics of sockets "+bf+"FAILED"+be+bw+" due to "+be+bf+str(csockconffail)+be
 				sys.exit(0)
@@ -85,7 +85,7 @@ class portrng():
 				pfunc("\t\t[!] Port range is: ",str(portr))
 				pfunc("\t\t[!] Lowport is: ",str(lowport))
 				pfunc("\t\t[!] Highport is: ",str(highport))
-				if fb == "both" or fb == "Both" or fb == "BOTH" or fb == "b" or fb == "B":
+				if str(fb) in ["both","b"]:
 					pfunc("\t\t[!] Total ports to scan: ", str(int(highport)-int(lowport)+int(highport)-int(lowport)+1))
 				else:
 					pfunc("\t\t[!] Total ports to scan: ", str(int(highport)-int(lowport)+1))

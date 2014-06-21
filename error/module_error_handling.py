@@ -1,5 +1,9 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
+
 '''
 used for error reporting on modules which crash for easy diagnostics and location of problematic module
 '''

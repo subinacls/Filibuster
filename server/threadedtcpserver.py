@@ -1,5 +1,9 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
+
 import os
 import re
 import threading

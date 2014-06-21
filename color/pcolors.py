@@ -1,5 +1,5 @@
-# encoding: utf-8
 #!/usr/bin/env python
+# encoding: utf-8
 #
 # module author: subinacls
 #
@@ -22,4 +22,5 @@ class printfunction:
     pip = bo+ userstr + be
     pips = " " + var 
     pipri = pip + pips.rjust((collen-len(pip)), '.') 
-    print pipri 
+    print pipri
+
