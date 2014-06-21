@@ -55,10 +55,10 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   communications on the IP stack will be redirected to the server and it will answer the attempted 
   communication if specific criteria are meet. If these conditions are not fulfilled the server will 
   append any received data to a Contaminated file which can be used as an Honeypot of sorts.
-  
-  No information about the scanning results are logged onto the server with one exception,the
-  Contamination log file which will not retain any information about the client and their egress rules.
-  
+
+  The Contaminated files contents are constructed as follows:
+      "{"IP":"127.0.0.1"{"PORT":"80"{"DATA":{"hex":"\x00\x01\x02","binary":"000000010010", "ASCII":"words","raw":"012"},"Count":1}}}"
+
   There really is no actual configuration to the server other than commandline options. As the applications
   functionality expands this could change.
   
