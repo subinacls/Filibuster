@@ -68,6 +68,10 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
       IPv6 Support
       More protocol testing
       More Covert / backchannel testing
+        Modes:[
+            IP sequence numbers,
+            GRE
+        ]
       Better Request handling
       FwKnop for remote administration
       IDS/IPS testing (sending known signatures)
@@ -84,7 +88,30 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
         Send known botnet signatures
         Send known buffer overflow signatures
         Send clear text Personal Identifiable Information (PII) signatures
+          Modes:[
+              clear text,
+              rot13,
+              md5,
+              sha1-512,
+              Web safe encoding,
+              PSK
+              SSL/TLS
+          ]
         Send Clear text Payment Card Industry (PCI) signatures
+          Modes:[
+              clear text,
+              rot13,
+              md5,
+              sha1-512,
+              Web safe encoding,
+              PSK
+              SSL/TLS
+          ]
+      Spoofing traffic to confuse investigators (Red Herring)
+        Mode: [
+            spoof live machine,
+            produce ficticious machine traffic
+        ]
       Monitor and report activity on wire to identify other vectors of attack
       Covert tunnel proxy options (turn client into a socks proxy)
       Lockout watchdog (monitor for preconfigured port knock sequence)
