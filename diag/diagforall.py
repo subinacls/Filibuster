@@ -146,7 +146,7 @@ class diagserverheader():
 				pfunc("\t\t[!] Application Codename: ", __appname__)
 				pfunc("\t\t[!] Application Functionality: ", "Server")
 				pfunc("\t\t[!] Original Author: ", __author__)
-				pfunc("\t\t[!] Year of Copyright: ", __copyright__ )
+				pfunc("\t\t[!] Year of Conception: ", __concept__ )
 				pfunc("\t\t[!] Credits Given: ", __credits__ )
 				pfunc("\t\t[!] License version: ", __license__ )
 				pfunc("\t\t[!] Application Version: ", __version__ )

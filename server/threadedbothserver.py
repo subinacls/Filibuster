@@ -39,7 +39,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 			socket.sendto(str(self.data[0:10000000]), self.client_address)
 		else:
 			with open('Contaminated_log-'+str(date)+'.txt', 'a', buffering=0) as f:
-				f.write(self.data)
+				f.write("IP:"+str(self.client_address)+" - Data: "+str(self.data)+"\n")
 				f.close()
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
