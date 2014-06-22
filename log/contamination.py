@@ -46,7 +46,7 @@ class contaminlog():
 		except Exception as e3:
 			print e3
 		try:
-			if str(port) not in contjson[str(ipaddr)]str([proto)].keys():
+			if str(port) not in contjson[str(ipaddr)][str([proto)].keys():
 				contjson[str(ipaddr)][str(proto)][str(port)] = {}
 		except Exception as e4:
 			print e4
