@@ -21,9 +21,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 			print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data 
 			self.request.send(self.data) 
 		else:
-			contaminlog().jcom_read()
 			contaminlog().jcom_keeper(self.client_address[0],str("tcp").upper(),self.client_address[1],self.data)
-			contaminlog().jcom_write()
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass

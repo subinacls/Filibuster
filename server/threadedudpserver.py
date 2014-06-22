@@ -19,12 +19,10 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		line = str(self.data)
 		matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', line)
 		if matchObj:
-			print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
+			print bo + "Client:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
 			socket.sendto(str(self.data[0:10000000]), self.client_address)
 		else:
-			contaminlog().jcom_read()
-			contaminlog().jcom_keeper(self.client_address[0],str("tcp").upper(),self.client_address[1],self.data)
-			contaminlog().jcom_write()
+			contaminlog().jcom_keeper(self.client_address[0], str("udp").upper(), self.client_address[1], self.data)
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass

@@ -21,9 +21,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 			print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data 
 			self.request.send(self.data) 
 		else:
-			contaminlog().jcom_read()
 			contaminlog().jcom_keeper(self.client_address[0],str("tcp").upper(),self.client_address[1],self.data)
-			contaminlog().jcom_write()
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass
@@ -39,9 +37,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 			print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
 			socket.sendto(str(self.data[0:10000000]), self.client_address)
 		else:
-			contaminlog().jcom_read()
-			contaminlog().jcom_keeper(self.client_address[0],str("tcp").upper(),self.client_address[1],self.data)
-			contaminlog().jcom_write()
+			contaminlog().jcom_keeper(self.client_address[0],str("udp").upper(),self.client_address[1],self.data)
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass

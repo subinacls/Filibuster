@@ -52,7 +52,6 @@ class udpsocks():
 				print "Failed in udpsock logging: " + str(logenbfail)
 
 		except Exception as logenbfail:
-			print "test2"
 			print bf+"\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(logenbfail)+be
 			bi.state = "Failed"
 			try:
