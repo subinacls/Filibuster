@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/covert/covert.py" afterPath="$PROJECT_DIR$/covert/covert.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scanconfig.py" afterPath="$PROJECT_DIR$/client/scanconfig.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/PCI-PII-data.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/magstripedata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403461776555" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403465997139" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403301761236" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403367698281" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -38,6 +37,8 @@
     <file path="/*.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403338602068" ignored="false" />
     <file path="/exceptcatcher.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403461056880" ignored="false" />
     <file path="/contamination.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403461510308" ignored="false" />
+    <file path="/PIIdata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403469677144" ignored="false" />
+    <file path="/magstripedata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403473823238" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,17 +89,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client_kicker.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="19" selection-start="3759" selection-end="3759" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#248#266#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scanconfig.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,15 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server_kicker.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server_kicker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="16" selection-start="1987" selection-end="1987" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
@@ -139,11 +120,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="covert.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="covert.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/covert/covert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="15" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.6135266">
+            <state line="0" column="0" selection-start="0" selection-end="138" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCI-PII-data.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datatypes/PCI-PII-data.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="237" selection-end="256" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="magstripedata.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="8" selection-start="3722" selection-end="3722" vertical-scroll-proportion="2.0048308">
+              <folding>
+                <element signature="e#3593#3606#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,10 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/threadedbothserver.py" />
-        <option value="$PROJECT_DIR$/server/threadedtcpserver.py" />
-        <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
-        <option value="$PROJECT_DIR$/client/udpsock.py" />
         <option value="$PROJECT_DIR$/server/server_func.py" />
         <option value="$PROJECT_DIR$/log/txtloggen.py" />
         <option value="$PROJECT_DIR$/log/jsonloggen.py" />
@@ -197,6 +194,10 @@
         <option value="$PROJECT_DIR$/client/scanconfig.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/covert/covert.py" />
+        <option value="$PROJECT_DIR$/datatypes/PIIdata.txt" />
+        <option value="$PROJECT_DIR$/datatypes/PCI-PII-data.txt" />
+        <option value="$PROJECT_DIR$/datatypes/magstripedata.txt" />
+        <option value="$PROJECT_DIR$/datatypes/magstripedata.py" />
       </list>
     </option>
   </component>
@@ -345,6 +346,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="diag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datatypes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -741,7 +756,11 @@
       <created>1403461779724</created>
       <updated>1403461779724</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="added some info to readme and modified some data time stamps">
+      <created>1403465999033</created>
+      <updated>1403465999033</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -830,7 +849,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the way errors are handled in the server and better way of ensuring overwrite is effecting" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some info to readme and modified some data time stamps" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -850,6 +869,7 @@
     <MESSAGE value="corrected some spelling errors" />
     <MESSAGE value="fixed a problem with the contamination log creator" />
     <MESSAGE value="changed the way errors are handled in the server and better way of ensuring overwrite is effecting" />
+    <MESSAGE value="added some info to readme and modified some data time stamps" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -869,22 +889,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/log/txtloggen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="134" selection-end="134" vertical-scroll-proportion="0.28037384">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/udpsock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.7626168">
-          <folding>
-            <element signature="e#229#238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/csvloggen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -990,10 +994,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/datatypes/PCI-PII-data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="237" selection-end="256" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/covert/covert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="15" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.6135266">
+        <state line="0" column="0" selection-start="0" selection-end="138" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="8" selection-start="3722" selection-end="3722" vertical-scroll-proportion="2.0048308">
+          <folding>
+            <element signature="e#3593#3606#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
