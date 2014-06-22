@@ -4,7 +4,7 @@ Filterbuster
 Egress filter mapping application with additional functionality.
 Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
-  [-] Prerequisites before getting statrted
+  [-] Prerequisites: ...
 
   It is required to utilize additional modules outside the standard library as follows. You can use
   the application `pip` if you so desire or download and install from source. Your choice.
@@ -19,6 +19,9 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
     """ required for covert testing """
     Please install python DNS module with: `easy_install dnspython`
+
+  Currently the application relies on iptables to configure the kernel for port redirection to the servers listening
+  port. Currently I have no other solution other than scapy listening for matching packets and replying with raw sockets
 
   [-] Commandline Usage: ...
   

@@ -97,7 +97,7 @@ print bh + "\n\t[-] Finished Cover tunnel testing process ..." + be
 if tunnelspass:
 	print(bh + "\n\t[-] List of passed Covert tunnels ...\n" + be)
 	for tp in tunnelspass:
-		""" adult toilet jokes, he said tp """
+		""" childish toilet humor, he said tp """
 		printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tp))
 
 if tunnelsfail:

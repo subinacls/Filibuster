@@ -45,9 +45,7 @@ class initscanner():
 			__builtin__.faillist = []
 			# get the date information from local system
 			""" maybe future addition, if NTP test passes use NTP server in EDU for data information """
-			d = os.popen("date")
-			dft = d.readline()
-			__builtin__.ldate = str(dft.strip('\n')[4:7])+"-"+str(dft.strip('\n')[8:10])+"-"+str(dft.strip('\n')[24:29])
+			__builtin__.ldate = str(dft.strip('\n')[4:7])+"-"+str(ldate)
 			__builtin__.u = 0
 
 			""" check if the portrange configuration variable is a file or a range """
