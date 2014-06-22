@@ -38,7 +38,7 @@ class sferrorhandler():
 		pid = os.getpid()
 		os.popen("iptables -t nat -F")
 		print bo+"\t[!] User initialized exit - flushed IPTABLES and killed server pid " + \
-		      str(pid)+" ...\n" + be
+		      bf + str(pid)+" ...\n" + be
 		killer = "kill -9 "+str(pid)
 		os.popen(killer)
 		sys.exit(0)

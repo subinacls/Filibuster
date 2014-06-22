@@ -17,7 +17,7 @@ class contaminlog():
 	def jcom_read(self):
 		try:
 			with open('Contaminated_log-'+str(date)+'.json', 'r') as f: # open a file as named variable
-				contjson = json.loads(f.read()) # load json data to built in variable
+				__builtin__.contjson = json.loads(f.read()) # load json data to built in variable
 				f.close()
 		except Exception as jreadfail: # catch all
 			contjson = json.loads(json.dumps({})) #, indent=4)) # modify to add tabs to logfile
@@ -26,17 +26,18 @@ class contaminlog():
 
 	def jcom_write(self):
 		try:
-			with open('Contaminated_log-'+str(date)+'.json', 'w') as f: # open a file as named variable
-				f.write(json.dumps(contjson, indent=4)) # dumps data to file with indent 4 spaces
+			with open('Contaminated_log-'+str(date)+'.json', 'a') as f: # open a file as named variable
+				f.write(json.dumps(contjson))#, indent=4)) # dumps data to file with indent 4 spaces
+				f.close()
+
 		except Exception as jwritefail: # catch all
 			clh().jsonrwritefail(jwritefail)
 			pass
 
 	def jcom_keeper(self, ipaddr, proto, port, data):
 		self.jcom_read()
-		time.sleep(0.01)
 		try:
-			data = base64.b64encode(data)
+			#data = base64.b64encode(data)
 			if str(ipaddr) not in contjson.keys():
 				contjson[str(ipaddr)] = {}
 			if str(proto) not in contjson[str(ipaddr)].keys():
@@ -55,5 +56,4 @@ class contaminlog():
 		except Exception as jkeeperfail: # catch all
 			clh().jsonrkeepfail(jkeeperfail)
 			pass # keep on keeping no
-		time.sleep(0.01)
 		self.jcom_write()
