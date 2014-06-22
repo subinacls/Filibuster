@@ -93,7 +93,7 @@ class initclient():
 			else:
 				__builtin__.mytls = str(sys.argv[3])
 		except Exception as nosysarg3:
-			if diag == "yes":
+			if str(diag).lower() in ["true", "yes", "1"]:
 				print("\n"+bh +"[*] " + "-"*80 + be+"\n")
 				print("\t"+bf+"ATTENTION "+be+bw+"[?] SYSARG position 3 is "+bf+str(mytls)+be+bw+be)
 				print("\t[?] " +van+" v."+vv+" - CRASHED: " + bf + str(nosysarg3) + "\n" +be)

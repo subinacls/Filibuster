@@ -25,7 +25,7 @@ __builtin__.date = date
 __builtin__.u = 0
 
 """ useful for diagnostics and error suppression """
-__builtin__.diag = "true"
+__builtin__.diag = "yes"
 __builtin__.dd = {}
 """
 warning:
@@ -110,7 +110,6 @@ def checkfirstargument():
 				helper().helpall()
 				sys.exit(0)
 		if str(sa1).lower() in ["server", "s"]: # if your looking for the server portion
-
 			try:
 				from servargs import args
 				args().getservargs()

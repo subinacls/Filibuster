@@ -1,6 +1,7 @@
 
 
 import base64
+import shutil
 import time
 import json
 import __builtin__
@@ -16,20 +17,25 @@ class contaminlog():
 
 	def jcom_read(self):
 		try:
-			with open('Contaminated_log-'+str(date)+'.json', 'r') as f: # open a file as named variable
+			with open('Contaminated_log-'+str(date)+'.json', 'r') as fr: # open a file as named variable
 				__builtin__.contjson = json.loads(f.read()) # load json data to built in variable
-				f.close()
+				fr.close()
 		except Exception as jreadfail: # catch all
-			contjson = json.loads(json.dumps({})) #, indent=4)) # modify to add tabs to logfile
+			if contback != "":
+				contjson = json.loads(json.dumps(contback)) #, indent=4)) # modify to add tabs to logfile
+			else:
+				contjson = json.loads(json.dumps({})) #, indent=4)) # modify to add tabs to logfile
 			clh().jsonreadfail(jreadfail)
 			pass
 
 	def jcom_write(self):
 		try:
-			with open('Contaminated_log-'+str(date)+'.json', 'a') as f: # open a file as named variable
-				f.write(json.dumps(contjson))#, indent=4)) # dumps data to file with indent 4 spaces
-				f.close()
-
+			with open('Contaminated_log-'+str(date)+'.json', 'w') as fw: # open a file as named variable
+				__builtin__.fw = fw
+				fw.write(json.dumps(contjson))#, indent=4)) # dumps data to file with indent 4 spaces
+				fw.close()
+			if len(contjson) != 0:
+				shutil.copyfile('Contaminated_log-'+str(date)+'.json', 'Contaminated_log-'+str(date)+'.back')
 		except Exception as jwritefail: # catch all
 			clh().jsonrwritefail(jwritefail)
 			pass
@@ -37,7 +43,7 @@ class contaminlog():
 	def jcom_keeper(self, ipaddr, proto, port, data):
 		self.jcom_read()
 		try:
-			#data = base64.b64encode(data)
+			data = base64.b64encode(data)
 			if str(ipaddr) not in contjson.keys():
 				contjson[str(ipaddr)] = {}
 			if str(proto) not in contjson[str(ipaddr)].keys():

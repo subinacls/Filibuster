@@ -74,16 +74,18 @@ class contamloghandler():
 		pass
 
 	def jsonreadfail(self,reporterror):
-		print bo+"\t[?] " +va+" v."+vv+" - CRASHED Couldn\'t read from file: Contaminated_log-"+str(date)+".json : " + \
-		      bf + str(reporterror) + "\n" +be
+		if str(diag).lower() in ["true", "yes", "1"]:
+			print bo+"\t[?] Reading saved JSON contamination data from file: Contaminated_log-"+str(date)+".json\n" +be
+
 
 	def jsonrwritefail(self,reporterror):
-		print bo+"\t[?] " +va+" v."+vv+" - CRASHED Couldn\'t write to file: Contaminated_log-"+str(date)+".json : " + \
-		      bf + str(reporterror) + "\n" +be
+		if str(diag).lower() in ["true", "yes", "1"]:
+			print bo+"\t[?] Writting JSON contamination data to file: Contaminated_log-"+str(date)+".json\n" +be
 
 	def jsonrkeepfail(self,reporterror):
-		print bo+"\t[?] " +va+" v."+vv+" - CRASHED Couldn't properly format: Contaminated_log-"+str(date)+".json : " + \
-		      bf + str(reporterror) + "\n" +be
+		if str(diag).lower() in ["true", "yes", "1"]:
+			print bo+"\t[?] Processsing received traffic which does not meet criteria\n" +be
+			print reporterror
 
 
 
