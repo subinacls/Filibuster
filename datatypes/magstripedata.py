@@ -72,6 +72,7 @@ I needed a way to make some test data for MagStrip - this is not formatted corre
             7: Goods and services only (no cash), use PIN where feasible
 """
 
+import sys
 import random
 import __builtin__
 
@@ -81,8 +82,16 @@ class magstripgen():
         pass
 
     def makemagdata(self):
+        """
+
+
+        """
         newtrack = ""
+        t1track = ""
         tlist = []
+        t1list = []
+        t2track = ""
+        t2list = []
 
         # track: 1
         #    format: B
@@ -107,29 +116,59 @@ class magstripgen():
         t2disdata = dict(t1disdata)
         et2sentinel = list(et1sentinel)
         t2lrc = list(t1lrc)
-        tlist.append(random.choice(st1sentinel))
-        tlist.append(random.choice(fcode))
-        tlist.append(random.choice(t1pan))
-        tlist.append(random.choice(t1fsep))
-        tlist.append(random.choice(t1name))
+        __builtin__.K = 5
+        t1list.append(random.choice(st1sentinel))
+        t1list.append(random.choice(fcode))
+        t1list.append(random.choice(t1pan))
+        t1list.append(random.choice(t1fsep))
+        t1list.append(random.choice(t1name))
         rexpd = random.choice(t1expdate)
-        tlist.append(random.choice(rexpd))
+        t1list.append(random.choice(rexpd))
         for t in t1scode.keys():
-            tlist.append(random.choice(t1scode[t]))
+            t1list.append(random.choice(t1scode[t]))
 
         for d in t1disdata.keys():
-            tlist.append(random.choice(t1disdata[d]))
+            t1list.append(random.choice(t1disdata[d]))
 
-        tlist.append(random.choice(et1sentinel))
-        tlist.append(random.choice(t1lrc))
-        tlist.append(random.choice(st2sentinel))
-        tlist.append(random.choice(t2pan))
-        tlist.append(random.choice(t2fsep))
-        tlist.append(random.choice(rexpd))
-        tlist.append(random.choice(t))
-        tlist.append(random.choice(d))
-        tlist.append(random.choice(et2sentinel))
-        tlist.append(random.choice(t2lrc))
+        t1list.append(random.choice(et1sentinel))
+        t1list.append(random.choice(t1lrc))
+        tlist.append(self.encode(t1track.join(t1list)))
 
-        __builtin__.savedtrack = newtrack.join(tlist)
-        print savedtrack
+        tlist.append(t1track)
+
+        __builtin__.K = 4
+        t2list.append(random.choice(st2sentinel))
+        t2list.append(random.choice(t2pan))
+        t2list.append(random.choice(t2fsep))
+        t2list.append(random.choice(rexpd))
+        t2list.append(random.choice(t))
+        t2list.append(random.choice(d))
+        t2list.append(random.choice(et2sentinel))
+        t2list.append(random.choice(t2lrc))
+        tlist.append(self.encode(t2track.join(t1list)))
+        tlist.append(t2track)
+        try:
+            __builtin__.savedtrack = newtrack.join(tlist)
+            print savedtrack
+        except:
+            pass
+    def encode(self, s):
+        """Read in K=4 bits at a time and write out those plus parity bits"""
+        while len(s) >= K:
+            nybble = s[0:K]
+            sys.stdout.write(self.hamming(nybble))
+            s = s[K:]
+
+    def hamming(self, bits):
+        """Return given 4 bits plus parity bits for bits (1,2,3), (2,3,4) and (1,3,4)"""
+        t1 = self.parity(bits, [0,1,2])
+        t2 = self.parity(bits, [1,2,3])
+        t3 = self.parity(bits, [0,2,3])
+        return bits + t1 + t2 + t3
+
+    def parity(self, s, indicies):
+        """Compute the parity bit for the given string s and indicies"""
+        sub = ""
+        for i in indicies:
+            sub += s[i]
+        return str(str.count(sub, "1") % 2)

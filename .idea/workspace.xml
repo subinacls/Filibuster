@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/PCI-PII-data.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/magstripedata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datatypes/magstripedata.py" afterPath="$PROJECT_DIR$/datatypes/magstripedata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403465997139" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403473922701" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403301761236" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403367698281" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -39,6 +38,7 @@
     <file path="/contamination.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403461510308" ignored="false" />
     <file path="/PIIdata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403469677144" ignored="false" />
     <file path="/magstripedata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403473823238" ignored="false" />
+    <file path="/magstripedata.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403475872186" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,9 +141,9 @@
       <file leaf-file-name="magstripedata.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="8" selection-start="3722" selection-end="3722" vertical-scroll-proportion="2.0048308">
+            <state line="153" column="16" selection-start="6252" selection-end="6252" vertical-scroll-proportion="0.5169082">
               <folding>
-                <element signature="e#3593#3606#0" expanded="true" />
+                <element signature="e#3593#3603#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -760,7 +760,11 @@
       <created>1403465999033</created>
       <updated>1403465999033</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="added a file to help generate test data for mag strip">
+      <created>1403473925622</created>
+      <updated>1403473925622</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -849,7 +853,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some info to readme and modified some data time stamps" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a file to help generate test data for mag strip" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -870,6 +874,7 @@
     <MESSAGE value="fixed a problem with the contamination log creator" />
     <MESSAGE value="changed the way errors are handled in the server and better way of ensuring overwrite is effecting" />
     <MESSAGE value="added some info to readme and modified some data time stamps" />
+    <MESSAGE value="added a file to help generate test data for mag strip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1010,9 +1015,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="8" selection-start="3722" selection-end="3722" vertical-scroll-proportion="2.0048308">
+        <state line="153" column="16" selection-start="6252" selection-end="6252" vertical-scroll-proportion="0.5169082">
           <folding>
-            <element signature="e#3593#3606#0" expanded="true" />
+            <element signature="e#3593#3603#0" expanded="true" />
           </folding>
         </state>
       </provider>
