@@ -17,23 +17,24 @@ class jsonlogger():
 	def __init__(self):
 		pass # nothing to see here
 
-	def json_read(self,filename):
+	def json_read(self):
 		try:
-			with open(filename, "r") as f: # open a file as named variable
+			with open(str(consultant)+'-'+str(location)+'-'+str(ldate)+'.json', "r") as f: # open a file as named variable
 				__builtin__.rawjson = json.loads(f.read()) # load json data to built in variable
 		except Exception as jreadfail: # catch all
 			__builtin__.rawjson = json.loads(json.dumps({})) #, indent=4))
 			pass
 
-	def json_write(self,filename):
+	def json_write(self):
 		try:
-			with open(filename, "w") as f: # open a file as named variable
+			with open(str(consultant)+'-'+str(location)+'-'+str(ldate)+'.json', "w") as f: # open a file as named variable
 				f.write(json.dumps(rawjson)) #, indent=4)) # dumps data to file with indent 4 spaces
 		except Exception as jwritefail: # catch all
 			print jwritefail, "something failed in writing the file: " + str(filename)
 			pass
 
-	def json_keeper(self):
+	def jsonlog(self):
+		self.json_read()
 		try:
 			if consultant not in rawjson.keys(): # check for variable in key values
 				rawjson[consultant] = {} # if not in key values, make new key as a dict

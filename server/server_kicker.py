@@ -15,6 +15,7 @@ import sys
 
 """ import modules after directory structure appended to system $PATH """
 
+from exceptcatcher import skerrorhandler as skh
 from bcolors import bcolors as b
 from pcolors import *
 from helper import *
@@ -40,9 +41,7 @@ class initserver():
 		print bh+ va +" Server Initialized: ~ " + "ver.: "+ vv +  " - " + vauth +"\n\n"+ be
 		ap = str(servproto)
 		""" check system arguments for protocol to use """
-		"""
-		This section handles the protocol and encryption staging for the server portion of the application
-		"""
+		""" This section handles the protocol and SSL/TLS staging """
 		""" handling TCP protocol staging for server """
 		if str(ap).lower() in ["tcp","t"]:
 			""" check if protocol is tcp """
@@ -59,9 +58,8 @@ class initserver():
 					tcp_servers().tserver()
 					""" set TCP server port from user supplied argument """
 			except Exception as tcpserverfuncfail:
-				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
-				      str(tcpserverfuncfail) + "\n" +be
-				sys.exit(0)
+				skh().allserverfail(tcpserverfuncfail)
+
 		""" handling UDP protocol staging for server """
 		if str(ap).lower() in ["udp","u"]:
 			""" check if protocol is udp """
@@ -78,10 +76,9 @@ class initserver():
 					udp_servers().userver()
 					""" set udp server port from user supplied argument """
 			except Exception as udpserverfuncfail:
-				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
-				      str(udpserverfuncfail) + "\n" +be
-				sys.exit(0)
+				skh().allserverfail(udpserverfuncfail)
 
+		""" handling BOTH protocol staging for server """
 		if str(ap).lower() in ["both","b"]:
 			""" check if protocol is both """
 			try:
@@ -97,6 +94,4 @@ class initserver():
 					both_servers().bserver()
 					""" set udp server port from user supplied argument """
 			except Exception as bothserverfuncfail:
-				print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp servers: " + bf + \
-				      str(bothserverfuncfail) + "\n" +be
-				sys.exit(0)
+				skh().allserverfail(bothserverfuncfail)

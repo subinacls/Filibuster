@@ -4,11 +4,27 @@ Filterbuster
 Egress filter mapping application with additional functionality.
 Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
-  [*] Commandline Usage: ...
+  [-] Prerequisites before getting statrted
+
+  It is required to utilize additional modules outside the standard library as follows. You can use
+  the application `pip` if you so desire or download and install from source. Your choice.
+
+  The application it will do some basic checks to help elimate issues later in the process
+
+    """ required for graphing """
+    Please install numpy with: `easy_install numpy`
+
+    """ import configparser for user supplied configuration file """
+    Please install ConfigParser with: `easy_install configparser`
+
+    """ required for covert testing """
+    Please install python DNS module with: `easy_install dnspython`
+
+  [-] Commandline Usage: ...
   
     {Client}  term:$ python ./filterbuster.py client (config.file) (no/yes)
   
-    {Server}  term:$ python ./filterbuster.py server (tcp/udp/both) (port) (no/yes)
+    {Server}  term:$ python ./filterbuster.py server (tcp/udp) (port) (no/yes)
 
   [-] Understanding the client: ....
 
@@ -127,7 +143,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
               SSL/TLS
           ]
       Spoofing traffic to confuse investigators (Red Herring)
-        Mode: [
+        Mode:[
             spoof live machine (DoS / race conditions),
             produce ficticious traffic (smokescreen),
             capture and replay (cause RST floods)
@@ -140,6 +156,13 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
             Wait for 5 min for ssh connection,
             reconfigure iptables port redirection
         ]
-       QT GUI (who knows?)
-      
+      GUI interface for both server/ client
+        Interface:[
+            Its perfect the way it is ? (highly doubtful),
+            QT GUI (kinda played around with it) ,
+            Web Driven (im interested),
+            Maybe all sounds good
+        ]
+      Bogus Data Generator module - Diagnostics and log generation testing
+      Traceroute from inside out - w/ SVG image generation for reports (scapy)
       

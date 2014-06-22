@@ -10,6 +10,7 @@ import time
 import verinfo
 import __builtin__
 from bcolors import bcolors
+from exceptcatcher import sferrorhandler as sfh
 
 __builtin__.va = __appname__
 __builtin__.vv = __version__
@@ -34,15 +35,9 @@ class tcp_servers():
 				while 1:
 					time.sleep(0)
 			except KeyboardInterrupt:
-				pid = os.getpid()
-				os.popen("iptables -t nat -F")
-				print bo+"\t[!] User exited - flushed IPTABLES and killed server pid "+str(pid)+" ...\n" + be
-				killer = "kill -9 "+str(pid)
-				os.popen(killer)
-				sys.exit(0)
+				sfh().kbicatcher()
 		except Exception as tcpserverfail:
-			print "\t[?] " +va+" v."+vv+" - CRASHED during import of tcp server: " + bf + str(tcpserverfail) + "\n" +be
-			sys.exit(0)
+			sfh().sftcpfail(tcpserverfail)
 
 class udp_servers:
 
@@ -57,15 +52,9 @@ class udp_servers:
 				while 1:
 					time.sleep(0)
 			except KeyboardInterrupt:
-				pid = os.getpid()
-				os.popen("iptables -t nat -F")
-				print bo+"\t[!] User exited - flushed IPTABLES and killed server pid "+str(pid)+" ...\n" + be
-				killer = "kill -9 "+str(pid)
-				os.popen(killer)
-				sys.exit(0)
+				sfh().kbicatcher()
 		except Exception as udpserverfail:
-			print "\t[?] " +va+" v."+vv+" - CRASHED during import of udp servers: " + bf + str(udpserverfail) + "\n" +be
-			sys.exit(0)
+			sfh().sfudpfail(udpserverfail)
 
 class both_servers:
 
@@ -81,12 +70,6 @@ class both_servers:
 				while 1:
 					time.sleep(0)
 			except KeyboardInterrupt:
-				pid = os.getpid()
-				os.popen("iptables -t nat -F")
-				print bo+"\t[!] User initialized exit - flushed IPTABLES and killed server pid "+str(pid)+" ...\n" + be
-				killer = "kill -9 "+str(pid)
-				os.popen(killer)
-				sys.exit(0)
+				sfh().kbicatcher()
 		except Exception as bothserverfail:
-			print "\t[?] " +va+" v."+vv+" - CRASHED during import of both servers: " + bf + str(bothserverfail) + "\n" +be
-			sys.exit(0)
+			sfh().sfbothfail(bothserverfail)
