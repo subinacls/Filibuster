@@ -53,7 +53,7 @@ class contaminlog():
 		try:
 			if str(data) not in contjson[str(ipaddr)][str(proto)][str(port)].keys():
 				try:
-					contjson[str(ipaddr)][str(proto)][str(str(port)][str(data)] = []
+					contjson[str(ipaddr)][str(proto)][str(port)][str(data)] = []
 				except Exception as e:
 					print e, "test1"
 				try:

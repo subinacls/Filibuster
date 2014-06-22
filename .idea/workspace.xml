@@ -8,7 +8,7 @@
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403409349529" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403409530340" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403301761236" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403367698281" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -131,7 +131,7 @@
       <file leaf-file-name="contamination.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/log/contamination.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="62" selection-start="1426" selection-end="1426" vertical-scroll-proportion="0.6863118">
+            <state line="55" column="57" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.88593155">
               <folding>
                 <element signature="e#22#35#0" expanded="true" />
               </folding>
@@ -725,7 +725,11 @@
       <created>1403409351012</created>
       <updated>1403409351012</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fixed a problem with the contamination log creator">
+      <created>1403409532324</created>
+      <updated>1403409532324</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -975,7 +979,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log/contamination.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="62" selection-start="1426" selection-end="1426" vertical-scroll-proportion="0.6863118">
+        <state line="55" column="57" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.88593155">
           <folding>
             <element signature="e#22#35#0" expanded="true" />
           </folding>
