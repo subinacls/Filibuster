@@ -9,6 +9,7 @@ import json
 import __builtin__
 import verinfo
 from bcolors import bcolors
+from helper import helper
 import sys
 import time
 
@@ -27,11 +28,10 @@ class skerrorhandler():
 	def __init__(self):
 		pass
 
-	def allserverfail(self,reporterror):
+	def allserverfail(self, reporterror):
 		print "\t[?] " +va+" v."+vv+" - CRASH in server_kicker.py during import of both server: " + \
 		      bf + str(reporterror) + "\n" +be
 		sys.exit(0)
-
 
 class sferrorhandler():
 
@@ -47,17 +47,17 @@ class sferrorhandler():
 		os.popen(killer)
 		sys.exit(0)
 
-	def sfbothfail(self,reporterror):
+	def sfbothfail(self, reporterror):
 		print bo+"\t[?] " +va+" v."+vv+" - CRASH in server_func.py during import of both servers: " + \
 		      bf + str(reporterror) + "\n" +be
 		sys.exit(0)
 
-	def sftcpfail(self,reporterror):
+	def sftcpfail(self, reporterror):
 		print bo+"\t[?] " +va+" v."+vv+" - CRASHED during import of tcp server: " + \
 		      bf + str(reporterror) + "\n" +be
 		sys.exit(0)
 
-	def sfudpfail(self,reporterror):
+	def sfudpfail(self, reporterror):
 		print bo+"\t[?] " +va+" v."+vv+" - CRASHED during import of udp servers: " + \
 		      bf + str(reporterror) + "\n" +be
 		sys.exit(0)
@@ -67,7 +67,7 @@ class logenablehandler():
 	def __init__(self):
 		pass
 
-	def logimportfail(self,reporterror):
+	def logimportfail(self, reporterror):
 		print bo+"\t[?] " +va+" v."+vv+" - " + str(logtype).upper() + " CRASHED due to: " + \
 		      bf + str(reporterror) + "\n" +be
 		sys.exit(0)
@@ -77,19 +77,48 @@ class contamloghandler():
 	def __init__(self):
 		pass
 
-	def jsonreadfail(self,reporterror):
+	def jsonreadfail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
-			print bo+"\t[?] Reading saved JSON contamination data from file: Contaminated_log-"+str(date)+".json\n" +be
+			print bo+"\t[?] Reading saved JSON contamination data from file: Contaminated_log-" + str(date) + ".json\n" + be
 
-
-	def jsonrwritefail(self,reporterror):
+	def jsonrwritefail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
-			print bo+"\t[?] Writting JSON contamination data to file: Contaminated_log-"+str(date)+".json\n" +be
+			print bo+"\t[?] Writting JSON contamination data to file: Contaminated_log-" + str(date) + ".json\n" +be
 
-	def jsonrkeepfail(self,reporterror):
+	def jsonrkeepfail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
-			print bo+"\t[?] Processsing received traffic which does not meet criteria\n" +be
-			print reporterror
+			print bo+"\t[?] Processsing received traffic which does not meet criteria "+ str(reporterror) + "\n" +be
 
+class servarghandler():
 
+	def __init__(self):
+		pass
 
+	def srvarg2fail(self, reporterror):
+		print bo+"\t[?] Please choose: 'TCP or UDP' for the protocol: " + str(reporterror) + "\n" + be
+		helper().shelp()
+		sys.exit(0)
+
+	def srvarg3fail(self, reporterror):
+		print bo+"\t[?] Please choose: 'Port Number' for the server to bind to: " + str(reporterror) + "\n" + be
+		helper().shelp()
+		sys.exit(0)
+
+	def srvarg4fail(self, reporterror):
+		print bo+"\t[?] Please choose: 'Yes' or 'No' for the use of TLS: " + str(reporterror) + "\n" + be
+		helper().tlshelp()
+		sys.exit(0)
+
+class jsonloghandler():
+
+	def __init__(self):
+		pass
+
+	def jlogreadfail(self, reporterror):
+		print bo+"\t[?] Read access violation in jsonloggen.py: " + str(reporterror) + "\n" + be
+
+	def jlogwritefail(self, reporterror):
+		print bo+"\t[?] Write access violation in jsonloggen.py: " + str(reporterror) + "\n" + be
+
+	def jlogfail(self, reporterror):
+		print bo+"\t[?] Keeper access violation in jsonloggen.py: " + str(reporterror) + "\n" + be

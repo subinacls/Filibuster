@@ -4,13 +4,16 @@
 # module author: subinacls
 #
 
+#
+# file should handle its own exceptions
+#
+
 """ Useful information
 exactly what it says - handles all the printing of diagnostic information
 """
 import __builtin__
 import sys
 from bcolors import bcolors as b
-from module_error_handling import modreporter as mp
 from diagfun import diagfun
 
 __builtin__.bh = b.HEADER
@@ -258,12 +261,6 @@ class modimporttest():
 					pfunc("\t\t[-] Threaded TCP server module imported ", "successfully")
 					import threadedudpserver
 					pfunc("\t\t[-] Threaded UDP server module imported ", "successfully")
-					#try:
-					#	from log_enable import log_enabled
-					#	pfunc("\t\t[-] Logging module imported ", "successfully")
-					#except: # just keep swimming
-					#	pfunc("\t\t[-] Logging module imported ", "FAILED")
-					#	pass
 					print ""
 			except Exception as importdiagfail:
 				print "\n"+bh +"[*] " + "-"*80 + be+"\n"

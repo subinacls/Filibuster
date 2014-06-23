@@ -11,6 +11,7 @@ sets __builtin__ vars to be used throughout the application
 
 import json
 import __builtin__
+from exceptcatcher import jsonloghandler as jlh
 
 class jsonlogger():
 
@@ -23,6 +24,7 @@ class jsonlogger():
 				__builtin__.rawjson = json.loads(f.read()) # load json data to built in variable
 		except Exception as jreadfail: # catch all
 			__builtin__.rawjson = json.loads(json.dumps({})) #, indent=4))
+			jlh().jlogreadfail(jreadfail)
 			pass
 
 	def json_write(self):
@@ -30,7 +32,7 @@ class jsonlogger():
 			with open(str(consultant)+'-'+str(location)+'-'+str(ldate)+'.json', "w") as f: # open a file as named variable
 				f.write(json.dumps(rawjson)) #, indent=4)) # dumps data to file with indent 4 spaces
 		except Exception as jwritefail: # catch all
-			print jwritefail, "something failed in writing the file: " + str(filename)
+			jlh().jlogwritefail(jwritefail)
 			pass
 
 	def jsonlog(self):
@@ -58,7 +60,5 @@ class jsonlogger():
 					rawjson[consultant][location][ldate][ipaddr][proto][state].sort(key=int)
 			pass # keep on moving
 		except Exception as jkeeperfail: # catch all
-			print jkeeperfail, "something happened in keeper "
+			jlh().jlogfail(jkeeperfail)
 			pass # keep on keeping no
-
-

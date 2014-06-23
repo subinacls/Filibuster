@@ -168,5 +168,6 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
         ]
       Bogus Data Generator module - Diagnostics and log generation testing
       Traceroute from inside out - w/ SVG image generation for reports (scapy)
-      Stop myself from coding after 11:45pm
+      Get NG FW or access to an environement with one (physical or virtual)
+      Stop myself from coding between (23:45 / 04:40) or at least dont commit
       

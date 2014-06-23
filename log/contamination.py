@@ -21,7 +21,7 @@ class contaminlog():
 				__builtin__.contjson = json.loads(f.read()) # load json data to built in variable
 				fr.close()
 		except Exception as jreadfail: # catch all
-			if contback != "":
+			if contback != "": # really dirty hack to keep a log ...
 				contjson = json.loads(json.dumps(contback)) #, indent=4)) # modify to add tabs to logfile
 			else:
 				contjson = json.loads(json.dumps({})) #, indent=4)) # modify to add tabs to logfile

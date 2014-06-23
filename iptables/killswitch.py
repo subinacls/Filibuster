@@ -18,9 +18,12 @@ class killswitch:
 		pass
 
 	def killswitch(self, pid):
+		#
+		# determined this file needs to handle its own exceptions, no offloading
+		#
 		try:
 			try: 
-				time.sleep(0) 
+				time.sleep(0) # dirty hack to monitor for keybard interrupt
 			except KeyboardInterrupt:
 				os.popen("iptables -t nat -F")
 			if str(diag).lower() in ["true","yes"]:
