@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datatypes/pcipiidata.py" afterPath="$PROJECT_DIR$/datatypes/pcipiidata.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403484626128" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403486500603" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403301761236" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403367698281" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -134,7 +133,7 @@
       <file leaf-file-name="pcipiidata.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datatypes/pcipiidata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="372" selection-end="372" vertical-scroll-proportion="0.33333334">
+            <state line="15" column="17" selection-start="175" selection-end="175" vertical-scroll-proportion="-11.884058">
               <folding />
             </state>
           </provider>
@@ -770,7 +769,11 @@
       <created>1403484627438</created>
       <updated>1403484627439</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="made some changes to piipcidata file">
+      <created>1403486502231</created>
+      <updated>1403486502231</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1024,7 +1027,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datatypes/pcipiidata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="372" selection-end="372" vertical-scroll-proportion="0.33333334">
+        <state line="15" column="17" selection-start="175" selection-end="175" vertical-scroll-proportion="-11.884058">
           <folding />
         </state>
       </provider>
