@@ -7,7 +7,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   [-] Prerequisites: ...
 
   It is required to utilize additional modules outside the standard library as follows. You can use
-  the application `pip` if you so desire or download and install from source. Your choice.
+  `easy_install` if you so desire or download and install from source. Your choice.
 
   The application it will do some basic checks to help elimate issues later in the process
 
