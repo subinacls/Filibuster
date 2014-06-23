@@ -11,13 +11,11 @@ configuration file for the client portion of the application.
 
 import __builtin__
 import sys
-import thread
 import datetime
 import os
 __builtin__.ipaddr = "127.0.0.1"
 __builtin__.hostip = ""
 __builtin__.stack = []
-import numpy as np
 global ident
 __builtin__.ident = ""
 date = str(datetime.datetime.now()).split()[0]
@@ -25,7 +23,6 @@ __builtin__.date = date
 __builtin__.u = 0
 
 """ useful for diagnostics and error suppression """
-__builtin__.diag = "yes"
 __builtin__.dd = {}
 """
 warning:
@@ -39,14 +36,26 @@ __builtin__.suppress = "yes"
 """ suppress error msgs from try and other exception handling """
 
 """ list required directories for application to import custom modules """
-directories = ["client", "color", "config", "covert", "diag", "error", "help", "iptables", "log", "server", "socket", "version"]
+directories = [
+	"client",
+	"color",
+	"config",
+	"covert",
+	"diag",
+	"error",
+	"help",
+	"iptables",
+	"log",
+	"server",
+	"socket",
+	"version"
+]
 
 """ for each directory append to system $PATH for custom module importing """
 for inc in directories:
-	sys.path.append(os.getcwd()+"/"+inc)
+	sys.path.append(os.getcwd() + "/" + inc)
 
 """ import modules after directory structure appended to system $PATH """
-from client_kicker import initclient
 from bcolors import bcolors as b
 from diagforall import diagclientheader
 from diagforall import diagserverheader
@@ -81,6 +90,8 @@ except Exception as nofirstargument:
 
 """ function to check first user supplied argument before execution """
 def checkfirstargument():
+
+
 	try:
 		if str(sa1).lower() in ["client","c"]: # if your looking for the client portion
 			from client_kicker import initclient
@@ -89,33 +100,33 @@ def checkfirstargument():
 			from diagforall import diagclientheader
 			# import some functionality
 			try:
-				checkdepends().required_mods() # check dependencies before launch
+				checkdepends().required_mods()  # check dependencies before launch
 			except Exception as requiredmodsfail: # if anything failed here
 				print "hit an exception in checkdepends.py - required_mods(): " + str(requiredmodsfail)
 				helper().helpall()
 				sys.exit(0)
 			try:
 				diagclientheader().clientheader()
-				initclient().clientrun() # run client kicker
+				initclient().clientrun()  # run client kicker
 			except Exception as clientrunfail: # if anything failed here
 				if str(diag).lower() in ["true","yes"]:
 					print "hit an exception in initclient.py clientrun(): " + str(clientrunfail)
 				helper().helpall()
 				sys.exit(0)
 			try:
-				initscanner().scanengine() # configure and run scanning engine
-			except Exception as scanenginefail: # if anything failed here
+				initscanner().scanengine()  # configure and run scanning engine
+			except Exception as scanenginefail:  # if anything failed here
 				if str(diag).lower() in ["true","yes"]:
 					print "hit an exception in initscanner.py scanengine(): " + str(scanenginefail)
 				helper().helpall()
 				sys.exit(0)
-		if str(sa1).lower() in ["server", "s"]: # if your looking for the server portion
+		if str(sa1).lower() in ["server", "s"]:  # if your looking for the server portion
+			__builtin__.diag = "yes"  # since server does not get settings from ini file
 			try:
 				from servargs import args
 				args().getservargs()
 				try:
 					from server_kicker import initserver
-					# import some functionality
 					initserver().serverrun()
 				except Exception as serverrunfail:
 					print "hit an exception in initserver.py serverrun(): " + str(serverrunfail)
@@ -135,4 +146,5 @@ if __name__ == "__main__":
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
 	print ""
+
 
