@@ -36,19 +36,18 @@ __builtin__.suppress = "yes"
 """ suppress error msgs from try and other exception handling """
 
 """ list required directories for application to import custom modules """
-directories = ["client",\
-"color",\
-"config",\
-"covert",\
-"diag",\
-"error",\
-"help",\
-"iptables",\
-"log",\
-"server",\
-"socket",\
-"version"\
-]
+directories = ["client",
+               "color",
+               "config",
+               "covert",
+               "diag",
+               "error",
+               "help",
+               "iptables",
+               "log",
+               "server",
+               "socket",
+               "version"]
 
 """ for each directory append to system $PATH for custom module importing """
 for inc in directories:
@@ -88,8 +87,9 @@ except Exception as nofirstargument:
 	sys.exit(0)
 
 """ function to check first user supplied argument before execution """
-def checkfirstargument():
 
+
+def checkfirstargument():
 
 	try:
 		if str(sa1).lower() in ["client","c"]: # if your looking for the client portion
@@ -100,14 +100,14 @@ def checkfirstargument():
 			# import some functionality
 			try:
 				checkdepends().required_mods()  # check dependencies before launch
-			except Exception as requiredmodsfail: # if anything failed here
+			except Exception as requiredmodsfail:  # if anything failed here
 				print "hit an exception in checkdepends.py - required_mods(): " + str(requiredmodsfail)
 				helper().helpall()
 				sys.exit(0)
 			try:
 				diagclientheader().clientheader()
 				initclient().clientrun()  # run client kicker
-			except Exception as clientrunfail: # if anything failed here
+			except Exception as clientrunfail:  # if anything failed here
 				if str(diag).lower() in ["true","yes"]:
 					print "hit an exception in initclient.py clientrun(): " + str(clientrunfail)
 				helper().helpall()
@@ -145,5 +145,6 @@ if __name__ == "__main__":
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
 	print ""
+
 
 
