@@ -22,8 +22,10 @@ from diagforall import clientconfdiag
 van = __appname__
 vv = __version__
 
+
 class initclient():
-	
+
+
 	def __init__(self):
 		pass
 
@@ -37,7 +39,7 @@ class initclient():
 		except Exception as nonumpyinstalled:
 			print("Please install numpy with: easy_install numpy")
 			if str(diag).lower() in ["true","yes"]:
-				print "Dependency exception caught as: " +str(nonumpyinstalled)
+				print "Dependency exception caught as: " + str(nonumpyinstalled)
 			sys.exit()
 		try:
 			""" import configparser for user supplied configuration file """
@@ -45,7 +47,7 @@ class initclient():
 		except Exception as noconfigparserinstalled:
 			print("Please install ConfigParser with: easy_install configparser")
 			if str(diag).lower() in ["true","yes"]:
-				print "Dependency exception caught as: " +str(noconfigparserinstalled)
+				print "Dependency exception caught as: " + str(noconfigparserinstalled)
 			sys.exit()
 		try:
 			""" required for covert testing """
@@ -53,7 +55,7 @@ class initclient():
 		except Exception as covertdnsimportfail:
 			print("Please install python DNS module with: easy_install dnspython")
 			if str(diag).lower() in ["true","yes"]:
-				print "Dependency exception caught as: " +str(covertdnsimportfail)
+				print "Dependency exception caught as: " + str(covertdnsimportfail)
 			sys.exit()
 
 	""" starting client portion of the application """
@@ -64,25 +66,30 @@ class initclient():
 		""" log start time of application """
 		__builtin__.start_timer = time.time()
 		try:
-			is_host = re.match("^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z]|[A-Za-z][A-Za-z0-9\-]*[A-Za-z0-9])$", ipaddr)
+			is_host = re.match(
+				"^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z]|[A-Za-z][A-Za-z0-9\-]*[A-Za-z0-9])$"
+				, ipaddr
+			)
 			if is_host:
 				__builtin__.host_ip = socket.gethostbyname(ipaddr)
 			else:
 				__builtin__.hostip == ipaddr
 				pass
 
-		except Exception as  csetvarfail:
+		except Exception as csetvarfail:
 			print "could not set hostip address from ipaddress in conf.py" + str(csetvarfail)
 
 		""" get system argument 2 which handles the configuration INI file"""
 		try:
 			__builtin__.conffile = sys.argv[2]
 		except Exception as conffilefail:
-			if str(diag).lower() in ["true","yes"]:
-				print("\n"+bh +"[*] " + "-"*80 + be+"\n")
-				print("\t"+bf+"ATTENTION "+be+bw+"[?] SYSARG position 2 has "+bf+"FAILED"+be+bw+" due to absence"+be)
-				print("\t[?] " +van+" v."+vv+" - CRASHED: " + bf + str(conffilefail) + "\n" +be)
-			print("")
+			if str(diag).lower() in ["true", "yes"]:
+				print("\n" + bh + "[*] " + "-" * 80 + be+"\n")
+				print("\t" + bf + "ATTENTION " + be + bw + "[?] SYSARG position 2 has " + \
+				      bf + "FAILED" + be + bw + " due to absence" + be
+				)
+				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(conffilefail) + "\n" + be)
+			print ""
 			from helper import helper
 			helper().chelp()
 			sys.exit(0)
@@ -94,9 +101,9 @@ class initclient():
 				__builtin__.mytls = str(sys.argv[3])
 		except Exception as nosysarg3:
 			if str(diag).lower() in ["true", "yes", "1"]:
-				print("\n"+bh +"[*] " + "-"*80 + be+"\n")
-				print("\t"+bf+"ATTENTION "+be+bw+"[?] SYSARG position 3 is "+bf+str(mytls)+be+bw+be)
-				print("\t[?] " +van+" v."+vv+" - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
+				print("\n" + bh + "[*] " + "-" * 80 + be + "\n")
+				print("\t" + bf + "ATTENTION " + be + bw + "[?] SYSARG position 3 is " + bf + str(mytls) + be + bw + be)
+				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
 			print("")
 			from helper import helper
 			helper().chelp()
@@ -114,9 +121,9 @@ class initclient():
 				clientconfdiag().diagconfig
 		except Exception as conffilefail:
 			if str(diag).lower() in ["true","yes"]:
-				print("\n"+bh +"[*] " + "-"*80 + be+"\n")
+				print("\n" + bh + "[*] " + "-" * 80 + be + "\n")
 				print("\t"+bf+"ATTENTION "+be+bw+"[?] config file failed "+bf+str(conffilefail)+be+bw+be)
-				print("\t[?] " +van+" v."+vv+" - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
+				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
 			print("")
 			from helper import helper
 			helper().chelp()
