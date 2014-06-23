@@ -235,10 +235,6 @@ class modimporttest():
 					pfunc("\t\t[-] Diagfun module imported ", "successfully")
 					import killswitch
 					pfunc("\t\t[-] Killer module imported ", "successfully")
-					import module_error_handling
-					pfunc("\t\t[-] Error handler module imported ", "successfully")
-					import perror
-					pfunc("\t\t[-] Perror module imported ", "successfully")
 					import helper
 					pfunc("\t\t[-] Helper module imported ", "successfully")
 					from bcolors import bcolors as b
