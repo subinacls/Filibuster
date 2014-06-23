@@ -5,7 +5,7 @@
 #
 
 
-{"piipci":{
+{"piipci": {
 	"sex": [
 	    "m",
 	    "male",
@@ -116,7 +116,7 @@
 	"fedtaxid": [
 	    "example"
 	],
-	"medinfo":[
+	"medinfo": [
 		"example format construction"
 	],
 	"bankaccount": {
@@ -953,16 +953,16 @@
 	    "titlenumber": [
 	        "432756437289543782"
 	    ],
-	    "regnum":[
+	    "regnum": [
 	        "36547587543"
 	    ]
 	},
 	"dob": {
-	    "byear":{
-	        "fdy":[
+	    "byear": {
+	        "fdy": [
 	            "2000"
 	        ],
-	        "tdy":[
+	        "tdy": [
 	            "00"
 	        ]
 	    },
