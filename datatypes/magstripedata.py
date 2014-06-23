@@ -43,33 +43,33 @@ I needed a way to make some test data for MagStrip - this is not formatted corre
         Longitudinal redundancy check (LRC) — it is one character and a validity character calculated from other data on the track.
 
     Most reader devices do not return this value when the card is swiped to the presentation layer,
-        and use it only to verify the input internally to the reader. Service code values common in financial cards:
+    and use it only to verify the input internally to the reader. Service code values common in financial cards:
 
-            First digit
+        First digit
 
-            1: International interchange OK
-            2: International interchange, use IC (chip) where feasible
-            5: National interchange only except under bilateral agreement
-            6: National interchange only except under bilateral agreement, use IC (chip) where feasible
-            7: No interchange except under bilateral agreement (closed loop)
-            9: Test
+        1: International interchange OK
+        2: International interchange, use IC (chip) where feasible
+        5: National interchange only except under bilateral agreement
+        6: National interchange only except under bilateral agreement, use IC (chip) where feasible
+        7: No interchange except under bilateral agreement (closed loop)
+        9: Test
 
-            Second digit
+        Second digit
 
-            0: Normal
-            2: Contact issuer via online means
-            4: Contact issuer via online means except under bilateral agreement
+        0: Normal
+        2: Contact issuer via online means
+        4: Contact issuer via online means except under bilateral agreement
 
-            Third digit
+        Third digit
 
-            0: No restrictions, PIN required
-            1: No restrictions
-            2: Goods and services only (no cash)
-            3: ATM only, PIN required
-            4: Cash only
-            5: Goods and services only (no cash), PIN required
-            6: No restrictions, use PIN where feasible
-            7: Goods and services only (no cash), use PIN where feasible
+        0: No restrictions, PIN required
+        1: No restrictions
+        2: Goods and services only (no cash)
+        3: ATM only, PIN required
+        4: Cash only
+        5: Goods and services only (no cash), PIN required
+        6: No restrictions, use PIN where feasible
+        7: Goods and services only (no cash), use PIN where feasible
 """
 
 import sys
@@ -81,11 +81,29 @@ class magstripgen():
     def __init__(self):
         pass
 
+    def encode(self, s):
+        """Read in K=4 bits at a time and write out those plus parity bits"""
+        while len(s) >= K:
+            nybble = s[0:K]
+            sys.stdout.write(self.hamming(nybble))
+            s = s[K:]
+
+    def hamming(self, bits):
+        """Return given 4 bits plus parity bits for bits (1,2,3), (2,3,4) and (1,3,4)"""
+        t1 = self.parity(bits, [0,1,2])
+        t2 = self.parity(bits, [1,2,3])
+        t3 = self.parity(bits, [0,2,3])
+        return bits + t1 + t2 + t3
+
+    def parity(self, s, indicies):
+        """Compute the parity bit for the given string s and indicies"""
+        sub = ""
+        for i in indicies:
+            sub += s[i]
+        return str(str.count(sub, "1") % 2)
+
     def makemagdata(self):
-        """
 
-
-        """
         newtrack = ""
         t1track = ""
         tlist = []
@@ -99,7 +117,7 @@ class magstripgen():
         fcode = ["B"] # sets this track data type
         t1pan = ["0400000000000000","04000000000000000","040000000000000000","0400000000000000000"] # represents card number
         t1fsep = ["^"] # seperation character
-        t1name = ["AB","Test User"] # card holders name
+        t1name = ["Test^User^Mr^1"] # card holders name
         t1expdate = ["0000","2011"] # expiration date
         t1scode = {"intr":["1","2","5","6","7","9"],"authp":["0","2","4"],"rserv":["0","1","2","3","4","5","6","7"]} # service code
         t1disdata = {"pvki": ["A","4"],"pvv": ["1234","4321"],"cvv": ["123","456"]} # discretionary data
@@ -111,9 +129,6 @@ class magstripgen():
         st2sentinel = [";"]
         t2pan = list(t1pan)
         t2fsep = ["="]
-        t2expdata = list(t1expdate)
-        t2scode = dict(t1scode)
-        t2disdata = dict(t1disdata)
         et2sentinel = list(et1sentinel)
         t2lrc = list(t1lrc)
         __builtin__.K = 5
@@ -137,6 +152,7 @@ class magstripgen():
         tlist.append(t1track)
 
         __builtin__.K = 4
+
         t2list.append(random.choice(st2sentinel))
         t2list.append(random.choice(t2pan))
         t2list.append(random.choice(t2fsep))
@@ -145,30 +161,12 @@ class magstripgen():
         t2list.append(random.choice(d))
         t2list.append(random.choice(et2sentinel))
         t2list.append(random.choice(t2lrc))
-        tlist.append(self.encode(t2track.join(t1list)))
+        tlist.append(self.encode(t2track.join(t2list)))
+
         tlist.append(t2track)
+
         try:
             __builtin__.savedtrack = newtrack.join(tlist)
             print savedtrack
         except:
             pass
-    def encode(self, s):
-        """Read in K=4 bits at a time and write out those plus parity bits"""
-        while len(s) >= K:
-            nybble = s[0:K]
-            sys.stdout.write(self.hamming(nybble))
-            s = s[K:]
-
-    def hamming(self, bits):
-        """Return given 4 bits plus parity bits for bits (1,2,3), (2,3,4) and (1,3,4)"""
-        t1 = self.parity(bits, [0,1,2])
-        t2 = self.parity(bits, [1,2,3])
-        t3 = self.parity(bits, [0,2,3])
-        return bits + t1 + t2 + t3
-
-    def parity(self, s, indicies):
-        """Compute the parity bit for the given string s and indicies"""
-        sub = ""
-        for i in indicies:
-            sub += s[i]
-        return str(str.count(sub, "1") % 2)

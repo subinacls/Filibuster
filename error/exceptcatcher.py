@@ -1,4 +1,8 @@
-__author__ = 'root'
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
 
 import os
 import json
