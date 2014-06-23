@@ -6,51 +6,70 @@
 
 
 {"piipci":{
+	"sex": [
+	    "m",
+	    "male",
+	    "f",
+	    "female"
+	],
 	"fullname": {
 	    "male": {
 	        "first": [
-
+				"rick",
+	            "dave",
+	            "mike"
 	        ],
 	        "middle": [
-
+		        "scott",
+	            "john",
+	            "jim"
 	        ],
 	        "last": [
-
+		        "jhonson",
+	            "smith"
 	        ],
 	        "title": [
-
+		        "mr. ",
+	            "master ",
+	            "sr. ",
+	            "jr. ",
+	            "sir "
 	        ]
 	    },
 	    "female": {
 	        "first": [
-
+		        "mary",
+	            "susan",
+	            "grace"
 	        ],
 	        "middle": [
-
+		        "jane",
+	            "jamie",
+	            "erin"
 	        ],
 	        "last": [
-
+				"jhonson",
+	            "smith"
 	        ],
 	        "title": [
-
+				"mrs. ",
+	            "miss ",
+	            "ms. ",
+	            "lady "
 	        ]
 	    }
 	},
 	"ssn": [
 	    "219-09-9999",
-	    "078-05-1120"
+	    "078-05-1120",
+	    "219099999",
+	    "078051120"
 	],
 	"telephone": [
 	    "1-999-555-5555",
 	    "19995555555",
 	    "9995555555",
 	    "19998675309"
-	],
-	"sex": [
-	    "m",
-	    "male",
-	    "f",
-	    "female"
 	],
 	"creditcard": [
 	    "0400-0000-0000-0000",
@@ -127,7 +146,8 @@
 	        "Delaware": [
 	        ],
 	        "Florida": [
-	            "apopka, FL. 32703"
+		        "apopka, fl 32703",
+	            "orlando, fl 32765"
 	        ],
 	        "Georgia": [
 	        ],
@@ -229,8 +249,7 @@
 	        "nw ",
 	        "ne ",
 	        "sw ",
-	        "se ",
-	        ""
+	        "se "
 	    ],
 	    "country": [
 	        "USA",
