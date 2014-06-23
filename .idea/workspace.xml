@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/error/module_error_handling.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/error/perror.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/contamination.py" afterPath="$PROJECT_DIR$/log/contamination.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diag/diagforall.py" afterPath="$PROJECT_DIR$/diag/diagforall.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/error/exceptcatcher.py" afterPath="$PROJECT_DIR$/error/exceptcatcher.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/jsonloggen.py" afterPath="$PROJECT_DIR$/log/jsonloggen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iptables/killswitch.py" afterPath="$PROJECT_DIR$/iptables/killswitch.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datatypes/magstripedata.py" afterPath="$PROJECT_DIR$/datatypes/magstripedata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/servargs.py" afterPath="$PROJECT_DIR$/server/servargs.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403490346600" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403496066046" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403301761236" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403492363202" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -47,7 +38,7 @@
     <file path="/contamination.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403492039730" ignored="false" />
     <file path="/PIIdata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403469677144" ignored="false" />
     <file path="/magstripedata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403473823238" ignored="false" />
-    <file path="/magstripedata.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403494807402" ignored="false" />
+    <file path="/magstripedata.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403496156182" ignored="false" />
     <file path="/PCI-PII-data.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403483501509" ignored="false" />
     <file path="/pcipiidata.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403486486980" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -123,9 +114,9 @@
       <file leaf-file-name="magstripedata.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="0" selection-start="3814" selection-end="3814" vertical-scroll-proportion="0.8">
+            <state line="15" column="14" selection-start="517" selection-end="574" vertical-scroll-proportion="0.27272728">
               <folding>
-                <element signature="e#15149#15159#0" expanded="true" />
+                <element signature="e#12901#12911#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -771,7 +762,11 @@
       <created>1403490348518</created>
       <updated>1403490348518</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="changed some info in magstripedata file, did some eception modifications">
+      <created>1403496067943</created>
+      <updated>1403496067943</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -860,7 +855,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="made some changes to piipcidata file" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed some info in magstripedata file, did some eception modifications" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -883,6 +878,7 @@
     <MESSAGE value="added some info to readme and modified some data time stamps" />
     <MESSAGE value="added a file to help generate test data for mag strip" />
     <MESSAGE value="made some changes to piipcidata file" />
+    <MESSAGE value="changed some info in magstripedata file, did some eception modifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1019,9 +1015,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="3814" selection-end="3814" vertical-scroll-proportion="0.8">
+        <state line="15" column="14" selection-start="517" selection-end="574" vertical-scroll-proportion="0.27272728">
           <folding>
-            <element signature="e#15149#15159#0" expanded="true" />
+            <element signature="e#12901#12911#0" expanded="true" />
           </folding>
         </state>
       </provider>

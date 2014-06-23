@@ -8,75 +8,13 @@
 
 I needed a way to make some test data for MagStrip - this is not formatted correctly needs help
 
-    Track 1:
-        Start sentinel — one character (generally '%')
-        Format code="B" — one character (alpha only)
-        Primary account number (PAN) — up to 19 characters. Usually, but not always, matches the credit card number printed on the front of the card.
-        Field Separator — one character (generally '^')
-        Name — two to 26 characters
-        Field Separator — one character (generally '^')
-        Expiration date — four characters in the form YYMM.
-        Service code — three characters
-        Discretionary data —
-            may include Pin Verification Key Indicator (PVKI, 1 character),
-            PIN Verification Value (PVV, 4 characters),
-            Card Verification Value or Card Verification Code (CVV or CVC, 3 characters)
-        End sentinel — one character (generally '?')
-        Longitudinal redundancy check (LRC) — it is one character and a validity character calculated from other data on the track.
-
-    Track 2:
-        This format was developed by the banking industry (ABA).
-        This track is written with a 5-bit scheme (4 data bits + 1 parity),
-        which allows for sixteen possible characters,
-        which are the numbers 0-9, plus the six characters  : ; < = > ? .
-        The selection of six punctuation symbols may seem odd,
-        but in fact the sixteen codes simply map to the ASCII range 0x30
-        through 0x3f, which defines ten digit characters plus those six symbols.
-        Start sentinel — one character (generally ';')
-        Primary account number (PAN) — up to 19 characters. Usually, but not always, matches the credit card number printed on the front of the card.
-        Separator — one char (generally '=')
-        Expiration date — four characters in the form YYMM.
-        Service code — three digits. The first digit specifies the interchange rules, the second specifies authorisation processing and the
-        third specifies the range of services
-        Discretionary data — as in track one
-        End sentinel — one character (generally '?')
-        Longitudinal redundancy check (LRC) — it is one character and a validity character calculated from other data on the track.
-
-    Most reader devices do not return this value when the card is swiped to the presentation layer,
-    and use it only to verify the input internally to the reader. Service code values common in financial cards:
-
-        First digit
-
-        1: International interchange OK
-        2: International interchange, use IC (chip) where feasible
-        5: National interchange only except under bilateral agreement
-        6: National interchange only except under bilateral agreement, use IC (chip) where feasible
-        7: No interchange except under bilateral agreement (closed loop)
-        9: Test
-
-        Second digit
-
-        0: Normal
-        2: Contact issuer via online means
-        4: Contact issuer via online means except under bilateral agreement
-
-        Third digit
-
-        0: No restrictions, PIN required
-        1: No restrictions
-        2: Goods and services only (no cash)
-        3: ATM only, PIN required
-        4: Cash only
-        5: Goods and services only (no cash), PIN required
-        6: No restrictions, use PIN where feasible
-        7: Goods and services only (no cash), use PIN where feasible
-
 	Well, there's three tracks (ISO 3554), all 0.110" wide.
 	The top one is 210 BPI and has 7 bits per chr. (incl. parity). Total 79 alpha-num. chrs.
 	The second track has 75 BPI, 5 bits per chr. (incl. par.) total 40 digits
 	The third track has agian 210 BPI, 5 bits per chr (yeah incl. par.) total 107 digits.
 
 Read more at: http://www.epanorama.net/documents/smartcard/magcard.html
+
 	VISA ATM example:
 
 
@@ -108,9 +46,9 @@ Read more at: http://www.epanorama.net/documents/smartcard/magcard.html
 				                         Cycle length _| |  |   |_ Interchange control               |_ Field separator
 				                            Retry count _|  |_ Encrypted PIN***
 
-				%B1234567890123445^PADILLA/L.                ^99011200000000000000**XXX******?*
-				;1234567890123445=99011200XXXX00000000?*;
-				011234567890123445=724724100000000000030300XXXX040400099010=************************==1=0000000000000000?*
+		%B1234567890123445^PADILLA/L.                ^99011200000000000000**XXX******?*
+		;1234567890123445=99011200XXXX00000000?*
+		;011234567890123445=724724100000000000030300XXXX040400099010=************************==1=0000000000000000?*
 
 	VISA ELECT CARD:
 
@@ -143,6 +81,9 @@ Read more at: http://www.epanorama.net/documents/smartcard/magcard.html
 				                    Validity date _|     |  |_ Encrypted PIN (except if duplicate card)
 				              (except if duplicate card) |_ Retry count
 
+		%B1234567890123445^PADILLA/L.                ^99011X100000*000000000XXX000000?*
+		;1234567890123445=99011X10XXXXXXX00000?*
+		;011234567890123445=724724000000000****00300XXXX020200099010=********************==1=100000000000000000**?*
 
 	VISA ELECT CARD:
 
@@ -174,6 +115,10 @@ Read more at: http://www.epanorama.net/documents/smartcard/magcard.html
 				                      separator    |     |  |   |_ Interchange control           |_ Field separator
 				                    Validity date _|     |  |_ Encrypted PIN (except if duplicate card)
 				              (except if duplicate card) |_ Retry count
+
+		%B1234567890123445^PADILLA/L.                ^99011X100000*000000000XXX000000?*
+		;1234567890123445=99011X10XXXXXXX00000?*
+		;011234567890123445=724724000000000****00300XXXX020200099010=********************==1=100000000000000000**?*
 
 	MasterCard:
 
@@ -205,6 +150,10 @@ Read more at: http://www.epanorama.net/documents/smartcard/magcard.html
 				                      separator    |      length|_ Interchange control               ||_ Field separator
 				                    Validity date _|                                                 |_ Field separator
 
+		%B1234567890123445^PADILLA/L.                ^99011211XXXX*000000**0XXX0**000?*
+		;1234567890123445=99011211XXXXXXX00***?*
+		;011234567890123445=000978100000000****8330*0000920000099010=************************==1=0000000*00000000?*
+
 	MasterCard:
 
 		Track 1:
@@ -233,6 +182,10 @@ Read more at: http://www.epanorama.net/documents/smartcard/magcard.html
 				                    |_ Country (Spain)   |      || |_ FSAN service restriction       |||_ Relay marker
 				                            Retry count _|      ||_ PAN service restriction          ||_ Field separator
 				                                                |_ Interchange control               |_ Field separator
+
+		%B1234567890123445^PADILLA/L.                ^990110100000000XXX****XXX******?*
+		;1234567890123445=990110100000XXXXXX00?*
+		;011234567890123445=7247241000000000000001000000040400099010=************************==0=0002000000******?*
 
 	Social security card:
 
@@ -263,6 +216,9 @@ Read more at: http://www.epanorama.net/documents/smartcard/magcard.html
 				||     |_ = 30 x (#P - 30) + #D - 22, where P, D, V and S come from the card number (see above)
 				||_ Card number(1)
 				|_ Start sentinel
+
+		%B999999^PDVS123456789012^PADILLA L.                    ^0X0000399           ?*
+		;999999554749123456789012=00X990300000?*
 
 """
 
