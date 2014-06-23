@@ -36,19 +36,18 @@ __builtin__.suppress = "yes"
 """ suppress error msgs from try and other exception handling """
 
 """ list required directories for application to import custom modules """
-directories = [
-	"client",
-	"color",
-	"config",
-	"covert",
-	"diag",
-	"error",
-	"help",
-	"iptables",
-	"log",
-	"server",
-	"socket",
-	"version"
+directories = ["client",\
+"color",\
+"config",\
+"covert",\
+"diag",\
+"error",\
+"help",\
+"iptables",\
+"log",\
+"server",\
+"socket",\
+"version"\
 ]
 
 """ for each directory append to system $PATH for custom module importing """
