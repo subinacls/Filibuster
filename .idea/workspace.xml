@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datatypes/pcipiidata.py" afterPath="$PROJECT_DIR$/datatypes/pcipiidata.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/pci/carinfo.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/pciinfo.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/pii/personalinfo.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datatypes/stcityzip/stateinfo1.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datatypes/pcipiidata.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403585360240" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403587187778" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403301761236" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403496795450" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -40,9 +44,10 @@
     <file path="/magstripedata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403473823238" ignored="false" />
     <file path="/magstripedata.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403496156182" ignored="false" />
     <file path="/PCI-PII-data.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403483501509" ignored="false" />
-    <file path="/pcipiidata.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403584223598" ignored="false" />
+    <file path="/pcipiidata.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403586454409" ignored="false" />
     <file path="/memos.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403566314918" ignored="false" />
     <file path="/makestcityzip.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403583920225" ignored="false" />
+    <file path="/stateinfo.json" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403586878149" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,15 +67,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="filterbuster.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/filterbuster.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="16" selection-start="4050" selection-end="4050" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="client_kicker.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,17 +76,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diagforall.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/diag/diagforall.py">
+      <file leaf-file-name="testing.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="236" column="76" selection-start="8729" selection-end="8729" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testing.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing.py">
+      <file leaf-file-name="pciinfo.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datatypes/pciinfo.json">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -98,46 +94,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memos.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datatypes/helperscripts/memos.txt">
+      <file leaf-file-name="personalinfo.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datatypes/pii/personalinfo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="44" selection-start="96" selection-end="514" vertical-scroll-proportion="0.0">
+            <state line="188" column="1" selection-start="2761" selection-end="2761" vertical-scroll-proportion="-29.083334">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makestcityzip.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datatypes/helperscripts/makestcityzip.py">
+      <file leaf-file-name="carinfo.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/datatypes/pci/carinfo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="75" selection-end="2002" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="magstripedata.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="517" selection-end="574" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diagfun.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/diag/diagfun.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="35" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pcipiidata.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/datatypes/pcipiidata.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="20" selection-start="2864" selection-end="2864" vertical-scroll-proportion="0.01863354">
+            <state line="27" column="14" selection-start="528" selection-end="528" vertical-scroll-proportion="0.50435865">
               <folding />
             </state>
           </provider>
@@ -167,12 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/server/servargs.py" />
-        <option value="$PROJECT_DIR$/error/exceptcatcher.py" />
-        <option value="$PROJECT_DIR$/log/jsonloggen.py" />
-        <option value="$PROJECT_DIR$/log/contamination.py" />
-        <option value="$PROJECT_DIR$/iptables/killswitch.py" />
         <option value="$PROJECT_DIR$/datatypes/magstripedata.py" />
         <option value="$PROJECT_DIR$/diag/diagforall.py" />
         <option value="$PROJECT_DIR$/filterbuster.py" />
@@ -182,7 +145,13 @@
         <option value="$PROJECT_DIR$/datatypes/helperscripts/memos.txt" />
         <option value="$PROJECT_DIR$/datatypes/helperscripts/makestcityzip.py" />
         <option value="$PROJECT_DIR$/statedump" />
+        <option value="$PROJECT_DIR$/datatypes/pci/stateinfo.json" />
         <option value="$PROJECT_DIR$/datatypes/pcipiidata.py" />
+        <option value="$PROJECT_DIR$/datatypes/pii/personinfo.json.py" />
+        <option value="$PROJECT_DIR$/datatypes/stcityzip/stateinfo1.json" />
+        <option value="$PROJECT_DIR$/datatypes/pci/carinfo.json" />
+        <option value="$PROJECT_DIR$/datatypes/pii/personalinfo.json" />
+        <option value="$PROJECT_DIR$/datatypes/pciinfo.json" />
       </list>
     </option>
   </component>
@@ -217,6 +186,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,19 +219,90 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datatypes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stcityzip" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datatypes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pii" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datatypes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pci" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datatypes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helperscripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/statedump" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -270,6 +311,11 @@
     <option name="myDjangoConsoleState">
       <PyConsoleSettings />
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/datatypes/stcityzip" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.scanconfig">
     <configuration default="false" name="scanconfig" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -670,7 +716,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969174" sideWeight="0.6713615" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27620223" sideWeight="0.786385" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27990136" sideWeight="0.786385" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21361503" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -771,28 +817,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/datatypes/pcipiidata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="12" selection-start="2397" selection-end="2400" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/xmlloggen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/txtloggen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iptables/killswitch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="80" selection-start="349" selection-end="349" vertical-scroll-proportion="0.38181818" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="37" selection-start="2613" selection-end="2613" vertical-scroll-proportion="0.0" />
@@ -829,23 +853,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datatypes/helperscripts/memos.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="44" selection-start="96" selection-end="514" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="517" selection-end="574" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -857,16 +867,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datatypes/helperscripts/makestcityzip.py">
+    <entry file="file://$PROJECT_DIR$/datatypes/magstripedata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="75" selection-end="2002" vertical-scroll-proportion="0.0">
+        <state line="303" column="49" selection-start="15598" selection-end="15598" vertical-scroll-proportion="0.6086956">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datatypes/pcipiidata.py">
+    <entry file="file://$PROJECT_DIR$/datatypes/helperscripts/makestcityzip.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="20" selection-start="2864" selection-end="2864" vertical-scroll-proportion="0.01863354">
+        <state line="31" column="350" selection-start="1211" selection-end="1572" vertical-scroll-proportion="0.48402947">
+          <folding>
+            <element signature="e#75#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datatypes/pii/personalinfo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="1" selection-start="2761" selection-end="2761" vertical-scroll-proportion="-29.083334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datatypes/pciinfo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datatypes/stcityzip/stateinfo1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42934" column="1" selection-start="1573645" selection-end="1573645" vertical-scroll-proportion="802.005">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datatypes/pci/carinfo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="14" selection-start="528" selection-end="528" vertical-scroll-proportion="0.50435865">
           <folding />
         </state>
       </provider>
