@@ -23,7 +23,9 @@ __builtin__.date = date
 __builtin__.u = 0
 
 """ useful for diagnostics and error suppression """
+__builtin__.diag = "yes"
 __builtin__.dd = {}
+
 """
 warning:
 	running diagnostics will slow down the scanning process
@@ -40,6 +42,7 @@ directories = ["client",
                "color",
                "config",
                "covert",
+               "datatypes",
                "diag",
                "error",
                "help",
@@ -47,7 +50,8 @@ directories = ["client",
                "log",
                "server",
                "socket",
-               "version"]
+               "version"
+]
 
 """ for each directory append to system $PATH for custom module importing """
 for inc in directories:
