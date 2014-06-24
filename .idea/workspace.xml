@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datatypes/magstripedata.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/version/version.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/datatypes/pci/carinfo.json" afterPath="$PROJECT_DIR$/datatypes/pii/carinfo.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/datatypes/pciinfo.json" afterPath="$PROJECT_DIR$/datatypes/pci/pciinfo.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filterbuster.py" afterPath="$PROJECT_DIR$/filterbuster.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datatypes/pci/pciinfo.json" afterPath="$PROJECT_DIR$/datatypes/pci/pciinfo.json" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
@@ -67,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="filterbuster.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="filterbuster.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/filterbuster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="23" selection-start="723" selection-end="723" vertical-scroll-proportion="0.2">
+            <state line="25" column="23" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,10 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pciinfo.json" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pciinfo.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datatypes/pci/pciinfo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="9" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
+            <state line="50" column="1" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.90909094">
               <folding />
             </state>
           </provider>
@@ -165,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/diag/diagforall.py" />
         <option value="$PROJECT_DIR$/client/client_kicker.py" />
         <option value="$PROJECT_DIR$/testing.py" />
         <option value="$PROJECT_DIR$/fl_city_zip.json" />
@@ -181,6 +175,7 @@
         <option value="$PROJECT_DIR$/datatypes/pciinfo.json" />
         <option value="$PROJECT_DIR$/datatypes/helperscripts/makemagstripe.py" />
         <option value="$PROJECT_DIR$/filterbuster.py" />
+        <option value="$PROJECT_DIR$/datatypes/pci/pciinfo.json" />
       </list>
     </option>
   </component>
@@ -951,13 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datatypes/pci/pciinfo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="9" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datatypes/pii/carinfo.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="14" selection-start="528" selection-end="528" vertical-scroll-proportion="-16.875">
@@ -995,7 +983,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/filterbuster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="23" selection-start="723" selection-end="723" vertical-scroll-proportion="0.2">
+        <state line="25" column="23" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datatypes/pci/pciinfo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="1" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.90909094">
           <folding />
         </state>
       </provider>
