@@ -167,7 +167,12 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
             Maybe all sounds good
         ]
       Bogus Data Generator module - Diagnostics and log generation testing
-      Traceroute from inside out - w/ SVG image generation for reports (scapy)
-      Get NG FW or access to an environement with one (physical or virtual)
-      Stop myself from coding between (23:45 / 04:40) or at least dont commit
+      Traceroute from inside out - w/ SVG image generation for reports ( scapy )
+      Get NG FW or access to an environement with one ( physical or virtual )
+      Learn more on the topic of:[
+            HL7 iso v2.x and v3 specifications
+      ]
+      Implement specific test based on PCI
+      Implement specific test based on HIPAA
+      Stop myself from coding between ( 23:45 / 04:40 ) or at least dont commit
       
