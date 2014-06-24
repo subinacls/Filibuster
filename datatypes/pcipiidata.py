@@ -121,143 +121,21 @@
 	],
 	"bankaccount": {
 	    "routing": [
-	        "example"
+	        "110000000"
 	    ],
-	    "accountnum": [
-	        "example"
-	    ]
+	    "accountnum": {
+		    "passing": [
+			    "000123456789"
+		    ],
+	        "failing": [
+		        "000111111116"
+	        ]
+	    }
 	},
 	"911addrgen": {
-	    "state": {
-	        "Alabama": [
-	        ],
-	        "Alaska": [
-	        ],
-	        "Arizona": [
-	        ],
-	        "Arkansas": [
-	        ],
-	        "California": [
-	        ],
-	        "Colorado": [
-	        ],
-	        "Connecticut": [
-	        ],
-	        "Delaware": [
-	        ],
-	        "Florida": [
-		        "apopka, fl 32703",
-	            "orlando, fl 32765"
-	        ],
-	        "Georgia": [
-	        ],
-	        "Hawaii": [
-	        ],
-	        "Idaho": [
-	        ],
-	        "Illinois": [
-	        ],
-	        "Indiana": [
-	        ],
-	        "Iowa": [
-	        ],
-	        "Kansas": [
-	        ],
-	        "Kentucky": [
-	        ],
-	        "Louisiana": [
-	        ],
-	        "Maine": [
-	        ],
-	        "Maryland": [
-	        ],
-	        "Massachusetts": [
-	        ],
-	        "Michigan": [
-	        ],
-	        "Minnesota": [
-	        ],
-	        "Mississippi": [
-	        ],
-	        "Missouri": [
-	        ],
-	        "Montana": [
-	        ],
-	        "Nebraska": [
-	        ],
-	        "Nevada": [
-	        ],
-	        "New Hampshire": [
-	        ],
-	        "New Jersey": [
-	        ],
-	        "New Mexico": [
-	        ],
-	        "New York": [
-	        ],
-	        "North Carolina": [
-	        ],
-	        "North Dakota": [
-	        ],
-	        "Ohio": [
-	        ],
-	        "Oklahoma": [
-	        ],
-	        "Oregon": [
-	        ],
-	        "Pennsylvania": [
-	        ],
-	        "Rhode Island": [
-	        ],
-	        "South Carolina": [
-	        ],
-	        "South Dakota": [
-	        ],
-	        "Tennessee": [
-	        ],
-	        "Texas": [
-	        ],
-	        "Utah": [
-	        ],
-	        "Vermont": [
-	        ],
-	        "Virginia": [
-	        ],
-	        "Washington": [
-	        ],
-	        "West Virginia": [
-	        ],
-	        "Wisconsin": [
-	        ],
-	        "Wyoming": [
-	        ]
-	    },
-	    "streetname": [
-	        "pentest"
-	    ],
-	    "stprefix": [
-	        " .dr",
-	        " .st",
-	        " .way",
-	        " .rd"
-	    ],
-	    "stpostfix": [
-	        "north ",
-	        "south ",
-	        "east ",
-	        "west ",
-	        "nw ",
-	        "ne ",
-	        "sw ",
-	        "se "
-	    ],
-	    "country": [
-	        "USA",
-	        "America"
-	    ],
-	    "aptnum": [
-	        "apt. 101"
-	    ]
+		"state": {
+			
+		}
 	},
 	"emailaddr": [
 	    "someuser@aol.com"
