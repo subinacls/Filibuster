@@ -25,9 +25,8 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
   [-] Commandline Usage: ...
   
-    {Client}  term:$ python ./filterbuster.py client (config.file) (no/yes)
-  
-    {Server}  term:$ python ./filterbuster.py server (tcp/udp) (port) (no/yes)
+    {Client}  term:$ python ./filterbuster.py client ( config.file ) ( no / yes )
+    {Server}  term:$ python ./filterbuster.py server ( tcp/udp ) ( port ) ( no / yes )
 
   [-] Understanding the client: ....
 
@@ -41,7 +40,6 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   configuration file will obviously need expanding as required. The examples below expect some
   modification from the end user -
 
-  
       [SectionOne]
 
         diagnostics: ( boolean )
@@ -67,7 +65,6 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
         logtype: ( txt / xml / csv / json )
         covert: ( boolean )
 
-  
   [-] Understanding the server: ....
   
   The server is threaded, bound to a single port and listens on all interfaces meaning all attempted 
