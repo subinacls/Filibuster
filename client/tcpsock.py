@@ -10,7 +10,7 @@ configures and starts socket for communication
 	logs state and information about connection attempt
 """
 
-import datetime
+import sys
 from socket import *
 import __builtin__
 
@@ -21,7 +21,6 @@ class tcpsocks():
 
 	def connectsocket(self):
 		try:
-
 			__builtin__.proto = str("tcp").upper()
 			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
 			sockobj = socket(AF_INET, SOCK_STREAM)
@@ -44,7 +43,6 @@ class tcpsocks():
 				log_enabled().logging()
 			except Exception as logfailed:
 				print "log failed in tcpsock " + str(logfailed)
-
 		except Exception as tcpconfail:
 			__builtin__.state = str(tcpconfail).split("] ")[1]
 			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(tcpconfail)+be
@@ -54,3 +52,4 @@ class tcpsocks():
 			except Exception as logfailed:
 				print "log2 failed in tcpsock " + str(logfailed)
 			faillist.append("TCP/"+str(base_port))
+

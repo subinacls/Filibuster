@@ -33,6 +33,7 @@ class initclient():
 	""" if dependency is not found, print helper text to install modules """
 	def check_depends(self):
 		# check depends ,,, the joke writes it's self...
+
 		try:
 			""" required for graphing """
 			import numpy as np

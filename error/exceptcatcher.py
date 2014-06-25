@@ -79,11 +79,11 @@ class contamloghandler():
 
 	def jsonreadfail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
-			print bo+"\t[?] Reading saved JSON contamination data from file: Contaminated_log-" + str(date) + ".json\n" + be
+			print bo+"\t[?] Reading saved JSON contamination data from file: Contaminated_log-" + str(dft) + ".json\n" + be
 
 	def jsonrwritefail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
-			print bo+"\t[?] Writting JSON contamination data to file: Contaminated_log-" + str(date) + ".json\n" +be
+			print bo+"\t[?] Writting JSON contamination data to file: Contaminated_log-" + str(dft) + ".json\n" +be
 
 	def jsonrkeepfail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
@@ -116,9 +116,12 @@ class jsonloghandler():
 
 	def jlogreadfail(self, reporterror):
 		print bo+"\t[?] Read access violation in jsonloggen.py: " + str(reporterror) + "\n" + be
+		pass
 
 	def jlogwritefail(self, reporterror):
 		print bo+"\t[?] Write access violation in jsonloggen.py: " + str(reporterror) + "\n" + be
+		pass
 
 	def jlogfail(self, reporterror):
 		print bo+"\t[?] Keeper access violation in jsonloggen.py: " + str(reporterror) + "\n" + be
+		pass

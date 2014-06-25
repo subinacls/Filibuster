@@ -20,7 +20,7 @@ from bcolors import bcolors as b
 from pcolors import *
 from helper import *
 from diagforall import diagserverheader
-from killswitch import *
+from killswitch import killswitch
 
 """ set some color variable shortcuts """
 bh = b.HEADER
