@@ -13,6 +13,7 @@ configures and starts socket for communication
 import sys
 from socket import *
 import __builtin__
+import datetime
 
 class tcpsocks():
 
@@ -21,8 +22,9 @@ class tcpsocks():
 
 	def connectsocket(self):
 		try:
+			sdate = str(datetime.datetime.now()).strip(".")
 			__builtin__.proto = str("tcp").upper()
-			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
+			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(sdate)
 			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
@@ -51,5 +53,5 @@ class tcpsocks():
 				log_enabled().logging()
 			except Exception as logfailed:
 				print "log2 failed in tcpsock " + str(logfailed)
-			faillist.append("TCP/"+str(base_port))
+			faillist.append("TCP/"+str(ls))
 

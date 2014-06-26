@@ -7,6 +7,8 @@
 this file is used to produce the XML log
 '''
 
+import datetime
+
 class xmllogfilegen:
 
 	def __init__(self):
@@ -20,7 +22,7 @@ class xmllogfilegen:
 \t<address>"""+str(location)+"""</address>
 </location>
 <date>
-\t<current_date>"""+str(dft.strip())+"""</current_date>
+\t<current_date>"""+str(datetime.datetime.now()).strip(".")+"""</current_date>
 </date>
 <ipaddress>
 \t<target_ip>"""+str(ipaddr)+"""</target_ip>
