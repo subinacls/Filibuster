@@ -12,6 +12,7 @@ sets __builtin__ vars to be used throughout the application
 import json
 import __builtin__
 import datetime
+import shutil
 from exceptcatcher import jsonloghandler as jlh
 
 __builtin__.jlogback = {}
@@ -42,6 +43,8 @@ class jsonlogger():
 			with open(str(consultant)+'-'+str(location)+'-'+str(datetime.datetime.now()).split(" ")[0]+'.json', "w") as __builtin__.f: # open a file as named variable
 				f.write(json.dumps(rawjson)) #, indent=4)) # dumps data to file with indent 4 spaces
 				jlogback = dict(rawjson)
+			if len(jlogback) != 0:
+				shutil.copyfile(str(consultant)+'-'+str(location)+'-'+str(datetime.datetime.now()).split(" ")[0]+'.json', str(consultant)+'-'+str(location)+'-'+str(datetime.datetime.now()).split(" ")[0]+'.back')
 		except Exception as jwritefail: # catch all
 			jlh().jlogwritefail(jwritefail)
 			pass

@@ -23,7 +23,7 @@ __builtin__.date = date
 __builtin__.u = 0
 
 """ useful for diagnostics and error suppression """
-__builtin__.diag = "yes"
+__builtin__.diag = ""
 __builtin__.dd = {}
 
 """
