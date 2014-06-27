@@ -24,7 +24,7 @@ class tcpsocks():
 		try:
 			sdate = str(datetime.datetime.now()).strip(".")
 			__builtin__.proto = str("tcp").upper()
-			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(sdate)
+			ident = bo+"Filterbuster - On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(sdate)
 			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))

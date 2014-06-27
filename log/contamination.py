@@ -43,7 +43,9 @@ class contaminlog():
 	def jcom_keeper(self, ipaddr, proto, port, data):
 		self.jcom_read()
 		try:
-			data = base64.b64encode(data)
+			bdata = base64.b64encode(data)
+			sdata = str(data).encode('hex')
+			hdata = "\\x"+'\\x'.join(a+b for a,b in zip(sdata[::2], sdata[1::2]))
 			if str(ipaddr) not in contjson.keys():
 				contjson[str(ipaddr)] = {}
 			if str(proto) not in contjson[str(ipaddr)].keys():
@@ -52,13 +54,16 @@ class contaminlog():
 			if str(port) not in contjson[str(ipaddr)][str(proto)].keys():
 				contjson[str(ipaddr)][str(proto)][str(port)] = {}
 
-			if str(data) not in contjson[str(ipaddr)][str(proto)][str(port)].keys():
-				contjson[str(ipaddr)][str(proto)][str(port)][str(data)] = []
-				contjson[str(ipaddr)][str(proto)][str(port)][str(data)].append(str(1))
+			if str(bdata) not in contjson[str(ipaddr)][str(proto)][str(port)].keys():
+				contjson[str(ipaddr)][str(proto)][str(port)][str(bdata)] = {}
+
+				contjson[str(ipaddr)][str(proto)][str(port)][str(bdata)]["raw"] = """+str(data)+"""
+				contjson[str(ipaddr)][str(proto)][str(port)][str(bdata)]["hex"] = str(hdata)
+				contjson[str(ipaddr)][str(proto)][str(port)][str(bdata)]["count"] = 1
 			else:
-				cjc = contjson[str(ipaddr)][str(proto)][str(port)][str(data)][0]
+				cjc = contjson[str(ipaddr)][str(proto)][str(port)][str(bdata)]["count"]
 				cjc = int(cjc) + 1
-				contjson[str(ipaddr)][str(proto)][str(port)][str(data)][0] = str(cjc)
+				contjson[str(ipaddr)][str(proto)][str(port)][str(bdata)]["count"] = str(cjc)
 		except Exception as jkeeperfail: # catch all
 			clh().jsonrkeepfail(jkeeperfail)
 			pass # keep on keeping no
