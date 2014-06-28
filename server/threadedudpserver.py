@@ -26,22 +26,26 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = " : Filterbuster - " +self.line
+					self.data = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
-			except Exception as notaxor:
+			except Exception as notxor:
 				pass
 			try:
 				self.line = str(self.data).decode('rot13')
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = str(" : Filterbuster = "+str(self.line)).encode('rot13')
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
-			except Exception as notarot:
+			except Exception as notro13:
 				pass
 			try:
 				self.line = str(b64.b85decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
 			except Exception as notbase85:
 				pass
@@ -50,6 +54,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b64.b64encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
 			except Exception as notbase64:
 				pass
@@ -58,14 +63,16 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b32.b85encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
-			except Exception as notbase32:
+			except Exception as notbase64:
 				pass
 			try:
 				self.line = str(b64.b16decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b16.b85encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
 			except Exception as notbase16:
 				pass
@@ -73,12 +80,11 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = self.data
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					socket.sendto(str(self.data[0:10000000]), self.client_address)
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
+					socket.sendto(str(" : Filterbuster - " +self.data[0:10000000]), self.client_address)
 			except Exception as notplaintxt:
 				pass
 
-			socket.sendto(str(self.data[0:10000000]), self.client_address)
 		else:
 			contaminlog().jcom_keeper(self.client_address[0], str("udp").upper(), self.client_address[1], self.data)
 
