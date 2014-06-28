@@ -3,14 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/tcpsock.py" afterPath="$PROJECT_DIR$/client/tcpsock.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/udpsock.py" afterPath="$PROJECT_DIR$/client/udpsock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client_kicker.py" afterPath="$PROJECT_DIR$/client/client_kicker.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/error/exceptcatcher.py" afterPath="$PROJECT_DIR$/error/exceptcatcher.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filterbuster.py" afterPath="$PROJECT_DIR$/filterbuster.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedtcpserver.py" afterPath="$PROJECT_DIR$/server/threadedtcpserver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedudpserver.py" afterPath="$PROJECT_DIR$/server/threadedudpserver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/version/verinfo.py" afterPath="$PROJECT_DIR$/version/verinfo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403974742633" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403978488056" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403926189393" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403664922845" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -24,19 +28,19 @@
     <file path="/diagforall.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403923425092" ignored="false" />
     <file path="/servargs.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403491109021" ignored="false" />
     <file path="/covert.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403839866505" ignored="false" />
-    <file path="/client_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972290647" ignored="false" />
-    <file path="/*.regexp" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403978224217" ignored="false" />
-    <file path="/filterbuster.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972369502" ignored="false" />
+    <file path="/client_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403981204144" ignored="false" />
+    <file path="/*.regexp" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403983591164" ignored="false" />
+    <file path="/filterbuster.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403981241794" ignored="false" />
     <file path="$USER_HOME$/Filterbuster/version/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403280227816" ignored="false" />
-    <file path="/README.md" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403976064941" ignored="false" />
+    <file path="/README.md" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403978709298" ignored="false" />
     <file path="/jsonloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403845014810" ignored="false" />
     <file path="/killswitch.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972460730" ignored="false" />
-    <file path="/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403333301375" ignored="false" />
-    <file path="/threadedtcpserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403939693902" ignored="false" />
+    <file path="/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403980704307" ignored="false" />
+    <file path="/threadedtcpserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403983308706" ignored="false" />
     <file path="/bothsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403941059218" ignored="false" />
     <file path="/threadedbothserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403394809612" ignored="false" />
     <file path="/*.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403338602068" ignored="false" />
-    <file path="/exceptcatcher.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403842887363" ignored="false" />
+    <file path="/exceptcatcher.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403980773331" ignored="false" />
     <file path="/contamination.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403825313500" ignored="false" />
     <file path="/PIIdata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403469677144" ignored="false" />
     <file path="/magstripedata.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403473823238" ignored="false" />
@@ -70,52 +74,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tcpsock.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
+      <file leaf-file-name="filterbuster.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filterbuster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+            <state line="89" column="51" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#230#250#0" expanded="true" />
+                <element signature="e#385#403#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/conf.py">
+      <file leaf-file-name="client_kicker.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="35" selection-start="1643" selection-end="1674" vertical-scroll-proportion="0.0">
+            <state line="134" column="77" selection-start="4613" selection-end="4613" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="killswitch.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iptables/killswitch.py">
+      <file leaf-file-name="verinfo.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/version/verinfo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="19" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#128#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server_func.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server_func.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="19" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0">
+            <state line="15" column="41" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threadedtcpserver.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
+      <file leaf-file-name="exceptcatcher.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/error/exceptcatcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="20" selection-start="342" selection-end="3198" vertical-scroll-proportion="0.0">
+            <state line="98" column="0" selection-start="2548" selection-end="2622" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/help/helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="16" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#72#81#0" expanded="true" />
+                <element signature="e#117#127#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,7 +126,7 @@
       <file leaf-file-name="threadedudpserver.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="34" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
+            <state line="37" column="54" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#72#81#0" expanded="true" />
               </folding>
@@ -132,41 +134,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="bothsock.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/bothsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="61" selection-start="5194" selection-end="5194" vertical-scroll-proportion="0.0">
+            <state line="38" column="39" selection-start="904" selection-end="925" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="udpsock.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/udpsock.py">
+      <file leaf-file-name="threadedtcpserver.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="262" selection-end="278" vertical-scroll-proportion="0.1576507">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scanconfig.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="58" selection-start="5222" selection-end="5222" vertical-scroll-proportion="0.0">
+            <state line="79" column="37" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.927357">
               <folding>
-                <element signature="e#509#522#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="encoder.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="78" selection-end="1877" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#3#23#0" expanded="true" />
+                <element signature="e#72#81#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -196,22 +178,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/efb.conf" />
-        <option value="$PROJECT_DIR$/log/jsonloggen.py" />
         <option value="$PROJECT_DIR$/diag/diagforall.py" />
         <option value="$PROJECT_DIR$/config/conf.py" />
         <option value="$PROJECT_DIR$/client/bothsock.py" />
-        <option value="$PROJECT_DIR$/client/client_kicker.py" />
-        <option value="$PROJECT_DIR$/filterbuster.py" />
         <option value="$PROJECT_DIR$/iptables/killswitch.py" />
-        <option value="$PROJECT_DIR$/server/threadedtcpserver.py" />
         <option value="$PROJECT_DIR$/client/scanconfig.py" />
         <option value="$PROJECT_DIR$/encoder/encoder.py" />
-        <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/encoder/hasher.py" />
         <option value="$PROJECT_DIR$/client/tcpsock.py" />
         <option value="$PROJECT_DIR$/client/udpsock.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/version/verinfo.py" />
+        <option value="$PROJECT_DIR$/error/exceptcatcher.py" />
+        <option value="$PROJECT_DIR$/filterbuster.py" />
+        <option value="$PROJECT_DIR$/client/client_kicker.py" />
+        <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
+        <option value="$PROJECT_DIR$/server/threadedtcpserver.py" />
       </list>
     </option>
   </component>
@@ -276,6 +258,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="version" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -305,6 +301,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="iptables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="help" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -815,7 +825,11 @@
       <created>1403974743866</created>
       <updated>1403974743866</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="fixed the stuck datetime function for data string">
+      <created>1403978492486</created>
+      <updated>1403978492487</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -904,7 +918,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a todo item or 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the stuck datetime function for data string" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -929,6 +943,7 @@
     <MESSAGE value="made some changes to piipcidata file" />
     <MESSAGE value="changed some info in magstripedata file, did some eception modifications" />
     <MESSAGE value="added a todo item or 2" />
+    <MESSAGE value="fixed the stuck datetime function for data string" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -948,45 +963,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/efb.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/bothsock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="48" selection-start="2248" selection-end="2248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/diag/diagforall.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="348" column="70" selection-start="12749" selection-end="12749" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#218#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="17" selection-start="3903" selection-end="3903" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filterbuster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="17" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#385#403#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iptables/killswitch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="19" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
@@ -1000,49 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="19" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="20" selection-start="342" selection-end="3198" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#72#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="61" selection-start="5194" selection-end="5194" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="78" selection-end="1877" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#3#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="34" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#72#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="58" selection-start="5222" selection-end="5222" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#509#522#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,10 +995,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-0.251932">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/udpsock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="262" selection-end="278" vertical-scroll-proportion="0.1576507">
+        <state line="13" column="13" selection-start="262" selection-end="278" vertical-scroll-proportion="0.16088328">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="58" selection-start="5222" selection-end="5222" vertical-scroll-proportion="1.3785489">
+          <folding>
+            <element signature="e#509#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="78" selection-end="1877" vertical-scroll-proportion="0.06955178">
+          <folding>
+            <element signature="e#3#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version/verinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="41" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error/exceptcatcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="2548" selection-end="2622" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filterbuster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="51" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#385#403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="77" selection-start="4613" selection-end="4613" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/help/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="16" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#117#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/bothsock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="39" selection-start="904" selection-end="925" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="54" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#72#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="37" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.927357">
+          <folding>
+            <element signature="e#72#81#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

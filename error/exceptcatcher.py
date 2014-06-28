@@ -96,17 +96,17 @@ class servarghandler():
 		pass
 
 	def srvarg2fail(self, reporterror):
-		print bo+"\t[?] Please choose: 'TCP or UDP' for the protocol: " + str(reporterror) + "\n" + be
+		print bo+"\n\n\t[?] Please choose: 'TCP or UDP' for the protocol\n" + be
 		helper().shelp()
 		sys.exit(0)
 
 	def srvarg3fail(self, reporterror):
-		print bo+"\t[?] Please choose: 'Port Number' for the server to bind to: " + str(reporterror) + "\n" + be
+		print bo+"\n\n\t[?] Please choose: 'Port Number' for the server to bind to\n" + be
 		helper().shelp()
 		sys.exit(0)
 
 	def srvarg4fail(self, reporterror):
-		print bo+"\t[?] Please choose: 'Yes' or 'No' for the use of TLS: " + str(reporterror) + "\n" + be
+		print bo+"\n\n\t[?] Please choose: 'Yes' or 'No' for the use of TLS\n" + be
 		helper().tlshelp()
 		sys.exit(0)
 

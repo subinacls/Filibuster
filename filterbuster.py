@@ -87,7 +87,7 @@ ctest().colortest()
 try:
 	__builtin__.sa1 = str(sys.argv[1])
 except Exception as nofirstargument:
-	print "hit an exception in filterbuster.py no first argument: " + str(nofirstargument)
+	print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 	helper().helpall()
 	sys.exit(0)
 
@@ -102,14 +102,13 @@ def checkfirstargument():
 			from scanconfig import initscanner
 			from diagforall import checkdepends
 			from diagforall import diagclientheader
-			# import some functionality
 			try:
 				#print 'Check depends before' # diagnostics
 				checkdepends().required_mods()  # check dependencies before launch
 				#print 'Check depends after' # diagnostics
 			except Exception as requiredmodsfail:  # if anything failed here
-				print "hit an exception in checkdepends.py - required_mods(): " + str(requiredmodsfail)
-				helper().helpall()
+				print bo+"\n\n\t[?] Please ensure all dependencies are installed\n" + be
+				helper().chelp()
 				sys.exit(0)
 			try:
 				#print 'Check client header before' # diagnostics
@@ -119,18 +118,16 @@ def checkfirstargument():
 				initclient().clientrun()  # run client kicker
 				#print 'Check client run after' # diagnostics
 			except Exception as clientrunfail:  # if anything failed here
-				if str(diag).lower() in ["true","yes"]:
-					print "hit an exception in initclient.py clientrun(): " + str(clientrunfail)
-				helper().helpall()
+				print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
+				helper().chelp()
 				sys.exit(0)
 			try:
 				#print 'Check scanengine before' # diagnostics
 				initscanner().scanengine()  # configure and run scanning engine
 				#print 'Check scanengine atfer' # diagnostics
 			except Exception as scanenginefail:  # if anything failed here
-				if str(diag).lower() in ["true","yes"]:
-					print "hit an exception in initscanner.py scanengine(): " + str(scanenginefail)
-				helper().helpall()
+				print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
+				helper().chelp()
 				sys.exit(0)
 		if str(sa1).lower() in ["server", "s"]:  # if your looking for the server portion
 			__builtin__.diag = "yes"  # since server does not get settings from ini file
@@ -145,12 +142,12 @@ def checkfirstargument():
 					initserver().serverrun()
 					#print "Check initserver after" # diagnostics
 				except Exception as serverrunfail:
-					print "hit an exception in initserver.py serverrun(): " + str(serverrunfail)
+					print bo+"\n\n\t[?] Please ensure all variables are given\n" + be
 				pass
 			except Exception as serverinitfail:
 				print serverinitfail, "failed server initialization"
 	except Exception as nofirstargument:
-		print "hit an exception in filterbuster.py last exception nofirstargument: " + str(nofirstargument)
+		print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 		helper().helpall()
 		sys.exit(0)
 

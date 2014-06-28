@@ -60,6 +60,7 @@ class initclient():
 			sys.exit()
 
 	""" starting client portion of the application """
+
 	def clientrun(self):
 		"""
 		"""
@@ -92,6 +93,7 @@ class initclient():
 				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(conffilefail) + "\n" + be)
 			print ""
 			from helper import helper
+			print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 			helper().chelp()
 			sys.exit(0)
 		""" get system argument 3, which handles SSL/TLS - addin extra encryption layer ( AES ) """
@@ -107,6 +109,7 @@ class initclient():
 				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
 			print("")
 			from helper import helper
+			print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 			helper().chelp()
 			sys.exit(0)
 		""" set vars to user input provided from INI file from system argument 3 """
@@ -129,5 +132,6 @@ class initclient():
 				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
 			print("")
 			from helper import helper
+			print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 			helper().chelp()
 			sys.exit(0)

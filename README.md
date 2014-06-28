@@ -9,7 +9,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   It is required to utilize additional modules outside the standard library as follows. You can use
   `easy_install` if you so desire or download and install from source. Your choice.
 
-  The application it will do some basic checks to help elimate issues later in the process
+  The application will perform some basic checks to help elimate issues later in the application
 
     """ required for graphing """
     Please install numpy with: `easy_install numpy`
@@ -20,8 +20,8 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
     """ required for covert testing """
     Please install python DNS module with: `easy_install dnspython`
 
-  Currently the application relies on iptables to configure the kernel for port redirection to the servers listening
-  port. Currently I have no other solution other than scapy listening for matching packets and replying with raw sockets
+  Currently the application relies on iptables for port redirection to the servers listening port
+  other solutions, utilize scapy to handle all packet manipulation
 
   [-] Commandline Usage: ...
   
