@@ -106,6 +106,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
       More protocol testing - smtp, etc etc
       More Covert / backchannel testing
         Modes:[
+            SSH over HTTPTunnel,
             IP packet fileds,
             GRE
         ]
