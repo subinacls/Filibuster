@@ -52,11 +52,12 @@ class tcpsocks():
 				print "log failed in tcpsock " + str(logfailed)
 		except Exception as tcpconfail:
 			__builtin__.state = str(tcpconfail).split("] ")[1]
+			faillist.append(str(proto).upper()+"/"+str(ls))
 			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(tcpconfail)+be
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
 			except Exception as logfailed:
 				print "log2 failed in tcpsock " + str(logfailed)
-			faillist.append("TCP/"+str(ls))
-
+				pass
+			pass

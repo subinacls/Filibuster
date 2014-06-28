@@ -90,10 +90,12 @@ class jsonlogger():
 				rawjson[consultant][location][str(ldate).split(" ")[0]] = {}
 			if ipaddr not in rawjson[consultant][location][str(ldate).split(" ")[0]].keys():
 				rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr] = {}
-			if "tunnelspass" not in rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr].keys():
-				rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr]["tunnelspass"] = tunnelspass
-			if "tunnelsfail" not in rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr].keys():
-				rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr]["tunnelsfail"] = tunnelsfail
+			if str(tunnelspass) != "[]":
+				if "tunnelspass" not in rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr].keys():
+					rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr]["tunnelspass"] = tunnelspass
+			if str(tunnelsfail) != "[]":
+				if "tunnelsfail" not in rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr].keys():
+					rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr]["tunnelsfail"] = tunnelsfail
 			self.json_write()
 			pass # keep on moving
 		except Exception as jkeeperfail: # catch all

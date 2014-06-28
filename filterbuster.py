@@ -166,14 +166,13 @@ if __name__ == "__main__":
 		""" set basic list for gathering for covert tunnel testing """
 		__builtin__.tunnelspass = []
 		__builtin__.tunnelsfail = []
-		print(bh + "\n\t[-] Starting Covert tunnel testing process now ..." + be)
 		""" initalize tunnel testing """
 		""" actual covert testing calls to the previous set classes """
 		icmptunnel().ping(tunnelspass, tunnelsfail)
 		ntptunnel().ntp(tunnelspass, tunnelsfail)
 		dnstunnel().dns(tunnelspass, tunnelsfail)
 		""" print findings for covert testing """
-		if tunnelspass:
+		if str(tunnelspass) != "[]":
 			print(bh + "\n\t[-] List of passed Covert tunnels ...\n" + be)
 			printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tunnelspass))
 		if str(tunnelsfail) != "[]":

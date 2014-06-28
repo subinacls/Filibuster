@@ -56,16 +56,16 @@ class udpsocks():
 				log_enabled().logging()
 			except Exception as logenbfail:
 				print "Failed in udpsock logging: " + str(logenbfail)
-		except Exception as logenbfail:
-			print bf+"\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(logenbfail)+be
-			state = "Failed"
+		except Exception as udpconfail:
+			__builtin__.state = str(udpconfail).split("] ")[1]
+			faillist.append(str(proto).upper()+"/"+str(ls))
+			print bf+"\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(udpconfail)+be
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
 			except Exception as e:
 				print "Failed in udpsock logging: " + str(e)
 				pass
-			faillist.append(str(proto).upper()+"/"+str(ls))
 			pass
 
 
