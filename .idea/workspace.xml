@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client_kicker.py" afterPath="$PROJECT_DIR$/client/client_kicker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/error/exceptcatcher.py" afterPath="$PROJECT_DIR$/error/exceptcatcher.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filterbuster.py" afterPath="$PROJECT_DIR$/filterbuster.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedtcpserver.py" afterPath="$PROJECT_DIR$/server/threadedtcpserver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedudpserver.py" afterPath="$PROJECT_DIR$/server/threadedudpserver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/version/verinfo.py" afterPath="$PROJECT_DIR$/version/verinfo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403978488056" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403984054176" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403926189393" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403664922845" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -55,6 +49,7 @@
     <file path="/testing.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403823843298" ignored="false" />
     <file path="/encoder.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972232978" ignored="false" />
     <file path="/hasher.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403976511977" ignored="false" />
+    <file path="$PROJECT_DIR$/efb.conf" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403984217465" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,10 +118,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threadedudpserver.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="threadedudpserver.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="54" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
+            <state line="27" column="75" selection-start="756" selection-end="756" vertical-scroll-proportion="-0.3256936">
               <folding>
                 <element signature="e#72#81#0" expanded="true" />
               </folding>
@@ -143,10 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threadedtcpserver.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="threadedtcpserver.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="37" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.927357">
+            <state line="79" column="37" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#72#81#0" expanded="true" />
               </folding>
@@ -192,8 +187,8 @@
         <option value="$PROJECT_DIR$/error/exceptcatcher.py" />
         <option value="$PROJECT_DIR$/filterbuster.py" />
         <option value="$PROJECT_DIR$/client/client_kicker.py" />
-        <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
         <option value="$PROJECT_DIR$/server/threadedtcpserver.py" />
+        <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
       </list>
     </option>
   </component>
@@ -829,7 +824,11 @@
       <created>1403978492486</created>
       <updated>1403978492487</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="made a bunch of change to the way the client and server display data in terminal window">
+      <created>1403984056003</created>
+      <updated>1403984056003</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -859,7 +858,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21261682" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21261682" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24908201" sideWeight="0.7873832" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27784577" sideWeight="0.7873832" order="0" side_tool="false" content_ui="combo" />
@@ -918,7 +917,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the stuck datetime function for data string" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a bunch of change to the way the client and server display data in terminal window" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -944,6 +943,7 @@
     <MESSAGE value="changed some info in magstripedata file, did some eception modifications" />
     <MESSAGE value="added a todo item or 2" />
     <MESSAGE value="fixed the stuck datetime function for data string" />
+    <MESSAGE value="made a bunch of change to the way the client and server display data in terminal window" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1073,18 +1073,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
+    <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="54" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
+        <state line="79" column="37" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#72#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
+    <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="37" selection-start="3137" selection-end="3137" vertical-scroll-proportion="0.927357">
+        <state line="27" column="75" selection-start="756" selection-end="756" vertical-scroll-proportion="-0.3256936">
           <folding>
             <element signature="e#72#81#0" expanded="true" />
           </folding>

@@ -25,7 +25,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					print bf+"\t\tATTENTION " + bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
 					self.data = " : Filterbuster - " +self.line
 					self.data = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
