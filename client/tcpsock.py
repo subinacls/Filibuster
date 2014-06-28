@@ -11,8 +11,8 @@ configures and starts socket for communication
 """
 
 from socket import *
+import datetime
 import __builtin__
-import base64 as b64
 from encoder import clientencoder
 
 
@@ -23,7 +23,7 @@ class tcpsocks():
 
 	def connectsocket(self):
 		try:
-			key = "filterbuster"
+			ldate = datetime.datetime.now()
 			__builtin__.proto = str("tcp").upper()
 			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
 			clientencoder().dataencode(ident)

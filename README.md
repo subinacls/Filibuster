@@ -99,20 +99,22 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   [-] TODO list: ....
 
       MORE SCAPY
+      Server side logging ? very quesitonable
+            Encrypt data at rest if this is to be offered
       Take IP/Hostname list (iterate list for targeting)
       IPv6 Support
-      More protocol testing
+      More protocol testing - smtp, etc etc
       More Covert / backchannel testing
         Modes:[
-            IP sequence numbers,
+            IP packet fileds,
             GRE
         ]
       Better Request handling
       FwKnop for remote administration
       IDS/IPS testing (sending known signatures)
         Modes:[
-            silent.
-            quiet.
+            silent,
+            quiet,
             loud,
             OBVIOUS,
             OBNOXIOUS
@@ -138,8 +140,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
               rot13,
               md5,
               sha1-512,
-              Web safe encoding,
-              PSK
+              PSK,
               SSL/TLS
           ]
       Spoofing traffic to confuse investigators (Red Herring)

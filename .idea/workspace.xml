@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedudpserver.py" afterPath="$PROJECT_DIR$/server/threadedudpserver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/tcpsock.py" afterPath="$PROJECT_DIR$/client/tcpsock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/udpsock.py" afterPath="$PROJECT_DIR$/client/udpsock.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
@@ -16,17 +18,17 @@
     <file path="/server_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403668227266" ignored="false" />
     <file path="/server_func.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403410407759" ignored="false" />
     <file path="/threadedudpserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403941840834" ignored="false" />
-    <file path="/tcpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403974136836" ignored="false" />
-    <file path="/udpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403974710967" ignored="false" />
+    <file path="/tcpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403978258224" ignored="false" />
+    <file path="/udpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403978288423" ignored="false" />
     <file path="/log_enable.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403412055324" ignored="false" />
     <file path="/diagforall.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403923425092" ignored="false" />
     <file path="/servargs.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403491109021" ignored="false" />
     <file path="/covert.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403839866505" ignored="false" />
     <file path="/client_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972290647" ignored="false" />
-    <file path="/*.regexp" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403973733664" ignored="false" />
+    <file path="/*.regexp" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403978224217" ignored="false" />
     <file path="/filterbuster.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972369502" ignored="false" />
     <file path="$USER_HOME$/Filterbuster/version/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403280227816" ignored="false" />
-    <file path="/README.md" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403653144402" ignored="false" />
+    <file path="/README.md" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403976064941" ignored="false" />
     <file path="/jsonloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403845014810" ignored="false" />
     <file path="/killswitch.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972460730" ignored="false" />
     <file path="/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403333301375" ignored="false" />
@@ -48,6 +50,7 @@
     <file path="/txtloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403734405726" ignored="false" />
     <file path="/testing.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403823843298" ignored="false" />
     <file path="/encoder.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403972232978" ignored="false" />
+    <file path="/hasher.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403976511977" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +73,19 @@
       <file leaf-file-name="tcpsock.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="84" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#230#250#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conf.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/conf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="35" selection-start="1643" selection-end="1674" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threadedudpserver.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="threadedudpserver.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="34" selection-start="799" selection-end="799" vertical-scroll-proportion="0.472">
+            <state line="28" column="34" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#72#81#0" expanded="true" />
               </folding>
@@ -120,24 +132,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="udpsock.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/udpsock.py">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="59" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#230#248#0" expanded="true" />
-              </folding>
+            <state line="151" column="61" selection-start="5194" selection-end="5194" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filterbuster.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/filterbuster.py">
+      <file leaf-file-name="udpsock.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/udpsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="17" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#385#403#0" expanded="true" />
-              </folding>
+            <state line="13" column="13" selection-start="262" selection-end="278" vertical-scroll-proportion="0.1576507">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,19 +161,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client_kicker.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="17" selection-start="3903" selection-end="3903" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="encoder.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="33" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0">
+            <state line="8" column="0" selection-start="78" selection-end="1877" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#3#23#0" expanded="true" />
               </folding>
@@ -197,8 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/error/exceptcatcher.py" />
-        <option value="$PROJECT_DIR$/efb2.conf" />
         <option value="$PROJECT_DIR$/efb.conf" />
         <option value="$PROJECT_DIR$/log/jsonloggen.py" />
         <option value="$PROJECT_DIR$/diag/diagforall.py" />
@@ -210,9 +207,11 @@
         <option value="$PROJECT_DIR$/server/threadedtcpserver.py" />
         <option value="$PROJECT_DIR$/client/scanconfig.py" />
         <option value="$PROJECT_DIR$/encoder/encoder.py" />
+        <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/encoder/hasher.py" />
         <option value="$PROJECT_DIR$/client/tcpsock.py" />
         <option value="$PROJECT_DIR$/client/udpsock.py" />
-        <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
       </list>
     </option>
   </component>
@@ -840,7 +839,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="25" width="1692" height="1004" extended-state="7" />
+    <frame x="-6" y="25" width="1692" height="1004" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -849,7 +848,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21261682" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24908201" sideWeight="0.7873832" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27784577" sideWeight="0.7873832" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27784577" sideWeight="0.7873832" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21261682" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -949,29 +948,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/efb2.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="-0.9">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#214#225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="16" selection-start="3287" selection-end="3287" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/efb.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="13" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0">
@@ -1011,15 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="58" selection-start="5222" selection-end="5222" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#509#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iptables/killswitch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="19" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
@@ -1036,33 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="33" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#3#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/udpsock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="59" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#230#248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="84" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#230#250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="20" selection-start="342" selection-end="3198" vertical-scroll-proportion="0.0">
@@ -1072,12 +1012,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="61" selection-start="5194" selection-end="5194" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="78" selection-end="1877" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#3#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="34" selection-start="799" selection-end="799" vertical-scroll-proportion="0.472">
+        <state line="28" column="34" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#72#81#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="58" selection-start="5222" selection-end="5222" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#509#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="35" selection-start="1643" selection-end="1674" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#230#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/udpsock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="262" selection-end="278" vertical-scroll-proportion="0.1576507">
+          <folding />
         </state>
       </provider>
     </entry>

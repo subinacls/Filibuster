@@ -12,6 +12,7 @@ configures and starts socket for communication
 
 import __builtin__
 import socket
+import datetime
 from bcolors import bcolors as b
 bh = b.HEADER
 bf = b.FAIL
@@ -29,6 +30,7 @@ class udpsocks():
 
 	def connectsocket(self):
 		try:
+			ldate = datetime.datetime.now()
 			__builtin__.state = ""
 			__builtin__.proto = str("udp").upper()
 			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
