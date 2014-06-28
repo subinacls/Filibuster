@@ -94,7 +94,7 @@ class initclient():
 			from helper import helper
 			helper().chelp()
 			sys.exit(0)
-		""" get system argument 3, which handles SSL/TLS - addin extra encryption layer due to heartbleed """
+		""" get system argument 3, which handles SSL/TLS - addin extra encryption layer ( AES ) """
 		try:
 			if not sys.argv[3]:
 				__builtin__.mytls = ""

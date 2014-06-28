@@ -144,11 +144,10 @@ def checkfirstargument():
 """ pain in the __main__ """
 if __name__ == "__main__":
 	"""  run checkfirstargument function """
-
 	checkfirstargument()
 	"""for diagnostics display a pie chart"""
-	from diagforall import piechartdiag
-	piechartdiag().getaslice()
+	#from diagforall import piechartdiag
+	#piechartdiag().getaslice()
 	print ""
 
 

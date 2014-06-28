@@ -14,7 +14,6 @@ import __builtin__
 from bcolors import bcolors as b
 
 class killswitch:
-	import __builtin__
 	def __init__(self):
 		pass
 
@@ -26,13 +25,12 @@ class killswitch:
 			try: 
 				time.sleep(0) # dirty hack to monitor for keybard interrupt
 			except KeyboardInterrupt:
-				if str(sa1) in ["client","c"]:
-					f.close()
+				if str(__builtin__.sa1) in ["client","c"]:
 					print b.OKBLUE+"\t[!] User exited - closed log file ...\n" + b.ENDC
 					sys.exit(0)
-				if str(sa1) in ["server","s"]:
+				if str(_builtin__.sa1) in ["server","s"]:
 					os.popen("iptables -t nat -F")
-					if str(diag).lower() in ["true","yes"]:
+					if str(_builtin__.diag).lower() in ["true","yes"]:
 						print "Killer module killed pid: " + str(pid)
 					print b.OKBLUE+"\t[!] User exited - flushed IPTABLES and killed server pid "+str(pid)+" ...\n" + b.ENDC
 					pid = os.getpid()

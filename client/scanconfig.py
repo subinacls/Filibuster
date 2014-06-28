@@ -48,7 +48,7 @@ class initscanner():
 		__builtin__.passlist = []
 		__builtin__.faillist = []
 		# get the date information from local system
-		""" maybe future addition, if NTP test passes use NTP server in EDU for data information """
+		""" maybe future addition, if NTP test passes use NTP server update from .EDU"""
 		__builtin__.ldate = str(datetime.datetime.now()).strip(".")
 		__builtin__.dft = str(ldate).split(" ")[0]
 		__builtin__.u = 0
@@ -87,15 +87,14 @@ class initscanner():
 				__builtin__.t = int(highport)
 
 		# iterate over port start and finish range
-
 		for x in range(s,t):
 			stack.append(x)
 		stack.append(highport)
 		if str(randomness).lower() in ["true","yes"]:
-			#ls = random.choice(stack)
 			random.shuffle(stack)
 		else:
 			pass
+		print stack
 		__builtin__.total_stack = len(stack)
 		print(bh+"\n\t[-] Starting "+be+str(scantype)+be+bh+" scanning process against server IP: "+be+ipaddr+be)
 		while int(u) != total_stack:
@@ -104,6 +103,7 @@ class initscanner():
 			__builtin__.run_timer = time.time()
 			if stack[0]:
 				__builtin__.ls = stack[0]
+				print ls
 				if sleepy == "random":
 					__builtin__.rest = int(random.choice(np.arange(1,int(nappy),int(rester))))
 				else:
@@ -115,9 +115,7 @@ class initscanner():
 				if  str(scantype).lower() == "connect":
 					if (str(mytls)) == (str("no")):
 						cfb = str(flipbit).lower()
-
 						# initalize socket creation
-
 						if cfb == "tcp":
 							try:
 								ctsc().clienttcpsockconf()
@@ -129,9 +127,7 @@ class initscanner():
 								pass
 							time.sleep(float(rest))
 							stack.remove(ls)
-
 						# initalize socket creation
-
 						if cfb == "udp":
 							try:
 								cusc().clientudpsockconf()
@@ -142,9 +138,7 @@ class initscanner():
 								pass
 							time.sleep(float(rest))
 							stack.remove(ls)
-
 						# initalize socket creation
-
 						if cfb == "both":
 							try:
 								ctsc().clienttcpsockconf()
@@ -157,3 +151,4 @@ class initscanner():
 								print("\t"+bf+"ATTENTION "+be+bw+"[?] Client failed to connect to TCP/UDP sockets "+bf+"FAILED"+be+bw+" due to "+be+str(tcpsockfail))
 							time.sleep(float(rest))
 							stack.remove(ls)
+

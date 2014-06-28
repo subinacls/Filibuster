@@ -33,6 +33,7 @@ class checkdepends():
 
 	def required_mods(self):
 		if str(diag).lower() in ["true", "yes"]:
+			print "Test1"
 			print bh+"\t[-] Checking for required modules for proper operation\n"+be
 			try:
 				import numpy as np

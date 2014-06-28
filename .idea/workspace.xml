@@ -2,37 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/contamination.py" afterPath="$PROJECT_DIR$/log/contamination.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client_kicker.py" afterPath="$PROJECT_DIR$/client/client_kicker.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diag/diagforall.py" afterPath="$PROJECT_DIR$/diag/diagforall.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filterbuster.py" afterPath="$PROJECT_DIR$/filterbuster.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/jsonloggen.py" afterPath="$PROJECT_DIR$/log/jsonloggen.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iptables/killswitch.py" afterPath="$PROJECT_DIR$/iptables/killswitch.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/tcpsock.py" afterPath="$PROJECT_DIR$/client/tcpsock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scanconfig.py" afterPath="$PROJECT_DIR$/client/scanconfig.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403827619588" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403845149132" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403301761236" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403664922845" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
-    <file path="/scanconfig.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403842416110" ignored="false" />
+    <file path="/scanconfig.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403924582642" ignored="false" />
     <file path="/server_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403668227266" ignored="false" />
     <file path="/server_func.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403410407759" ignored="false" />
     <file path="/threadedudpserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403406082905" ignored="false" />
     <file path="/tcpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403842645726" ignored="false" />
     <file path="/udpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403735050838" ignored="false" />
     <file path="/log_enable.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403412055324" ignored="false" />
-    <file path="/diagforall.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403842107181" ignored="false" />
+    <file path="/diagforall.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403923425092" ignored="false" />
     <file path="/servargs.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403491109021" ignored="false" />
     <file path="/covert.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403839866505" ignored="false" />
-    <file path="/client_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403841522393" ignored="false" />
-    <file path="/*.regexp" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403844534366" ignored="false" />
-    <file path="/filterbuster.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403842281936" ignored="false" />
+    <file path="/client_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403922839572" ignored="false" />
+    <file path="/*.regexp" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403923458230" ignored="false" />
+    <file path="/filterbuster.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403922922598" ignored="false" />
     <file path="$USER_HOME$/Filterbuster/version/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403280227816" ignored="false" />
     <file path="/README.md" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403653144402" ignored="false" />
     <file path="/jsonloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403845014810" ignored="false" />
-    <file path="/killswitch.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403844584461" ignored="false" />
+    <file path="/killswitch.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403923857639" ignored="false" />
     <file path="/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403333301375" ignored="false" />
     <file path="/threadedtcpserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403827508398" ignored="false" />
     <file path="/bothsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403335715079" ignored="false" />
@@ -73,34 +74,25 @@
       <file leaf-file-name="efb.conf" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/efb.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+            <state line="26" column="8" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/conf.py">
+      <file leaf-file-name="efb2.conf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/efb2.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.9">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exceptcatcher.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/error/exceptcatcher.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="killswitch.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="killswitch.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iptables/killswitch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.8912">
+            <state line="32" column="38" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#128#137#0" expanded="true" />
               </folding>
@@ -111,7 +103,7 @@
       <file leaf-file-name="client_kicker.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="120" column="30" selection-start="3897" selection-end="3897" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,9 +112,20 @@
       <file leaf-file-name="jsonloggen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="20" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.0">
+            <state line="27" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#214#225#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scanconfig.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="154" column="0" selection-start="5072" selection-end="5072" vertical-scroll-proportion="0.9290221">
+              <folding>
+                <element signature="e#509#522#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,19 +140,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contamination.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/contamination.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="30" selection-start="1069" selection-end="1192" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="filterbuster.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/filterbuster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="39" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0">
+            <state line="147" column="45" selection-start="4803" selection-end="4803" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#385#403#0" expanded="true" />
               </folding>
@@ -181,22 +175,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/log/csvloggen.py" />
         <option value="$PROJECT_DIR$/log/contamination.py" />
         <option value="$PROJECT_DIR$/server/threadedtcpserver.py" />
         <option value="$PROJECT_DIR$/testing.py" />
         <option value="$PROJECT_DIR$/client/udpsock.py" />
         <option value="$PROJECT_DIR$/covert/covert.py" />
         <option value="$PROJECT_DIR$/log/log_enable.py" />
-        <option value="$PROJECT_DIR$/client/client_kicker.py" />
-        <option value="$PROJECT_DIR$/diag/diagforall.py" />
         <option value="$PROJECT_DIR$/client/tcpsock.py" />
-        <option value="$PROJECT_DIR$/client/scanconfig.py" />
         <option value="$PROJECT_DIR$/error/exceptcatcher.py" />
-        <option value="$PROJECT_DIR$/iptables/killswitch.py" />
-        <option value="$PROJECT_DIR$/filterbuster.py" />
+        <option value="$PROJECT_DIR$/efb2.conf" />
         <option value="$PROJECT_DIR$/efb.conf" />
+        <option value="$PROJECT_DIR$/client/client_kicker.py" />
+        <option value="$PROJECT_DIR$/filterbuster.py" />
         <option value="$PROJECT_DIR$/log/jsonloggen.py" />
+        <option value="$PROJECT_DIR$/diag/diagforall.py" />
+        <option value="$PROJECT_DIR$/iptables/killswitch.py" />
+        <option value="$PROJECT_DIR$/client/scanconfig.py" />
       </list>
     </option>
   </component>
@@ -290,6 +284,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="error" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filterbuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diag" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -742,7 +750,11 @@
       <created>1403827620550</created>
       <updated>1403827620550</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="added a todo item or 2">
+      <created>1403845154585</created>
+      <updated>1403845154585</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -875,55 +887,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/filterbuster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="39" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#385#403#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/contamination.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="30" selection-start="1069" selection-end="1192" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="20" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#214#225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/efb.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -935,11 +901,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/efb2.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-0.9">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filterbuster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="45" selection-start="4803" selection-end="4803" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#385#403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diag/diagforall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="67" selection-start="2099" selection-end="2099" vertical-scroll-proportion="0.74956524">
+          <folding>
+            <element signature="e#218#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#214#225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/iptables/killswitch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.8912">
+        <state line="32" column="38" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#128#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="1695" selection-end="5151" vertical-scroll-proportion="0.3477589">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/efb.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="8" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/client_kicker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="30" selection-start="3897" selection-end="3897" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scanconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="0" selection-start="5072" selection-end="5072" vertical-scroll-proportion="0.9290221">
+          <folding>
+            <element signature="e#509#522#0" expanded="true" />
           </folding>
         </state>
       </provider>
