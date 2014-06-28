@@ -13,6 +13,8 @@ configures and starts socket for communication
 from socket import *
 import __builtin__
 import base64 as b64
+from encoder import clientencoder
+
 
 class tcpsocks():
 
@@ -21,34 +23,10 @@ class tcpsocks():
 
 	def connectsocket(self):
 		try:
+			key = "filterbuster"
 			__builtin__.proto = str("tcp").upper()
 			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
-			if encodedata in ["base85","b85"]:
-				ident = b64.b85encode(ident)
-			if encodedata in ["base64", "b64"]:
-				ident = b64.b64encode(ident)
-			if encodedata in ["base32", "b32"]:
-				ident = b64.b32encode(ident)
-			if encodedata in ["base16", "b16"]:
-				ident = b64.b16encode(ident)
-			if encodedata in ["rot13", "rot", "r13"]:
-				ident = str(ident).encode('rot13')
-			if encodedata in ["xor", "OR"]:
-				#xor routing taken from https://dustri.org/
-				# Stupid XOR demo
-				from itertools import cycle, izip
-				key = 'filterbuster'
-				ident = ''.join(chr(ord(c)^ord(k)) for c,k in izip(ident, cycle(key)))
-			if encodedata == "url":
-				pass # do url
-			if encodedata == "lzma":
-				pass # do lzma
-			if encodedata in ["gz", "gzip"]:
-				pass # do gzip
-			if encodedata in ["binary", "bytestring"]:
-				pass # do gzip
-			if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
-				pass # do gzip
+			clientencoder().dataencode(ident)
 			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
@@ -56,26 +34,17 @@ class tcpsocks():
 				pass
 			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
-			data = sockobj.recv(1024)
+			__builtin__.data = sockobj.recv(1024)
 			sockobj.close()
-			if str(data):
+			if data:
 				passlist.append("TCP/"+str(ls))
-				if encodedata == "base85":
-					ident = b64.b85decode(data)
-				if encodedata == "base64":
-					ident = b64.b64decode(data)
-				if encodedata == "base16":
-					ident = b64.b16decode(data)
-				if encodedata == "base32":
-					ident = b64.b32decode(data)
-				if encodedata == "rot13":
-					ident = str(data).decode('rot13')
-				if encodedata == "xor":
-					ident = ''.join(chr(ord(c)^ord(k)) for c,k in izip(data, cycle(key)))
-				__builtin__.state = "Established"
-				print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(ident).strip()
+				#print "Client data encoder before" # diagnostics
+				clientencoder().datadecode(data)
+				#print "Client data encoder after" # diagnostics
 			else:
 				pass
+			__builtin__.state = "Established"
+			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr)+" " + str(data)
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()

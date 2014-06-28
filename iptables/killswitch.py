@@ -38,6 +38,6 @@ class killswitch:
 					os.popen(killer)
 					sys.exit(0)
 		except Exception as killerdied:
-			print "exception caused in killswitch module: "+str(killerdied)
+			#print "exception caused in killswitch module: "+str(killerdied)
 			sys.exit(0)
 

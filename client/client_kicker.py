@@ -119,7 +119,9 @@ class initclient():
 				""" check and make sure its a file and not some malicious user input """
 				if os.path.isfile(sys.argv[2]):
 					confsecmap
+				#print "Client config diagnostics before" # diagnostics
 				clientconfdiag().diagconfig
+				#print "Client config diagnostics after" # diagnostics
 		except Exception as conffilefail:
 			if str(diag).lower() in ["true","yes"]:
 				print("\n" + bh + "[*] " + "-" * 80 + be + "\n")

@@ -32,21 +32,21 @@ class udpsocks():
 			__builtin__.state = ""
 			__builtin__.proto = str("udp").upper()
 			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
-			clientencoder().dataencode()
+			clientencoder().dataencode(ident)
 			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
 			else:
 				sockobj.settimeout(float(0.1))
-			sockobj.connect((ipaddr, base_port))
+			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
-			data = sockobj.recv(1024)
+			__builtin__.data = sockobj.recv(1024)
 			sockobj.close()
 			if data != "":
 				passlist.append(str(proto).upper()+"/"+str(ls))
-				clientencoder().datadecode()
+				clientencoder().datadecode(data)
 				__builtin__.state = "Established"
-				print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - "+ be + str(data)
+				print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) + str(data)
 			else:
 				pass
 			try:
@@ -64,7 +64,6 @@ class udpsocks():
 				print "Failed in udpsock logging: " + str(e)
 				pass
 			faillist.append(str(proto).upper()+"/"+str(ls))
-			print ls
 			pass
 
 

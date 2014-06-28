@@ -45,6 +45,7 @@ directories = ["client",
                "datatypes",
                "diag",
                "error",
+               "encoder",
                "help",
                "iptables",
                "log",
@@ -103,21 +104,29 @@ def checkfirstargument():
 			from diagforall import diagclientheader
 			# import some functionality
 			try:
+				#print 'Check depends before' # diagnostics
 				checkdepends().required_mods()  # check dependencies before launch
+				#print 'Check depends after' # diagnostics
 			except Exception as requiredmodsfail:  # if anything failed here
 				print "hit an exception in checkdepends.py - required_mods(): " + str(requiredmodsfail)
 				helper().helpall()
 				sys.exit(0)
 			try:
+				#print 'Check client header before' # diagnostics
 				diagclientheader().clientheader()
+				#print 'Check client header after' # diagnostics
+				#print 'Check client run before' # diagnostics
 				initclient().clientrun()  # run client kicker
+				#print 'Check client run after' # diagnostics
 			except Exception as clientrunfail:  # if anything failed here
 				if str(diag).lower() in ["true","yes"]:
 					print "hit an exception in initclient.py clientrun(): " + str(clientrunfail)
 				helper().helpall()
 				sys.exit(0)
 			try:
+				#print 'Check scanengine before' # diagnostics
 				initscanner().scanengine()  # configure and run scanning engine
+				#print 'Check scanengine atfer' # diagnostics
 			except Exception as scanenginefail:  # if anything failed here
 				if str(diag).lower() in ["true","yes"]:
 					print "hit an exception in initscanner.py scanengine(): " + str(scanenginefail)
@@ -127,10 +136,14 @@ def checkfirstargument():
 			__builtin__.diag = "yes"  # since server does not get settings from ini file
 			try:
 				from servargs import args
+				#print "Check server argument before" # diagnostics
 				args().getservargs()
+				#print "Check server argument after" # diagnostics
 				try:
 					from server_kicker import initserver
+					#print "Check initserver before" # diagnostics
 					initserver().serverrun()
+					#print "Check initserver after" # diagnostics
 				except Exception as serverrunfail:
 					print "hit an exception in initserver.py serverrun(): " + str(serverrunfail)
 				pass
@@ -144,10 +157,12 @@ def checkfirstargument():
 """ pain in the __main__ """
 if __name__ == "__main__":
 	"""  run checkfirstargument function """
+	#print "Run checkfirstargument before" # diagnostics
 	checkfirstargument()
+	#print "Run checkfirstargument after" # diagnostics
 	"""for diagnostics display a pie chart"""
-	#from diagforall import piechartdiag
-	#piechartdiag().getaslice()
+	from diagforall import piechartdiag
+	piechartdiag().getaslice()
 	print ""
 
 

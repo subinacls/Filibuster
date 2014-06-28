@@ -26,7 +26,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					self.data = " Filterbuster - " +self.line
+					self.data = ": Filterbuster - " +self.line
 					self.data = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
 					self.request.send(self.data)
 			except Exception as notxor:
@@ -36,7 +36,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					self.data = str(" Filterbuster = "+str(self.line)).encode('rot13')
+					self.data = str(": Filterbuster = "+str(self.line)).encode('rot13')
 					self.request.send(self.data)
 			except Exception as notro13:
 				pass
@@ -45,7 +45,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					self.data = b64.b85encode(" Filterbuster - " + str(self.line))
+					self.data = b64.b85encode(": Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase85:
 				pass
@@ -54,7 +54,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					self.data = b64.b64encode(" Filterbuster - " + str(self.line))
+					self.data = b64.b64encode(": Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase64:
 				pass
@@ -63,7 +63,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					self.data = b32.b85encode(" Filterbuster - " + str(self.line))
+					self.data = b32.b85encode(": Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase64:
 				pass
@@ -72,7 +72,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					self.data = b16.b85encode(" Filterbuster - " + str(self.line))
+					self.data = b16.b85encode(": Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase16:
 				pass
@@ -81,7 +81,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
-					self.request.send(" Filterbuster - " +self.data)
+					self.request.send(": Filterbuster - " +self.data)
 			except Exception as notplaintxt:
 				pass
 		else:
