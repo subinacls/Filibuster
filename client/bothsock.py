@@ -35,7 +35,7 @@ class bothsocks():
 			else:
 				pass
 			sockobj.close()
-			__builtin__.state = "connected"
+			__builtin__.state = "Established"
 			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(data).strip()
 			try:
 				from log_enable import log_enabled
@@ -69,7 +69,7 @@ class bothsocks():
 			sockobj.close()
 			if data != "":
 				passlist.append(str(proto).upper()+"/"+str(ls))
-				__builtin__.state = "connected"
+				__builtin__.state = "Established"
 			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - "+ be + str(data)
 			try:
 				from log_enable import log_enabled

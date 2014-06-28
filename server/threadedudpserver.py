@@ -27,7 +27,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
-			except Exception as notbase16:
+			except Exception as notaxor:
 				pass
 			try:
 				self.line = str(self.data).decode('rot13')
@@ -35,7 +35,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
-			except Exception as notbase16:
+			except Exception as notarot:
 				pass
 			try:
 				self.line = str(b64.b85decode(self.data))
@@ -43,7 +43,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
-			except Exception as notbase16:
+			except Exception as notbase85:
 				pass
 			try:
 				self.line = str(b64.b64decode(self.data))
@@ -59,7 +59,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
-			except Exception as notbase64:
+			except Exception as notbase32:
 				pass
 			try:
 				self.line = str(b64.b16decode(self.data))

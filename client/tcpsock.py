@@ -22,7 +22,7 @@ class tcpsocks():
 	def connectsocket(self):
 		try:
 			__builtin__.proto = str("tcp").upper()
-			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
+			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
 			if encodedata in ["base85","b85"]:
 				ident = b64.b85encode(ident)
 			if encodedata in ["base64", "b64"]:
@@ -72,7 +72,7 @@ class tcpsocks():
 					ident = str(data).decode('rot13')
 				if encodedata == "xor":
 					ident = ''.join(chr(ord(c)^ord(k)) for c,k in izip(data, cycle(key)))
-				__builtin__.state = "connected"
+				__builtin__.state = "Established"
 				print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(ident).strip()
 			else:
 				pass
