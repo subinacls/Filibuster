@@ -21,35 +21,40 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				#xor routing taken from https://dustri.org/
 				# Stupid XOR demo
 				from itertools import cycle, izip
-				key = 's3cr3t'
+				key = 'filterbuster'
 				self.line = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = " Filterbuster - " +self.line
+					self.data = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
 					self.request.send(self.data)
-			except Exception as notbase16:
+			except Exception as notxor:
 				pass
 			try:
 				self.line = str(self.data).decode('rot13')
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = str(" Filterbuster = "+str(self.line)).encode('rot13')
 					self.request.send(self.data)
-			except Exception as notbase16:
+			except Exception as notro13:
 				pass
 			try:
 				self.line = str(b64.b85decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b64.b85encode(" Filterbuster - " + str(self.line))
 					self.request.send(self.data)
-			except Exception as notbase16:
+			except Exception as notbase85:
 				pass
 			try:
 				self.line = str(b64.b64decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b64.b64encode(" Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase64:
 				pass
@@ -58,6 +63,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b32.b85encode(" Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase64:
 				pass
@@ -66,6 +72,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					self.data = b16.b85encode(" Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase16:
 				pass
@@ -74,7 +81,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
 					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
-					self.request.send(self.data)
+					self.request.send(" Filterbuster - " +self.data)
 			except Exception as notplaintxt:
 				pass
 		else:

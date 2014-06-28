@@ -10,23 +10,74 @@ import threading
 import SocketServer
 import __builtin__
 from contamination import contaminlog
+import base64 as b64
 
 class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 	def handle(self):
 		self.data = self.request[0].strip()
 		socket = self.request[1]
-		try:
-			self.line = str(b64.b64decode(self.data))
-			matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
-		except Exception as notbase64:
-			pass
-		try:
-			self.line = str(self.data)
-			matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
-		except Exception as notbase64:
-			pass
-		if matchObj:
-			print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
+		if self.data:
+			try:
+				#xor routing taken from https://dustri.org/
+				# Stupid XOR demo
+				from itertools import cycle, izip
+				key = 'filterbuster'
+				self.line = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				if matchObj:
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					socket.sendto(str(self.data[0:10000000]), self.client_address)
+			except Exception as notbase16:
+				pass
+			try:
+				self.line = str(self.data).decode('rot13')
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				if matchObj:
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					socket.sendto(str(self.data[0:10000000]), self.client_address)
+			except Exception as notbase16:
+				pass
+			try:
+				self.line = str(b64.b85decode(self.data))
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				if matchObj:
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					socket.sendto(str(self.data[0:10000000]), self.client_address)
+			except Exception as notbase16:
+				pass
+			try:
+				self.line = str(b64.b64decode(self.data))
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				if matchObj:
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					socket.sendto(str(self.data[0:10000000]), self.client_address)
+			except Exception as notbase64:
+				pass
+			try:
+				self.line = str(b64.b32decode(self.data))
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				if matchObj:
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					socket.sendto(str(self.data[0:10000000]), self.client_address)
+			except Exception as notbase64:
+				pass
+			try:
+				self.line = str(b64.b16decode(self.data))
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				if matchObj:
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					socket.sendto(str(self.data[0:10000000]), self.client_address)
+			except Exception as notbase16:
+				pass
+			try:
+				self.line = self.data
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				if matchObj:
+					print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					socket.sendto(str(self.data[0:10000000]), self.client_address)
+			except Exception as notplaintxt:
+				pass
+
 			socket.sendto(str(self.data[0:10000000]), self.client_address)
 		else:
 			contaminlog().jcom_keeper(self.client_address[0], str("udp").upper(), self.client_address[1], self.data)

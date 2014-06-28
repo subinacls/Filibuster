@@ -10,10 +10,8 @@ configures and starts socket for communication
 	logs state and information about connection attempt
 """
 
-import sys
 from socket import *
 import __builtin__
-import datetime
 import base64 as b64
 
 class tcpsocks():
@@ -23,26 +21,23 @@ class tcpsocks():
 
 	def connectsocket(self):
 		try:
-			sdate = str(datetime.datetime.now()).strip(".")
 			__builtin__.proto = str("tcp").upper()
-			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(sdate)
-			if encodedata == "base85":
+			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
+			if encodedata in ["base85","b85"]:
 				ident = b64.b85encode(ident)
-			if encodedata == "base64":
+			if encodedata in ["base64", "b64"]:
 				ident = b64.b64encode(ident)
-			if encodedata == "base32":
+			if encodedata in ["base32", "b32"]:
 				ident = b64.b32encode(ident)
-			if encodedata == "base16":
+			if encodedata in ["base16", "b16"]:
 				ident = b64.b16encode(ident)
-			if encodedata == "base85":
-				ident = b64.b85encode(ident)
-			if encodedata == "rot13":
+			if encodedata in ["rot13", "rot", "r13"]:
 				ident = str(ident).encode('rot13')
-			if encodedata == "xor":
+			if encodedata in ["xor", "OR"]:
 				#xor routing taken from https://dustri.org/
 				# Stupid XOR demo
 				from itertools import cycle, izip
-				key = 's3cr3t'
+				key = 'filterbuster'
 				ident = ''.join(chr(ord(c)^ord(k)) for c,k in izip(ident, cycle(key)))
 			if encodedata == "url":
 				pass # do url
@@ -65,22 +60,22 @@ class tcpsocks():
 			sockobj.close()
 			if str(data):
 				passlist.append("TCP/"+str(ls))
+				if encodedata == "base85":
+					ident = b64.b85decode(data)
+				if encodedata == "base64":
+					ident = b64.b64decode(data)
+				if encodedata == "base16":
+					ident = b64.b16decode(data)
+				if encodedata == "base32":
+					ident = b64.b32decode(data)
+				if encodedata == "rot13":
+					ident = str(data).decode('rot13')
+				if encodedata == "xor":
+					ident = ''.join(chr(ord(c)^ord(k)) for c,k in izip(data, cycle(key)))
+				__builtin__.state = "connected"
+				print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(ident).strip()
 			else:
 				pass
-			if encodedata == "base85":
-				ident = b64.b85decode(ident)
-			if encodedata == "base64":
-				data = b64.b64decode(ident)
-			if encodedata == "base16":
-				ident = b64.b16decode(ident)
-			if encodedata == "base32":
-				ident = b64.b32decode(ident)
-			if encodedata == "rot13":
-				ident = str(ident).decode('rot13')
-			if encodedata == "xor":
-				ident = ''.join(chr(ord(c)^ord(k)) for c,k in izip(ident, cycle(key)))
-			__builtin__.state = "connected"
-			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(ident).strip()
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
