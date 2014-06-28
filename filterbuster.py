@@ -60,6 +60,7 @@ for inc in directories:
 
 """ import modules after directory structure appended to system $PATH """
 from bcolors import bcolors as b
+import pcolors
 from diagforall import diagclientheader
 from diagforall import diagserverheader
 import verinfo as verinfo
@@ -160,6 +161,26 @@ if __name__ == "__main__":
 	"""for diagnostics display a pie chart"""
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
+	if str(covert).lower() in ["true","yes"]:
+		from covert import icmptunnel, ntptunnel, dnstunnel
+		""" set basic list for gathering for covert tunnel testing """
+		__builtin__.tunnelspass = []
+		__builtin__.tunnelsfail = []
+		print(bh + "\n\t[-] Starting Covert tunnel testing process now ..." + be)
+		""" initalize tunnel testing """
+		""" actual covert testing calls to the previous set classes """
+		icmptunnel().ping(tunnelspass, tunnelsfail)
+		ntptunnel().ntp(tunnelspass, tunnelsfail)
+		dnstunnel().dns(tunnelspass, tunnelsfail)
+		""" print findings for covert testing """
+		if tunnelspass:
+			print(bh + "\n\t[-] List of passed Covert tunnels ...\n" + be)
+			printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tunnelspass))
+		if str(tunnelsfail) != "[]":
+			print(bh + "\n\t[-] List of failed Covert tunnels ...\n" + be)
+			printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tunnelsfail))
+		from jsonloggen import jsonlogger
+		jsonlogger().jsontunnellog()
 	print ""
 
 

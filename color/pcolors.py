@@ -10,17 +10,16 @@ colorization of output handled in this file
 
 global userstr
 global var
-  
+
 class printfunction:
 
-  def __init__(self, userstr, var):
-    self.userstr = userstr
-    self.var = var
+  def __init__(self):
+      pass
 
-  def pfunc(self, userstr, var): 
-    collen = 75 
-    pip = bo+ userstr + be
-    pips = " " + var 
-    pipri = pip + pips.rjust((collen-len(pip)), '.') 
-    print pipri
+  def pfunc(self, userstr, var):
+      collen = 95
+      pip = bo+ userstr + be
+      pips = " " + var
+      pipri = pip + pips.rjust((collen-len(pip)), '.')
+      print pipri
 

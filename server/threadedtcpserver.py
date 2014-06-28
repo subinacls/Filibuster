@@ -12,14 +12,17 @@ import __builtin__
 import base64 as b64
 from contamination import contaminlog
 
+"""
+This is the TCP Threaded server portiong of the application
+Some processing of the data is done here which is then reflected back to the client
+Any future encoding/hashing/encryption function should be added to their respective file
+and then patched into the threadedtcprequesthandler """
 
 class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler): 
 	def handle(self): 
 		self.data = self.request.recv(1024).strip()
 		if self.data:
 			try:
-				#xor routing taken from https://dustri.org/
-				# Stupid XOR demo
 				from itertools import cycle, izip
 				key = 'filterbuster'
 				self.line = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))

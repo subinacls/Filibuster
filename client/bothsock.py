@@ -27,14 +27,16 @@ class bothsocks():
 				sockobj.settimeout(float(nappy))
 			else:
 				pass
+			#print 'Start both socket connection' # diagnostics
 			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
 			data = sockobj.recv(1024)
+			sockobj.close()
+			#print 'End both socket connection' # diagnostics
 			if data != "":
 				passlist.append("TCP/"+str(ls))
 			else:
 				pass
-			sockobj.close()
 			__builtin__.state = "Established"
 			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(data).strip()
 			try:

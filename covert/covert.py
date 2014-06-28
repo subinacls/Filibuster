@@ -12,6 +12,8 @@ import os
 import time
 from subprocess import Popen
 from socket import *
+import dns.resolver
+
 
 """ handles the icmp tunnel testing """
 class icmptunnel:
@@ -80,34 +82,3 @@ class dnstunnel:
 				tunnelsfail.append('dns')
 		except Exception as dnstunnelfail:
 			print dnstunnelfail, "dnstunnel failed"
-
-""" set basic list for gathering for covert tunnel testing """
-tunnelspass = []
-tunnelsfail = []
-print(bh + "\n\t[-] Starting Covert tunnel testing process now ..." + be)
-""" initalize tunnel testing """
-
-""" actual covert testing calls to the previous set classes """
-icmptunnel().ping(tunnelspass, tunnelsfail)
-ntptunnel().ntp(tunnelspass, tunnelsfail)
-dnstunnel().dns(tunnelspass, tunnelsfail)
-print bh + "\n\t[-] Finished Cover tunnel testing process ..." + be
-
-""" print findings for covert testing """
-if tunnelspass:
-	print(bh + "\n\t[-] List of passed Covert tunnels ...\n" + be)
-	for tp in tunnelspass:
-		""" childish toilet humor, he said tp """
-		printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tp))
-
-if tunnelsfail:
-	print(bh + "\n\t[-] List of failed Covert tunnels ...\n" + be)
-	for tf in tunnelsfail:
-		printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tf))
-
-diagclientheader().clientheader()
-if str(diag).lower() in ["true","yes"]:
-	print(bh+"\n\t[-] Entering the Client portion of application\n"+be)
-	printfunction().pfunc("\t\t[!] System Argument position 1 is set to: ",sa1)
-else:
-	pass

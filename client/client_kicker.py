@@ -6,7 +6,7 @@
 
 """ Useful information
 Used to check for dependencies required for operation
-run client user argument variables
+collect user arguments for processing
 check configuration ini file
 kick off configuration parser
 """
@@ -33,32 +33,32 @@ class initclient():
 	""" if dependency is not found, print helper text to install modules """
 	def check_depends(self):
 		# check depends ,,, the joke writes it's self...
-
+		#print "Start checking for dependencies" # diagnostics
 		try:
 			""" required for graphing """
 			import numpy as np
 		except Exception as nonumpyinstalled:
-			print("Please install numpy with: easy_install numpy")
+			print bo+"\n\n\t"+be+"[?] Please install numpy with: easy_install numpy"
 			if str(diag).lower() in ["true","yes"]:
-				print "Dependency exception caught as: " + str(nonumpyinstalled)
+				print bo+"\n\n\t"+be+"[?] Dependency exception caught as: " + str(nonumpyinstalled)
 			sys.exit()
 		try:
 			""" import configparser for user supplied configuration file """
 			import ConfigParser
 		except Exception as noconfigparserinstalled:
-			print("Please install ConfigParser with: easy_install configparser")
+			print bo+"\n\n\t"+be+"[?] Please install ConfigParser with: easy_install configparser"
 			if str(diag).lower() in ["true","yes"]:
-				print "Dependency exception caught as: " + str(noconfigparserinstalled)
+				print bo+"\n\n\t"+be+"[?] Dependency exception caught as: " + str(noconfigparserinstalled)
 			sys.exit()
 		try:
 			""" required for covert testing """
 			import dns.resolver
 		except Exception as covertdnsimportfail:
-			print("Please install python DNS module with: easy_install dnspython")
+			print bo+"\n\n\t"+be+"[?] Please install python DNS module with: easy_install dnspython"
 			if str(diag).lower() in ["true","yes"]:
-				print "Dependency exception caught as: " + str(covertdnsimportfail)
+				print bo+"\n\n\t"+be+"[?] Dependency exception caught as: " + str(covertdnsimportfail)
 			sys.exit()
-
+		#print "End checking for dependencies" # diagnostics
 	""" starting client portion of the application """
 
 	def clientrun(self):
@@ -77,7 +77,6 @@ class initclient():
 			else:
 				__builtin__.hostip == ipaddr
 				pass
-
 		except Exception as csetvarfail:
 			print "could not set hostip address from ipaddress in conf.py" + str(csetvarfail)
 
@@ -85,13 +84,6 @@ class initclient():
 		try:
 			__builtin__.conffile = sys.argv[2]
 		except Exception as conffilefail:
-			if str(diag).lower() in ["true", "yes"]:
-				print("\n" + bh + "[*] " + "-" * 80 + be+"\n")
-				print("\t" + bf + "ATTENTION " + be + bw + "[?] SYSARG position 2 has " + \
-				      bf + "FAILED" + be + bw + " due to absence" + be
-				)
-				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(conffilefail) + "\n" + be)
-			print ""
 			from helper import helper
 			print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 			helper().chelp()
@@ -103,11 +95,6 @@ class initclient():
 			else:
 				__builtin__.mytls = str(sys.argv[3])
 		except Exception as nosysarg3:
-			if str(diag).lower() in ["true", "yes", "1"]:
-				print("\n" + bh + "[*] " + "-" * 80 + be + "\n")
-				print("\t" + bf + "ATTENTION " + be + bw + "[?] SYSARG position 3 is " + bf + str(mytls) + be + bw + be)
-				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
-			print("")
 			from helper import helper
 			print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 			helper().chelp()
@@ -126,11 +113,6 @@ class initclient():
 				clientconfdiag().diagconfig
 				#print "Client config diagnostics after" # diagnostics
 		except Exception as conffilefail:
-			if str(diag).lower() in ["true","yes"]:
-				print("\n" + bh + "[*] " + "-" * 80 + be + "\n")
-				print("\t"+bf+"ATTENTION "+be+bw+"[?] config file failed "+bf+str(conffilefail)+be+bw+be)
-				print("\t[?] " + van + " v." + vv + " - CRASHED: " + bf + str(nosysarg3) + "\n" +be)
-			print("")
 			from helper import helper
 			print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
 			helper().chelp()

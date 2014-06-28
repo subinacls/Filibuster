@@ -3,6 +3,11 @@
 #
 # module author: subinacls
 #
+"""
+This is the UDP Threaded server portiong of the application
+Some processing of the data is done here which is then reflected back to the client
+Any future encoding/hashing/encryption function should be added to their respective file
+and then patched into the threadedudprequesthandler """
 
 import os
 import re
@@ -18,8 +23,6 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		socket = self.request[1]
 		if self.data:
 			try:
-				#xor routing taken from https://dustri.org/
-				# Stupid XOR demo
 				from itertools import cycle, izip
 				key = 'filterbuster'
 				self.line = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
@@ -40,7 +43,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
 			except Exception as notro13:
 				pass
-			try:
+			try: # this actualy may not work - fix it
 				self.line = str(b64.b85decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:

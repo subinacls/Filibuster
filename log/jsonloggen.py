@@ -78,3 +78,24 @@ class jsonlogger():
 		except Exception as jkeeperfail: # catch all
 			jlh().jlogfail(jkeeperfail)
 			pass # keep on keeping no
+
+	def jsontunnellog(self):
+		self.json_read()
+		try:
+			if consultant not in rawjson.keys(): # check for variable in key values
+				rawjson[consultant] = {} # if not in key values, make new key as a dict
+			if location not in rawjson[consultant].keys(): # repeated
+				rawjson[consultant][location] = {}
+			if str(ldate).split(" ")[0] not in rawjson[consultant][location].keys():
+				rawjson[consultant][location][str(ldate).split(" ")[0]] = {}
+			if ipaddr not in rawjson[consultant][location][str(ldate).split(" ")[0]].keys():
+				rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr] = {}
+			if "tunnelspass" not in rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr].keys():
+				rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr]["tunnelspass"] = tunnelspass
+			if "tunnelsfail" not in rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr].keys():
+				rawjson[consultant][location][str(ldate).split(" ")[0]][ipaddr]["tunnelsfail"] = tunnelsfail
+			self.json_write()
+			pass # keep on moving
+		except Exception as jkeeperfail: # catch all
+			jlh().jlogfail(jkeeperfail)
+			pass # keep on keeping no

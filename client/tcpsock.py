@@ -44,7 +44,7 @@ class tcpsocks():
 			else:
 				pass
 			__builtin__.state = "Established"
-			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr)+" " + str(data)
+			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) + str(data)
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
