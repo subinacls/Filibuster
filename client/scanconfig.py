@@ -94,7 +94,6 @@ class initscanner():
 			random.shuffle(stack)
 		else:
 			pass
-		print stack
 		__builtin__.total_stack = len(stack)
 		print(bh+"\n\t[-] Starting "+be+str(scantype)+be+bh+" scanning process against server IP: "+be+ipaddr+be)
 		while int(u) != total_stack:
@@ -103,7 +102,6 @@ class initscanner():
 			__builtin__.run_timer = time.time()
 			if stack[0]:
 				__builtin__.ls = stack[0]
-				print ls
 				if sleepy == "random":
 					__builtin__.rest = int(random.choice(np.arange(1,int(nappy),int(rester))))
 				else:

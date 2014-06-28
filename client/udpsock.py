@@ -36,6 +36,20 @@ class udpsocks():
 			print ls
 			sdate = str(datetime.datetime.now()).strip(".")
 			ident = bo+"On "+ be +str(proto) + bo+" Port: "+ be +str(ls) + bo+" - By: "+ be +  str(consultant) +bo+ " - From: " +be + str(location) + bo+ " - On: " +  be +str(sdate)
+			if encodedata == "base64":
+				pass # do base64
+			if encodedata == "rot13":
+				pass # do rot13
+			if encodedata == "url":
+				pass # do url
+			if encodedata == "lzma":
+				pass # do lzma
+			if encodedata in ["gz", "gzip"]:
+				pass # do gzip
+			if encodedata in ["binary", "bytestring"]:
+				pass # do gzip
+			if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
+				pass # do gzip
 			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
@@ -54,14 +68,12 @@ class udpsocks():
 				log_enabled().logging()
 			except Exception as logenbfail:
 				print "Failed in udpsock logging: " + str(logenbfail)
-
 		except Exception as logenbfail:
 			print bf+"\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(logenbfail)+be
 			state = "Failed"
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
-
 			except Exception as e:
 				print "Failed in udpsock logging: " + str(e)
 				pass

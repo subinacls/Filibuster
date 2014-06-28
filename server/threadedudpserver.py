@@ -15,11 +15,18 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 	def handle(self):
 		self.data = self.request[0].strip()
 		socket = self.request[1]
-
-		line = str(self.data)
-		matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', line)
+		try:
+			self.line = str(b64.b64decode(self.data))
+			matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+		except Exception as notbase64:
+			pass
+		try:
+			self.line = str(self.data)
+			matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+		except Exception as notbase64:
+			pass
 		if matchObj:
-			print bo + "Client:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
+			print bo + "Host:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
 			socket.sendto(str(self.data[0:10000000]), self.client_address)
 		else:
 			contaminlog().jcom_keeper(self.client_address[0], str("udp").upper(), self.client_address[1], self.data)

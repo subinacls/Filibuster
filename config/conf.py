@@ -92,6 +92,12 @@ class confsecmap:
 				__builtin__.proto = flipbit
 				pass
 			try:
+				if Config.get("SectionOne", "encodedata") != "":
+					__builtin__.encodedata = ConfigSectionMap("SectionOne")["encodedata"]
+			except Exception as encodedatafail:
+				__builtin__.encodedata = "plain"
+				pass
+			try:
 				if Config.get("SectionOne", "consultant") != "":
 					__builtin__.consultant = ConfigSectionMap("SectionOne")["consultant"]
 			except Exception as conconffail:
