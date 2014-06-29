@@ -1,8 +1,6 @@
-
 #!/usr/bin/env python
-
+# encoding: utf-8
 """
-encoding: utf-8
 module author: subinacls
 
 Some diagnostics was added to the application
@@ -20,7 +18,6 @@ warning:
 	running diagnostics will slow down the scanning process
 	use only when adding modules to view the data flow
 	You have been informed
-
 """
 
 import __builtin__
@@ -38,8 +35,6 @@ __builtin__.u = 0
 """ useful for diagnostics and error suppression """
 __builtin__.diag = ""
 __builtin__.dd = {}
-
-
 """ enable or disable error msg output """
 __builtin__.suppress = "yes"
 
@@ -48,8 +43,8 @@ directories = ["client",
                "color",
                "config",
                "covert",
-               "datatypes",
                "diag",
+               "dlp",
                "error",
                "encoder",
                "help",
@@ -102,8 +97,8 @@ except Exception as nofirstargument:
 
 def checkfirstargument():
 
-	try:
-		if str(sa1).lower() in ["client","c"]:  # if your looking for the client portion
+	try:  # if your looking for the client portion
+		if str(sa1).lower() in ["client", "c"]:
 			from client_kicker import initclient
 			from scanconfig import initscanner
 			from diagforall import checkdepends
@@ -151,7 +146,7 @@ def checkfirstargument():
 					print bo + "\n\n\t[?] Please ensure all variables are given\n" + be
 				pass
 			except Exception as serverinitfail:
-				print serverinitfail, "failed server initialization"
+				print bo + "\n\n\t[?] Failed server initialization" + str(serverinitfail)
 	except Exception as nofirstargument:
 		print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 		helper().helpall()
