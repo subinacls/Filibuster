@@ -14,6 +14,7 @@ import __builtin__
 import socket
 import datetime
 from bcolors import bcolors as b
+
 bh = b.HEADER
 bf = b.FAIL
 be = b.ENDC
@@ -22,8 +23,7 @@ bo = b.OKBLUE
 from encoder import clientencoder
 
 
-class udpsocks():
-
+class udpsocks(object):
 
 	def __init__(self):
 		pass
@@ -33,7 +33,9 @@ class udpsocks():
 			ldate = datetime.datetime.now()
 			__builtin__.state = ""
 			__builtin__.proto = str("udp").upper()
-			__builtin__.ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
+			__builtin__.ident = bo + "On " + be + str(proto) + bo + " Port: " + be + str(
+				ls) + bo + " - By: " + be + str(consultant) + bo + " - From: " + be + str(
+				location) + bo + " - On: " + be + str(ldate)
 			clientencoder().dataencode(ident)
 			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			if nappy > "1":
@@ -45,27 +47,28 @@ class udpsocks():
 			__builtin__.data = sockobj.recv(1024)
 			sockobj.close()
 			if data != "":
-				passlist.append(str(proto).upper()+"/"+str(ls))
+				passlist.append(str(proto).upper() + "/" + str(ls))
 				clientencoder().datadecode(data)
 				__builtin__.state = "Established"
-				print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) + str(data)
+				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
 			else:
 				pass
 			try:
 				from log_enable import log_enabled
+
 				log_enabled().logging()
 			except Exception as logenbfail:
 				print "Failed in udpsock logging: " + str(logenbfail)
 		except Exception as udpconfail:
 			__builtin__.state = str(udpconfail).split("] ")[1]
-			faillist.append(str(proto).upper()+"/"+str(ls))
-			print bf+"\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(udpconfail)+be
+			faillist.append(str(proto).upper() + "/" + str(ls))
+			print bf + "\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + \
+			      str(ipaddr) + " - " + str(udpconfail) + be
 			try:
 				from log_enable import log_enabled
+
 				log_enabled().logging()
 			except Exception as e:
 				print "Failed in udpsock logging: " + str(e)
 				pass
 			pass
-
-

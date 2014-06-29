@@ -22,7 +22,7 @@ global failconfig
 #create a disctionary to store all configuration information
 __builtin__.dict1 = {}
 
-class confsecmap:
+class confsecmap(object):
 
 	global Config
 	Config = ConfigParser.ConfigParser()
@@ -33,9 +33,9 @@ class confsecmap:
 		Config.sections()
 	except Exception as configreadfail:                                                   
 		print("\nERROR CONFIGURATION READ CONDITION in conf.py: %s\n" % configreadfail)       
-		sys.exit(0) # exit on failure to read configuration file
+		sys.exit(0)  # exit on failure to read configuration file
 
-	def ConfigSectionMap(section):                                                        
+	def ConfigSectionMap(section):
 		options = Config.options(section)                                                 
 		for option in options:                                                            
 			try:                                                                          
@@ -160,10 +160,10 @@ class confsecmap:
 			__builtin__.dict1 = dict1
 			clientconfdiag().diagconfig()
 		except Exception as failconfig:
-			if str(diag).lower() in ["true","yes"]:
+			if str(diag).lower() in ["true", "yes"]:
 				print "Configuration failed in conf.py, reason: " + str(failconfig)
 			sys.exit(0)
 	except Exception as confcatchall:
-		if str(diag).lower() in ["true","yes"]:
+		if str(diag).lower() in ["true", "yes"]:
 			print confcatchall, "configuration failed, hit catch all"
 		sys.exit(0)

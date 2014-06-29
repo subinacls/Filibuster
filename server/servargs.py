@@ -11,7 +11,8 @@ import __builtin__
 from helper import helper
 from exceptcatcher import servarghandler as sah
 
-class args():
+
+class args(object):
 
 	def __init__(self):
 		pass

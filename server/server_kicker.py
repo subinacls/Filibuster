@@ -12,7 +12,6 @@ specific to the functionality desired for smaller payload to deploy.
 
 import sys
 
-
 """ import modules after directory structure appended to system $PATH """
 
 from exceptcatcher import skerrorhandler as skh
@@ -31,23 +30,24 @@ bo = b.OKBLUE
 
 """ import server args class to handle commandline arguments """
 
-class initserver():
+
+class initserver(object):
 
 	def __init__(self):
 		pass
 
 	def serverrun(self):
 		diagserverheader().serverheader()
-		print bh+ va +" Server Initialized: ~ " + "ver.: "+ vv +  " - " + vauth +"\n\n"+ be
+		print bh + va + " Server Initialized: ~ " + "ver.: " + vv + " - " + vauth + "\n\n" + be
 		ap = str(servproto)
 		""" check system arguments for protocol to use """
 		""" This section handles the protocol and SSL/TLS staging """
 		""" handling TCP protocol staging for server """
-		if str(ap).lower() in ["tcp","t"]:
+		if str(ap).lower() in ["tcp", "t"]:
 			""" check if protocol is tcp """
 			try:
 				""" check if tls is being used or not """
-				if str(atls).lower() in ["yes","y"]:
+				if str(atls).lower() in ["yes", "y"]:
 					from server_func import tls_servers
 					""" import tcp server functionality module """
 					tcp_servers().tlsserver(ap)
@@ -61,11 +61,11 @@ class initserver():
 				skh().allserverfail(tcpserverfuncfail)
 
 		""" handling UDP protocol staging for server """
-		if str(ap).lower() in ["udp","u"]:
+		if str(ap).lower() in ["udp", "u"]:
 			""" check if protocol is udp """
 			try:
 				""" check if tls is being used or not """
-				if str(atls).lower() in ["yes","y"]:
+				if str(atls).lower() in ["yes", "y"]:
 					from server_func import tls_servers
 					""" import udp server functionality module """
 					udp_servers().dtlsserver(ap)
@@ -79,11 +79,11 @@ class initserver():
 				skh().allserverfail(udpserverfuncfail)
 
 		""" handling BOTH protocol staging for server """
-		if str(ap).lower() in ["both","b"]:
+		if str(ap).lower() in ["both", "b"]:
 			""" check if protocol is both """
 			try:
 				""" check if tls is being used or not """
-				if str(atls).lower() in ["yes","y"]:
+				if str(atls).lower() in ["yes", "y"]:
 					from server_func import tls_servers
 					""" import udp server functionality module """
 					both_servers().dtlsserver(ap)

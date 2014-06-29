@@ -1,11 +1,15 @@
-
-
+#!/usr/bin/env python
+# encoding: utf-8
+#
+# module author: subinacls
+#
 
 import base64 as b64
 import __builtin__
 from itertools import cycle, izip
 
-class clientencoder():
+
+class clientencoder(object):
 
 	def __init__(self):
 		pass
@@ -28,21 +32,20 @@ class clientencoder():
 				#xor routing taken from https://dustri.org/
 				# Stupid XOR demo
 				key = 'filterbuster'
-				__builtin__.ident = ''.join(chr(ord(c)^ord(k)) for c,k in izip(ident, cycle(key)))
+				__builtin__.ident = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(ident, cycle(key)))
 			if encodedata == "url":
-				pass # do url
+				pass  # do url
 			if encodedata == "lzma":
-				pass # do lzma
+				pass  # do lzma
 			if encodedata in ["gz", "gzip"]:
-				pass # do gzip
+				pass  # do gzip
 			if encodedata in ["binary", "bytestring"]:
-				pass # do gzip
+				pass  # do gzip
 			if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
-				pass # do gzip
+				pass  # do gzip
 			#print "Stop of encoding routine" # diagnostics
 		except Exception as e:
 			print e
-
 
 	def datadecode(self, data):
 		try:
@@ -59,7 +62,7 @@ class clientencoder():
 				__builtin__.data = str(data).decode('rot13')
 			if encodedata == "xor":
 				key = 'filterbuster'
-				__builtin__.data = ''.join(chr(ord(c)^ord(k)) for c,k in izip(data, cycle(key)))
+				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data, cycle(key)))
 			#print "Stop of decoding routine" # diagnostics
 		except Exception as e:
 			print e

@@ -8,7 +8,7 @@
 colorization of output handled in this file
 """
 
-class bcolors:
+class bcolors(object):
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'

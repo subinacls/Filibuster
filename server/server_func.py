@@ -22,7 +22,8 @@ be = bcolors.ENDC
 bw = bcolors.WARNING
 bo = bcolors.OKBLUE
 
-class tcp_servers():
+
+class tcp_servers(object):
 
 	def __init__(self):
 		pass
@@ -39,7 +40,8 @@ class tcp_servers():
 		except Exception as tcpserverfail:
 			sfh().sftcpfail(tcpserverfail)
 
-class udp_servers:
+
+class udp_servers(object):
 
 	def __init__(self):
 		pass
@@ -56,7 +58,8 @@ class udp_servers:
 		except Exception as udpserverfail:
 			sfh().sfudpfail(udpserverfail)
 
-class both_servers:
+
+class both_servers(object):
 
 	def __init__(self):
 		pass

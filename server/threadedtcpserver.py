@@ -18,6 +18,7 @@ Some processing of the data is done here which is then reflected back to the cli
 Any future encoding/hashing/encryption function should be added to their respective file
 and then patched into the threadedtcprequesthandler """
 
+
 class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler): 
 	def handle(self): 
 		self.data = self.request.recv(1024).strip()
@@ -25,12 +26,13 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 			try:
 				from itertools import cycle, izip
 				key = 'filterbuster'
-				self.line = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
+				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bf+"\t\tATTENTION " +bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
-					self.data = ": Filterbuster - " +self.line
-					self.data = ''.join(chr(ord(c)^ord(k)) for c,k in izip(self.data, cycle(key)))
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					      bo + " - " + be + self.line
+					self.data = ": Filterbuster - " + self.line
+					self.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 					self.request.send(self.data)
 			except Exception as notxor:
 				pass
@@ -38,7 +40,8 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(self.data).decode('rot13')
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bf+"\t\tATTENTION " +bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					      bo + " - " + be + self.line
 					self.data = str(" : Filterbuster = "+str(self.line)).encode('rot13')
 					self.request.send(self.data)
 			except Exception as notro13:
@@ -47,7 +50,8 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b85decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bf+"\t\tATTENTION " +bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be+ " " +self.client_address[0] + \
+					      bo + " - " + be + self.line
 					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase85:
@@ -56,7 +60,8 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b64decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bf+"\t\tATTENTION " +bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " +self.client_address[0] + \
+					      bo + " - " + be + self.line
 					self.data = b64.b64encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase64:
@@ -65,7 +70,8 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b32decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bf+"\t\tATTENTION " +bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					      bo + " - " + be + self.line
 					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase64:
@@ -74,7 +80,8 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b16decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bf+"\t\tATTENTION " +bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.line
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					      bo + " - " + be + self.line
 					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
 			except Exception as notbase16:
@@ -83,16 +90,19 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = self.data
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
-					print bf+"\t\tATTENTION " +bo + "[*] Connection from:" + be+ " " +self.client_address[0] + bo+" - "+ be+ self.data
-					self.request.send(" : Filterbuster - " +self.data)
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					      bo + " - " + be + self.line
+					self.request.send(" : Filterbuster - " + self.data)
 			except Exception as notplaintxt:
 				pass
 		else:
-			contaminlog().jcom_keeper(self.client_address[0],str("tcp").upper(),self.client_address[1],self.data)
+			contaminlog().jcom_keeper(self.client_address[0], str("tcp").upper(), self.client_address[1], self.data)
+
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass
-  
+
+
 class tcpserver():
 	def __init__(self):
 		pass
@@ -103,7 +113,7 @@ class tcpserver():
 		socketserver_thread.setDaemon(False)
 		socketserver_thread.start()
 		os.popen("iptables -t nat -F")
-		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports "+str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port "+str(serverport))
+		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port " + str(serverport))
 		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
 		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-port 22")

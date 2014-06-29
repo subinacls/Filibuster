@@ -1,13 +1,27 @@
-# encoding: utf-8
+
 #!/usr/bin/env python
 
 """
-This application is useful for mapping egress filters for a network in which has some port filtering device between you
-and another network segment. This can be the internet or used throughout different vlans etc etc. Use is based on INI
-configuration file for the client portion of the application.
-"""
+encoding: utf-8
+module author: subinacls
 
-""" standard lib imports here """
+Some diagnostics was added to the application
+To enable these print statements, remove all the starting # from lines ending in # diagnostics
+
+This application is useful for mapping egress filters and simple covert tunnel testing
+for a network which has a port filtering device bewtween you and another segment.
+
+This can be used for internet access or vlans etc etc.
+Client is enabled from the command line providing an INI file
+Clients variables are taken from the supplied INI file
+Server is configured from command line arguments
+
+warning:
+	running diagnostics will slow down the scanning process
+	use only when adding modules to view the data flow
+	You have been informed
+
+"""
 
 import __builtin__
 import sys
@@ -21,21 +35,13 @@ __builtin__.ident = ""
 date = str(datetime.datetime.now()).split()[0]
 __builtin__.date = date
 __builtin__.u = 0
-
 """ useful for diagnostics and error suppression """
 __builtin__.diag = ""
 __builtin__.dd = {}
 
-"""
-warning:
-	running diagnostics will slow down the scanning process
-	use only when adding modules to view the data flow
-	You have been informed
-"""
 
-""" enable or disable diagnostics output """
+""" enable or disable error msg output """
 __builtin__.suppress = "yes"
-""" suppress error msgs from try and other exception handling """
 
 """ list required directories for application to import custom modules """
 directories = ["client",
@@ -51,8 +57,7 @@ directories = ["client",
                "log",
                "server",
                "socket",
-               "version"
-]
+               "version"]
 
 """ for each directory append to system $PATH for custom module importing """
 for inc in directories:
@@ -88,7 +93,7 @@ ctest().colortest()
 try:
 	__builtin__.sa1 = str(sys.argv[1])
 except Exception as nofirstargument:
-	print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
+	print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 	helper().helpall()
 	sys.exit(0)
 
@@ -98,7 +103,7 @@ except Exception as nofirstargument:
 def checkfirstargument():
 
 	try:
-		if str(sa1).lower() in ["client","c"]: # if your looking for the client portion
+		if str(sa1).lower() in ["client","c"]:  # if your looking for the client portion
 			from client_kicker import initclient
 			from scanconfig import initscanner
 			from diagforall import checkdepends
@@ -108,7 +113,7 @@ def checkfirstargument():
 				checkdepends().required_mods()  # check dependencies before launch
 				#print 'Check depends after' # diagnostics
 			except Exception as requiredmodsfail:  # if anything failed here
-				print bo+"\n\n\t[?] Please ensure all dependencies are installed\n" + be
+				print bo + "\n\n\t[?] Please ensure all dependencies are installed\n" + be
 				helper().chelp()
 				sys.exit(0)
 			try:
@@ -119,7 +124,7 @@ def checkfirstargument():
 				initclient().clientrun()  # run client kicker
 				#print 'Check client run after' # diagnostics
 			except Exception as clientrunfail:  # if anything failed here
-				print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
+				print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 				helper().chelp()
 				sys.exit(0)
 			try:
@@ -127,7 +132,7 @@ def checkfirstargument():
 				initscanner().scanengine()  # configure and run scanning engine
 				#print 'Check scanengine atfer' # diagnostics
 			except Exception as scanenginefail:  # if anything failed here
-				print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
+				print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 				helper().chelp()
 				sys.exit(0)
 		if str(sa1).lower() in ["server", "s"]:  # if your looking for the server portion
@@ -143,12 +148,12 @@ def checkfirstargument():
 					initserver().serverrun()
 					#print "Check initserver after" # diagnostics
 				except Exception as serverrunfail:
-					print bo+"\n\n\t[?] Please ensure all variables are given\n" + be
+					print bo + "\n\n\t[?] Please ensure all variables are given\n" + be
 				pass
 			except Exception as serverinitfail:
 				print serverinitfail, "failed server initialization"
 	except Exception as nofirstargument:
-		print bo+"\n\n\t[?] Please ensure all arguments are given\n" + be
+		print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 		helper().helpall()
 		sys.exit(0)
 
@@ -161,7 +166,7 @@ if __name__ == "__main__":
 	"""for diagnostics display a pie chart"""
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
-	if str(covert).lower() in ["true","yes"]:
+	if str(covert).lower() in ["true", "yes"]:
 		from covert import icmptunnel, ntptunnel, dnstunnel
 		""" set basic list for gathering for covert tunnel testing """
 		__builtin__.tunnelspass = []
@@ -170,17 +175,14 @@ if __name__ == "__main__":
 		""" actual covert testing calls to the previous set classes """
 		icmptunnel().ping(tunnelspass, tunnelsfail)
 		ntptunnel().ntp(tunnelspass, tunnelsfail)
-		dnstunnel().dns(tunnelspass, tunnelsfail)
+		dnstunnel().dnsres(tunnelspass, tunnelsfail)
 		""" print findings for covert testing """
 		if str(tunnelspass) != "[]":
 			print(bh + "\n\t[-] List of passed Covert tunnels ...\n" + be)
-			printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tunnelspass))
+			printfunction().pfunc("\t\t[!] Cover tunnel: ", str(tunnelspass))
 		if str(tunnelsfail) != "[]":
 			print(bh + "\n\t[-] List of failed Covert tunnels ...\n" + be)
-			printfunction().pfunc("\t\t[!] Cover tunnel: ",str(tunnelsfail))
+			printfunction().pfunc("\t\t[!] Cover tunnel: ", str(tunnelsfail))
 		from jsonloggen import jsonlogger
 		jsonlogger().jsontunnellog()
 	print ""
-
-
-

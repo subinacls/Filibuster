@@ -4,11 +4,11 @@
 # module author: subinacls
 #
 
-'''
+"""
 version information in this file
-'''
-import __builtin__
+"""
 
+import __builtin__
 
 __builtin__.__appname__ = "Filibuster"
 __builtin__.__author__ = "SubINaclS"

@@ -3,9 +3,9 @@
 #
 # module author: subinacls
 #
-'''
+"""
 Help information handled in this file
-'''
+"""
 import sys
 import verinfo
 from bcolors import bcolors as b
@@ -17,29 +17,29 @@ vauth = __author__
 bh = b.HEADER
 be = b.ENDC
 
-class helper:
 
-  """ display basic help information to use when there is NO supplied arguments on the commandline """
+class helper(object):
+	""" display basic help information to use when there is NO supplied arguments on the commandline """
 
-  def helpall(self):
-    print bh+r"""
+	def helpall(self):
+		print bh + """
 
-    ~ """ + va  + ": " + vv +  " - " + vauth + """
+    ~ """ + va + ": " + vv + " - " + vauth + """
     [*] ----------------------------------------------------------------------------
     [*] Egress Filter verification and Covert Channel testing suite
     [*]
     [*] For further help try the following arguments:
       [!] Usage: python """ + sys.argv[0] + """ <mode>
-	      [-] Server: python """+sys.argv[0]+""" server
-	      [-] Client: python """+sys.argv[0]+""" client
+	      [-] Server: python """ + sys.argv[0] + """ server
+	      [-] Client: python """ + sys.argv[0] + """ client
 
 	""" + be
 
-  # help for server portion of the appliation
-  def shelp(self):
-    print bh +"""
+	# help for server portion of the appliation
+	def shelp(self):
+		print bh + """
 
-    ~ """ + va  + ": " + vv +  " - " + vauth + """
+    ~ """ + va + ": " + vv + " - " + vauth + """
     [*] ----------------------------------------------------------------------------
     [*] Egress Filter verification and Covert Channel testing suite
     [*] Use this for a server listening on the internet.
@@ -51,11 +51,11 @@ class helper:
 
     """ + be
 
-  # help for server TLS support
-  def tlshelp(self):
-    print bh +"""
+	# help for server TLS support
+	def tlshelp(self):
+		print bh + """
 
-    ~ """ + va  + ": " + vv +  " - " + vauth + """
+    ~ """ + va + ": " + vv + " - " + vauth + """
     [*] ----------------------------------------------------------------------------
     [*] Egress Filter verification and Covert Channel testing suite
     [*] Use this for a TLS server listening on the internet.
@@ -64,33 +64,33 @@ class helper:
 	      [-] Example: python """ + sys.argv[0] + """ server tcp 10000 yes
 
     """ + be
+
+	def chelp(self):
+		print bh + """
     
-  def chelp(self):
-    print bh+"""
-    
-    ~ """ + va  + ": " + vv +  " - " + vauth + """
+    ~ """ + va + ": " + vv + " - " + vauth + """
     [*] ----------------------------------------------------------------------------
     [*] Egress Filter verification and Covert Channel testing suite
     [*] Client portion of this application to be used with listening server
     [*] For further help try the following arguments::
       [!] Usage: python """ + sys.argv[0] + """ <mode> <config> <tls>
-	      [-] Example: python """+sys.argv[0]+""" client ./efb.conf no
-    """+be
+	      [-] Example: python """ + sys.argv[0] + """ client ./efb.conf no
+    """ + be
 
-  def thelp(self):
-    print bh+"""
+	def thelp(self):
+		print bh + """
     
-    ~ """ + va  + ": " + vv +  " - " + vauth + """
+    ~ """ + va + ": " + vv + " - " + vauth + """
     [*] ----------------------------------------------------------------------------
     [*] Finds open ports inside a network or something...
     [*] Client portion of this application to be used with TLS listening server
     [*] For further help try the following arguments:
       [!] Usage: python """ + sys.argv[0] + """ <mode> <config> <tls>
-	      [-] Example: python """+sys.argv[0]+""" client ./efb.conf yes
-    """+be
-    
-  def confh(self):
-    print bh+"""
+	      [-] Example: python """ + sys.argv[0] + """ client ./efb.conf yes
+    """ + be
+
+	def confh(self):
+		print bh + """
     # This is an example configuration file, modify as needed!
     # SectionOne is for main processes and settings
 
@@ -115,4 +115,4 @@ class helper:
     suppress: no
     logging: yes
     logtype: xml
-    """+be
+    """ + be
