@@ -99,6 +99,13 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   [-] TODO list: ....
 
       MORE SCAPY
+      Gather PII sample data (images): [
+          passports,
+          social security cards,
+          drivers license,
+          license plates,
+          birth certificates
+      ]
       Server side logging ? very quesitonable
             Encrypt data at rest if this is to be offered
       Take IP/Hostname list (iterate list for targeting)
