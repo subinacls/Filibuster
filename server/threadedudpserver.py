@@ -12,6 +12,7 @@ and then patched into the threadedudprequesthandler """
 import os
 import re
 import threading
+
 import SocketServer
 import __builtin__
 from contamination import contaminlog
@@ -24,7 +25,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		if self.data:
 			try:
 				from itertools import cycle, izip
-				key = 'filterbuster'
+				key = 'Filterbuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
@@ -41,7 +42,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = str(" : Filterbuster = " + str(self.line)).encode('rot13')
+					self.data = str(" : Filterbuster - " + str(self.line)).encode('rot13')
 					socket.sendto(str(self.data[0:10000000]), self.client_address)
 			except Exception as notro13:
 				pass

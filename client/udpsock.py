@@ -33,7 +33,7 @@ class udpsocks(object):
 			ldate = datetime.datetime.now()
 			__builtin__.state = ""
 			__builtin__.proto = str("udp").upper()
-			#print proto  # diagnostics
+			#print "current protocol set to: ", proto  # diagnostics
 			__builtin__.ident = bo + "On " + be + str(proto) + bo + " Port: " + be + \
 			                    str(ls) + bo + " - By: " + be + str(consultant) + bo + " - From: " + be + \
 			                    str(location) + bo + " - On: " + be + str(ldate)
@@ -51,11 +51,11 @@ class udpsocks(object):
 			#print "socket connection attempted"  # diagnostics
 			sockobj.send(ident)
 			#print "socket attempted to send ident string"  # diagnostics
-			__builtin__.data = sockobj.recv(1024)
+			__builtin__.data = sockobj.recv(2048)
 			#print "socket attempting to get data returned"  # diagnostics
 			sockobj.close()
 			#print "closed socket"  # diagnostics
-			if data != "":
+			if data:
 				#print "data string is as follows: ", str(data)  # diagnostics
 				passlist.append(str(proto).upper() + "/" + str(ls))
 				clientencoder().datadecode(data)

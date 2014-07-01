@@ -25,7 +25,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 		if self.data:
 			try:
 				from itertools import cycle, izip
-				key = 'filterbuster'
+				key = 'Filterbuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
@@ -101,8 +101,8 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass
-
-
+  
+  
 class tcpserver():
 	def __init__(self):
 		pass
@@ -113,7 +113,7 @@ class tcpserver():
 		socketserver_thread.setDaemon(False)
 		socketserver_thread.start()
 		os.popen("iptables -t nat -F")
-		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port " + str(serverport))
+		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports "+str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port "+str(serverport))
 		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
 		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-port 22")

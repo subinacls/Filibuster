@@ -161,23 +161,24 @@ if __name__ == "__main__":
 	"""for diagnostics display a pie chart"""
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
-	if str(covert).lower() in ["true", "yes"]:
-		from covert import icmptunnel, ntptunnel, dnstunnel
-		""" set basic list for gathering for covert tunnel testing """
-		__builtin__.tunnelspass = []
-		__builtin__.tunnelsfail = []
-		""" initalize tunnel testing """
-		""" actual covert testing calls to the previous set classes """
-		icmptunnel().ping(tunnelspass, tunnelsfail)
-		ntptunnel().ntp(tunnelspass, tunnelsfail)
-		dnstunnel().dnsres(tunnelspass, tunnelsfail)
-		""" print findings for covert testing """
-		if str(tunnelspass) != "[]":
-			print(bh + "\n\t[-] List of passed Covert tunnels ...\n" + be)
-			printfunction().pfunc("\t\t[!] Cover tunnel: ", str(tunnelspass))
-		if str(tunnelsfail) != "[]":
-			print(bh + "\n\t[-] List of failed Covert tunnels ...\n" + be)
-			printfunction().pfunc("\t\t[!] Cover tunnel: ", str(tunnelsfail))
-		from jsonloggen import jsonlogger
-		jsonlogger().jsontunnellog()
-	print ""
+	if str(sa1).lower() not in ["server", "s"]:
+		if str(covert).lower() in ["true", "yes"]:
+			from covert import icmptunnel, ntptunnel, dnstunnel
+			""" set basic list for gathering for covert tunnel testing """
+			__builtin__.tunnelspass = []
+			__builtin__.tunnelsfail = []
+			""" initalize tunnel testing """
+			""" actual covert testing calls to the previous set classes """
+			icmptunnel().ping(tunnelspass, tunnelsfail)
+			ntptunnel().ntp(tunnelspass, tunnelsfail)
+			dnstunnel().dnsres(tunnelspass, tunnelsfail)
+			""" print findings for covert testing """
+			if str(tunnelspass) != "[]":
+				print(bh + "\n\t[-] List of passed Covert tunnels ...\n" + be)
+				printfunction().pfunc("\t\t[!] Covert tunnel: ", str(tunnelspass))
+			if str(tunnelsfail) != "[]":
+				print(bh + "\n\t[-] List of failed Covert tunnels ...\n" + be)
+				printfunction().pfunc("\t\t[!] Covert tunnel: ", str(tunnelsfail))
+			from jsonloggen import jsonlogger
+			jsonlogger().jsontunnellog()
+		print ""

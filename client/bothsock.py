@@ -19,73 +19,98 @@ class bothsocks():
 
 	def connectsocket(self):
 		try:
-			__builtin__.state = ""
+			ldate = datetime.datetime.now()
 			__builtin__.proto = str("tcp").upper()
-			ident = bo+"On "+be+str(proto)+bo+" Port: "+be+str(ls)+bo+" - By: "+be+str(consultant)+bo+" - From: "+be+str(location)+bo+" - On: "+be +str(ldate)
-			sockobj = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			__builtin__.ident = bo + "On " + be + str(proto) + bo + " Port: " + be + str(ls) + bo + \
+			                    " - By: " + be + str(consultant) + bo + " - From: " + be + \
+			                    str(location) + bo + " - On: " + be + str(ldate)
+			clientencoder().dataencode(ident)
+			sockobj = socket(AF_INET, SOCK_STREAM)
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
 			else:
 				pass
-			#print 'Start both socket connection' # diagnostics
 			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
-			data = sockobj.recv(1024)
+			__builtin__.data = sockobj.recv(1024)
 			sockobj.close()
-			#print 'End both socket connection' # diagnostics
-			if data != "":
-				passlist.append("TCP/"+str(ls))
+			if data:
+				passlist.append("TCP/" + str(ls))
+				#print "Client data encoder before" # diagnostics
+				clientencoder().datadecode(data)
+			#print "Client data encoder after" # diagnostics
 			else:
 				pass
 			__builtin__.state = "Established"
-			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - " +be+str(data).strip()
+			print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
 			try:
 				from log_enable import log_enabled
+
 				log_enabled().logging()
 			except Exception as logfailed:
 				print "log failed in tcpsock " + str(logfailed)
-
 		except Exception as tcpconfail:
 			__builtin__.state = str(tcpconfail).split("] ")[1]
-			print bf+"\t\t[?] Connection attempt failed on port: TCP " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(tcpconfail)+be
-			__builtin__.proto = "TCP"
+			faillist.append(str(proto).upper() + "/" + str(ls))
+			print bf + "\t\t[?] Connection attempt failed on port: TCP " + str(ls) + " - to IP Address: " + str(
+				ipaddr) + " - " + str(tcpconfail) + be
 			try:
 				from log_enable import log_enabled
+
 				log_enabled().logging()
 			except Exception as logfailed:
 				print "log2 failed in tcpsock " + str(logfailed)
-			faillist.append("TCP/"+str(base_port))
+				pass
 			pass
 		try:
+			ldate = datetime.datetime.now()
 			__builtin__.state = ""
 			__builtin__.proto = str("udp").upper()
-			ident = bo+"On "+ be +str(proto) + bo+" Port: "+ be +str(ls) + bo+" - By: "+ be +  str(consultant) +bo+ " - From: " +be + str(location) + bo+ " - On: " +  be +str(ldate)
+			#print "current protocol set to: ", proto  # diagnostics
+			__builtin__.ident = bo + "On " + be + str(proto) + bo + " Port: " + be + \
+			                    str(ls) + bo + " - By: " + be + str(consultant) + bo + " - From: " + be + \
+			                    str(location) + bo + " - On: " + be + str(ldate)
+			#print "string being sent: ", ident  # diagnostics
+			clientencoder().dataencode(ident)
+			#print "encoded string being sent: ", ident  # diagnostics
 			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			if nappy > "1":
+				#print "nap time is a float: ", nappy  # diagnostics
 				sockobj.settimeout(float(nappy))
 			else:
+				#print "nap time is an integer:", nappy  # diagnostics
 				sockobj.settimeout(float(0.1))
 			sockobj.connect((ipaddr, ls))
+			#print "socket connection attempted"  # diagnostics
 			sockobj.send(ident)
-			data = sockobj.recv(1024)
+			#print "socket attempted to send ident string"  # diagnostics
+			__builtin__.data = sockobj.recv(2048)
+			#print "socket attempting to get data returned"  # diagnostics
 			sockobj.close()
-			if data != "":
-				passlist.append(str(proto).upper()+"/"+str(ls))
+			#print "closed socket"  # diagnostics
+			if data:
+				#print "data string is as follows: ", str(data)  # diagnostics
+				passlist.append(str(proto).upper() + "/" + str(ls))
+				clientencoder().datadecode(data)
 				__builtin__.state = "Established"
-			print bf+"\t\tATTENTION " +be+bo+"[*] Connected to: "+be+str(ipaddr) +bo+" - "+ be + str(data)
+				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
+			else:
+				pass
 			try:
 				from log_enable import log_enabled
 				log_enabled().logging()
 			except Exception as logenbfail:
 				print "Failed in udpsock logging: " + str(logenbfail)
-
-		except Exception as logenbfail:
-			print bf+"\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + str(ipaddr) + " - " + str(logenbfail)+be
-			__builtin__.state = str(logenbfail).split("] ")[1]
+		except Exception as udpconfail:
+			__builtin__.state = str(udpconfail).split("] ")[1]
+			faillist.append(str(proto).upper() + "/" + str(ls))
+			print bf + "\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + \
+			      str(ipaddr) + " - " + str(udpconfail) + be
 			try:
 				from log_enable import log_enabled
+
 				log_enabled().logging()
-			except Exception as logfailed:
-				print "log2 failed in bothsock " + str(logfailed)
-			faillist.append("UDP/"+str(ls))
+			except Exception as e:
+				print "Failed in udpsock logging: " + str(e)
+				pass
 			pass

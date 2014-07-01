@@ -99,6 +99,8 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
   [-] TODO list: ....
 
       MORE SCAPY
+      Make "both" TCP/UDP scan module have 2 seperate list so TCP and UDP ports tested
+        are not the same when using in random choice
       Gather PII sample data (images): [
           passports,
           social security cards,

@@ -27,7 +27,7 @@ class icmptunnel(object):
 			p = []  # ip -> process
 			targets = ['google.com']
 			for n in targets:  # start ping processes
-				p.append((n, Popen(['ping', '-c', '3', n], stdout=devnull)))
+				p.append((n, Popen(['ping', '-c', '1', n], stdout=devnull)))
 			while p:
 				for i, (ip, proc) in enumerate(p[:]):
 					if proc.poll() is not None:  # ping finished
