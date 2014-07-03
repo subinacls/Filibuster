@@ -25,7 +25,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		if self.data:
 			try:
 				from itertools import cycle, izip
-				key = 'Filterbuster'
+				key = 'filibuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:

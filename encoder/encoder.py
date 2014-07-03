@@ -25,13 +25,12 @@ class clientencoder(object):
 				__builtin__.ident = b64.b32encode(ident)
 			if encodedata == "base16":
 				__builtin__.ident = b64.b16encode(ident)
-
 			if encodedata == "rot13":
 				__builtin__.ident = str(ident).encode('rot13')
 			if encodedata == "xor":
 				#xor routing taken from https://dustri.org/
 				# Stupid XOR demo
-				key = 'filterbuster'
+				key = 'filibuster'
 				__builtin__.ident = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(ident, cycle(key)))
 			if encodedata == "url":
 				pass  # do url

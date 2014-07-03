@@ -21,11 +21,11 @@ and then patched into the threadedtcprequesthandler """
 
 class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler): 
 	def handle(self): 
-		self.data = self.request.recv(1024).strip()
+		self.data = self.request.recv(10192).strip()
 		if self.data:
 			try:
 				from itertools import cycle, izip
-				key = 'Filterbuster'
+				key = 'filibuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:

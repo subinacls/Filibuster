@@ -14,11 +14,11 @@ import base64 as b64
 
 class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 	def handle(self):
-		self.data = self.request.recv(2048).strip()
+		self.data = self.request.recv(10196).strip()
 		if self.data:
 			try:
 				from itertools import cycle, izip
-				key = 'Filterbuster'
+				key = 'filibuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:
@@ -102,7 +102,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		if self.data:
 			try:
 				from itertools import cycle, izip
-				key = 'Filterbuster'
+				key = 'filibuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
 				if matchObj:

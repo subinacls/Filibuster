@@ -125,8 +125,8 @@ class initscanner(object):
 								#print "Socket testing diag before" # diagnostics
 								#print "TCP sock testing connect before" # diagnostics
 								tcpsocks().connectsocket()
-							#print "TCP sock testing connect after" # diagnostics
-							#print "Client socket config after" # diagnostics
+								#print "TCP sock testing connect after" # diagnostics
+								#print "Client socket config after" # diagnostics
 							except Exception as tcpconnectsocketfail:
 								print "\t" + bf + "ATTENTION " + be + bw + "[?] Client failed to connect to TCP sockets " + \
 								      bf + "FAILED" + be + bw + " due to " + be + str(tcpconnectsocketfail)

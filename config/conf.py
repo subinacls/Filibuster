@@ -92,6 +92,12 @@ class confsecmap(object):
 				__builtin__.proto = flipbit
 				pass
 			try:
+				if Config.get("SectionOne", "padding") != "":
+					__builtin__.paddata = ConfigSectionMap("SectionOne")["padding"]
+			except Exception as paddingfail:
+				__builtin__.paddata = "False"
+				pass
+			try:
 				if Config.get("SectionOne", "encodedata") != "":
 					__builtin__.encodedata = ConfigSectionMap("SectionOne")["encodedata"]
 			except Exception as encodedatafail:

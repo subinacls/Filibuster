@@ -51,7 +51,7 @@ class udpsocks(object):
 			#print "socket connection attempted"  # diagnostics
 			sockobj.send(ident)
 			#print "socket attempted to send ident string"  # diagnostics
-			__builtin__.data = sockobj.recv(2048)
+			__builtin__.data = sockobj.recv(10196)
 			#print "socket attempting to get data returned"  # diagnostics
 			sockobj.close()
 			#print "closed socket"  # diagnostics

@@ -33,7 +33,7 @@ date = str(datetime.datetime.now()).split()[0]
 __builtin__.date = date
 __builtin__.u = 0
 """ useful for diagnostics and error suppression """
-__builtin__.diag = ""
+__builtin__.diag = "yes"
 __builtin__.dd = {}
 """ enable or disable error msg output """
 __builtin__.suppress = "yes"
