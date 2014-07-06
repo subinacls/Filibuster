@@ -29,8 +29,6 @@ class clientencoder(object):
 				if encodedata == "rot13":
 					__builtin__.ident = str(ident).encode('rot13')
 				if encodedata == "xor":
-					#xor routing taken from https://dustri.org/
-					# Stupid XOR demo
 					key = 'filterbuster'
 					__builtin__.ident = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(ident, cycle(key)))
 				if encodedata == "url":
@@ -52,22 +50,41 @@ class clientencoder(object):
 	def datadecode(self, data):
 		try:
 			#print "Start of decoding routine" # diagnostics
-			try:
-				if encodedata == "base85":
-					__builtin__.data = b64.b85decode(data)
-				if encodedata == "base64":
-					__builtin__.data = b64.b64decode(data)
-				if encodedata == "base16":
-					__builtin__.data = b64.b16decode(data)
-				if encodedata == "base32":
-					__builtin__.data = b64.b32decode(data)
-				if encodedata == "rot13":
-					__builtin__.data = str(data).decode('rot13')
-				if encodedata == "xor":
-					key = 'filterbuster'
-					__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data, cycle(key)))
-				#print "Stop of decoding routine" # diagnostics
-			except Exception as failedtodecode:
-				pass
+			if str(proto).lower() == "udp":
+				try:
+					if encodedata == "base85":
+						__builtin__.data = b64.b85decode(data[0])
+					if encodedata == "base64":
+						__builtin__.data = b64.b64decode(data[0])
+					if encodedata == "base16":
+						__builtin__.data = b64.b16decode(data[0])
+					if encodedata == "base32":
+						__builtin__.data = b64.b32decode(data[0])
+					if encodedata == "rot13":
+						__builtin__.data = str(data[0]).decode('rot13')
+					if encodedata == "xor":
+						key = 'filterbuster'
+						__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data[0], cycle(key)))
+					#print "Stop of decoding routine" # diagnostics
+				except Exception as failedtodecode:
+					pass
+			if str(proto).lower() == "tcp":
+				try:
+					if encodedata == "base85":
+						__builtin__.data = b64.b85decode(data)
+					if encodedata == "base64":
+						__builtin__.data = b64.b64decode(data)
+					if encodedata == "base16":
+						__builtin__.data = b64.b16decode(data)
+					if encodedata == "base32":
+						__builtin__.data = b64.b32decode(data)
+					if encodedata == "rot13":
+						__builtin__.data = str(data).decode('rot13')
+					if encodedata == "xor":
+						key = 'filterbuster'
+						__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data, cycle(key)))
+					#print "Stop of decoding routine" # diagnostics
+				except Exception as failedtodecode:
+					pass
 		except Exception as e:
 			print e

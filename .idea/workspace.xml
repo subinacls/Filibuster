@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="made some changes in the servers">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encoder/encoder.py" afterPath="$PROJECT_DIR$/encoder/encoder.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/tcpsock.py" afterPath="$PROJECT_DIR$/client/tcpsock.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedbothserver.py" afterPath="$PROJECT_DIR$/server/threadedbothserver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedtcpserver.py" afterPath="$PROJECT_DIR$/server/threadedtcpserver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/threadedudpserver.py" afterPath="$PROJECT_DIR$/server/threadedudpserver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/udpsock.py" afterPath="$PROJECT_DIR$/client/udpsock.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -14,16 +10,16 @@
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404257941599" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404672290226" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404357949425" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403664922845" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
     <file path="/scanconfig.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404350823746" ignored="false" />
     <file path="/server_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403668227266" ignored="false" />
     <file path="/server_func.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404000660257" ignored="false" />
-    <file path="/threadedudpserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404672032196" ignored="false" />
+    <file path="/threadedudpserver.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404673161702" ignored="false" />
     <file path="/tcpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404669920563" ignored="false" />
-    <file path="/udpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404671408282" ignored="false" />
+    <file path="/udpsock.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404672870778" ignored="false" />
     <file path="/log_enable.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404000466072" ignored="false" />
     <file path="/diagforall.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403999200966" ignored="false" />
     <file path="/servargs.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404000644681" ignored="false" />
@@ -53,7 +49,7 @@
     <file path="/xmlloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404000572856" ignored="false" />
     <file path="/txtloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404000514832" ignored="false" />
     <file path="/testing.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403823843298" ignored="false" />
-    <file path="/encoder.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404670796621" ignored="false" />
+    <file path="/encoder.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404672974516" ignored="false" />
     <file path="/hasher.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403976511977" ignored="false" />
     <file path="/pcolors.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403997959647" ignored="false" />
     <file path="/bcolors.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403997843105" ignored="false" />
@@ -87,7 +83,7 @@
       <file leaf-file-name="tcpsock.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="21" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
+            <state line="29" column="0" selection-start="512" selection-end="1398" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#230#250#0" expanded="true" />
               </folding>
@@ -98,7 +94,7 @@
       <file leaf-file-name="encoder.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="19" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.0">
+            <state line="66" column="110" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#72#92#0" expanded="true" />
               </folding>
@@ -106,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threadedtcpserver.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="threadedtcpserver.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="94" selection-start="907" selection-end="907" vertical-scroll-proportion="0.264">
+            <state line="60" column="12" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#72#81#0" expanded="true" />
               </folding>
@@ -142,7 +138,7 @@
       <file leaf-file-name="threadedudpserver.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="74" selection-start="4018" selection-end="4018" vertical-scroll-proportion="0.0">
+            <state line="89" column="37" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#365#374#0" expanded="true" />
               </folding>
@@ -172,10 +168,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="udpsock.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="udpsock.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/udpsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="43" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+            <state line="53" column="53" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.928">
               <folding>
                 <element signature="e#230#248#0" expanded="true" />
               </folding>
@@ -230,8 +226,8 @@
         <option value="$PROJECT_DIR$/client/tcpsock.py" />
         <option value="$PROJECT_DIR$/server/threadedtcpserver.py" />
         <option value="$PROJECT_DIR$/encoder/encoder.py" />
-        <option value="$PROJECT_DIR$/client/udpsock.py" />
         <option value="$PROJECT_DIR$/server/threadedudpserver.py" />
+        <option value="$PROJECT_DIR$/client/udpsock.py" />
       </list>
     </option>
   </component>
@@ -860,7 +856,11 @@
       <created>1404187269840</created>
       <updated>1404187269840</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="shit broke, reverted back to older ThreadedUDPServer">
+      <created>1404672291633</created>
+      <updated>1404672291633</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -896,7 +896,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27784577" sideWeight="0.7873832" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21261682" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21261682" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -949,7 +949,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="made some changes in the servers" />
+    <option name="LAST_COMMIT_MESSAGE" value="shit broke, reverted back to older ThreadedUDPServer" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -986,6 +986,7 @@
     <MESSAGE value="nothing much" />
     <MESSAGE value="modified the udp client - hope it worked" />
     <MESSAGE value="made some changes in the servers" />
+    <MESSAGE value="shit broke, reverted back to older ThreadedUDPServer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1090,24 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="21" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#230#250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="19" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#72#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/filterbuster.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="147" column="47" selection-start="5020" selection-end="5020" vertical-scroll-proportion="0.0">
@@ -1117,29 +1100,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/udpsock.py">
+    <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="43" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+        <state line="60" column="12" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#230#248#0" expanded="true" />
+            <element signature="e#72#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="512" selection-end="1398" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#230#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="110" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#72#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="74" selection-start="4018" selection-end="4018" vertical-scroll-proportion="0.0">
+        <state line="89" column="37" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#365#374#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
+    <entry file="file://$PROJECT_DIR$/client/udpsock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="94" selection-start="907" selection-end="907" vertical-scroll-proportion="0.264">
+        <state line="53" column="53" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.928">
           <folding>
-            <element signature="e#72#81#0" expanded="true" />
+            <element signature="e#230#248#0" expanded="true" />
           </folding>
         </state>
       </provider>
