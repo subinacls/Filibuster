@@ -8,9 +8,11 @@ import os
 import re
 import threading
 import SocketServer
+import socket
 import __builtin__
 import base64 as b64
 from contamination import contaminlog
+
 
 """
 This is the TCP Threaded server portiong of the application
@@ -21,13 +23,13 @@ and then patched into the threadedtcprequesthandler """
 
 class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler): 
 	def handle(self): 
-		self.data = self.request.recv(10192).strip()
+		self.data = self.request.recv(65535).strip()
 		if self.data:
 			try:
 				from itertools import cycle, izip
-				key = 'filibuster'
+				key = 'filterbuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
-				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
@@ -38,7 +40,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				pass
 			try:
 				self.line = str(self.data).decode('rot13')
-				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
@@ -48,7 +50,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				pass
 			try:
 				self.line = str(b64.b85decode(self.data))
-				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be+ " " +self.client_address[0] + \
 					      bo + " - " + be + self.line
@@ -58,7 +60,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				pass
 			try:
 				self.line = str(b64.b64decode(self.data))
-				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " +self.client_address[0] + \
 					      bo + " - " + be + self.line
@@ -68,7 +70,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				pass
 			try:
 				self.line = str(b64.b32decode(self.data))
-				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
@@ -78,7 +80,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				pass
 			try:
 				self.line = str(b64.b16decode(self.data))
-				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
@@ -88,13 +90,25 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				pass
 			try:
 				self.line = self.data
-				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)On:(.*)', self.line)
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.request.send(" : Filterbuster - " + self.data)
 			except Exception as notplaintxt:
 				pass
+
+			try:
+				self.line = str(b64.b16decode(self.data))
+				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
+				if matchObj:
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					      bo + " - " + be + self.line
+					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
+					self.request.send(self.data)
+			except Exception as notbase16:
+				pass
+
 		else:
 			contaminlog().jcom_keeper(self.client_address[0], str("tcp").upper(), self.client_address[1], self.data)
 

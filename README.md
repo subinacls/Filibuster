@@ -182,5 +182,11 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
       ]
       Implement specific test based on PCI
       Implement specific test based on HIPAA
+      Log and encrypt data w/ email alerting:[
+        send encrypted attachment via email server,
+        log on disk and encrypt no smtp,
+        silent - no logging (current configuration)
+            except for Contamination logged data
+      ]
       Stop myself from coding between ( 23:45 / 04:40 ) or at least dont commit
       

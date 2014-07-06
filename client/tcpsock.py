@@ -29,17 +29,17 @@ class tcpsocks(object):
 			__builtin__.proto = str("tcp").upper()
 			try:
 				if str(paddata).lower() in ["true","yes"]:
-					__builtin__.ident = bo + str(padgen().maxipad()) + "On " + be + str(proto) + bo + \
-				                    str(padgen().maxipad()) + " Port: " + be + str(ls) + bo + \
-				                    str(padgen().maxipad()) + " - By: " + be + str(consultant) + bo + \
-				                    str(padgen().maxipad()) + " - From: " + be + str(location) + bo + \
-				                    str(padgen().maxipad()) + " - On: " + be + str(ldate) + str(padgen().maxipad())
+					__builtin__.ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
+				                    str(padgen().maxipad()) + be + " - Port: " + str(ls) + bo + \
+				                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
+				                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
+				                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + be + str(padgen().maxipad())
 				else:
 					__builtin__.ident = bo + "On " + be + str(proto) + bo + \
 				                    " Port: " + be + str(ls) + bo + \
 				                    " - By: " + be + str(consultant) + bo + \
 				                    " - From: " + be + str(location) + bo + \
-				                    " - On: " + be + str(ldate)
+				                    " - Date: " + be + str(ldate) + be
 			except Exception as e:
 				print e
 			clientencoder().dataencode(ident)
@@ -50,7 +50,7 @@ class tcpsocks(object):
 				pass
 			sockobj.connect((ipaddr, ls))
 			sockobj.send(ident)
-			__builtin__.data = sockobj.recv(10192)
+			__builtin__.data = sockobj.recv(65535)
 			sockobj.close()
 			if data:
 				passlist.append("TCP/" + str(ls))
