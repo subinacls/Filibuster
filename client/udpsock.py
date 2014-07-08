@@ -14,6 +14,7 @@ import __builtin__
 import socket
 import datetime
 from bcolors import bcolors as b
+from padme import padgen
 
 bh = b.HEADER
 bf = b.FAIL
@@ -33,10 +34,25 @@ class udpsocks(object):
 			ldate = datetime.datetime.now()
 			state = ""
 			proto = str("udp").upper()
+			try:
+				if str(paddata).lower() in ["true","yes"]:
+					__builtin__.ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
+				                    str(padgen().maxipad()) + be + " - Port: " + str(ls) + bo + \
+				                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
+				                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
+				                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + be + str(padgen().maxipad())
+					print "pdddata udp"
+					print ident
+				else:
+					__builtin__.ident = bo + "On " + be + str(proto) + bo + \
+				                    " Port: " + be + str(ls) + bo + \
+				                    " - By: " + be + str(consultant) + bo + \
+				                    " - From: " + be + str(location) + bo + \
+				                    " - Date: " + be + str(ldate) + be
+			except Exception as e:
+				print e
 			#print "current protocol set to: ", proto  # diagnostics
-			ident = bo + "On " + be + str(proto) + bo + " Port: " + be + \
-			                    str(ls) + bo + " - By: " + be + str(consultant) + bo + " - From: " + be + \
-			                    str(location) + bo + " - Date: " + be + str(ldate)
+
 			#print "string being sent: ", ident  # diagnostics
 			clientencoder().dataencode(ident)
 			#print "encoded string being sent: ", ident  # diagnostics
@@ -51,16 +67,16 @@ class udpsocks(object):
 			#print "socket connection attempted"  # diagnostics
 			sockobj.send(ident)
 			#print "socket sent ident string"  # diagnostics
-			data = sockobj.recvfrom(65535)
+			data1 = sockobj.recvfrom(65535)
 			#print "socket attempting to get data returned"  # diagnostics
 			sockobj.close()
 			#print "closed socket"  # diagnostics
-			if data:
+			if data1:
 				#print "data string is as follows: ", str(data)  # diagnostics
 				passlist.append(str(proto).upper() + "/" + str(ls))
-				clientencoder().datadecode(data)
+				clientencoder().datadecode(data1)
 				__builtin__.state = "Established"
-				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data[0])
+				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
 			else:
 				pass
 			try:

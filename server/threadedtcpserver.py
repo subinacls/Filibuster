@@ -33,7 +33,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = ": Filterbuster - " + self.line
+					self.data = ": filterbuster - " + self.line
 					self.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 					self.request.send(self.data)
 			except Exception as notxor:

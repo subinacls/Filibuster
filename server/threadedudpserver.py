@@ -12,7 +12,7 @@ and then patched into the threadedudprequesthandler """
 import os
 import re
 import threading
-
+import socket
 import SocketServer
 import __builtin__
 from contamination import contaminlog

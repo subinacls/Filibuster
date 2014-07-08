@@ -32,6 +32,7 @@ from pcolors import printfunction
 from helper import helper
 from tcpsock import tcpsocks
 from udpsock import udpsocks
+from bothsock import bothsocks
 #from bothsock import bothsocks
 from killswitch import killswitch as ks
 
@@ -87,22 +88,35 @@ class initscanner(object):
 						      bf + "FAILED" + be + " to:" + str(prangefail)
 				__builtin__.s = int(lowport)
 				__builtin__.t = int(highport)
+
 		for x in range(s, t):  # iterate over port start and finish range
 			stack.append(x)
 		stack.append(highport)
+
+		if str(flipbit).lower() == "both":
+			__builtin__.stack2 = list(stack)
+			if str(randomness).lower() in ["true", "yes"]:
+				random.shuffle(stack2)
+			__builtin__.total_stack = len(stack)+len(stack2)
+
 		if str(randomness).lower() in ["true", "yes"]:
 			random.shuffle(stack)
-		else:
-			pass
+
 		__builtin__.total_stack = len(stack)
-		print bh + "\n\t[-] Starting " + be + str(
-			scantype) + be + bh + " scanning process against server IP: " + be + ipaddr + be
+
+		print bh + "\n\t[-] Starting " + be + str(scantype) + be + bh + \
+		      " scanning process against server IP: " + be + ipaddr + be
+
 		while int(u) != total_stack:  # while loop till counter = stack total
 			ks().skillswitch()
 			__builtin__.state = ""
 			__builtin__.run_timer = time.time()
 			if stack[0]:
-				__builtin__.ls = stack[0]
+				if str(flipbit).lower() == "both":
+					__builtin__.lst = stack[0]
+					__builtin__.lsu = stack2[0]
+				else:
+					__builtin__.ls = stack[0]
 				if sleepy == "random":
 					__builtin__.rest = int(random.choice(np.arange(1, int(nappy), int(rester))))
 				else:
@@ -148,14 +162,13 @@ class initscanner(object):
 						# initalize socket creation
 						if cfb == "both":
 							try:
-								ctsc().clienttcpsockconf()
-								socktesting().sockdiag()
-								tcpsocks().connectsocket()
-								cusc().clientudpsockconf()
-								socktesting().sockdiag()
-								udpsocks().connectsocket()
+								#cbsc().clientbothsockconf()
+								bothsocks().connecttcpsocket()
+								bothsocks().connectudpsocket()
+
 							except Exception as tcpsockfail:
 								print "\t" + bf + "ATTENTION " + be + bw + "[?] Client failed to connect to TCP/UDP sockets " + \
 								      bf + "FAILED" + be + bw + " due to " + be + str(tcpsockfail)
 							time.sleep(float(rest))
-							stack.remove(ls)
+							stack.remove(lst)
+							stack2.remove(lsu)
