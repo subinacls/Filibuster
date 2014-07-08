@@ -125,7 +125,7 @@ class confsecmap(object):
 				if Config.get("SectionTwo", "sleep") != "":
 					__builtin__.sleepy = ConfigSectionMap("SectionTwo")["sleep"]
 			except Exception as sleepconffail:
-				__builtin__.sleepy = "1"
+				__builtin__.sleepy = "static"
 				pass
 			try:
 				if Config.get("SectionTwo", "nappy") != "":

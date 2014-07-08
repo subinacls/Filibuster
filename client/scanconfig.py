@@ -118,7 +118,7 @@ class initscanner(object):
 				else:
 					__builtin__.ls = stack[0]
 				if sleepy == "random":
-					__builtin__.rest = int(random.choice(np.arange(1, int(nappy), int(rester))))
+					__builtin__.rest = int(random.choice(np.arange(int(nappy), int(rester))))
 				else:
 					__builtin__.rest = rester
 				__builtin__.u = int(u) + 1
@@ -170,5 +170,8 @@ class initscanner(object):
 								print "\t" + bf + "ATTENTION " + be + bw + "[?] Client failed to connect to TCP/UDP sockets " + \
 								      bf + "FAILED" + be + bw + " due to " + be + str(tcpsockfail)
 							time.sleep(float(rest))
-							stack.remove(lst)
-							stack2.remove(lsu)
+							try:
+								stack.remove(lst)
+								stack2.remove(lsu)
+							except Exception as nomorestack:
+								pass
