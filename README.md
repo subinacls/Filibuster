@@ -6,8 +6,12 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
 
   [-] Prerequisites: ...
 
-  It is required to utilize additional modules outside the standard library as follows. You can use
-  `easy_install` if you so desire or download and install from source. Your choice.
+  It is required to utilize additional modules outside the standard library.
+
+  You can use the following:
+    `easy_install`
+
+  if you so desire or download and install from source. Your choice.
 
   The application will perform some basic checks to help elimate issues later in the application
 
