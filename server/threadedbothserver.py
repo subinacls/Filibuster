@@ -36,7 +36,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = str(" : Filterbuster = "+str(self.line)).encode('rot13')
+					self.data = str(" : Filterbuster - "+str(self.line)).encode('rot13')
 					self.request.send(self.data)
 			except Exception as notro13:
 				pass

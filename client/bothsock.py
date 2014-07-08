@@ -55,12 +55,12 @@ class bothsocks():
 				pass
 			sockobj.connect((ipaddr, lst))
 			sockobj.send(ident)
-			data = sockobj.recv(65535)
+			data1 = sockobj.recv(65535)
 			sockobj.close()
-			if data:
+			if data1:
 				passlist.append("TCP/" + str(lst))
 				#print "Client data encoder before" # diagnostics
-				clientencoder().datadecode(data)
+				clientencoder().datadecode(data1)
 				#print "Client data encoder after" # diagnostics
 			else:
 				pass
@@ -69,7 +69,7 @@ class bothsocks():
 				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + bo + ": Padded data"
 				passlist.append("TCP/" + str(lst))
 			else:
-				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
+				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + " " + str(data)
 				passlist.append("TCP/" + str(lst))
 			try:
 				from log_enable import log_enabled
@@ -97,25 +97,22 @@ class bothsocks():
 			proto = str("udp").upper()
 			try:
 				if str(paddata).lower() in ["true","yes"]:
-					ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
+					ident2 = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
 				                    str(padgen().maxipad()) + be + " - Port: " + str(lsu) + bo + \
 				                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
 				                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
 				                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + be + str(padgen().maxipad())
 				else:
-					ident = bo + "On " + be + str(proto) + bo + \
+					ident2 = bo + "On " + be + str(proto) + bo + \
 				                    " Port: " + be + str(lsu) + bo + \
 				                    " - By: " + be + str(consultant) + bo + \
 				                    " - From: " + be + str(location) + bo + \
 				                    " - Date: " + be + str(ldate) + be
 			except Exception as paddingfailed:
 				print paddingfailed
-			#print "current protocol set to: ", proto  # diagnostics
-			ident = bo + "On " + be + str(proto) + bo + " Port: " + be + \
-			                    str(lsu) + bo + " - By: " + be + str(consultant) + bo + " - From: " + be + \
-			                    str(location) + bo + " - Date: " + be + str(ldate)
+
 			#print "string being sent: ", ident  # diagnostics
-			clientencoder().dataencode(ident)
+			clientencoder().dataencode(ident2)
 			#print "encoded string being sent: ", ident  # diagnostics
 			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			if nappy > "1":
@@ -128,14 +125,14 @@ class bothsocks():
 			#print "socket connection attempted"  # diagnostics
 			sockobj.send(ident)
 			#print "socket sent ident string"  # diagnostics
-			data = sockobj.recv(65535)
+			data2 = sockobj.recv(65535)
 			#print "socket attempting to get data returned"  # diagnostics
 			sockobj.close()
 			#print "closed socket"  # diagnostics
-			if data:
+			if data2:
 				#print "data string is as follows: ", str(data)  # diagnostics
 				passlist.append(str(proto).upper() + "/" + str(lsu))
-				clientencoder().datadecode(data)
+				clientencoder().datadecode(data2)
 				__builtin__.state = "Established"
 				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
 			else:
