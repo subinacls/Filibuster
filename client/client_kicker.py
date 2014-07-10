@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-
+# encoding: utf-8
+#
+# module author: subinacls
+#
 """
-encoding: utf-8
-module author: subinacls
-
 Used to check for dependencies required for operation
 collect user arguments for processing
 check configuration ini file
@@ -21,7 +21,7 @@ from diagforall import clientconfdiag
 van = __appname__
 vv = __version__
 
-class initclient():
+class initclient(object):
 
 	"""
 	"""

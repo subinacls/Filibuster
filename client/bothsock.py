@@ -23,7 +23,7 @@ bo = b.OKBLUE
 from encoder import clientencoder
 
 
-class bothsocks():
+class bothsocks(object):
 
 	def __init__(self):
 		pass
@@ -48,7 +48,7 @@ class bothsocks():
 			except Exception as e:
 				print e
 			clientencoder().dataencode(ident1)
-			sockobj = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			sockobj = socket.socket()
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
 			else:

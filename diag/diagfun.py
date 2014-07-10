@@ -4,9 +4,9 @@
 # module author: subinacls
 #
 
-'''
+"""
 This file is for pretty printing on stdout
-'''
+"""
 
 
 class diagfun(object):

@@ -117,7 +117,7 @@ class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass
   
   
-class tcpserver():
+class tcpserver(object):
 	def __init__(self):
 		pass
 

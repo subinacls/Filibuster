@@ -84,12 +84,12 @@ class contamloghandler(object):
 	def jsonreadfail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
 			print bo + "\t[?] Reading saved JSON contamination data from file: Contaminated_log-" + \
-			      str(datetime.datetime.now()).strip(".") + ".json\n" + be
+			      str(datetime.datetime.now()).split(".")[0] + ".json\n" + be
 
 	def jsonrwritefail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:
 			print bo + "\t[?] Writting JSON contamination data to file: Contaminated_log-" + \
-			      str(datetime.datetime.now()).strip(".") + ".json\n" + be
+			      str(datetime.datetime.now()).split(".")[0] + ".json\n" + be
 
 	def jsonrkeepfail(self, reporterror):
 		if str(diag).lower() in ["true", "yes", "1"]:

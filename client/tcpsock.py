@@ -43,7 +43,7 @@ class tcpsocks(object):
 			except Exception as e:
 				print e
 			clientencoder().dataencode(ident)
-			sockobj = socket(AF_INET, SOCK_STREAM)
+			sockobj = socket()
 			if nappy > "1":
 				sockobj.settimeout(float(nappy))
 			else:

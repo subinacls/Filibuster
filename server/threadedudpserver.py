@@ -102,7 +102,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass
 
-class udpserver():
+class udpserver(object):
 	def __init__(self):
 		pass
 

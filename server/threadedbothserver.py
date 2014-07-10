@@ -183,7 +183,7 @@ class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass
 
 
-class bothserver():
+class bothserver(object):
 	def __init__(self):
 		pass
 

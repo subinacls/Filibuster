@@ -35,12 +35,13 @@ class udpsocks(object):
 			state = ""
 			proto = str("udp").upper()
 			try:
-				if str(paddata).lower() in ["true","yes"]:
+				if str(paddata).lower() in ["true", "yes"]:
 					__builtin__.ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
 				                    str(padgen().maxipad()) + be + " - Port: " + str(ls) + bo + \
 				                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
-				                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
-				                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + be + str(padgen().maxipad())
+				                    str(padgen().maxipad()) + be + " - From: " + str(location) + bo + \
+				                    str(padgen().maxipad()) + be + " - Date: " + str(ldate) + be + \
+					                str(padgen().maxipad())
 					print "pdddata udp"
 					print ident
 				else:
