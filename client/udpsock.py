@@ -43,7 +43,7 @@ class udpsocks(object):
 
 			clientencoder().dataencode(ident)  # check encoding module and produce ident as desired by configuration
 
-			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # create the socket object
+			sockobj = socket.socket(socket.SOCK_DGRAM)  # create the socket object
 
 			if nappy > "1":  # is nappy is a fraction less than 1 -  float socket timeout
 				sockobj.settimeout(float(nappy))

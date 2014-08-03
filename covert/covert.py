@@ -54,7 +54,7 @@ class ntptunnel(object):
 
 	def ntp(self, tunnelspass, tunnelsfail):
 		try:
-			client = socket(AF_INET, SOCK_DGRAM)
+			client = socket(SOCK_DGRAM)
 			data = '\x1b' + 47 * '\0'
 			client.sendto(data,('pool.ntp.org', 123))
 			data, address = client.recvfrom(1024)
