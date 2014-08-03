@@ -115,6 +115,19 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		socket = self.request[1]
 		if self.data:
 			try:
+				self.line = self.data
+
+				matchObj = re.match('GET /this/should/never/be/real_anywhere/Filterbuster.html(.*)', self.line)
+				if matchObj:
+					print self.line
+					self.reply1 = " - HTTP Allowed over port: "
+					try:
+						self.request.sendto(str(self.reply1), self.client_address)
+					except Exception as e:
+						print e
+			except Exception as notxor:
+				pass
+			try:
 				from itertools import cycle, izip
 				key = 'filterbuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))

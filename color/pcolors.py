@@ -5,11 +5,8 @@
 #
 
 """ Useful information
-colorization of output handled in this file
+colorization  handled in this file
 """
-
-global userstr
-global var
 
 
 class printfunction(object):

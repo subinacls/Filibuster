@@ -5,7 +5,7 @@
 #
 
 """ Useful information
-colorization of output handled in this file
+colorization handled in this file
 """
 
 class bcolors(object):

@@ -17,7 +17,7 @@ import __builtin__
 from diagforall import clientconfdiag
 import datetime
 
-global failconfig
+
 
 #create a disctionary to store all configuration information
 __builtin__.dict1 = {}
@@ -27,25 +27,18 @@ class confsecmap(object):
 	global Config
 	Config = ConfigParser.ConfigParser()
 	Config
-	try:
-		read_config = Config.read(conffile)
-		read_config
-		Config.sections()
-	except Exception as configreadfail:                                                   
-		print("\nERROR CONFIGURATION READ CONDITION in conf.py: %s\n" % configreadfail)       
-		sys.exit(0)  # exit on failure to read configuration file
+	read_config = Config.read(conffile)
+	read_config
+	Config.sections()
+
 
 	def ConfigSectionMap(section):
 		options = Config.options(section)                                                 
 		for option in options:                                                            
-			try:                                                                          
-				dict1[option] = Config.get(section, option)                               
-				if dict1[option] == -1:                                                   
-					print("Option has no var to set: %s" % option)                        
-			except Exception as optionfailure:                                            
-				print("\nERROR CONDITION IN READ OPTIONS in conf.py: %s\n" % optionfailure)
-				print ""
-				sys.exit(0)
+			dict1[option] = Config.get(section, option)
+			if dict1[option] == -1:
+				print("Option has no var to set: %s" % option)
+
 		return dict1
 
 	ldate = datetime.datetime.now().date()
