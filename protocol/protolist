@@ -1,0 +1,149 @@
+
+Decimal	Hex	Keyword	Protocol	References
+0	0x00	HOPOPT	IPv6 Hop-by-Hop Option	RFC 2460
+1	0x01	ICMP	Internet Control Message Protocol	RFC 792
+2	0x02	IGMP	Internet Group Management Protocol	RFC 1112
+3	0x03	GGP	Gateway-to-Gateway Protocol	RFC 823
+4	0x04	IP-in-IP	IP-Within-IP (encapsulation)	RFC 2003
+5	0x05	ST	Internet Stream Protocol	RFC 1190, RFC 1819
+6	0x06	TCP	Transmission Control Protocol	RFC 793
+7	0x07	CBT	Core-based trees	RFC 2189
+8	0x08	EGP	Exterior Gateway Protocol	RFC 888
+9	0x09	IGP	Interior Gateway Protocol (any private interior gateway (used by Cisco for their IGRP))
+10	0x0A	BBN-RCC-MON	BBN RCC Monitoring
+11	0x0B	NVP-II	Network Voice Protocol	RFC 741
+12	0x0C	PUP	Xerox PUP
+13	0x0D	ARGUS	ARGUS
+14	0x0E	EMCON	EMCON
+15	0x0F	XNET	Cross Net Debugger	IEN 158
+16	0x10	CHAOS	Chaos
+17	0x11	UDP	User Datagram Protocol	RFC 768
+18	0x12	MUX	Multiplexing	IEN 90
+19	0x13	DCN-MEAS	DCN Measurement Subsystems
+20	0x14	HMP	Host Monitoring Protocol	RFC 869
+21	0x15	PRM	Packet Radio Measurement
+22	0x16	XNS-IDP	XEROX NS IDP
+23	0x17	TRUNK-1	Trunk-1
+24	0x18	TRUNK-2	Trunk-2
+25	0x19	LEAF-1	Leaf-1
+26	0x1A	LEAF-2	Leaf-2
+27	0x1B	RDP	Reliable Datagram Protocol	RFC 908
+28	0x1C	IRTP	Internet Reliable Transaction Protocol	RFC 938
+29	0x1D	ISO-TP4	ISO Transport Protocol Class 4	RFC 905
+30	0x1E	NETBLT	Bulk Data Transfer Protocol	RFC 998
+31	0x1F	MFE-NSP	MFE Network Services Protocol
+32	0x20	MERIT-INP	MERIT Internodal Protocol
+33	0x21	DCCP	Datagram Congestion Control Protocol	RFC 4340
+34	0x22	3PC	Third Party Connect Protocol
+35	0x23	IDPR	Inter-Domain Policy Routing Protocol	RFC 1479
+36	0x24	XTP	Xpress Transport Protocol
+37	0x25	DDP	Datagram Delivery Protocol
+38	0x26	IDPR-CMTP	IDPR Control Message Transport Protocol
+39	0x27	TP++	TP++ Transport Protocol
+40	0x28	IL	IL Transport Protocol
+41	0x29	IPv6	IPv6 Encapsulation	RFC 2473
+42	0x2A	SDRP	Source Demand Routing Protocol	RFC 1940
+43	0x2B	IPv6-Route	Routing Header for IPv6	RFC 2460
+44	0x2C	IPv6-Frag	Fragment Header for IPv6	RFC 2460
+45	0x2D	IDRP	Inter-Domain Routing Protocol
+46	0x2E	RSVP	Resource Reservation Protocol	RFC 2205
+47	0x2F	GRE	Generic Routing Encapsulation	RFC 2784, RFC 2890
+48	0x30	MHRP	Mobile Host Routing Protocol
+49	0x31	BNA	BNA
+50	0x32	ESP	Encapsulating Security Payload	RFC 4303
+51	0x33	AH	Authentication Header	RFC 4302
+52	0x34	I-NLSP	Integrated Net Layer Security Protocol	TUBA
+53	0x35	SWIPE	SwIPe	IP with Encryption
+54	0x36	NARP	NBMA Address Resolution Protocol	RFC 1735
+55	0x37	MOBILE	IP Mobility (Min Encap)	RFC 2004
+56	0x38	TLSP	Transport Layer Security Protocol (using Kryptonet key management)
+57	0x39	SKIP	Simple Key-Management for Internet Protocol	RFC 2356
+58	0x3A	IPv6-ICMP	ICMP for IPv6	RFC 4443, RFC 4884
+59	0x3B	IPv6-NoNxt	No Next Header for IPv6	RFC 2460
+60	0x3C	IPv6-Opts	Destination Options for IPv6	RFC 2460
+61	0x3D		Any host internal protocol
+62	0x3E	CFTP	CFTP
+63	0x3F		Any local network
+64	0x40	SAT-EXPAK	SATNET and Backroom EXPAK
+65	0x41	KRYPTOLAN	Kryptolan
+66	0x42	RVD	MIT Remote Virtual Disk Protocol
+67	0x43	IPPC	Internet Pluribus Packet Core
+68	0x44		Any distributed file system
+69	0x45	SAT-MON	SATNET Monitoring
+70	0x46	VISA	VISA Protocol
+71	0x47	IPCU	Internet Packet Core Utility
+72	0x48	CPNX	Computer Protocol Network Executive
+73	0x49	CPHB	Computer Protocol Heart Beat
+74	0x4A	WSN	Wang Span Network
+75	0x4B	PVP	Packet Video Protocol
+76	0x4C	BR-SAT-MON	Backroom SATNET Monitoring
+77	0x4D	SUN-ND	SUN ND PROTOCOL-Temporary
+78	0x4E	WB-MON	WIDEBAND Monitoring
+79	0x4F	WB-EXPAK	WIDEBAND EXPAK
+80	0x50	ISO-IP	International Organization for Standardization Internet Protocol
+81	0x51	VMTP	Versatile Message Transaction Protocol	RFC 1045
+82	0x52	SECURE-VMTP	Secure Versatile Message Transaction Protocol	RFC 1045
+83	0x53	VINES	VINES
+84	0x54	TTP	TTP
+84	0x54	IPTM	Internet Protocol Traffic Manager
+85	0x55	NSFNET-IGP	NSFNET-IGP
+86	0x56	DGP	Dissimilar Gateway Protocol
+87	0x57	TCF	TCF
+88	0x58	EIGRP	EIGRP
+89	0x59	OSPF	Open Shortest Path First	RFC 1583
+90	0x5A	Sprite-RPC	Sprite RPC Protocol
+91	0x5B	LARP	Locus Address Resolution Protocol
+92	0x5C	MTP	Multicast Transport Protocol
+93	0x5D	AX.25	AX.25
+94	0x5E	IPIP	IP-within-IP Encapsulation Protocol	RFC 2003
+95	0x5F	MICP	Mobile Internetworking Control Protocol
+96	0x60	SCC-SP	Semaphore Communications Sec. Pro
+97	0x61	ETHERIP	Ethernet-within-IP Encapsulation	RFC 3378
+98	0x62	ENCAP	Encapsulation Header	RFC 1241
+99	0x63		Any private encryption scheme
+100	0x64	GMTP	GMTP
+101	0x65	IFMP	Ipsilon Flow Management Protocol
+102	0x66	PNNI	PNNI over IP
+103	0x67	PIM	Protocol Independent Multicast
+104	0x68	ARIS	IBM's ARIS (Aggregate Route IP Switching) Protocol
+105	0x69	SCPS	SCPS (Space Communications Protocol Standards)	SCPS-TP[1]
+106	0x6A	QNX	QNX
+107	0x6B	A/N	Active Networks
+108	0x6C	IPComp	IP Payload Compression Protocol	RFC 3173
+109	0x6D	SNP	Sitara Networks Protocol
+110	0x6E	Compaq-Peer	Compaq Peer Protocol
+111	0x6F	IPX-in-IP	IPX in IP
+112	0x70	VRRP	Virtual Router Redundancy Protocol, Common Address Redundancy Protocol (not IANA assigned)	VRRP:RFC 3768
+113	0x71	PGM	PGM Reliable Transport Protocol	RFC 3208
+114	0x72		Any 0-hop protocol
+115	0x73	L2TP	Layer Two Tunneling Protocol Version 3	RFC 3931
+116	0x74	DDX	D-II Data Exchange (DDX)
+117	0x75	IATP	Interactive Agent Transfer Protocol
+118	0x76	STP	Schedule Transfer Protocol
+119	0x77	SRP	SpectraLink Radio Protocol
+120	0x78	UTI	Universal Transport Interface Protocol
+121	0x79	SMP	Simple Message Protocol
+122	0x7A	SM	Simple Multicast Protocol	draft-perlman-simple-multicast-03
+123	0x7B	PTP	Performance Transparency Protocol
+124	0x7C	IS-IS over IPv4	Intermediate System to Intermediate System (IS-IS) Protocol over IPv4	RFC 1142 and RFC 1195
+125	0x7D	FIRE	Flexible Intra-AS Routing Environment
+126	0x7E	CRTP	Combat Radio Transport Protocol
+127	0x7F	CRUDP	Combat Radio User Datagram
+128	0x80	SSCOPMCE	Service-Specific Connection-Oriented Protocol in a Multilink and Connectionless Environment	ITU-T Q.2111 (1999)
+129	0x81	IPLT
+130	0x82	SPS	Secure Packet Shield
+131	0x83	PIPE	Private IP Encapsulation within IP	Expired I-D draft-petri-mobileip-pipe-00.txt
+132	0x84	SCTP	Stream Control Transmission Protocol
+133	0x85	FC	Fibre Channel
+134	0x86	RSVP-E2E-IGNORE	Reservation Protocol (RSVP) End-to-End Ignore	RFC 3175
+135	0x87	Mobility Header	Mobility Extension Header for IPv6	RFC 6275
+136	0x88	UDPLite	Lightweight User Datagram Protocol	RFC 3828
+137	0x89	MPLS-in-IP	Multiprotocol Label Switching Encapsulated in IP	RFC 4023
+138	0x8A	manet	MANET Protocols	RFC 5498
+139	0x8B	HIP	Host Identity Protocol	RFC 5201
+140	0x8C	Shim6	Site Multihoming by IPv6 Intermediation	RFC 5533
+141	0x8D	WESP	Wrapped Encapsulating Security Payload	RFC 5840
+142	0x8E	ROHC	Robust Header Compression	RFC 5856
+143-252	0x8F-0xFC	UNASSIGNED
+253-254	0xFD-0xFE	Use for experimentation and testing	RFC 3692
+255	0xFF	Reserved.

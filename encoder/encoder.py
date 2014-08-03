@@ -16,7 +16,6 @@ class clientencoder(object):
 
 	def dataencode(self, ident):
 		try:
-			#print "Start of encoding routine" # diagnostics
 			try:
 				if encodedata == "base85":
 					__builtin__.ident = b64.b85encode(ident)
@@ -41,7 +40,6 @@ class clientencoder(object):
 					pass  # do gzip
 				if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
 					pass  # do gzip
-				#print "Stop of encoding routine" # diagnostics
 			except Exception as failedtoencode:
 				pass
 		except Exception as e:
@@ -49,42 +47,39 @@ class clientencoder(object):
 
 	def datadecode(self, data):
 		try:
-			#print "Start of decoding routine" # diagnostics
+
 			if str(proto).lower() == "udp":
-				try:
-					if encodedata == "base85":
-						__builtin__.data = b64.b85decode(data[0])
-					if encodedata == "base64":
-						__builtin__.data = b64.b64decode(data[0])
-					if encodedata == "base16":
-						__builtin__.data = b64.b16decode(data[0])
-					if encodedata == "base32":
-						__builtin__.data = b64.b32decode(data[0])
-					if encodedata == "rot13":
-						__builtin__.data = str(data[0]).decode('rot13')
-					if encodedata == "xor":
-						key = 'filterbuster'
-						__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data[0], cycle(key)))
-					#print "Stop of decoding routine" # diagnostics
-				except Exception as failedtodecode:
-					pass
+				if encodedata == "base85":
+					__builtin__.data = b64.b85decode(data[0])
+				if encodedata == "base64":
+					__builtin__.data = b64.b64decode(data[0])
+				if encodedata == "base16":
+					__builtin__.data = b64.b16decode(data[0])
+				if encodedata == "base32":
+					__builtin__.data = b64.b32decode(data[0])
+				if encodedata == "rot13":
+					__builtin__.data = str(data[0]).decode('rot13')
+				if encodedata == "xor":
+					key = 'filterbuster'
+					__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data[0], cycle(key)))
+
 			if str(proto).lower() == "tcp":
-				try:
-					if encodedata == "base85":
-						__builtin__.data = b64.b85decode(data)
-					if encodedata == "base64":
-						__builtin__.data = b64.b64decode(data)
-					if encodedata == "base16":
-						__builtin__.data = b64.b16decode(data)
-					if encodedata == "base32":
-						__builtin__.data = b64.b32decode(data)
-					if encodedata == "rot13":
-						__builtin__.data = str(data).decode('rot13')
-					if encodedata == "xor":
-						key = 'filterbuster'
-						__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data, cycle(key)))
-					#print "Stop of decoding routine" # diagnostics
-				except Exception as failedtodecode:
-					pass
-		except Exception as e:
-			print e
+				if encodedata == "base85":
+					__builtin__.data = b64.b85decode(data)
+				if encodedata == "base64":
+					__builtin__.data = b64.b64decode(data)
+				if encodedata == "base16":
+					__builtin__.data = b64.b16decode(data)
+				if encodedata == "base32":
+					__builtin__.data = b64.b32decode(data)
+				if encodedata == "rot13":
+					__builtin__.data = str(data).decode('rot13')
+				if encodedata == "xor":
+					key = 'filterbuster'
+					__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data, cycle(key)))
+
+		except Exception as codecfailure:
+			print codecfailure
+
+		__builtin__.data = data
+		return data

@@ -57,11 +57,8 @@ class padgen(object):
 		           'B', 'N', 'M'
 		]
 
-		try:
-			padcount = random.choice(xrange(random.choice(xrange(500))))
-			pl = ""
-			for xpc in xrange(padcount):
-				pl += "".join(random.choice(padlist))
-			return pl
-		except Exception as padrangefail:
-			pass
+		padcount = random.choice(xrange(random.choice(xrange(500))))
+		pl = ""
+		for xpc in xrange(padcount):
+			pl += "".join(random.choice(padlist))
+		return pl

@@ -13,15 +13,8 @@ configures and starts socket for communication
 import __builtin__
 import socket
 import datetime
-from bcolors import bcolors as b
-from padme import padgen
-
-bh = b.HEADER
-bf = b.FAIL
-be = b.ENDC
-bw = b.WARNING
-bo = b.OKBLUE
 from encoder import clientencoder
+from padme import padgen
 
 
 class udpsocks(object):
@@ -31,70 +24,61 @@ class udpsocks(object):
 
 	def connectsocket(self):
 		try:
-			ldate = datetime.datetime.now()
-			state = ""
-			proto = str("udp").upper()
-			try:
-				if str(paddata).lower() in ["true", "yes"]:
-					__builtin__.ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
-				                    str(padgen().maxipad()) + be + " - Port: " + str(ls) + bo + \
-				                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
-				                    str(padgen().maxipad()) + be + " - From: " + str(location) + bo + \
-				                    str(padgen().maxipad()) + be + " - Date: " + str(ldate) + be + \
-					                str(padgen().maxipad())
-					print "pdddata udp"
-					print ident
-				else:
-					__builtin__.ident = bo + "On " + be + str(proto) + bo + \
-				                    " Port: " + be + str(ls) + bo + \
-				                    " - By: " + be + str(consultant) + bo + \
-				                    " - From: " + be + str(location) + bo + \
-				                    " - Date: " + be + str(ldate) + be
-			except Exception as e:
-				print e
-			#print "current protocol set to: ", proto  # diagnostics
+			ldate = datetime.datetime.now()  # get current date/time
+			proto = str("udp").upper()  # sets protocol in uppercase for logging
 
-			#print "string being sent: ", ident  # diagnostics
-			clientencoder().dataencode(ident)
-			#print "encoded string being sent: ", ident  # diagnostics
-			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			if nappy > "1":
-				#print "nap time is a float: ", nappy  # diagnostics
+			if str(paddata).lower() in ["true", "yes"]:  # used to make data more random, harder for signatures
+				ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
+			                    str(padgen().maxipad()) + be + " - Port: " + str(ls) + bo + \
+			                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
+			                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
+			                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + bo + \
+				                str(padgen().maxipad()) + be
+			else:  # if no padding use standard ident information to send
+				ident = bo + "On " + be + str(proto) + bo + \
+			                    " Port: " + be + str(ls) + bo + \
+			                    " - By: " + be + str(consultant) + bo + \
+			                    " - From: " + be + str(location) + bo + \
+			                    " - Date: " + be + str(ldate) + be
+
+			clientencoder().dataencode(ident)  # check encoding module and produce ident as desired by configuration
+
+			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # create the socket object
+
+			if nappy > "1":  # is nappy is a fraction less than 1 -  float socket timeout
 				sockobj.settimeout(float(nappy))
 			else:
-				#print "nap time is an integer:", nappy  # diagnostics
-				sockobj.settimeout(float(0.1))
-			sockobj.connect((ipaddr, ls))
-			#print "socket connection attempted"  # diagnostics
-			sockobj.send(ident)
-			#print "socket sent ident string"  # diagnostics
-			data1 = sockobj.recvfrom(65535)
-			#print "socket attempting to get data returned"  # diagnostics
-			sockobj.close()
-			#print "closed socket"  # diagnostics
-			if data1:
-				#print "data string is as follows: ", str(data)  # diagnostics
+				pass
+
+			sockobj.connect((ipaddr, ls))  # basic socket connection
+			sockobj.send(ident)  # send ident string
+			data1 = sockobj.recv(65535)  # catch anything sent back
+			sockobj.close()  # close the socket
+
+			if data1:  # if we recv any data back from server, append to passlist
 				passlist.append(str(proto).upper() + "/" + str(ls))
-				clientencoder().datadecode(data1)
-				__builtin__.state = "Established"
-				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
+				clientencoder().datadecode(data1)  # check if encode and decode data for displaying
 			else:
 				pass
-			try:
-				from log_enable import log_enabled
-				log_enabled().logging()
-			except Exception as logenbfail:
-				print "Failed in udpsock logging: " + str(logenbfail)
-		except Exception as udpconfail:
-			__builtin__.state = str(udpconfail).split("] ")[1]
-			faillist.append(str(proto).upper() + "/" + str(ls))
+
+			__builtin__.state = "Established"
+
+			if str(paddata).lower() in ["true","yes"]:  # if padding was used display generic information to client
+				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + bo + ": Padded data"
+				# passlist.append("TCP/" + str(ls))
+			else:
+				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
+
+			from log_enable import log_enabled
+			log_enabled().logging()  # try to log data
+
+		except Exception as udpconfail:  # catch all errors generated - unexpected results
+			__builtin__.state = str(udpconfail).split("]")  # strip out the socket fail reason for display
+			faillist.append(str(proto).upper() + "/" + str(ls))  # append to faillist
 			print bf + "\t\t[?] Connection attempt failed on UDP port: " + str(ls) + " - to IP Address: " + \
 			      str(ipaddr) + " - " + str(udpconfail) + be
-			try:
-				from log_enable import log_enabled
 
-				log_enabled().logging()
-			except Exception as e:
-				print "Failed in udpsock logging: " + str(e)
-				pass
-			pass
+			from log_enable import log_enabled
+			log_enabled().logging()
+
+			pass  # nothing to see here - keep moving on ..

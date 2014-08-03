@@ -23,17 +23,14 @@ vv = __version__
 
 class initclient(object):
 
-	"""
-	"""
-	""" checking for required dependencies before any further execution """
-	""" if dependency is not found, print helper text to install modules """
+	# checking for required dependencies before any further execution
+	# if dependency is not found, print helper text to install modules
 
 	def __init__(self):
 		pass
 
 	def check_depends(self):
 		# check depends ,,, the joke writes it's self...
-		#print "Start checking for dependencies" # diagnostics
 		try:
 			""" required for graphing """
 			import numpy as np
@@ -58,14 +55,11 @@ class initclient(object):
 			if str(diag).lower() in ["true", "yes"]:
 				print bo + "\n\n\t" + be + "[?] Dependency exception caught as: " + str(covertdnsimportfail)
 			sys.exit(0)
-		#print "End checking for dependencies" # diagnostics
 
 	""" starting client portion of the application """
 	def clientrun(self):
-		"""
-		"""
-		""" check for system argument to initialize client portion of application """
-		""" log start time of application """
+		# check for system argument to initialize client portion of application
+		# log start time of application
 		__builtin__.start_timer = time.time()
 		try:
 			is_host = re.match(
@@ -86,7 +80,7 @@ class initclient(object):
 			print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 			helper().chelp()
 			sys.exit(0)
-		""" get system argument 3, which handles SSL/TLS - addin extra encryption layer ( AES ) """
+		""" get system argument 3, which handles SSL/TLS """
 		try:
 			if not sys.argv[3]:
 				__builtin__.mytls = ""
@@ -104,12 +98,10 @@ class initclient(object):
 					from conf import confsecmap
 				except Exception as confsecmapfail:
 					print("Failed at system argument configuration in main.py: " + str(confsecmapfail))
-				""" check and make sure its a file and not some malicious user input """
+				""" check and make sure its a file """
 				if os.path.isfile(sys.argv[2]):
 					confsecmap
-				#print "Client config diagnostics before" # diagnostics
 				clientconfdiag().diagconfig
-				#print "Client config diagnostics after" # diagnostics
 		except Exception as conffilefail:
 			from helper import helper
 			print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be

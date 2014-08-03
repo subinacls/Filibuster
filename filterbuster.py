@@ -3,15 +3,17 @@
 """
 module author: subinacls
 
-Some diagnostics was added to the application
-To enable these print statements, remove all the starting # from lines ending in # diagnostics
+I understand this is not the best code in the world and I will modify this to become a cleaner
+more understandable code base for future use. The current postion I take on the way this was
+developed is - it just works and will be modified with better try and except later
+
+Some diagnostics was added to the application to help in understanding where and what broke.
 
 This application is useful for mapping egress filters and simple covert tunnel testing
 for a network which has a port filtering device bewtween you and another segment.
 
 This can be used for internet access or vlans etc etc.
 Client is enabled from the command line providing an INI file
-Clients variables are taken from the supplied INI file
 Server is configured from command line arguments
 
 warning:
@@ -24,20 +26,23 @@ import __builtin__
 import sys
 import datetime
 import os
+
+# set the IP address to default localhost before configuration file is opened
 __builtin__.ipaddr = "127.0.0.1"
 __builtin__.hostip = ""
 __builtin__.stack = []
+# set ident information before configuration file is opened
 global ident
 __builtin__.ident = ""
-date = str(datetime.datetime.now()).split()[0]
-__builtin__.date = date
+# get datetime from local system
+__builtin__.date = str(datetime.datetime.now()).split()[0]
+# set counter to 0
 __builtin__.u = 0
 """ useful for diagnostics and error suppression """
-__builtin__.diag = "yes"
+__builtin__.diag = ""
 __builtin__.dd = {}
 """ enable or disable error msg output """
 __builtin__.suppress = "yes"
-
 """ list required directories for application to import custom modules """
 directories = ["client",
                "color",
@@ -92,11 +97,13 @@ except Exception as nofirstargument:
 	helper().helpall()
 	sys.exit(0)
 
-""" function to check first user supplied argument before execution """
 
 
 def checkfirstargument():
 
+	"""
+	function to check user supplied argument to determine functionality of the app
+	"""
 	try:  # if your looking for the client portion
 		if str(sa1).lower() in ["client", "c"]:
 			from client_kicker import initclient
@@ -104,29 +111,21 @@ def checkfirstargument():
 			from diagforall import checkdepends
 			from diagforall import diagclientheader
 			try:
-				#print 'Check depends before' # diagnostics
 				checkdepends().required_mods()  # check dependencies before launch
-				#print 'Check depends after' # diagnostics
-			except Exception as requiredmodsfail:  # if anything failed here
+			except Exception as requiredmodsfail:
 				print bo + "\n\n\t[?] Please ensure all dependencies are installed\n" + be
 				helper().chelp()
 				sys.exit(0)
 			try:
-				#print 'Check client header before' # diagnostics
 				diagclientheader().clientheader()
-				#print 'Check client header after' # diagnostics
-				#print 'Check client run before' # diagnostics
 				initclient().clientrun()  # run client kicker
-				#print 'Check client run after' # diagnostics
-			except Exception as clientrunfail:  # if anything failed here
+			except Exception as clientrunfail:
 				print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 				helper().chelp()
 				sys.exit(0)
 			try:
-				#print 'Check scanengine before' # diagnostics
 				initscanner().scanengine()  # configure and run scanning engine
-				#print 'Check scanengine atfer' # diagnostics
-			except Exception as scanenginefail:  # if anything failed here
+			except Exception as scanenginefail:
 				print bo + "\n\n\t[?] Please ensure all arguments are given\n" + be
 				helper().chelp()
 				sys.exit(0)
@@ -134,14 +133,10 @@ def checkfirstargument():
 			__builtin__.diag = "yes"  # since server does not get settings from ini file
 			try:
 				from servargs import args
-				#print "Check server argument before" # diagnostics
 				args().getservargs()
-				#print "Check server argument after" # diagnostics
 				try:
 					from server_kicker import initserver
-					#print "Check initserver before" # diagnostics
 					initserver().serverrun()
-					#print "Check initserver after" # diagnostics
 				except Exception as serverrunfail:
 					print bo + "\n\n\t[?] Please ensure all variables are given\n" + be
 				pass
@@ -155,9 +150,7 @@ def checkfirstargument():
 """ pain in the __main__ """
 if __name__ == "__main__":
 	"""  run checkfirstargument function """
-	#print "Run checkfirstargument before" # diagnostics
 	checkfirstargument()
-	#print "Run checkfirstargument after" # diagnostics
 	"""for diagnostics display a pie chart"""
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
