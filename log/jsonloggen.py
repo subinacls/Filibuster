@@ -4,6 +4,7 @@
 # module author: subinacls
 #
 
+
 """ Useful information
 This file preforms all the ini configuration settings
 sets __builtin__ vars to be used throughout the application

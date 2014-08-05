@@ -3,7 +3,6 @@
 #
 # module author: subinacls
 #
-
 #
 # file should handle its own exceptions
 #

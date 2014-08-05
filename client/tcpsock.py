@@ -4,6 +4,7 @@
 # module author: subinacls
 #
 
+
 """
 Useful information
 gets logging type used if any

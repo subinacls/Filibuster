@@ -4,6 +4,7 @@
 # module author: subinacls
 #
 
+
 """ Useful information
 	initializes client scanner for further configuration
 	checks if port range is a file or string

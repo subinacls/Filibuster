@@ -3,6 +3,7 @@
 #
 # module author: subinacls
 #
+
 """
 This file kills the app when user enters CTRL+C
 """
