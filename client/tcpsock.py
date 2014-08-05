@@ -25,7 +25,7 @@ class tcpsocks(object):
 
 	def connectsocket(self):
 		try:
-			ldate = datetime.datetime.now()  # get current date/time
+			__builtin__.ldate = datetime.datetime.now()  # get current date/time
 			__builtin__.proto = str("tcp").upper()  # sets protocol in uppercase for logging
 
 			if str(paddata).lower() in ["true", "yes"]:  # used to make data more random, harder for signatures
@@ -55,12 +55,12 @@ class tcpsocks(object):
 
 			sockobj.connect((ipaddr, ls))  # basic socket connection
 			sockobj.send(ident)  # send ident string
-			__builtin__.data = sockobj.recv(65535)  # catch anything sent back
+			data2 = sockobj.recv(65535)  # catch anything sent back
 			sockobj.close()  # close the socket
 
-			if data:  # if we recv any data back from server, append to passlist
+			if data2:  # if we recv any data back from server, append to passlist
 				passlist.append(str(proto) + "/" + str(ls))
-				clientencoder().datadecode(data)  # check if encode and decode data for displaying
+				clientencoder().datadecode(data2)  # check if encode and decode data for displaying
 			else:
 				pass
 

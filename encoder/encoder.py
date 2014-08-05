@@ -70,5 +70,5 @@ class clientencoder(object):
 			if encodedata == "xor":
 				key = 'filterbuster'
 				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data, cycle(key)))
-		__builtin__.data = data
+
 		return data

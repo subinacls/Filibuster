@@ -92,14 +92,14 @@ class bothsocks(object):
 			proto = str("udp").upper()  # sets protocol in uppercase for logging
 
 			if str(paddata).lower() in ["true", "yes"]:  # used to make data more random, harder for signatures
-				ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
+				__builtin__.ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
 			                    str(padgen().maxipad()) + be + " - Port: " + str(lsu) + bo + \
 			                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
 			                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
 			                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + bo + \
 				                str(padgen().maxipad()) + be
 			else:  # if no padding use standard ident information to send
-				ident = bo + "On " + be + str(proto) + bo + \
+				__builtin__.ident = bo + "On " + be + str(proto) + bo + \
 			                    " Port: " + be + str(lsu) + bo + \
 			                    " - By: " + be + str(consultant) + bo + \
 			                    " - From: " + be + str(location) + bo + \

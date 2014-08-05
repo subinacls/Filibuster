@@ -28,14 +28,14 @@ class udpsocks(object):
 			proto = str("udp").upper()  # sets protocol in uppercase for logging
 
 			if str(paddata).lower() in ["true", "yes"]:  # used to make data more random, harder for signatures
-				ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
+				__builtin__.ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
 			                    str(padgen().maxipad()) + be + " - Port: " + str(ls) + bo + \
 			                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
 			                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
 			                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + bo + \
 				                str(padgen().maxipad()) + be
 			else:  # if no padding use standard ident information to send
-				ident = bo + "On " + be + str(proto) + bo + \
+				__builtin__.ident = bo + "On " + be + str(proto) + bo + \
 			                    " Port: " + be + str(ls) + bo + \
 			                    " - By: " + be + str(consultant) + bo + \
 			                    " - From: " + be + str(location) + bo + \
@@ -43,7 +43,7 @@ class udpsocks(object):
 
 			clientencoder().dataencode(ident)  # check encoding module and produce ident as desired by configuration
 
-			sockobj = socket.socket(socket.SOCK_DGRAM)  # create the socket object
+			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # create the socket object
 
 			if nappy > "1":  # is nappy is a fraction less than 1 -  float socket timeout
 				sockobj.settimeout(float(nappy))
@@ -52,7 +52,7 @@ class udpsocks(object):
 
 			sockobj.connect((ipaddr, ls))  # basic socket connection
 			sockobj.send(ident)  # send ident string
-			data1 = sockobj.recv(65535)  # catch anything sent back
+			data1 = sockobj.recvfrom(65535)  # catch anything sent back
 			sockobj.close()  # close the socket
 
 			if data1:  # if we recv any data back from server, append to passlist

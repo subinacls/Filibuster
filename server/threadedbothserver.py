@@ -18,27 +18,14 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 		self.data = self.request.recv(65535).strip()
 		if self.data:
 			try:
-				self.line = self.data
-
-				matchObj = re.match('GET /this/should/never/be/real_anywhere/Filterbuster.html(.*)', self.line)
-				if matchObj:
-					print self.line
-					self.reply1 = " - HTTP Allowed over port: "
-					try:
-						self.request.sendto(str(self.reply1), self.client_address)
-					except Exception as e:
-						print e
-			except Exception as notxor:
-				pass
-			try:
 				from itertools import cycle, izip
 				key = 'filterbuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = ": Filterbuster - " + self.line
+					self.data = " : Filterbuster - " + self.line
 					self.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 					self.request.send(self.data)
 			except Exception as notxor:
@@ -47,7 +34,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(self.data).decode('rot13')
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = str(" : Filterbuster - "+str(self.line)).encode('rot13')
 					self.request.send(self.data)
@@ -57,7 +44,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b85decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be+ " " +self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
@@ -67,7 +54,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b64decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " +self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b64.b64encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
@@ -77,7 +64,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b32decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
@@ -87,7 +74,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b16decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					self.request.send(self.data)
@@ -97,7 +84,7 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = self.data
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.request.send(" : Filterbuster - " + self.data)
 			except Exception as notplaintxt:
@@ -115,25 +102,12 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 		socket = self.request[1]
 		if self.data:
 			try:
-				self.line = self.data
-
-				matchObj = re.match('GET /this/should/never/be/real_anywhere/Filterbuster.html(.*)', self.line)
-				if matchObj:
-					print self.line
-					self.reply1 = " - HTTP Allowed over port: "
-					try:
-						self.request.sendto(str(self.reply1), self.client_address)
-					except Exception as e:
-						print e
-			except Exception as notxor:
-				pass
-			try:
 				from itertools import cycle, izip
 				key = 'filterbuster'
 				self.line = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = " : Filterbuster - " +self.line
 					self.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
@@ -144,7 +118,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(self.data).decode('rot13')
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = str(" : Filterbuster - " + str(self.line)).encode('rot13')
 					socket.sendto(str(self.data[0::]), self.client_address)
@@ -154,7 +128,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b85decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
@@ -164,7 +138,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b64decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b64.b64encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
@@ -174,7 +148,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b32decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b32.b85encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
@@ -184,7 +158,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = str(b64.b16decode(self.data))
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					self.data = b16.b85encode(" : Filterbuster - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
@@ -194,7 +168,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				self.line = self.data
 				matchObj = re.match('(.*)On(.*)Port:(.*)By:(.*)From:(.*)Date:(.*)', self.line)
 				if matchObj:
-					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
+					print bf + "\t\tATTENTION " + bo + "[*] Connection from: " + be + self.client_address[0] + \
 					      bo + " - " + be + self.line
 					socket.sendto(str(" : Filterbuster - " + self.data[0::]), self.client_address)
 			except Exception as notplaintxt:
