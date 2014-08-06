@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/bothsock.py" afterPath="$PROJECT_DIR$/client/bothsock.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/covert/covert.py" afterPath="$PROJECT_DIR$/covert/covert.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocol/application/appsocket.py" afterPath="$PROJECT_DIR$/protocol/application/appsocket.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filterbuster.py" afterPath="$PROJECT_DIR$/filterbuster.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/udpsock.py" afterPath="$PROJECT_DIR$/client/udpsock.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407073673517" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407103505472" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407073090937" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403664922845" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -27,7 +25,7 @@
     <file path="/covert.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404182921425" ignored="false" />
     <file path="/client_kicker.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407063488980" ignored="false" />
     <file path="/*.regexp" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404496287326" ignored="false" />
-    <file path="/filterbuster.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407064696547" ignored="false" />
+    <file path="/filterbuster.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407104619872" ignored="false" />
     <file path="$USER_HOME$/Filterbuster/version/verinfo.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403280227816" ignored="false" />
     <file path="/README.md" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404784207340" ignored="false" />
     <file path="/jsonloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404000146347" ignored="false" />
@@ -103,19 +101,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/conf.py">
+      <file leaf-file-name="appsocket.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protocol/application/appsocket.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+            <state line="12" column="18" selection-start="248" selection-end="248" vertical-scroll-proportion="0.22304833">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threadedtcpserver.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
+      <file leaf-file-name="conf.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="20" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0">
+            <state line="34" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,10 +137,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filterbuster.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="filterbuster.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/filterbuster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="26" selection-start="1823" selection-end="1823" vertical-scroll-proportion="-0.29739776">
+            <state line="150" column="8" selection-start="4939" selection-end="4939" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,7 +158,7 @@
       <file leaf-file-name="bothsock.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/bothsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="36" selection-start="4659" selection-end="4659" vertical-scroll-proportion="0.0">
+            <state line="119" column="47" selection-start="0" selection-end="6297" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -208,7 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/scanconfig.py" />
         <option value="$PROJECT_DIR$/client/padme.py" />
         <option value="$PROJECT_DIR$/color/bcolors.py" />
         <option value="$PROJECT_DIR$/color/pcolors.py" />
@@ -224,6 +221,7 @@
         <option value="$PROJECT_DIR$/client/bothsock.py" />
         <option value="$PROJECT_DIR$/client/udpsock.py" />
         <option value="$PROJECT_DIR$/filterbuster.py" />
+        <option value="$PROJECT_DIR$/protocol/application/appsocket.py" />
       </list>
     </option>
   </component>
@@ -1000,7 +998,11 @@
       <created>1407073676594</created>
       <updated>1407073676594</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="removed some testing modules for new version of filterbuster from this public release">
+      <created>1407103507318</created>
+      <updated>1407103507318</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1089,7 +1091,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lots of text explaining the process for the applications logic as well as fixing issues with the amount of try and except as well as __builtin__ abuse" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed some testing modules for new version of filterbuster from this public release" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1103,7 +1105,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="changed the way errors are handled in the server and better way of ensuring overwrite is effecting" />
     <MESSAGE value="added some info to readme and modified some data time stamps" />
     <MESSAGE value="added a file to help generate test data for mag strip" />
     <MESSAGE value="made some changes to piipcidata file" />
@@ -1128,6 +1129,7 @@
     <MESSAGE value="fixed the error in the random time generator - was using numpy arange which was creating a bank array, now it populates the range from nap, dwell and chooses a random number from the array." />
     <MESSAGE value="added more entropy to padding and fixed some other issues across different modules" />
     <MESSAGE value="added lots of text explaining the process for the applications logic as well as fixing issues with the amount of try and except as well as __builtin__ abuse" />
+    <MESSAGE value="removed some testing modules for new version of filterbuster from this public release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1147,13 +1149,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/log/log_enable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/txtloggen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="111" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
@@ -1210,13 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protocol/application/approtos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/conf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="25" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
@@ -1238,13 +1226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/bothsock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="36" selection-start="4659" selection-end="4659" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/udpsock.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="4" selection-start="2665" selection-end="2665" vertical-scroll-proportion="0.0">
@@ -1254,7 +1235,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/filterbuster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="26" selection-start="1823" selection-end="1823" vertical-scroll-proportion="-0.29739776">
+        <state line="150" column="8" selection-start="4939" selection-end="4939" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protocol/application/approtos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/bothsock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="47" selection-start="0" selection-end="6297" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protocol/application/appsocket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="18" selection-start="248" selection-end="248" vertical-scroll-proportion="0.22304833">
           <folding />
         </state>
       </provider>

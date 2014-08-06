@@ -100,9 +100,9 @@ except Exception as nofirstargument:
 
 def checkfirstargument():
 
-	"""
-	function to check user supplied argument to determine functionality of the app
-	"""
+
+	# function to check user supplied argument to determine functionality of the app
+
 	try:  # if your looking for the client portion
 		if str(sa1).lower() in ["client", "c"]:
 			from client_kicker import initclient
@@ -148,9 +148,9 @@ def checkfirstargument():
 
 """ pain in the __main__ """
 if __name__ == "__main__":
-	"""  run checkfirstargument function """
+	""" run checkfirstargument function """
 	checkfirstargument()
-	"""for diagnostics display a pie chart"""
+	""" for diagnostics display a pie chart"""
 	from diagforall import piechartdiag
 	piechartdiag().getaslice()
 	if str(sa1).lower() not in ["server", "s"]:
