@@ -39,7 +39,7 @@ class jsonlogger(object):
 				rawjson = json.loads(json.dumps(jlogback))  #, indent=4)) # modify to add tabs to logfile
 			else:
 				rawjson = json.loads(json.dumps({}))  #, indent=4)) # modify to add tabs to logfile
-				pass
+			pass
 
 	def json_write(self):
 		try:
@@ -58,7 +58,11 @@ class jsonlogger(object):
 			pass
 
 	def jsonlog(self):
-		self.json_read()
+		try:
+			self.json_read()
+		except Exception as failedjread:
+			print failedjread
+			pass
 		try:
 			if consultant not in rawjson.keys():  # check for variable in key values
 				rawjson[consultant] = {}  # if not in key values, make new key as a dict

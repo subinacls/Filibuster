@@ -53,6 +53,7 @@ class bothsocks(object):
 			#  connect, send, and close the socket
 
 			sockobj.connect((ipaddr, lst))  # basic socket connection
+			__builtin__.ls = lst
 			sockobj.send(ident)  # send ident string
 			data2 = sockobj.recv(65535)  # catch anything sent back
 			sockobj.close()  # close the socket
@@ -60,6 +61,7 @@ class bothsocks(object):
 			if data2:  # if we recv any data back from server, append to passlist
 				passlist.append(str(proto) + "/" + str(lst))
 				clientencoder().datadecode(data2)  # check if encode and decode data for displaying
+
 			else:
 				pass
 
@@ -67,13 +69,11 @@ class bothsocks(object):
 
 			if str(paddata).lower() in ["true","yes"]:  # if padding was used display generic information to client
 				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + bo + ": Padded data"
-				# passlist.append("TCP/" + str(ls))
 			else:
 				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
 
 			from log_enable import log_enabled
 			log_enabled().logging()  # try to log data
-
 
 		except Exception as tcpconfail:  # catch all errors generated - unexpected results
 			__builtin__.state = str(tcpconfail).split("]")  # strip out the socket fail reason for display
@@ -115,6 +115,7 @@ class bothsocks(object):
 				pass
 
 			sockobj.connect((ipaddr, lsu))  # basic socket connection
+			__builtin__.ls = lsu
 			sockobj.send(ident)  # send ident string
 			data1 = sockobj.recvfrom(65535)  # catch anything sent back
 			sockobj.close()  # close the socket
@@ -129,7 +130,6 @@ class bothsocks(object):
 
 			if str(paddata).lower() in ["true","yes"]:  # if padding was used display generic information to client
 				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + bo + ": Padded data"
-				# passlist.append("TCP/" + str(ls))
 			else:
 				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
 

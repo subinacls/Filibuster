@@ -17,7 +17,6 @@ import datetime
 from encoder import clientencoder
 from padme import padgen
 
-
 class udpsocks(object):
 
 	def __init__(self):
@@ -25,8 +24,9 @@ class udpsocks(object):
 
 	def connectsocket(self):
 		try:
-			ldate = datetime.datetime.now()  # get current date/time
-			proto = str("udp").upper()  # sets protocol in uppercase for logging
+			__builtin__.data = ""
+			__builtin__.ldate = datetime.datetime.now()  # get current date/time
+			__builtin__.proto = str("udp").upper()  # sets protocol in uppercase for logging
 
 			if str(paddata).lower() in ["true", "yes"]:  # used to make data more random, harder for signatures
 				__builtin__.ident = bo + str(padgen().maxipad()) + be + "On " + str(proto) + bo + \
@@ -53,7 +53,7 @@ class udpsocks(object):
 
 			sockobj.connect((ipaddr, ls))  # basic socket connection
 			sockobj.send(ident)  # send ident string
-			data1 = sockobj.recvfrom(65535)  # catch anything sent back
+			__builtin__.data1 = sockobj.recvfrom(65535)  # catch anything sent back
 			sockobj.close()  # close the socket
 
 			if data1:  # if we recv any data back from server, append to passlist

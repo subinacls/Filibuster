@@ -9,8 +9,8 @@ import base64 as b64
 import __builtin__
 from itertools import cycle, izip
 
-
 class clientencoder(object):
+
 
 	def __init__(self):
 		pass
@@ -41,35 +41,39 @@ class clientencoder(object):
 			pass  # do gzip
 
 
-	def datadecode(self, data):
+	def datadecode(self, ddata):
 		if str(proto).lower() == "udp":
 			if encodedata == "base85":
-				__builtin__.data = b64.b85decode(data[0])
+				__builtin__.data = b64.b85decode(ddata[0])
 			if encodedata == "base64":
-				__builtin__.data = b64.b64decode(data[0])
-			if encodedata == "base16":
-				__builtin__.data = b64.b16decode(data[0])
+				__builtin__.data = b64.b64decode(ddata[0])
 			if encodedata == "base32":
-				__builtin__.data = b64.b32decode(data[0])
+				__builtin__.data = b64.b32decode(ddata[0])
+			if encodedata == "base16":
+				__builtin__.data = b64.b16decode(ddata[0])
 			if encodedata == "rot13":
-				__builtin__.data = str(data[0]).decode('rot13')
+				__builtin__.data = str(ddata[0]).decode('rot13')
 			if encodedata == "xor":
 				key = 'filterbuster'
-				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data[0], cycle(key)))
+				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(ddata[0], cycle(key)))
+			if encodedata == "plain":
+				__builtin__.data = ddata[0]
 
 		if str(proto).lower() == "tcp":
 			if encodedata == "base85":
-				__builtin__.data = b64.b85decode(data)
+				__builtin__.data = b64.b85decode(ddata)
 			if encodedata == "base64":
-				__builtin__.data = b64.b64decode(data)
-			if encodedata == "base16":
-				__builtin__.data = b64.b16decode(data)
+				__builtin__.data = b64.b64decode(ddata)
 			if encodedata == "base32":
-				__builtin__.data = b64.b32decode(data)
+				__builtin__.data = b64.b32decode(ddata)
+			if encodedata == "base16":
+				__builtin__.data = b64.b16decode(ddata)
 			if encodedata == "rot13":
-				__builtin__.data = str(data).decode('rot13')
+				__builtin__.data = str(ddata).decode('rot13')
 			if encodedata == "xor":
 				key = 'filterbuster'
-				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(data, cycle(key)))
+				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(ddata, cycle(key)))
+			if encodedata == "plain":
+				__builtin__.data = ddata
 
-		return data
+		return ddata

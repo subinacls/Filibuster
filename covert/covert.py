@@ -12,7 +12,7 @@ This file is for covert tunnel testing
 import os
 import time
 from subprocess import Popen
-from socket import *
+import socket
 import dns.resolver
 
 
@@ -55,7 +55,7 @@ class ntptunnel(object):
 
 	def ntp(self, tunnelspass, tunnelsfail):
 		try:
-			client = socket(SOCK_DGRAM)
+			client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			data = '\x1b' + 47 * '\0'
 			client.sendto(data,('pool.ntp.org', 123))
 			data, address = client.recvfrom(1024)

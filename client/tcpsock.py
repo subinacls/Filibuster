@@ -58,7 +58,6 @@ class tcpsocks(object):
 			sockobj.send(ident)  # send ident string
 			data2 = sockobj.recv(65535)  # catch anything sent back
 			sockobj.close()  # close the socket
-
 			if data2:  # if we recv any data back from server, append to passlist
 				passlist.append(str(proto) + "/" + str(ls))
 				clientencoder().datadecode(data2)  # check if encode and decode data for displaying
@@ -67,7 +66,7 @@ class tcpsocks(object):
 
 			__builtin__.state = "Established"  # set state for the connection
 
-			if str(paddata).lower() in ["true","yes"]:  # if padding was used display generic information to client
+			if str(paddata).lower() in ["true", "yes"]:  # if padding was used display generic information to client
 				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + bo + ": Padded data"
 				# passlist.append("TCP/" + str(ls))
 			else:
@@ -78,7 +77,7 @@ class tcpsocks(object):
 
 
 		except Exception as tcpconfail:  # catch all errors generated - unexpected results
-			__builtin__.state = str(tcpconfail).split("] ")[1]  # strip out the socket fail reason for display
+			__builtin__.state = str(tcpconfail).split("]")[0]  # strip out the socket fail reason for display
 			faillist.append(str(proto).upper() + "/" + str(ls))  # append to faillist
 			print bf + "\t\t[?] Connection attempt failed on port: TCP " + str(ls) + " - to IP Address: " + \
 			      str(ipaddr) + " - " + str(tcpconfail) + be

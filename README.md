@@ -163,6 +163,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
             produce ficticious traffic (smokescreen),
             capture and replay (cause RST floods)
         ]
+        integration w/ other tools
       Monitor and report activity on wire to identify other vectors of attack
       Covert tunnel proxy options (turn client into a socks proxy)
       Lockout watchdog (monitor for preconfigured port knock sequence)
@@ -171,7 +172,7 @@ Expanded from: https://www.trustedsec.com/files/egressbuster.zip
             Wait for 5 min for ssh connection,
             reconfigure iptables port redirection
         ]
-      GUI interface for both server/ client
+      GUI interface for both server/ client on major platforms
         Interface:[
             Its perfect the way it is ? (highly doubtful),
             QT GUI (kinda played around with it) ,
