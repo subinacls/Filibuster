@@ -3,7 +3,6 @@
 #
 # module author: subinacls
 #
-
 """
 This is the UDP Threaded server portiong of the application
 Some processing of the data is done here which is then reflected back to the client
@@ -18,6 +17,7 @@ import SocketServer
 import __builtin__
 from contamination import contaminlog
 import base64 as b64
+__builtin__.hostname = socket.gethostname()
 
 class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 	def handle(self):
@@ -45,7 +45,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = " : Filterbuster - " +self.line
+					self.data = " : " + hostname + " - " +self.line
 					self.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(self.data, cycle(key)))
 					socket.sendto(str(self.data[0::]), self.client_address)
 			except Exception as notxor:
@@ -56,7 +56,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = str(" : Filterbuster - " + str(self.line)).encode('rot13')
+					self.data = str(" : " + hostname + " - " + str(self.line)).encode('rot13')
 					socket.sendto(str(self.data[0::]), self.client_address)
 			except Exception as notro13:
 				pass
@@ -66,7 +66,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = b64.b85encode(" : Filterbuster - " + str(self.line))
+					self.data = b64.b85encode(" : " + hostname + " - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
 			except Exception as notbase85:
 				pass
@@ -76,7 +76,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = b64.b64encode(" : Filterbuster - " + str(self.line))
+					self.data = b64.b64encode(" : " + hostname + " - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
 			except Exception as notbase64:
 				pass
@@ -86,7 +86,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = b32.b85encode(" : Filterbuster - " + str(self.line))
+					self.data = b32.b85encode(" : " + hostname + " - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
 			except Exception as notbase64:
 				pass
@@ -96,7 +96,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					self.data = b16.b85encode(" : Filterbuster - " + str(self.line))
+					self.data = b16.b85encode(" : " + hostname + " - " + str(self.line))
 					socket.sendto(str(self.data[0::]), self.client_address)
 			except Exception as notbase16:
 				pass
@@ -106,7 +106,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 				if matchObj:
 					print bf + "\t\tATTENTION " + bo + "[*] Connection from:" + be + " " + self.client_address[0] + \
 					      bo + " - " + be + self.line
-					socket.sendto(str(" : Filterbuster - " + self.data[0::]), self.client_address)
+					socket.sendto(str(" : " + hostname + " - " + self.data[0::]), self.client_address)
 			except Exception as notplaintxt:
 				pass
 
