@@ -36,6 +36,7 @@ class xmllogfilegen(object):
 \t<condition>""" + str(state) + """</connection>
 </status>
 """
-		with open(str(consultant) + '-' + str(location) + '-' + str(ldate) + '.xml', 'a', buffering=0) as f:
+		with open(str(consultant) + '-' + str(location) + '-' + str(datetime.datetime.now()).split(" ")[0] +
+				          '.xml', 'a', buffering=0) as f:
 			f.write(xmloutput)
 			f.close()

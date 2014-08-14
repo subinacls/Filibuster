@@ -18,6 +18,12 @@ if str(logtype).lower() in ["txt", "text"]:
 	from txtloggen import txtlogfilegen as txt
 if str(logtype).lower() in ["dic", "dict", "dictionary", "json"]:
 	from jsonloggen import jsonlogger as json
+if str(logtype).lower() == "all":
+	from xmlloggen import xmllogfilegen as xml
+	from csvloggen import csvlogfilegen as csv
+	from txtloggen import txtlogfilegen as txt
+	from jsonloggen import jsonlogger as json
+
 
 
 class log_enabled(object):
@@ -35,6 +41,11 @@ class log_enabled(object):
 			if str(logtype).lower() in ["txt", "text"]:
 				txt().txtlog()
 			if str(logtype).lower() in ["dictionary", "dic", "dict", "json"]:
+				json().jsonlog()
+			if str(logtype).lower() == "all":
+				csv().csvlog()
+				xml().xmllog()
+				txt().txtlog()
 				json().jsonlog()
 			else:
 				pass
