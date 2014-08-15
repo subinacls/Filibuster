@@ -8,6 +8,7 @@
 import base64 as b64
 import __builtin__
 from itertools import cycle, izip
+import lzma
 
 class clientencoder(object):
 
@@ -32,8 +33,10 @@ class clientencoder(object):
 		if encodedata == "url":
 			pass  # do url
 		if encodedata == "lzma":
+			__builtin__.ident = lzma.compress(ident)
 			pass  # do lzma
-		if encodedata in ["gz", "gzip"]:
+		if encodedata in ["gz", "gzip", "zlib"]:
+			__builtin__.ident = ident.encode("zlib")
 			pass  # do gzip
 		if encodedata in ["binary", "bytestring"]:
 			pass  # do gzip
@@ -56,7 +59,13 @@ class clientencoder(object):
 			if encodedata == "xor":
 				key = 'filterbuster'
 				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(ddata[0], cycle(key)))
-			if encodedata == "plain":
+			if encodedata == "url":
+				pass  # do url
+			if encodedata == "lzma":
+				__builtin__.data = lzma.decompress(ddata)
+			if encodedata in ["gz", "gzip", "zlib"]:
+				__builtin__.data = ddata.encode("zlib")
+			if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
 				__builtin__.data = ddata[0]
 
 		if str(proto).lower() == "tcp":
@@ -73,7 +82,13 @@ class clientencoder(object):
 			if encodedata == "xor":
 				key = 'filterbuster'
 				__builtin__.data = ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(ddata, cycle(key)))
-			if encodedata == "plain":
+			if encodedata == "url":
+				pass  # do url
+			if encodedata == "lzma":
+				__builtin__.data = lzma.decompress(ddata)
+			if encodedata in ["gz", "gzip", "zlib"]:
+				__builtin__.data = ddata.encode("zlib")
+			if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
 				__builtin__.data = ddata
 
 		return ddata

@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/csvloggen.py" afterPath="$PROJECT_DIR$/log/csvloggen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/log_enable.py" afterPath="$PROJECT_DIR$/log/log_enable.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encoder/encoder.py" afterPath="$PROJECT_DIR$/encoder/encoder.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/xmlloggen.py" afterPath="$PROJECT_DIR$/log/xmlloggen.py" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407989485515" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1408001911223" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407073090937" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403664922845" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -49,7 +47,7 @@
     <file path="/xmlloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1404000572856" ignored="false" />
     <file path="/txtloggen.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407981931253" ignored="false" />
     <file path="/testing.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403823843298" ignored="false" />
-    <file path="/encoder.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407913808681" ignored="false" />
+    <file path="/encoder.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1408085161952" ignored="false" />
     <file path="/hasher.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403976511977" ignored="false" />
     <file path="/pcolors.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407072999802" ignored="false" />
     <file path="/bcolors.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403997843105" ignored="false" />
@@ -93,17 +91,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="udpsock.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/udpsock.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="2768" selection-end="2768" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#231#249#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="server_func.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server_func.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -129,14 +116,20 @@
       <file leaf-file-name="threadedbothserver.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/threadedbothserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="36" selection-start="829" selection-end="845" vertical-scroll-proportion="-6.6">
+            <state line="28" column="36" selection-start="829" selection-end="845" vertical-scroll-proportion="12.36">
               <folding>
                 <element signature="e#72#81#0" expanded="true" />
-                <marker date="1407980230335" expanded="true" signature="331:3728" placeholder="..." />
-                <marker date="1407980230335" expanded="true" signature="350:3728" placeholder="..." />
-                <marker date="1407980230335" expanded="true" signature="3807:3813" placeholder="..." />
-                <marker date="1407980230335" expanded="true" signature="3881:7530" placeholder="..." />
-                <marker date="1407980230335" expanded="true" signature="3900:7530" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="encoder.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="74" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.7809695">
+              <folding>
+                <element signature="e#73#93#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,10 +155,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xmlloggen.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="xmlloggen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log/xmlloggen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="26" selection-start="846" selection-end="846" vertical-scroll-proportion="0.8384201">
+            <state line="20" column="42" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,7 +167,7 @@
       <file leaf-file-name="jsonloggen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="72" selection-start="566" selection-end="604" vertical-scroll-proportion="0.0">
+            <state line="92" column="28" selection-start="3836" selection-end="3836" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -184,7 +177,9 @@
         <entry file="file://$PROJECT_DIR$/log/txtloggen.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="18" column="64" selection-start="266" selection-end="308" vertical-scroll-proportion="0.0">
-              <folding />
+              <folding>
+                <marker date="1407981933103" expanded="true" signature="159:660" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -228,7 +223,6 @@
         <option value="$PROJECT_DIR$/client/bothsock.py" />
         <option value="$PROJECT_DIR$/client/scanconfig.py" />
         <option value="$PROJECT_DIR$/client/tcpsock.py" />
-        <option value="$PROJECT_DIR$/encoder/encoder.py" />
         <option value="$PROJECT_DIR$/client/udpsock.py" />
         <option value="$PROJECT_DIR$/server/server_func.py" />
         <option value="$PROJECT_DIR$/server/threadedbothserver.py" />
@@ -238,6 +232,7 @@
         <option value="$PROJECT_DIR$/log/csvloggen.py" />
         <option value="$PROJECT_DIR$/log/log_enable.py" />
         <option value="$PROJECT_DIR$/log/xmlloggen.py" />
+        <option value="$PROJECT_DIR$/encoder/encoder.py" />
       </list>
     </option>
   </component>
@@ -1093,7 +1088,11 @@
       <created>1407989488320</created>
       <updated>1407989488320</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="fixed some reporting issues with datetime.datetime.now() in reporting module as well as socket.gethostname()">
+      <created>1408001917096</created>
+      <updated>1408001917096</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1260,7 +1259,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="47" selection-start="2102" selection-end="2102" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#230#243#0" expanded="true" />
+            <element signature="e#230#243#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1269,15 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="45" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="40" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#73#93#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,20 +1285,6 @@
         <state line="69" column="0" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#73#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/threadedbothserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="36" selection-start="829" selection-end="845" vertical-scroll-proportion="-6.6">
-          <folding>
-            <element signature="e#72#81#0" expanded="true" />
-            <marker date="1407980230335" expanded="true" signature="331:3728" placeholder="..." />
-            <marker date="1407980230335" expanded="true" signature="350:3728" placeholder="..." />
-            <marker date="1407980230335" expanded="true" signature="3807:3813" placeholder="..." />
-            <marker date="1407980230335" expanded="true" signature="3881:7530" placeholder="..." />
-            <marker date="1407980230335" expanded="true" signature="3900:7530" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1331,24 +1307,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="72" selection-start="566" selection-end="604" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/txtloggen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="64" selection-start="266" selection-end="308" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/log_enable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="30" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1407981933103" expanded="true" signature="159:660" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1361,8 +1325,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log/xmlloggen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="26" selection-start="846" selection-end="846" vertical-scroll-proportion="0.8384201">
+        <state line="20" column="42" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/log_enable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="30" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="28" selection-start="3836" selection-end="3836" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/threadedbothserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="36" selection-start="829" selection-end="845" vertical-scroll-proportion="12.36">
+          <folding>
+            <element signature="e#72#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/encoder/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="74" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.7809695">
+          <folding>
+            <element signature="e#73#93#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
