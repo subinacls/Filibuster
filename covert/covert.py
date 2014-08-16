@@ -56,17 +56,18 @@ class ntptunnel(object):
 	def ntp(self, tunnelspass, tunnelsfail):
 		try:
 			client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+			client.settimeout(3)
 			data = '\x1b' + 47 * '\0'
 			client.sendto(data,('pool.ntp.org', 123))
 			data, address = client.recvfrom(1024)
-			time.sleep(1)
+			#time.sleep(1)
 			if data:
 				tunnelspass.append('ntp')
 			else:
 				tunnelsfail.append('ntp')
 			client.close()
-		except Exception as ntptunnelfail:
-			print ntptunnelfail, "ntp tunnel failed"
+		except socket.timeout:
+			pass
 
 """ handles all the dns protocol tunnel testing """
 class dnstunnel(object):

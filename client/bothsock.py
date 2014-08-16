@@ -51,7 +51,7 @@ class bothsocks(object):
 				pass
 
 			#  connect, send, and close the socket
-
+			sockobj.settimeout(3)
 			sockobj.connect((ipaddr, lst))  # basic socket connection
 			__builtin__.ls = lst
 			sockobj.send(ident)  # send ident string

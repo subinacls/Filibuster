@@ -50,7 +50,7 @@ class udpsocks(object):
 				sockobj.settimeout(float(nappy))
 			else:
 				pass
-
+			sockobj.settimeout(3)
 			sockobj.connect((ipaddr, ls))  # basic socket connection
 			sockobj.send(ident)  # send ident string
 			__builtin__.data1 = sockobj.recvfrom(65535)  # catch anything sent back

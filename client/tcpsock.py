@@ -53,7 +53,7 @@ class tcpsocks(object):
 				pass
 
 			#  connect, send, and close the socket
-
+			sockobj.settimeout(3)
 			sockobj.connect((ipaddr, ls))  # basic socket connection
 			sockobj.send(ident)  # send ident string
 			data2 = sockobj.recv(65535)  # catch anything sent back

@@ -9,6 +9,7 @@ import base64 as b64
 import __builtin__
 from itertools import cycle, izip
 import lzma
+import binascii
 
 class clientencoder(object):
 
@@ -34,12 +35,10 @@ class clientencoder(object):
 			pass  # do url
 		if encodedata == "lzma":
 			__builtin__.ident = lzma.compress(ident)
-			pass  # do lzma
 		if encodedata in ["gz", "gzip", "zlib"]:
 			__builtin__.ident = ident.encode("zlib")
-			pass  # do gzip
 		if encodedata in ["binary", "bytestring"]:
-			pass  # do gzip
+			__builtin__.ident = binascii.b2a_uu(ident)
 		if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
 			pass  # do gzip
 
@@ -65,6 +64,8 @@ class clientencoder(object):
 				__builtin__.data = lzma.decompress(ddata)
 			if encodedata in ["gz", "gzip", "zlib"]:
 				__builtin__.data = ddata.encode("zlib")
+			if encodedata in ["binary", "bytestring"]:
+				__builtin__.data = binascii.a2b_uu(ddata)
 			if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
 				__builtin__.data = ddata[0]
 
@@ -88,6 +89,8 @@ class clientencoder(object):
 				__builtin__.data = lzma.decompress(ddata)
 			if encodedata in ["gz", "gzip", "zlib"]:
 				__builtin__.data = ddata.encode("zlib")
+			if encodedata in ["binary", "bytestring"]:
+				__builtin__.data = binascii.a2b_uu(ddata)
 			if encodedata in ["plain", "plaintext", "cleartext", "clear"]:
 				__builtin__.data = ddata
 
