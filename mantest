@@ -1,0 +1,70 @@
+.if !\n(.g \{\
+.	if !\w|\*(lq| \{\
+.		ds lq ``
+.		if \w'\(lq' .ds lq "\(lq
+.	\}
+.	if !\w|\*(rq| \{\
+.		ds rq ''
+.		if \w'\(rq' .ds rq "\(rq
+.	\}
+.\}
+.ie t .ds Tx \s-1T\v'.4n'\h'-.1667'E\v'-.4n'\h'-.125'X\s0
+. el  .ds Tx TeX
+.de Id
+. ds Yr \\$4
+. substring Yr 0 3
+. ds Mn \\$4
+. substring Mn 5 6
+. ds Dy \\$4
+. substring Dy 8 9
+. \" ISO 8601 date, complete format, extended representation
+. ds Dt \\*(Yr-\\*(Mn-\\*(Dy
+..
+.TH FILIBUSTER 1 \*(Dt "filibuster (git)" "User Commands"
+.SH NAME
+filibuster \- egress filter mapping application with additional functionality
+.SH SYNOPSIS
+.B filibuster
+.RI [\fBMODE\fR]
+.RI [\fBarguments\fR]
+.SH DESCRIPTION
+The filibuster tool is used to test for egress ports. If you're behind a port filtering device and need to get some idea of what ports are open and allow some type of connection, be it segment to segment, segment to internet, LAN to WAN or LAN to LAN. It can be a useful tool for a number of scenarios, including to help pentesters map out a range of ports to see whats open, and to help network administrators test the port connections on a firewall before pushing to production.
+.SH MODES
+.SS client
+The \fBclient\fR mode performs the following function. [fixme]
+.PP
+.B \./filibuster\.py \fBclient\fR [\fBCONFIG\fR] [\fBENCRYPT\fR]
+.P
+.RS
+.TP
+.BI CONFIG:
+.RS
+Path to the config file being used (eg: /path/to/bust.conf)
+.RE
+.P
+.BI ENCRYPT:
+.RS
+Whether or not to use encryption (\fByes\fR|\fBno\fR)
+.SS server
+The \fBserver\fR mode performs the following function. [fixme]
+.PP
+.B \./filibuster\.py \fBserver\fR [\fBPROTOCOL\fR] [\fBPORT\fR] [\fBENCRYPT\fR]
+.P
+.RS
+.BI PROTOCOL:
+.RS
+The protocol to listen over (\fBtcp\fR|\fBudp\fR|\fBboth\fR)
+.RE
+.P
+.BI PORT:
+.RS
+The port number the server should listen on (eg: 8967)
+.RE
+.P
+.BI ENCRYPT:
+.RS
+Whether or not to use encryption (\fByes\fR|\fBno\fR)
+.SH CREDITS
+Developed by: William Coppola
+.SH LICENSE
+Released under the GPLv3 license \fIhttp://gplv3\.fsf\.org/\fR
