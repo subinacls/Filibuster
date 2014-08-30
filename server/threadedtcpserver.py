@@ -130,18 +130,32 @@ class ThreadedTCPRequestHandler(SocketServer.BaseRequestHandler):
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 	pass
   
-  
+class ThreadedTCPV6Server(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
+	address_family = socket.AF_INET6
+
 class tcpserver(object):
 	def __init__(self):
 		pass
 
 	def mytcpserver(self):
-		__builtin__.socketserver = ThreadedTCPServer(('', int(serverport)), ThreadedTCPRequestHandler)
+		#IPv4 socket handling
+		socketserver = ThreadedTCPServer(('', int(serverport)), ThreadedTCPRequestHandler)
 		socketserver_thread = threading.Thread(target=socketserver.serve_forever)
-		socketserver_thread.setDaemon(False)
+		socketserver_thread.setDaemon(True)
 		socketserver_thread.start()
+		#IPv6 socket handling
+		v6socketserver = ThreadedTCPV6Server(('::1', int(serverport)), ThreadedTCPRequestHandler)
+		v6socketserver_thread = threading.Thread(target=v6socketserver.serve_forever)
+		v6socketserver_thread.setDaemon(True)
+		v6socketserver_thread.start()
+
 		os.popen("iptables -t nat -F")
-		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports "+str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port "+str(serverport))
+		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-ports "+ str(serverport))
 		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-port 22")
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-ports 22")
+		os.popen("ip6tables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("ip6tables -t nat -I OUTPUT -p tcp -d ::1 --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("ip6tables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
+		os.popen("ip6tables -t nat -I OUTPUT -p tcp -d ::1  --dport 65535 -j REDIRECT --to-ports 22")
+)

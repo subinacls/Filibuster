@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# env python
 # encoding: utf-8
 #
 # module author: subinacls
@@ -34,8 +35,8 @@ class confsecmap(object):
 
 
 	def ConfigSectionMap(section):
-		options = Config.options(section)                                                 
-		for option in options:                                                            
+		options = Config.options(section)
+		for option in options:
 			dict1[option] = Config.get(section, option)
 			if dict1[option] == -1:
 				print("Option has no var to set: %s" % option)
@@ -62,6 +63,12 @@ class confsecmap(object):
 					__builtin__.scantype = ConfigSectionMap("SectionOne")["types"]
 			except Exception as typesconffail:
 				__builtin__.scantype = "connect"
+				pass
+			try:
+				if Config.get("SectionOne", "ipver") != "":
+					__builtin__.ipver = ConfigSectionMap("SectionOne")["ipver"]
+			except Exception as typesconffail:
+				__builtin__.ipver = "ipv4"
 				pass
 			try:
 				if Config.get("SectionOne", "spoof") != "":
@@ -98,6 +105,12 @@ class confsecmap(object):
 				__builtin__.encodedata = "plain"
 				pass
 			try:
+				if Config.get("SectionOne", "encrypt") != "":
+					__builtin__.encrypt = ConfigSectionMap("SectionOne")["encrypt"]
+			except Exception as encryptfail:
+				__builtin__.encrypt = "false"
+				pass
+			try:
 				if Config.get("SectionOne", "consultant") != "":
 					__builtin__.consultant = ConfigSectionMap("SectionOne")["consultant"]
 			except Exception as conconffail:
@@ -124,7 +137,7 @@ class confsecmap(object):
 			try:
 				if Config.get("SectionTwo", "nappy") != "":
 					__builtin__.nappy = ConfigSectionMap("SectionTwo")["nappy"]
-			except Exception as nappyconffail: 
+			except Exception as nappyconffail:
 				__builtin__.nappy = "5"
 				pass
 			try:
@@ -136,19 +149,19 @@ class confsecmap(object):
 			try:
 				if Config.get("SectionThree", "suppress") != "":
 					__builtin__.suppress = ConfigSectionMap("SectionThree")["suppress"]
-			except Exception as suppressconffail: 
+			except Exception as suppressconffail:
 				__builtin__.suppress = "False"
 				pass
 			try:
 				if Config.get("SectionThree", "logging") != "":
 					__builtin__.logging = ConfigSectionMap("SectionThree")["logging"]
-			except Exception as loggingconffail: 
+			except Exception as loggingconffail:
 				__builtin__.logging = "False"
 				pass
 			try:
 				if Config.get("SectionThree", "logtype") != "":
 					__builtin__.logtype = ConfigSectionMap("SectionThree")["logtype"]
-			except Exception as logtypefail: 
+			except Exception as logtypefail:
 				__builtin__.logtype = ""
 				pass
 			try:

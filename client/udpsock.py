@@ -44,7 +44,16 @@ class udpsocks(object):
 
 			clientencoder().dataencode(ident)  # check encoding module and produce ident as desired by configuration
 
-			sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # create the socket object
+			# are we going to use IPv6 or not ?
+			if str(ipver).lower() == "ipv6":
+				if re.match("([0-9a-f]{0,4}:){6}[0-9-a-f]{0,4}$", ipaddr) or re.match("::[0-9]$", ipaddr):
+					if socket.has_ipv6:
+						sockobj = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
+					else:
+						print "\n\t\tNo IPv6 interface on this system"
+						pass
+			else:
+				sockobj = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # create the socket object
 
 			if nappy > "1":  # is nappy is a fraction less than 1 -  float socket timeout
 				sockobj.settimeout(float(nappy))

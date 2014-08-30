@@ -116,6 +116,10 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass
 
+
+class ThreadedUDPV6Server(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
+	address_family = socket.AF_INET6
+
 class udpserver(object):
 	def __init__(self):
 		pass
@@ -125,5 +129,11 @@ class udpserver(object):
 		socketserver_thread = threading.Thread(target=socketserver.serve_forever)
 		socketserver_thread.setDaemon(False)
 		socketserver_thread.start()
+		tv6usocketserver = ThreadedUDPV6Server(('::1', int(serverport)), ThreadedUDPRequestHandler)
+		tv6usocketserver_thread = threading.Thread(target=tv6usocketserver.serve_forever)
+		tv6usocketserver_thread.setDaemon(False)
+		tv6usocketserver_thread.start()
 		os.popen("iptables -t nat -I PREROUTING -p udp --dport 1:65535 -j REDIRECT --to-ports " + str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p udp -d 127.0.0.1 --dport 1:65535 -j REDIRECT --to-port " + str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p udp -d 0.0.0.0 --dport 1:65535 -j REDIRECT --to-port " + str(serverport))
+		os.popen("ip6tables -t nat -I PREROUTING -p udp --dport 1:65535 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("ip6tables -t nat -I OUTPUT -p udp -d ::1 --dport 1:65535 -j REDIRECT --to-port " + str(serverport))

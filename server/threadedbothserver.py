@@ -183,6 +183,11 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 	pass
 
+class ThreadedTCPV6Server(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
+	address_family = socket.AF_INET6
+
+class ThreadedUDPV6Server(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
+	address_family = socket.AF_INET6
 
 class bothserver(object):
 	def __init__(self):
@@ -192,15 +197,31 @@ class bothserver(object):
 		usocketserver = ThreadedUDPServer(('', int(serverport)), ThreadedUDPRequestHandler)
 		usocketserver_thread = threading.Thread(target=usocketserver.serve_forever)
 		usocketserver_thread.setDaemon(False)
+		tv6usocketserver = ThreadedUDPV6Server(('::1', int(serverport)), ThreadedUDPRequestHandler)
+		tv6usocketserver_thread = threading.Thread(target=tv6usocketserver.serve_forever)
+		tv6usocketserver_thread.setDaemon(False)
+		tv6usocketserver_thread.start()
+
 		tsocketserver = ThreadedTCPServer(('', int(serverport)), ThreadedTCPRequestHandler)
 		tsocketserver_thread = threading.Thread(target=tsocketserver.serve_forever)
 		tsocketserver_thread.setDaemon(False)
+		tv6tsocketserver = ThreadedTCPV6Server(('::1', int(serverport)), ThreadedTCPRequestHandler)
+		tv6tsocketserver_thread = threading.Thread(target=tv6tsocketserver.serve_forever)
+		tv6tsocketserver_thread.setDaemon(False)
+		tv6tsocketserver_thread.start()
+
 		os.popen("iptables -t nat -F")
-		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports "+str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-port "+ str(serverport))
+		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 1:65534 -j REDIRECT --to-ports "+ str(serverport))
 		os.popen("iptables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
-		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-port 22")
+		os.popen("iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 65535 -j REDIRECT --to-ports 22")
 		os.popen("iptables -t nat -I PREROUTING -p udp --dport 1:65535 -j REDIRECT --to-ports " + str(serverport))
-		os.popen("iptables -t nat -I OUTPUT -p udp -d 127.0.0.1 --dport 1:65535 -j REDIRECT --to-port " + str(serverport))
+		os.popen("iptables -t nat -I OUTPUT -p udp -d 127.0.0.1 --dport 1:65535 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("ip6tables -t nat -I PREROUTING -p tcp --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("ip6tables -t nat -I OUTPUT -p tcp -d ::1 --dport 1:65534 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("ip6tables -t nat -I PREROUTING -p tcp --dport 65535 -j REDIRECT --to-ports 22")
+		os.popen("ip6tables -t nat -I OUTPUT -p tcp -d ::1  --dport 65535 -j REDIRECT --to-ports 22")
+		os.popen("ip6tables -t nat -I PREROUTING -p udp --dport 1:65535 -j REDIRECT --to-ports " + str(serverport))
+		os.popen("ip6tables -t nat -I OUTPUT -p udp -d ::1 --dport 1:65535 -j REDIRECT --to-ports " + str(serverport))
 		for sserver in [tsocketserver_thread, usocketserver_thread]:
 			sserver.start()
