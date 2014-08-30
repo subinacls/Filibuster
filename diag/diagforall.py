@@ -1,10 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
 # encoding: utf-8
 #
 # module author: subinacls
-#
-#
-# file should handle its own exceptions
 #
 
 """ Useful information

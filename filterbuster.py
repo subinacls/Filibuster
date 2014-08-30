@@ -1,5 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
 # encoding: utf-8
+#
+# module author: subinacls
+#8
 
 """
 module author: subinacls
