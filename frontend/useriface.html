@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head><title></title>
+<script src="./jquery.min.js"></script>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript">
+<!--
+// This will generate the text file content based on the form data
+function buildData(){
+    var txtData ="[SectionOne]" +
+            "\r\ndiagnostics: "+($("#diagnostics").is(":checked")?"True":"False")+
+            "\r\ntarget: "+$("#target").val()+
+            "\r\ntypes: "+($("#types").is(":checked")?"Connect":"Syn")+
+            "\r\nspoof: "+($("#spoof").is(":checked")?"True":"False")+
+            "\r\nrange: "+$("#range").val()+
+            "\r\nrandom: "+($("#random").is(":checked")?"True":"False")+
+            "\r\nprotocol: "+($("#proto1").is(":checked")?"TCP":"") +
+            ($("#proto2").is(":checked")?"UDP":"") +
+            ($("#proto3").is(":checked")?"Both":"") +
+            "\r\npadding: "+($("#padding").is(":checked")?"True":"False")+
+            "\r\nencodedata: "+($("#encode1").is(":checked")?"base85":"") +
+            ($("#encode2").is(":checked")?"base64":"") +
+            ($("#encode3").is(":checked")?"base32":"") +
+            ($("#encode4").is(":checked")?"base16":"") +
+            ($("#encode5").is(":checked")?"xor":"") +
+            ($("#encode6").is(":checked")?"rot13":"") +
+            ($("#encode7").is(":checked")?"url":"") +
+            ($("#encode8").is(":checked")?"lzma":"") +
+            ($("#encode9").is(":checked")?"gz":"") +
+            ($("#encode10").is(":checked")?"plain":"") +
+            "\r\nconsultant: "+$("#consultant").val()+
+            "\r\nlocation: "+$("#location").val()+
+            "\r\n[SectionTwo]" +
+            "\r\nsleep: "+($("#sleep1").is(":checked")?"0":"") +
+            ($("#sleep2").is(":checked")?"Static":"") +
+            ($("#sleep3").is(":checked")?"Random":"") +
+            "\r\nnappy: "+$("#nappy").val()+
+            "\r\ndwell: "+$("#dwell").val()+
+            "\r\n[SectionThree]" +
+            "\r\nsuppress: "+($("#suppress").is(":checked")?"True":"False")+
+            "\r\nlogging: "+($("#logging").is(":checked")?"True":"False")+
+            "\r\nlogtype: "+($("#logt1").is(":checked")?"txt":"") +
+            ($("#logt2").is(":checked")?"xml":"") +
+            ($("#logt3").is(":checked")?"csv":"") +
+            ($("#logt4").is(":checked")?"json":"") +
+            ($("#logt5").is(":checked")?"all":"") +
+            "\r\ncovert: "+($("#covert").is(":checked")?"True":"False")+ "\r\n";
+
+
+    return txtData;
+}
+// This will be executed when the document is ready
+$(function(){
+    // This will act when the submit BUTTON is clicked
+    $("#formToSave").submit(function(event){
+        event.preventDefault();
+        var txtData = buildData();
+        window.location.href="data:application/octet-stream;base64,"+Base64.encode(txtData);
+    });
+});
+
+//-->
+
+</script>
+</head>
+<body>
+<form method="post" action="" id="formToSave">
+    <dl>
+        <dt>Diagnostics: <input type="radio" name="diagnostics: " value="True" id="diagnostics" />
+            True
+            <input type="radio" checked="checked" name="diagnostics: " value="False"/>
+            False
+
+        <dt>Target: <input type="text" id="target" value="127.0.0.1" />
+
+        <dt>Scan type: <input type="radio" checked="checked" name="types: " value="connect" id="types" />
+            Connect
+            <input type="radio" name="types: " value="syn"/>
+            Syn
+
+        <dt>Spoof: <input type="radio" name="spoof: " value="True" id="spoof" />
+            True
+            <input type="radio" checked="checked" name="spoof: " value="False"/>
+            False
+
+        <dt>Range: <input type="text" id="range" value="1-1024" />
+
+        <dt>Random: <input type="radio" name="random: " value="True" id="random" />
+            True
+            <input type="radio" checked="checked" name="random: " value="False"/>
+            False
+
+        <dt>Protocol: <input type="radio" name="proto: " value="TCP" id="proto1" />
+            TCP
+            <input type="radio" name="proto: " value="UDP" id="proto2"/>
+            UDP
+            <input type="radio" checked="checked" name="proto: " value="BOTH" id="proto3"/>
+            BOTH
+
+        <dt>Padding: <input type="radio" name="padding: " value="True" id="padding" />
+            True
+            <input type="radio" checked="checked" name="padding: " value="False"/>
+            False
+
+        <dt>Encoding: <input type="radio" name="encode: " value="base85" id="encode1" />
+            Base85
+            <input type="radio" name="encode: " value="base64" id="encode2"/>
+            Base64
+            <input type="radio" name="encode: " value="base32" id="encode3"/>
+            Base32
+            <input type="radio" name="encode: " value="base16" id="encode4"/>
+            Base16
+            <input type="radio" name="encode: " value="xor" id="encode5"/>
+            XOR
+            <input type="radio" name="encode: " value="rot13" id="encode6"/>
+            ROT13
+            <input type="radio" name="encode: " value="url" id="encode7"/>
+            URL
+            <input type="radio" name="encode: " value="lzma" id="encode8"/>
+            LZMA
+            <input type="radio" name="encode: " value="gz" id="encode9"/>
+            GZIP
+            <input type="radio" name="encode: " value="plain" id="encode10"/>
+            PLAIN
+
+            <dt>Consultant name: <input type="text" id="consultant" value="your name here" />
+
+            <dt>Location: <input type="text" id="location" value="from the kitchen" />
+
+            <dt>Sleep function: <input type="radio" name="sleep: " value="0" id="sleep1" />
+            None
+            <input type="radio" name="sleep: " value="Static" id="sleep2"/>
+            Static
+            <input type="radio" checked="checked" name="sleep: " value="Random" id="sleep3"/>
+            Random
+
+            <dt>Nap timer: <input type="text" id="nappy" value="0" />
+
+            <dt>Dwell timer: <input type="text" id="dwell" value="0" />
+
+            <dt>Suppress errors: <input type="radio" name="suppress: " value="True" id="suppress" />
+            True
+            <input type="radio" checked="checked" name="suppress: " value="False"/>
+            False
+
+            <dt>Logging enabled: <input type="radio" name="logging: " value="True" id="logging" />
+            True
+            <input type="radio" checked="checked" name="logging: " value="False"/>
+            False
+
+            <dt>Log type: <input type="radio" name="logtype: " value="Text" id="logt1" />
+            Text
+            <input type="radio" name="logtype: " value="XML" id="logt2"/>
+            XML
+            <input type="radio" name="logtype: " value="CSV" id="logt3"/>
+            CSV
+            <input type="radio" name="logtype: " value="JSON" id="logt4"/>
+            JSON
+            <input type="radio" checked="checked" name="logtype: " value="All" id="logt5"/>
+            All
+
+            <dt>Covert tunnel test: <input type="radio" name="covert: " value="True" id="covert" />
+            True
+            <input type="radio" checked="checked" name="covert: " value="False"/>
+            False
+        </dt>
+    </dl>
+    <p><a href="javascript://Save as TXT" id="submitLink"></a></p>
+    <p><button type="submit"> Save as TXT</button></p>
+</form>
+</body>
+</html>
