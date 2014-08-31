@@ -1,0 +1,21 @@
+[SectionOne]
+diagnostics: False
+target: 127.0.0.1
+types: Connect
+spoof: False
+range: 1-1024
+random: True
+protocol: Both
+padding: False
+encodedata: base64
+consultant: your name here
+location: from the kitchen
+[SectionTwo]
+sleep: 0
+nappy: 0
+dwell: 0
+[SectionThree]
+suppress: True
+logging: True
+logtype: json
+covert: True
