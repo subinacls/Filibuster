@@ -107,14 +107,14 @@ class bothsocks(object):
 			                    str(padgen().maxipad()) + be + " - Port: " + str(lsu) + bo + \
 			                    str(padgen().maxipad()) + be + " - By: " + str(consultant) + bo + \
 			                    str(padgen().maxipad()) + be + " - From: "  + str(location) + bo + \
-			                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate) + bo + \
+			                    str(padgen().maxipad()) + be + " - Date: "  + str(ldate).split(".")[0] + bo + \
 				                str(padgen().maxipad()) + be
 			else:  # if no padding use standard ident information to send
 				__builtin__.ident = bo + "On " + be + str(proto) + bo + \
 			                    " Port: " + be + str(lsu) + bo + \
 			                    " - By: " + be + str(consultant) + bo + \
 			                    " - From: " + be + str(location) + bo + \
-			                    " - Date: " + be + str(ldate) + be
+			                    " - Date: " + be + str(ldate).split(".")[0] + be
 
 			clientencoder().dataencode(ident)  # check encoding module and produce ident as desired by configuration
 
