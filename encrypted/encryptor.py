@@ -7,6 +7,7 @@ from Crypto.Cipher import AES
 import __builtin__
 import os
 import time
+import base64
 
 class encryptor(object):
 
