@@ -72,6 +72,7 @@
     <file path="/readme.rm" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1405219822776" ignored="false" />
     <file path="/approtos.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1405275854746" ignored="false" />
     <file path="/testingbranch" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1409094245843" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1409631326172" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +122,7 @@
       <file leaf-file-name="tcpsock.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="46" selection-start="3226" selection-end="3226" vertical-scroll-proportion="1.1356238">
+            <state line="59" column="47" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.5660036">
               <folding />
             </state>
           </provider>
@@ -1355,7 +1356,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/tcpsock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="46" selection-start="3226" selection-end="3226" vertical-scroll-proportion="1.1356238">
+        <state line="59" column="47" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.5660036">
           <folding />
         </state>
       </provider>
