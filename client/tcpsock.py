@@ -57,20 +57,19 @@ class tcpsocks(object):
 			sockobj.connect((ipaddr, ls))  # basic socket connection
 			sockobj.send(ident)  # send ident string
 			data2 = sockobj.recv(65535)  # catch anything sent back
-			sockobj.close()  # close the socket
 			if data2:  # if we recv any data back from server, append to passlist
 				passlist.append(str(proto) + "/" + str(ls))
-				clientencoder().datadecode(data2)  # check if encode and decode data for displaying
+				if str(encrypt).lower() == "true":
+					data3 = encryptor().decrypt(data2)
+					clientencoder().datadecode(data3)  # check if encode and decode data for displaying
+				else:
+					clientencoder().datadecode(data2)  # check if encode and decode data for displaying
 			else:
 				pass
 
 			__builtin__.state = "Established"  # set state for the connection
 
-			if str(paddata).lower() in ["true", "yes"]:  # if padding was used display generic information to client
-				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + bo + ": Padded data"
-				# passlist.append("TCP/" + str(ls))
-			else:
-				print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
+			print bf + "\t\tATTENTION " + be + bo + "[*] Connected to: " + be + str(ipaddr) + str(data)
 
 			from log_enable import log_enabled
 			log_enabled().logging()  # try to log data
