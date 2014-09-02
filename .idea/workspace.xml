@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/bothsock.py" afterPath="$PROJECT_DIR$/client/bothsock.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/encrypted/encryptor.py" />
     </list>
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1409372383614" ignored="false" />
+    <file path="/Dummy.txt" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1409629537809" ignored="false" />
     <file path="/conf.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1407073090937" ignored="false" />
     <file path="/a.dummy" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403664922845" ignored="false" />
     <file path="/kickstarter.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1403241369819" ignored="false" />
@@ -106,10 +105,7 @@
         <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="134" column="0" selection-start="5092" selection-end="5092" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1409371294171" expanded="true" signature="5117:6553" placeholder="..." />
-                <marker date="1409371294171" expanded="true" signature="5170:6553" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,10 +114,7 @@
         <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="119" column="0" selection-start="4770" selection-end="4883" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1409371179909" expanded="true" signature="4909:5893" placeholder="..." />
-                <marker date="1409371179909" expanded="true" signature="4962:5893" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,24 +137,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bothsock.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bothsock.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/bothsock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="75" selection-start="5029" selection-end="5029" vertical-scroll-proportion="0.7866185">
+            <state line="116" column="75" selection-start="5029" selection-end="5029" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GPLv3" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPLv3">
+      <file leaf-file-name="encryptor.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/encrypted/encryptor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="411" column="47" selection-start="21288" selection-end="21288" vertical-scroll-proportion="-237.11539">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
@@ -169,9 +159,7 @@
         <entry file="file://$PROJECT_DIR$/config/conf.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="182" column="0" selection-start="5586" selection-end="5586" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#225#239#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -268,6 +256,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,6 +286,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filibuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filibuster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="encrypted" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -344,17 +347,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -365,6 +367,9 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dlp/datawarehouse/images/passports" />
       <recent name="$PROJECT_DIR$/datatypes/pci" />
@@ -980,12 +985,11 @@
     <frame x="0" y="25" width="1280" height="750" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24908201" sideWeight="0.7873832" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17512275" sideWeight="0.6721854" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19476268" sideWeight="0.6721854" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39768976" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -995,6 +999,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31023103" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39836448" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1095,32 +1100,19 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/log/xmlloggen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="42" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/log_enable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="30" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="47" column="30" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/jsonloggen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="28" selection-start="3836" selection-end="3836" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="92" column="28" selection-start="3836" selection-end="3836" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/covert/covert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="16" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="69" column="16" selection-start="1620" selection-end="1620" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/padme.py">
@@ -1139,7 +1131,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GPLv3">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="411" column="47" selection-start="21288" selection-end="21288" vertical-scroll-proportion="-237.11539">
+        <state line="411" column="47" selection-start="21288" selection-end="21288" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1157,9 +1149,7 @@
     <entry file="file://$PROJECT_DIR$/config/conf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="182" column="0" selection-start="5586" selection-end="5586" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#225#239#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,20 +1163,14 @@
     <entry file="file://$PROJECT_DIR$/server/threadedtcpserver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="134" column="0" selection-start="5092" selection-end="5092" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1409371294171" expanded="true" signature="5117:6553" placeholder="..." />
-            <marker date="1409371294171" expanded="true" signature="5170:6553" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/threadedudpserver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="119" column="0" selection-start="4770" selection-end="4883" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1409371179909" expanded="true" signature="4909:5893" placeholder="..." />
-            <marker date="1409371179909" expanded="true" signature="4962:5893" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1213,7 +1197,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/bothsock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="75" selection-start="5029" selection-end="5029" vertical-scroll-proportion="0.7866185">
+        <state line="116" column="75" selection-start="5029" selection-end="5029" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/encrypted/encryptor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
