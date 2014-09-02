@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/tcpsock.py" afterPath="$PROJECT_DIR$/client/tcpsock.py" />
-    </list>
+    <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="" />
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +70,7 @@
     <file path="/readme.rm" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1405219822776" ignored="false" />
     <file path="/approtos.py" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1405275854746" ignored="false" />
     <file path="/testingbranch" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1409094245843" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1409631326172" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="31a200cc-4743-41c7-ae1d-0f60656e4642" time="1409631429553" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
