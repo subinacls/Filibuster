@@ -1,8 +1,0 @@
-[SectionOne]
-Diagnostics: False
-Target: 127.0.0.1
-Types: Connect
-Spoof: False
-Range: 1-1024
-Random: False
-Protocol: NONE
