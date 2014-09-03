@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/error/exceptcatcher.py" afterPath="$PROJECT_DIR$/error/exceptcatcher.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="31a200cc-4743-41c7-ae1d-0f60656e4642" name="Default" comment="" />
     <list id="63413527-08f7-4484-a416-2041917ae812" name="Failed commit: Default" comment="new files being pushed" />
     <ignored path="Filterbuster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -178,7 +175,7 @@
       <file leaf-file-name="exceptcatcher.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/error/exceptcatcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="22" selection-start="4131" selection-end="4131" vertical-scroll-proportion="0.8101266">
+            <state line="139" column="0" selection-start="3596" selection-end="4132" vertical-scroll-proportion="0.403255">
               <folding>
                 <element signature="e#73#82#0" expanded="true" />
               </folding>
@@ -1012,7 +1009,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24908201" sideWeight="0.7873832" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20130932" sideWeight="0.6721854" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20130932" sideWeight="0.6721854" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39768976" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -1230,7 +1227,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/error/exceptcatcher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="22" selection-start="4131" selection-end="4131" vertical-scroll-proportion="0.8101266">
+        <state line="139" column="0" selection-start="3596" selection-end="4132" vertical-scroll-proportion="0.403255">
           <folding>
             <element signature="e#73#82#0" expanded="true" />
           </folding>
