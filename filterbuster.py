@@ -46,6 +46,7 @@ __builtin__.dd = {}
 __builtin__.suppress = "yes"
 """ list required directories for application to import custom modules """
 directories = ["client",
+               "codec",
                "color",
                "config",
                "covert",
@@ -75,7 +76,7 @@ from diagforall import csconf as csconf
 import verinfo
 from diagforall import diagclientheader, modimporttest, ctest
 from diagforall import piechartdiag
-from exceptcatcher import osdistcheck
+from exceptcatcher import checkall
 
 """ do an import test on all modules """
 modimporttest().runimporttest()
@@ -150,7 +151,7 @@ def checkfirstargument():
 
 """ pain in the __main__ """
 if __name__ == "__main__":
-	osdistcheck().isaa()
+	checkall().findosrel()
 	""" run checkfirstargument function """
 	checkfirstargument()
 	""" for diagnostics display a pie chart"""
