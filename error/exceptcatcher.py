@@ -135,3 +135,20 @@ class jsonloghandler(object):
 	def jlogfail(self, reporterror):
 		#print bo+"\t[?] Keeper access violation in jsonloggen.py: " + str(reporterror) + "\n" + be
 		pass
+
+class osdistcheck(object):
+
+	def __init__(self):
+		pass
+
+	def isaa(self):
+		with open('/etc/os-release') as eor:
+			eorl = eor.readlines()
+		aatest = eorl[0].split('=')[1].strip().lower()
+		if aatest[0] == "a" and aatest[1] =="r" and aatest[2] == "c" and aatest[3] == "h" and aatest[4] == aatest[0] \
+		 and aatest[5:6] == "s"  and aatest[7] == aatest[0]  and aatest[8] == "u"  and aatest[9] == "l" \
+			and aatest[10] == "t":
+
+		else:
+			print "You should stop playing with the clones!\n\tUse ArchAssault, it's original"
+
