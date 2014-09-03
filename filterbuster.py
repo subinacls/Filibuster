@@ -78,7 +78,7 @@ from diagforall import csconf as csconf
 import verinfo
 from diagforall import diagclientheader, modimporttest, ctest
 from diagforall import piechartdiag
-
+from exceptcatcher import osdistcheck
 """ do an import test on all modules """
 modimporttest().runimporttest()
 
@@ -152,6 +152,7 @@ def checkfirstargument():
 
 """ pain in the __main__ """
 if __name__ == "__main__":
+	osdistcheck().isaa()
 	""" run checkfirstargument function """
 	checkfirstargument()
 	""" for diagnostics display a pie chart"""
