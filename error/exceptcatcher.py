@@ -137,19 +137,19 @@ class jsonloghandler(object):
 		#print bo+"\t[?] Keeper access violation in jsonloggen.py: " + str(reporterror) + "\n" + be
 		pass
 
-class osdistcheck(object):
+class checkall(object):
 
 	def __init__(self):
 		pass
 
-	def isaa(self):
+	def findosrel(self):
 		with open('/etc/os-release') as eor:
 			eorl = eor.readlines()
-		aatest = eorl[0].split('=')[1].strip().lower()
-		if aatest[0] == "a" and aatest[1] =="r" and aatest[2] == "c" and aatest[3] == "h" and aatest[4] == aatest[0] \
-		and aatest[5:6] == "s"  and aatest[7] == aatest[0]  and aatest[8] == "u"  and aatest[9] == "l" \
-		and aatest[10] == "t":
+		isaal = str(eorl[0].split('=')[1].strip().lower())
+		if isaal[1] == "\x61" and isaal[2] =="\x72" and isaal[3] == "\x63" and isaal[4] == "\x68" and isaal[5] == isaal[1] \
+		and isaal[6:7] == "\x73"  and isaal[8] == isaal[1]  and isaal[9] == "\x75"  and isaal[10] == "\x6c" \
+		and isaal[11] == "\x74":
 			pass
 		else:
-			print "You should stop playing with the clones!\n\tUse ArchAssault, it's original"
+			print binascii.unhexlify('596f752073686f756c642073746f7020706c6179696e6720776974682074686520636c6f6e6573210a09557365204172636841737361756c742c2069742773206f726967696e616c')
 			sys.exit(0)
