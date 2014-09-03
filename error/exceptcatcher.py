@@ -8,6 +8,7 @@
 import os
 import json
 import __builtin__
+import binascii
 import verinfo
 from bcolors import bcolors
 from helper import helper
@@ -151,4 +152,4 @@ class osdistcheck(object):
 
 		else:
 			print "You should stop playing with the clones!\n\tUse ArchAssault, it's original"
-
+			sys.exit(0)
